@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_gainloot",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_gainloot",
+  "parent":{
+    "name":"Pirate",
+    "path":"folders/Scripts/Pirate.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

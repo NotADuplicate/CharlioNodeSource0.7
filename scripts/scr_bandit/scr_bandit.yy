@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_bandit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_bandit",
+  "parent":{
+    "name":"Standoff",
+    "path":"folders/Scripts/Standoff.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_statFind",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_statFind",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

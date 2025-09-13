@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_make_buttons",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_make_buttons",
+  "parent":{
+    "name":"Quantum",
+    "path":"folders/Scripts/Quantum.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

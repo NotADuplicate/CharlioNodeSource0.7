@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_keycode",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_keycode",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

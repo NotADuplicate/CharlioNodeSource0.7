@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_hook_stop",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_hook_stop",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

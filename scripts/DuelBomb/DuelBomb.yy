@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"DuelBomb",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"DuelBomb",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

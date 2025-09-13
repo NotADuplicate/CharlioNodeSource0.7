@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_ability_release",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_ability_release",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

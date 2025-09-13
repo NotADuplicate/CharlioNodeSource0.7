@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Bloodshot",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Bloodshot",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

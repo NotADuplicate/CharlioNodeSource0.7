@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Cleaver",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Cleaver",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

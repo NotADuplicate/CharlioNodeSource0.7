@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_crossfade",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_crossfade",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

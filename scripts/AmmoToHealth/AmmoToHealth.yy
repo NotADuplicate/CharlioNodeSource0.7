@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"AmmoToHealth",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"AmmoToHealth",
+  "parent":{
+    "name":"BallPassives",
+    "path":"folders/Scripts/BallPassives.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

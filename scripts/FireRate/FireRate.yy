@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"FireRate",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"FireRate",
+  "parent":{
+    "name":"BallPassives",
+    "path":"folders/Scripts/BallPassives.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

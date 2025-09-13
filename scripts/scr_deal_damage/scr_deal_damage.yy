@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_deal_damage",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_deal_damage",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

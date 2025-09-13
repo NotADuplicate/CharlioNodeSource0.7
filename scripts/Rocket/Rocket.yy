@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Rocket",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Rocket",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

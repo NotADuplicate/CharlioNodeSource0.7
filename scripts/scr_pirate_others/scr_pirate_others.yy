@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_pirate_others",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_pirate_others",
+  "parent":{
+    "name":"Pirate",
+    "path":"folders/Scripts/Pirate.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

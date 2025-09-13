@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"BodySlam",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BodySlam",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

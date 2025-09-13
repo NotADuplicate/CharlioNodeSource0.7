@@ -1,0 +1,2 @@
+global.passive = "Edge Runner";
+

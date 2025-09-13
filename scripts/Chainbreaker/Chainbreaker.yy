@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Chainbreaker",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Chainbreaker",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

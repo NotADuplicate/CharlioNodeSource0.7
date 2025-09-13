@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_standoff_others",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_standoff_others",
+  "parent":{
+    "name":"Standoff",
+    "path":"folders/Scripts/Standoff.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

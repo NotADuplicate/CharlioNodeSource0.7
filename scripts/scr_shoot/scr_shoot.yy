@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_shoot",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_shoot",
+  "parent":{
+    "name":"Shooter",
+    "path":"folders/Scripts/Shooter.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_garen",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":2.123175,
+  "name":"snd_garen",
+  "parent":{
+    "name":"UISounds",
+    "path":"folders/Sounds/UISounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_garen.ogg",
+  "type":0,
+  "volume":1.0,
+}

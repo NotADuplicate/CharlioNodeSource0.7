@@ -1,0 +1,5 @@
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function scr_lore(){
+	return(choose("Enrage was found by John B. Enrage who died shortly after his discovery","The Leech ability was inspired by Sam G","Gaming moments can get heated so remember to use fire axe to crit on burning targets","Garren Nashor became an evil monster after his soundcloud career failed","Big Gun was able to become so big because it has no natural predators","The airstrike ability was first used by Obama","Reflect is made using Uno reverse cards","The gas from gas trap is nearly as toxic as a League of Legends lobby","Cassandra Varga was the first woman to cross the Atlantic using only Ninja Dash","Stasis was used to pass time before the invention of television","The first man to ever throw a boomerang died","Cleaver was invented by Fiacre Frenchmen who used it to prepare Confit de Canard","Enrage a bad player and they will be enraged for the rest of their life.\n Enrage a good player and they will be enraged for the rest of your life","Wall is a subtle nod to trump dash"));
+}

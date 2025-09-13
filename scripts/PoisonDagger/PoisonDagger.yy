@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"PoisonDagger",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PoisonDagger",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

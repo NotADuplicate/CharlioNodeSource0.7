@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_countdown",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":4.92263,
+  "name":"snd_countdown",
+  "parent":{
+    "name":"UISounds",
+    "path":"folders/Sounds/UISounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_countdown.wav",
+  "type":0,
+  "volume":0.25,
+}

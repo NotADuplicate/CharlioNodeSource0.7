@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"CooldownReduction",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"CooldownReduction",
+  "parent":{
+    "name":"BallPassives",
+    "path":"folders/Scripts/BallPassives.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

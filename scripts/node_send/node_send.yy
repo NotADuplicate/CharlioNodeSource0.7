@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"node_send",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"node_send",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

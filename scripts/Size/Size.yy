@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Size",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Size",
+  "parent":{
+    "name":"BallPassives",
+    "path":"folders/Scripts/BallPassives.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

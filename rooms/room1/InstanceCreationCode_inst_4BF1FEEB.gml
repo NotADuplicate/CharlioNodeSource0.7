@@ -1,0 +1,1 @@
+utility = Abilities.implosion

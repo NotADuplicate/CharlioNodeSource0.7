@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Shuriken",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shuriken",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

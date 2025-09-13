@@ -1,0 +1,2 @@
+global.ult = "Danger Zone";
+

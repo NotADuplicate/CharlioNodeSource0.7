@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_endTurn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_endTurn",
+  "parent":{
+    "name":"Trump",
+    "path":"folders/Scripts/Trump.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

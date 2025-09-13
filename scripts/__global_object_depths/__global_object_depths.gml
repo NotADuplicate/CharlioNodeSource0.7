@@ -1,0 +1,179 @@
+function __global_object_depths() {
+	// Initialise the global array that allows the lookup of the depth of a given object
+	// GM2.0 does not have a depth on objects so on import from 1.x a global array is created
+	// NOTE: MacroExpansion is used to insert the array initialisation at import time
+	gml_pragma( "global", "__global_object_depths()");
+
+	// insert the generated arrays here
+	global.__objectDepths[0] = 0; // shooter_game
+	global.__objectDepths[1] = 0; // obj_client
+	global.__objectDepths[2] = 0; // obj_click
+	global.__objectDepths[3] = 0; // obj_player
+	global.__objectDepths[4] = 0; // obj_other
+	global.__objectDepths[5] = 0; // obj_placeholder
+	global.__objectDepths[6] = 0; // obj_push
+	global.__objectDepths[7] = 0; // choose_bolt
+	global.__objectDepths[8] = 0; // choose_grenade
+	global.__objectDepths[9] = 0; // choose_pistol
+	global.__objectDepths[10] = 0; // choose_shotgun
+	global.__objectDepths[11] = 0; // choose_minigun
+	global.__objectDepths[12] = 0; // choose_boomerang
+	global.__objectDepths[13] = 0; // choose_slash
+	global.__objectDepths[14] = 0; // choose_push
+	global.__objectDepths[15] = 0; // choose_heal
+	global.__objectDepths[16] = 0; // choose_dash
+	global.__objectDepths[17] = 0; // choose_mine
+	global.__objectDepths[18] = 0; // choose_airstrike
+	global.__objectDepths[19] = 0; // choose_wall
+	global.__objectDepths[20] = 0; // choose_reflect
+	global.__objectDepths[21] = 0; // choose_regen
+	global.__objectDepths[22] = 0; // choose_speed
+	global.__objectDepths[23] = 0; // choose_bRes
+	global.__objectDepths[24] = 0; // choose_def
+	global.__objectDepths[25] = 0; // choose_runner
+	global.__objectDepths[26] = 0; // choose_juggernaut
+	global.__objectDepths[27] = 0; // choose_ult
+	global.__objectDepths[28] = 0; // choose_revive
+	global.__objectDepths[29] = 0; // choose_hp
+	global.__objectDepths[30] = 0; // choose_melee
+	global.__objectDepths[31] = 0; // choose_shooting
+	global.__objectDepths[32] = 0; // choose_self
+	global.__objectDepths[33] = 0; // choose_auto
+	global.__objectDepths[34] = 0; // choose_win
+	global.__objectDepths[35] = 0; // choose_danger
+	global.__objectDepths[36] = 0; // choose_ammo
+	global.__objectDepths[37] = 0; // choose_nuke
+	global.__objectDepths[38] = 0; // left_team
+	global.__objectDepths[39] = 0; // right_team
+	global.__objectDepths[40] = 0; // obj_fullscreen
+	global.__objectDepths[41] = 0; // obj_name
+	global.__objectDepths[42] = 0; // other_bolt
+	global.__objectDepths[43] = 0; // player_bolt
+	global.__objectDepths[44] = 0; // obj_grenade
+	global.__objectDepths[45] = 0; // BFG_grenade
+	global.__objectDepths[46] = 0; // obj_shotgun
+	global.__objectDepths[47] = 0; // obj_nuke
+	global.__objectDepths[48] = 0; // obj_bullet
+	global.__objectDepths[49] = 0; // obj_shell
+	global.__objectDepths[50] = 0; // obj_boomerang
+	global.__objectDepths[51] = 0; // obj_minigun
+	global.__objectDepths[52] = 0; // obj_explosion
+	global.__objectDepths[53] = 0; // obj_mine
+	global.__objectDepths[54] = 1; // obj_blast
+	global.__objectDepths[55] = 1; // small_blast
+	global.__objectDepths[56] = 0; // obj_minefield
+	global.__objectDepths[57] = 0; // obj_BFG
+	global.__objectDepths[58] = 0; // obj_win
+	global.__objectDepths[59] = 0; // player_airstrike
+	global.__objectDepths[60] = 0; // other_airstrike
+	global.__objectDepths[61] = 0; // obj_reflect
+	global.__objectDepths[62] = 0; // obj_melee
+	global.__objectDepths[63] = 0; // obj_barrier
+	global.__objectDepths[64] = 0; // obj_wall
+	global.__objectDepths[65] = 0; // obj_health
+	global.__objectDepths[66] = 0; // obj_spawner
+	global.__objectDepths[67] = 0; // obj_star
+	global.__objectDepths[68] = 0; // obj_ult
+	global.__objectDepths[69] = 0; // obj_not
+	global.__objectDepths[70] = 0; // obj_charging
+	global.__objectDepths[71] = 0; // obj_burning
+	global.__objectDepths[72] = 0; // obj_connect
+	global.__objectDepths[73] = 0; // obj_disconnect
+	global.__objectDepths[74] = 0; // obj_death
+	global.__objectDepths[75] = 0; // gui_win
+	global.__objectDepths[76] = 0; // leaderboard
+	global.__objectDepths[77] = 0; // inst_game
+
+
+	global.__objectNames[0] = "shooter_game";
+	global.__objectNames[1] = "obj_client";
+	global.__objectNames[2] = "obj_click";
+	global.__objectNames[3] = "obj_player";
+	global.__objectNames[4] = "obj_other";
+	global.__objectNames[5] = "obj_placeholder";
+	global.__objectNames[6] = "obj_push";
+	global.__objectNames[7] = "choose_bolt";
+	global.__objectNames[8] = "choose_grenade";
+	global.__objectNames[9] = "choose_pistol";
+	global.__objectNames[10] = "choose_shotgun";
+	global.__objectNames[11] = "choose_minigun";
+	global.__objectNames[12] = "choose_boomerang";
+	global.__objectNames[13] = "choose_slash";
+	global.__objectNames[14] = "choose_push";
+	global.__objectNames[15] = "choose_heal";
+	global.__objectNames[16] = "choose_dash";
+	global.__objectNames[17] = "choose_mine";
+	global.__objectNames[18] = "choose_airstrike";
+	global.__objectNames[19] = "choose_wall";
+	global.__objectNames[20] = "choose_reflect";
+	global.__objectNames[21] = "choose_regen";
+	global.__objectNames[22] = "choose_speed";
+	global.__objectNames[23] = "choose_bRes";
+	global.__objectNames[24] = "choose_def";
+	global.__objectNames[25] = "choose_runner";
+	global.__objectNames[26] = "choose_juggernaut";
+	global.__objectNames[27] = "choose_ult";
+	global.__objectNames[28] = "choose_revive";
+	global.__objectNames[29] = "choose_hp";
+	global.__objectNames[30] = "choose_melee";
+	global.__objectNames[31] = "choose_shooting";
+	global.__objectNames[32] = "choose_self";
+	global.__objectNames[33] = "choose_auto";
+	global.__objectNames[34] = "choose_win";
+	global.__objectNames[35] = "choose_danger";
+	global.__objectNames[36] = "choose_ammo";
+	global.__objectNames[37] = "choose_nuke";
+	global.__objectNames[38] = "left_team";
+	global.__objectNames[39] = "right_team";
+	global.__objectNames[40] = "obj_fullscreen";
+	global.__objectNames[41] = "obj_name";
+	global.__objectNames[42] = "other_bolt";
+	global.__objectNames[43] = "player_bolt";
+	global.__objectNames[44] = "obj_grenade";
+	global.__objectNames[45] = "BFG_grenade";
+	global.__objectNames[46] = "obj_shotgun";
+	global.__objectNames[47] = "obj_nuke";
+	global.__objectNames[48] = "obj_bullet";
+	global.__objectNames[49] = "obj_shell";
+	global.__objectNames[50] = "obj_boomerang";
+	global.__objectNames[51] = "obj_minigun";
+	global.__objectNames[52] = "obj_explosion";
+	global.__objectNames[53] = "obj_mine";
+	global.__objectNames[54] = "obj_blast";
+	global.__objectNames[55] = "small_blast";
+	global.__objectNames[56] = "obj_minefield";
+	global.__objectNames[57] = "obj_BFG";
+	global.__objectNames[58] = "obj_win";
+	global.__objectNames[59] = "player_airstrike";
+	global.__objectNames[60] = "other_airstrike";
+	global.__objectNames[61] = "obj_reflect";
+	global.__objectNames[62] = "obj_melee";
+	global.__objectNames[63] = "obj_barrier";
+	global.__objectNames[64] = "obj_wall";
+	global.__objectNames[65] = "obj_health";
+	global.__objectNames[66] = "obj_spawner";
+	global.__objectNames[67] = "obj_star";
+	global.__objectNames[68] = "obj_ult";
+	global.__objectNames[69] = "obj_not";
+	global.__objectNames[70] = "obj_charging";
+	global.__objectNames[71] = "obj_burning";
+	global.__objectNames[72] = "obj_connect";
+	global.__objectNames[73] = "obj_disconnect";
+	global.__objectNames[74] = "obj_death";
+	global.__objectNames[75] = "gui_win";
+	global.__objectNames[76] = "leaderboard";
+	global.__objectNames[77] = "inst_game";
+
+
+	// create another array that has the correct entries
+	var len = array_length_1d(global.__objectDepths);
+	global.__objectID2Depth = [];
+	for( var i=0; i<len; ++i ) {
+		var objID = asset_get_index( global.__objectNames[i] );
+		if (objID >= 0) {
+			global.__objectID2Depth[ objID ] = global.__objectDepths[i];
+		} // end if
+	} // end for
+
+
+}

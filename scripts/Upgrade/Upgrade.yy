@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Upgrade",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Upgrade",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

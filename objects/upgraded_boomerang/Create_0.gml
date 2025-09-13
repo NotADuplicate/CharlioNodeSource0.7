@@ -1,0 +1,10 @@
+dmg = 30;
+speed = 35;
+alarm[0] = 56;
+//range = 443
+image_xscale = 2;
+image_yscale = 2;
+portaled = false;
+hitCooldown = 0;
+visible = false;
+alarm[1] = 1;

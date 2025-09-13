@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_karts_recieve",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_karts_recieve",
+  "parent":{
+    "name":"Karts",
+    "path":"folders/Scripts/Karts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

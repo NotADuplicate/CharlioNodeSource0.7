@@ -1,0 +1,2 @@
+global.ult = "Sicko Mode";
+

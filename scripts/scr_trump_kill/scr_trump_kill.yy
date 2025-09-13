@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_trump_kill",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_trump_kill",
+  "parent":{
+    "name":"Trump",
+    "path":"folders/Scripts/Trump.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

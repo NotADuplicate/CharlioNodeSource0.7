@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_jumper_others",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_jumper_others",
+  "parent":{
+    "name":"Jumper",
+    "path":"folders/Rooms/Jumper.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

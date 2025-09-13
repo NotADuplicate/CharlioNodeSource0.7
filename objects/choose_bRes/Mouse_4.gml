@@ -1,0 +1,2 @@
+global.passive = "Blast Resistance";
+

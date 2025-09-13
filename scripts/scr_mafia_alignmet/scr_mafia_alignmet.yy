@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_mafia_alignmet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_mafia_alignmet",
+  "parent":{
+    "name":"Mafia",
+    "path":"folders/Scripts/Mafia.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

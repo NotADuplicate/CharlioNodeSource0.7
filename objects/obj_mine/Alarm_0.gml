@@ -1,0 +1,3 @@
+/// @description Arm
+armed = true;
+

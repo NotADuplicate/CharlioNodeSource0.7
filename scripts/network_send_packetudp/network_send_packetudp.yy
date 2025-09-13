@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"network_send_packetudp",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"network_send_packetudp",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_recieved_packet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_recieved_packet",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

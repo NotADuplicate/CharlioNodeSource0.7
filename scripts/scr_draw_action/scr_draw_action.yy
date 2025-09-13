@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_draw_action",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_draw_action",
+  "parent":{
+    "name":"DrawShoot",
+    "path":"folders/Scripts/DrawShoot.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

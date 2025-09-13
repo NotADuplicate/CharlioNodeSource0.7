@@ -1,0 +1,9 @@
+/// @description Have num = 1 but that'll change in 1 frame
+num = 1;
+col = c_teal;
+center = fa_left;
+alarm[0] = 1;
+hover1 = 0;
+hover2 = 0;
+hover3 = 0;
+hover4 = 0;

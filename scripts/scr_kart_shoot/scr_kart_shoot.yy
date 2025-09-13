@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_kart_shoot",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_kart_shoot",
+  "parent":{
+    "name":"Karts",
+    "path":"folders/Scripts/Karts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

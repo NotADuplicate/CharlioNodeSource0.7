@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_makeBind",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_makeBind",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

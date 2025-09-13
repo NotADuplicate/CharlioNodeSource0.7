@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_CNN_other",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_CNN_other",
+  "parent":{
+    "name":"Trump",
+    "path":"folders/Scripts/Trump.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

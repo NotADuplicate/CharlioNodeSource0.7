@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"BushHop",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BushHop",
+  "parent":{
+    "name":"BallPassives",
+    "path":"folders/Scripts/BallPassives.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

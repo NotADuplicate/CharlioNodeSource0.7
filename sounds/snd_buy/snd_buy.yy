@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_buy",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":2.505,
+  "name":"snd_buy",
+  "parent":{
+    "name":"JamesSounds",
+    "path":"folders/Sounds/JamesSounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_buy.wav",
+  "type":0,
+  "volume":0.49,
+}

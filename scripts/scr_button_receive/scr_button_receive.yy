@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_button_receive",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_button_receive",
+  "parent":{
+    "name":"Quantum",
+    "path":"folders/Scripts/Quantum.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

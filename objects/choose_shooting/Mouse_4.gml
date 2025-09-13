@@ -1,0 +1,2 @@
+global.passive = "Fast Firing";
+

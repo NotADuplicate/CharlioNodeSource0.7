@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"MaxAmmo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MaxAmmo",
+  "parent":{
+    "name":"BallPassives",
+    "path":"folders/Scripts/BallPassives.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

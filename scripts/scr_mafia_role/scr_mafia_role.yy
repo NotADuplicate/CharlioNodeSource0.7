@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_mafia_role",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_mafia_role",
+  "parent":{
+    "name":"Mafia",
+    "path":"folders/Scripts/Mafia.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

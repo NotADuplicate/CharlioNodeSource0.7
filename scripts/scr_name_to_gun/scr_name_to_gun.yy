@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_name_to_gun",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_name_to_gun",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

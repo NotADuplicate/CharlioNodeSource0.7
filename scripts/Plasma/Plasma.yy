@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Plasma",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Plasma",
+  "parent":{
+    "name":"BallPassives",
+    "path":"folders/Scripts/BallPassives.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

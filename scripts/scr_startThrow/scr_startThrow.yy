@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_startThrow",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_startThrow",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

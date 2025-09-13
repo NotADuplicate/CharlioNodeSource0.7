@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_block_receive",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_block_receive",
+  "parent":{
+    "name":"BlockFight",
+    "path":"folders/Scripts/BlockFight.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

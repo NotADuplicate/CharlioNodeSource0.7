@@ -1,0 +1,1 @@
+loadoutNum = 6;

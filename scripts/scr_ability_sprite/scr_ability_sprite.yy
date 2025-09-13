@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_ability_sprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_ability_sprite",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

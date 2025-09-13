@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_switch_receive",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_switch_receive",
+  "parent":{
+    "name":"Switcheroo",
+    "path":"folders/Scripts/Switcheroo.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

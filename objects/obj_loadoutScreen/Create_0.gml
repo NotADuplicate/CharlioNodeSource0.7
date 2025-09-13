@@ -1,0 +1,2 @@
+str = "Guns"
+highlighted = false;

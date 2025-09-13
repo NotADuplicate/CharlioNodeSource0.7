@@ -1,0 +1,359 @@
+Converting GML script: ${project_dir}\objects\shooter_game\Create_0.gml
+Converted description /// @description Set vars
+
+Converting GML script: ${project_dir}\objects\shooter_game\Alarm_7.gml
+Converted description /// @description Slow down
+
+Converting GML script: ${project_dir}\objects\shooter_game\Alarm_3.gml
+Converted description /// @description Kill all others and player to reset game
+
+Converting GML script: ${project_dir}\objects\shooter_game\Step_2.gml
+Converted description /// @description Spray minigun
+
+Converting GML script: ${project_dir}\objects\shooter_game\Mouse_56.gml
+Converted description /// @description Fire grenade
+
+Converting GML script: ${project_dir}\objects\shooter_game\Mouse_54.gml
+Converted description /// @description Use utilities
+
+Converting GML script: ${project_dir}\objects\shooter_game\Mouse_50.gml
+Converted description /// @description Increment timer
+
+Converting GML script: ${project_dir}\objects\shooter_game\KeyPress_32.gml
+Converted builtin - line 6: view_yview[0] -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 7: view_yview[0] = 768 -> __view_set( e__VW.YView, 0, 768 )
+Converted builtin - line 10: view_yview[0] = 0 -> __view_set( e__VW.YView, 0, 0 )
+Converted description /// @description Switch view
+
+Converting GML script: ${project_dir}\objects\obj_client\Create_0.gml
+Converted description /// @description Create buffer
+
+Converting GML script: ${project_dir}\objects\obj_client\Alarm_9.gml
+Converted description /// @description Disconnect
+
+Converting GML script: ${project_dir}\objects\obj_client\Alarm_8.gml
+Converted description /// @description Initialize Client
+
+Converting GML script: ${project_dir}\objects\obj_client\Other_68.gml
+Converted description /// @description Check for clients and data
+
+Converting GML script: ${project_dir}\objects\obj_client\Other_3.gml
+Converted description /// @description Kill
+
+Converting GML script: ${project_dir}\objects\obj_client\KeyPress_81.gml
+Converted description /// @description Toggle ready
+
+Converting GML script: ${project_dir}\objects\obj_player\Create_0.gml
+Converted description /// @description Wait a second before basing things off of num
+
+Converting GML script: ${project_dir}\objects\obj_player\Destroy_0.gml
+Converted description /// @description Drop hp
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_6.gml
+Converted description /// @description Activate ult from ammo
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_5.gml
+Converted description /// @description Lose attack
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_4.gml
+Converted description /// @description No longer sicko mode
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_3.gml
+Converted description /// @description Regen some health
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_2.gml
+Converted description /// @description Get pushed
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_0.gml
+Converted description /// @description Pick color
+
+Converting GML script: ${project_dir}\objects\obj_player\Step_2.gml
+Converted description /// @description Die to the ring
+
+Converting GML script: ${project_dir}\objects\obj_player\Step_0.gml
+Converted description /// @description Movement
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_571c4b38-5a4f-4c2e-8c01-3fd052245df8.gml
+Converted description /// @description Get yeeted away
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_a76b8950-efed-4102-b8c0-2c76443054fd.gml
+Converted description /// @description Activate ult
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_57db5f06-a186-44c4-963a-a9f1385c3b15.gml
+Converted description /// @description Get pushed
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_c3572c41-63d3-4720-8a7b-aeb19a4f6683.gml
+Converted description /// @description Take damage
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_dc474b4c-b222-4af6-9248-9b21db86cb15.gml
+Converted description /// @description Knockback
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_4f052917-2aa3-459e-a6a2-72d5558509e8.gml
+Converted description /// @description Knockback
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_0897c6b5-5f39-44a2-8ca9-7f797854c6c8.gml
+Converted description /// @description Take damage
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_f29fa0be-ceef-4c24-8054-0e50255eb1c2.gml
+Converted description /// @description Take damage
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_62eb91cd-80ed-4522-9260-edf92c548dd7.gml
+Converted description /// @description Take damage
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_474b6603-3a2c-41d7-b724-7fa8e30f0438.gml
+Converted description /// @description Get hit
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_daadcdc6-827f-419c-b7b4-7f764bf32ab3.gml
+Converted description /// @description Push and die
+
+Converting GML script: ${project_dir}\objects\obj_player\Draw_0.gml
+Converted description /// @description Draw HP
+
+Converting GML script: ${project_dir}\objects\obj_other\Create_0.gml
+Converted description /// @description Wait a second before basing things off of num
+
+Converting GML script: ${project_dir}\objects\obj_other\Destroy_0.gml
+Converted description /// @description Drop hp
+
+Converting GML script: ${project_dir}\objects\obj_other\Alarm_0.gml
+Converted description /// @description Pick color
+
+Converting GML script: ${project_dir}\objects\obj_other\Step_0.gml
+Converted description /// @description Try to disconnect
+
+Converting GML script: ${project_dir}\objects\obj_other\Draw_0.gml
+Converted description /// @description Draw HP
+
+Converting GML script: ${project_dir}\objects\obj_push\Step_0.gml
+Converted description /// @description Decrease magnitude and size
+
+Converting GML script: ${project_dir}\objects\choose_pistol\Draw_0.gml
+Converted description /// @description Draw
+
+Converting GML script: ${project_dir}\objects\left_team\Mouse_56.gml
+Converted description /// @description Check which team
+
+Converting GML script: ${project_dir}\objects\left_team\Draw_0.gml
+Converted description /// @description Draw team name
+
+Converting GML script: ${project_dir}\objects\right_team\Mouse_56.gml
+Converted description /// @description Check which team
+
+Converting GML script: ${project_dir}\objects\right_team\Draw_0.gml
+Converted description /// @description Draw team name
+
+Converting GML script: ${project_dir}\objects\obj_fullscreen\Mouse_4.gml
+Converted description /// @description Go fullscreen
+
+Converting GML script: ${project_dir}\objects\obj_fullscreen\Draw_0.gml
+Converted description /// @description Draw name
+
+Converting GML script: ${project_dir}\objects\obj_name\Mouse_4.gml
+Converted description /// @description Get name
+
+Converting GML script: ${project_dir}\objects\obj_name\Draw_0.gml
+Converted description /// @description Draw name
+
+Converting GML script: ${project_dir}\objects\other_bolt\Alarm_2.gml
+Converted description /// @description Link
+
+Converting GML script: ${project_dir}\objects\other_bolt\Step_2.gml
+Converted description /// @description Do image_angle
+
+Converting GML script: ${project_dir}\objects\player_bolt\Create_0.gml
+Converted description /// @description Start the fire time
+
+Converting GML script: ${project_dir}\objects\player_bolt\Step_2.gml
+Converted description /// @description Broadcast position and angle
+
+Converting GML script: ${project_dir}\objects\obj_grenade\Alarm_0.gml
+Converted description /// @description Explode
+
+Converting GML script: ${project_dir}\objects\obj_grenade\Step_0.gml
+Converted description /// @description Slow
+
+Converting GML script: ${project_dir}\objects\BFG_grenade\Alarm_0.gml
+Converted description /// @description Explode
+
+Converting GML script: ${project_dir}\objects\BFG_grenade\Step_0.gml
+Converted description /// @description Slow
+
+Converting GML script: ${project_dir}\objects\obj_shotgun\Create_0.gml
+Converted description /// @description Wait a frame then scatter
+
+Converting GML script: ${project_dir}\objects\obj_shotgun\Alarm_0.gml
+Converted description /// @description Scattershot
+
+Converting GML script: ${project_dir}\objects\obj_nuke\Create_0.gml
+Converted description /// @description Wait a frame then scatter
+
+Converting GML script: ${project_dir}\objects\obj_nuke\Alarm_1.gml
+Converted description /// @description Arm
+
+Converting GML script: ${project_dir}\objects\obj_nuke\Alarm_0.gml
+Converted description /// @description Scattershot
+
+Converting GML script: ${project_dir}\objects\obj_nuke\Step_0.gml
+Converted description /// @description Trail of blasts
+
+Converting GML script: ${project_dir}\objects\obj_bullet\Alarm_0.gml
+Converted description /// @description Face direction
+
+Converting GML script: ${project_dir}\objects\obj_bullet\Step_0.gml
+Converted description /// @description Slow and fade
+
+Converting GML script: ${project_dir}\objects\obj_boomerang\Step_0.gml
+Converted description /// @description Slow and fade
+
+Converting GML script: ${project_dir}\objects\obj_minigun\Alarm_0.gml
+Converted description /// @description Face direction
+
+Converting GML script: ${project_dir}\objects\obj_minigun\Step_0.gml
+Converted description /// @description Slow and fade
+
+Converting GML script: ${project_dir}\objects\obj_explosion\Alarm_0.gml
+Converted description /// @description Rotate
+
+Converting GML script: ${project_dir}\objects\obj_mine\Create_0.gml
+Converted description /// @description Scale up
+
+Converting GML script: ${project_dir}\objects\obj_mine\Alarm_0.gml
+Converted description /// @description Arm
+
+Converting GML script: ${project_dir}\objects\obj_mine\Step_0.gml
+Converted description /// @description Slowly fade
+
+Converting GML script: ${project_dir}\objects\obj_mine\Collision_69773e03-0d1c-49b6-a35f-d59a7af21bfe.gml
+Converted description /// @description Explode
+
+Converting GML script: ${project_dir}\objects\obj_mine\Collision_0bbf979a-18ce-4086-bfef-341a296c827b.gml
+Converted description /// @description Explode
+
+Converting GML script: ${project_dir}\objects\obj_blast\Create_0.gml
+Converted description /// @description Scale up
+
+Converting GML script: ${project_dir}\objects\small_blast\Create_0.gml
+Converted description /// @description Scale up
+
+Converting GML script: ${project_dir}\objects\small_blast\Step_0.gml
+Converted description /// @description Fade
+
+Converting GML script: ${project_dir}\objects\obj_minefield\Create_0.gml
+Converted description /// @description Create a ton of mines
+
+Converting GML script: ${project_dir}\objects\obj_BFG\Create_0.gml
+Converted description /// @description Initial blast
+
+Converting GML script: ${project_dir}\objects\obj_BFG\Alarm_0.gml
+Converted description /// @description Scatter nukes
+
+Converting GML script: ${project_dir}\objects\obj_win\Create_0.gml
+Converted description /// @description Start to count down
+
+Converting GML script: ${project_dir}\objects\obj_win\Alarm_1.gml
+Converted description /// @description Become linked
+
+Converting GML script: ${project_dir}\objects\obj_win\Alarm_0.gml
+Converted description /// @description Tick timer by a second
+
+Converting GML script: ${project_dir}\objects\obj_win\Step_2.gml
+Converted description /// @description Stay on link
+
+Converting GML script: ${project_dir}\objects\obj_win\Draw_0.gml
+Converted description /// @description Draw timer
+
+Converting GML script: ${project_dir}\objects\player_airstrike\Step_0.gml
+Converted description /// @description Set direction of path
+
+Converting GML script: ${project_dir}\objects\player_airstrike\Mouse_57.gml
+Converted description /// @description Destroy and send buffer to create actual airstrike
+
+Converting GML script: ${project_dir}\objects\other_airstrike\Alarm_1.gml
+Converted description /// @description Explode
+
+Windows NSIS Installer Script has been set to default due to changes in GameMaker Studio 2
+Converting GML script: ${project_dir}\objects\obj_barrier\Create_0.gml
+Converted description /// @description Wait a second
+
+Converting GML script: ${project_dir}\objects\obj_barrier\Alarm_0.gml
+Converted description /// @description Build the walls
+
+Converting GML script: ${project_dir}\objects\obj_wall\Step_0.gml
+Converted description /// @description Fade and break
+
+Converting GML script: ${project_dir}\objects\obj_wall\Collision_bf5fbc61-b843-4ad7-a989-ced144dfbc7f.gml
+Converted description /// @description break
+
+Converting GML script: ${project_dir}\objects\obj_wall\Collision_1a9eeed5-9707-4008-98d7-2bd713e82fd7.gml
+Converted description /// @description break
+
+Converting GML script: ${project_dir}\objects\obj_wall\Collision_c00cb538-929c-41cc-9ff8-824810b822c1.gml
+Converted description /// @description break
+
+Converting GML script: ${project_dir}\objects\obj_wall\Collision_44a90700-21a9-444b-8559-3e882bbc4b12.gml
+Converted description /// @description break
+
+Converting GML script: ${project_dir}\objects\obj_health\Create_0.gml
+Converted description /// @description Scale
+
+Converting GML script: ${project_dir}\objects\obj_health\Collision_aa140495-6727-452a-b252-9fdb1e7e8ec5.gml
+Converted description /// @description Break and heal
+
+Converting GML script: ${project_dir}\objects\obj_spawner\Alarm_1.gml
+Converted description /// @description Spawn sun
+
+Converting GML script: ${project_dir}\objects\obj_spawner\Alarm_0.gml
+Converted description /// @description Spawn stars
+
+Converting GML script: ${project_dir}\objects\obj_star\Create_0.gml
+Converted description /// @description Destroy after 10 seconds 
+
+Converting GML script: ${project_dir}\objects\obj_star\Collision_51f51240-c8a1-419c-a29f-4bbafdeb0759.gml
+Converted description /// @description Heal
+
+Converting GML script: ${project_dir}\objects\obj_ult\Create_0.gml
+Converted description /// @description Destroy after 10 seconds 
+
+Converting GML script: ${project_dir}\objects\obj_ult\Collision_0b09683f-8e42-4658-993f-70c373952880.gml
+Converted description /// @description Trigger ult
+
+Converting GML script: ${project_dir}\objects\obj_not\Create_0.gml
+Converted description /// @description Blink in and out
+
+Converting GML script: ${project_dir}\objects\obj_charging\Create_0.gml
+Converted description /// @description Fade in
+
+Converting GML script: ${project_dir}\objects\obj_burning\Create_0.gml
+Converted description /// @description Fade in
+
+Converting GML script: ${project_dir}\objects\obj_connect\Mouse_4.gml
+Converted description /// @description Get the client to connect
+
+Converting GML script: ${project_dir}\objects\obj_disconnect\Mouse_4.gml
+Converted description /// @description Get the client to connect
+
+Converting GML script: ${project_dir}\objects\obj_death\Alarm_0.gml
+Converted description /// @description Convert num to string
+
+Converting GML script: ${project_dir}\objects\obj_death\Draw_0.gml
+Converted description /// @description Draw who killed you
+
+Converting GML script: ${project_dir}\objects\gui_win\Alarm_0.gml
+Converted description /// @description Figure out who won
+
+Converting GML script: ${project_dir}\objects\leaderboard\Draw_64.gml
+Converted description /// @description Draw scores
+
+Game speed set to 30
+Added compatibility script 'action/action_bounce.gml'
+Added compatibility script 'action/action_kill_object.gml'
+Added compatibility script 'action/action_set_alarm.gml'
+Added compatibility script 'instance/instance_create.gml'
+Added compatibility script 'object/object_get_depth.gml'
+Added compatibility script 'view/__view_get.gml'
+Added compatibility script 'view/__view_set.gml'
+Added compatibility script 'view/__view_set_internal.gml'
+Added compatibility script 'action/__init_action.gml'
+Added compatibility script 'view/__init_view.gml'
+Added compatibility script '__init_global.gml'
+Added compatibility script '__global_object_depths.gml'

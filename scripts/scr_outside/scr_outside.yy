@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_outside",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_outside",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

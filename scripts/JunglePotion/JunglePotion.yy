@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"JunglePotion",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"JunglePotion",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,2 @@
+global.passive = "Self Resistance";
+

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_void",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.012917,
+  "name":"snd_void",
+  "parent":{
+    "name":"JamesSounds",
+    "path":"folders/Sounds/JamesSounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_void.wav",
+  "type":0,
+  "volume":1.0,
+}

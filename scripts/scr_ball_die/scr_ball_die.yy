@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_ball_die",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_ball_die",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

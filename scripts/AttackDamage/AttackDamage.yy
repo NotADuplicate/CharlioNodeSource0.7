@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"AttackDamage",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"AttackDamage",
+  "parent":{
+    "name":"BallPassives",
+    "path":"folders/Scripts/BallPassives.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

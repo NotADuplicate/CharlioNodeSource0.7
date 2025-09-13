@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Swapper",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Swapper",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

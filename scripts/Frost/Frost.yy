@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Frost",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Frost",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

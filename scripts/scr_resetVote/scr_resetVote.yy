@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_resetVote",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_resetVote",
+  "parent":{
+    "name":"Switcheroo",
+    "path":"folders/Scripts/Switcheroo.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

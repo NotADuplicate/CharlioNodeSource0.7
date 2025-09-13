@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Healing",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Healing",
+  "parent":{
+    "name":"BallPassives",
+    "path":"folders/Scripts/BallPassives.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
