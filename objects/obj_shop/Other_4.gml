@@ -72,7 +72,7 @@ i = 0;
 numOffense = 4;
 numDefense = 4;
 numResources = 3;
-numUtility = 3;
+numUtility = 4;
 while(i < numOffense){
 	xPos = 1050 + 450/numOffense * (i+.5);
 	yPos = 4430;

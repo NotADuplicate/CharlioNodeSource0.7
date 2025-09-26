@@ -59,7 +59,7 @@ if(global.free > 0) {
 else
 	global.free = 0;
 	
-if(global.teleportTimer > 0) {
+if(global.teleportTimer > 0 && started) {
 	global.teleportTimer -= 1/room_speed * dt;
 }
 else

@@ -45,6 +45,9 @@ function scr_drawStatus(){
 	
 	if(stunned > 0)
 		statusCount++;
+		
+	if(controlled > 0)
+		statusCount++;
 
 	//Now actually draw the icons
 	
@@ -80,6 +83,13 @@ function scr_drawStatus(){
 		draw_sprite_ext(spr_meat,0,xp,yp,1,1,0,c_white,chummed/100); 
 		xp += 40;
 		chummed-= dt;
+	}
+	
+	if(controlled > 0) {
+		dir = point_direction(x,y,controlledX, controlledY)
+		draw_sprite_ext(spr_telekenesis,0,xp,yp,1,1,dir,c_white,controlled/100); 
+		xp += 40;
+		controlled-= dt;
 	}
 
 	if(marked > 0) {

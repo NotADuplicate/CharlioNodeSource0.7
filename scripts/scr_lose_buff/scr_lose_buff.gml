@@ -16,9 +16,10 @@ function scr_lose_buff(buffType, doubleBuff){
 		
 		case "Ammo":
 			if(doubleBuff)
-				global.ammoRegen += 30;
+				global.ammoRegen += 0.6;
 			else
-				global.ammoRegen += 20;
+				global.ammoRegen += 0.3;
+			obj_junglePass.ammo = 0;
 		break; 
 		
 		case "Power":

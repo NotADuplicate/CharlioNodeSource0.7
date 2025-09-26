@@ -22,7 +22,7 @@ stasisx = 0;
 stasisy = 0;
 scale = 1;
 hopping = 0;
-global.ammoRegen = 90;
+global.ammoRegen = 1;
 global.maxAmmo = 10;
 global.ammo = 10;
 global.slow = 1;
@@ -105,6 +105,11 @@ glassShield = 0;
 gun = instance_create(x,y,obj_gun);
 napping = false;
 bodySlamSlow = 0;
+controlled = 0;
+controlling = 0;
+controlledNum = 0;
+controlledX = 0;
+controlledY = 0;
 
 global.throwRange = 0;
 

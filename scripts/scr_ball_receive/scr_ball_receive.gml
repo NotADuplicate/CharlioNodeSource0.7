@@ -59,7 +59,7 @@ function scr_ball_receive() {
 	        global.ammodrop = 50/30//(buffer_read(buffer,buffer_u8)/30);
 	        //global.ultdrop = buffer_read(buffer,buffer_u8)
 			global.abilityNum = 1//buffer_read(buffer,buffer_u8)/100;
-			global.leveled = buffer[? "Levels"]
+			global.leveled = 10//buffer[? "Levels"]
 			global.simple = buffer[? "Simple"]
 			global.cSwitch = true//buffer_read(buffer,buffer_bool);
 	        global.teaming = true//buffer_read(buffer,buffer_bool);
@@ -191,7 +191,7 @@ function scr_ball_receive() {
 			spr = buffer[? "Sprite"]
 			for (var i = 0; i < instance_number(obj_gun); i++){
 			    var gun = instance_find(obj_gun, i);
-				if(gun.num == other.gunNum) {
+				if(gun.num == gunNum) {
 					if(spr == -1) {
 						gun.throwing = false;
 					} else {
@@ -463,6 +463,23 @@ function scr_ball_receive() {
 			gunNum = buffer[? "Gun Num"];
 			gunObj = global.players[gunNum].gun;
 			scr_gunVisual(gunName,gunObj);
+		break;
+		case "Telekenesis Point":
+			num = buffer[? "User"];
+			xp = buffer[? "X"];
+			yp = buffer[? "Y"];
+			with(ball_player) {
+				if(controlledNum == other.num) {
+					controlledX = other.xp;
+					controlledY = other.yp;
+				}
+			}
+			with(ball_other) {
+				if(controlledNum == other.num) {
+					controlledX = other.xp;
+					controlledY = other.yp;
+				}
+			}
 		break;
 	}
 	}

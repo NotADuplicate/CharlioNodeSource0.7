@@ -42,7 +42,7 @@ revive = new Revive();
 glassShield = new GlassShield();
 rest = new Rest();
 bodyslam = new BodySlam();
-
+telekenesis = new Telekenesis();
 
 global.loadoutSet[0] = [shuriken, flash, dash, molotov, block, cleaver, healBomb, blastOff, obj_curve, obj_bullet];
 global.loadoutSet[1] = [shuriken, flash, dash, molotov, block, cleaver, healBomb, blastOff, obj_curve, obj_bullet];

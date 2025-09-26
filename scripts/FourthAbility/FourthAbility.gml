@@ -1,17 +1,20 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function AmmoRegen() constructor {
-	text = "Increase ammo regen"
-	sprite = spr_ammoRegen;
-	maxStacks = 3;
-	type = "Resources"
+function FourthAbility() constructor {
+	text = "Get a fourth ability slot"
+	sprite = spr_4;
+	maxStacks = 1;
+	type = "Utility"
 	
 	static passiveGet = function(buffer) {
-		global.ammoRegen -= 0.3;
+		instance_create(select_space.x+94,select_space.y,select_R);
 	}
 	
 	static passiveLose = function(buffer) {
-		global.ammoRegen += 0.3;
+		with(select_R) {
+			instance_destroy();
+		}
+		global.R = 0;
 	}
 	
 	static otherGet = function(num) {

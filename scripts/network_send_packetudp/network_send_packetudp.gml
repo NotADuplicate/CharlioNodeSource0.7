@@ -10,5 +10,5 @@ function network_send_packetudp(socket,bufferid,size){
 		penis = pospfkk;
 	}
 	//network_send_raw(socket,bufferid,size,network_send_text)
-	network_send_udp_raw(socket,global.serverip,4000,bufferid,size)
+	network_send_udp_raw(socket,global.serverip,5454,bufferid,size)
 }

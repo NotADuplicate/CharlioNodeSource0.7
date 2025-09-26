@@ -61,6 +61,11 @@ jam = 0;
 dashing = 0;
 magicBurn = 0;
 glassShield = 0;
+controlled = 0;
+controlledNum = 0;
+controlledX = 0;
+controlledY = 0;
+
 gun = instance_create(0,0,obj_gun);
 image_yscale = 1.75;
 image_speed = 1/2;

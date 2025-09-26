@@ -229,3 +229,21 @@ if(enraged) {
 	else
 		still = 0;
 }
+
+//Telekenesis stuff
+if(controlling) {
+	with(ball_game) {
+		node_send(buffer,"eventName","Telekenesis Point","User",ball_player.num,"X",mouse_x, "Y", mouse_y)
+	}
+}
+if(controlled) {
+	dir = point_direction(x,y,controlledX, controlledY);
+	var xmove = lengthdir_x(global.pushSpd*2.5, dir)
+	var ymove = lengthdir_y(global.pushSpd*2.5, dir)
+    if(!place_meeting(x+xmove,y,ball_wall)) {
+		x += xmove;
+	}
+    if(!place_meeting(x,y+ymove,ball_wall)) {
+		y += ymove;
+	}
+}

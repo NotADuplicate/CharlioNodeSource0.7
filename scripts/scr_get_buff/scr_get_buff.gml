@@ -3,7 +3,7 @@
 function scr_get_buff(buffType, doubleBuff, duration = 1800){
 	switch(buffType) {
 		case "Damage":
-			if(obj_junglePass.dmg == 0) {	
+			if(obj_junglePass.dmg <= 0) {	
 				with(ball_game) {
 					node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num", 11)
 				}
@@ -17,17 +17,17 @@ function scr_get_buff(buffType, doubleBuff, duration = 1800){
 		break;
 		
 		case "Ammo":
-			if(obj_junglePass.ammo == 0) {	
+			if(obj_junglePass.ammo <= 0) {	
 				if(doubleBuff)
-					global.ammoRegen -= 30;
+					global.ammoRegen -= 0.6;
 				else
-					global.ammoRegen -= 20;
+					global.ammoRegen -= 0.3;
 			}
 			obj_junglePass.ammo = duration;
 		break; 
 		
 		case "Power":
-			if(obj_junglePass.pwr == 0) {
+			if(obj_junglePass.pwr <= 0) {
 				with(ball_game) {
 					node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num", 23)
 				}
@@ -41,7 +41,7 @@ function scr_get_buff(buffType, doubleBuff, duration = 1800){
 		break;
 		
 		case "Speed":
-			if(obj_junglePass.spd == 0) {
+			if(obj_junglePass.spd <= 0) {
 				ball_player.moveSpd++;
 				if(doubleBuff)
 					ball_player.moveSpd++;
@@ -54,7 +54,7 @@ function scr_get_buff(buffType, doubleBuff, duration = 1800){
 		break;
 		
 		case "Resistance":
-			if(obj_junglePass.resistance == 0) {	
+			if(obj_junglePass.resistance <= 0) {	
 				global.resistance *= 1.25;
 				if(doubleBuff)
 					global.resistance *= 1.25;
@@ -63,7 +63,7 @@ function scr_get_buff(buffType, doubleBuff, duration = 1800){
 		break;
 		
 		case "Defense":
-			if(obj_junglePass.defense == 0) {	
+			if(obj_junglePass.defense <= 0) {	
 				global.defense *= 1.25;
 				if(doubleBuff)
 					global.defense *= 1.25;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Telekenesis",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Telekenesis",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

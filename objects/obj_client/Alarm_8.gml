@@ -2,7 +2,7 @@
 if(triedConnect)
 	global.serverip = get_string("IP adress:", "26.202.28.47");
 else {
-	global.serverip = "26.202.28.47";
+	global.serverip = "jazure.net";
 	triedConnect = true;
 }
 socket = network_create_socket(network_socket_udp)

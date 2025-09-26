@@ -35,8 +35,6 @@ if(shooting > 0)
 if(invin > 0)
 	invin--;
 	
-if(hp < 0)  {
-	with(ball_game) {
-		node_send(buffer, "eventName", "Death", "Target", other.num, "Killer", 1)
-	}
+if(hp < 3)  {
+	instance_destroy();
 }

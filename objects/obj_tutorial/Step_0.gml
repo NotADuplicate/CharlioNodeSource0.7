@@ -13,13 +13,13 @@ if(stage == 1 && global.shop) {
 }
 if(stage == 2 && global.attack != obj_bullet && global.shop == false) {
 	surface = false;
-	//tutText = "Shooting guns requires ammo. \n Ammo is displayed at the top of the screen and on the bar below your character"
+	tutText = "Shooting guns requires ammo. \n Ammo is displayed at the top of the screen and on the bar below your character"
 	textX = 550;
 	textY = 675;
 	arrowX = 500;
 	arrowY = 90
 	stage = 3;
-	alarm[1] = 1//000;
+	alarm[1] = 1000;
 }
 if(stage == 3) {
 	if(global.shop) {
@@ -57,11 +57,11 @@ if(stage == 4) {
 			surface = false; 
 			button = "right click"
 			//Find what you selected
-			if(global.space == "molotov") 
+			if(global.space == Abilities.molotov) 
 				button = "space"
-			else if(global.right == "molotov")
+			else if(global.right == Abilities.molotov)
 				button = "right click"
-			else if(global.Q == "molotov")
+			else if(global.Q == Abilities.molotov)
 				button = "Q"
 		}
 		tutText = "Go back to the shop to get abilities"
@@ -87,10 +87,6 @@ if(stage == 5) {
 		ob.drawOnce = 0;
 		ob = instance_create(300,4500,choose_dash)
 		ob.drawOnce = 0;
-					obj_shop.wipe = true;
-			with(inst_utility) {
-				drawOnce = 2;
-			}
 
 	}
 }
@@ -105,8 +101,8 @@ if(stage == 6) {
 		textY = 400
 		textX = 300
 		tutText = "Fill up your ability slots. Each ability costs a level"//"Go to the abilities screen and pick out 2 more abilities to fill up your ability slots"
-		arrowX = 160;
-		arrowY = 80;
+		arrowX = 120;
+		arrowY = 60;
 		if(global.leveled < 4) {
 			stage = 7;
 			surface = false;
@@ -173,7 +169,7 @@ else if(stage == 9) { //go to ball
 else if(stage == 10) { //go to ball
 		surface = false;
 		textX = 550;
-		textY = 600;
+		textY = 300;
 		tutText = "Go to the ball in the middle of the top of the map"
 	if(point_distance(ball_player.x,ball_player.y,obj_bigBall.x,obj_bigBall.y) < 500) {
 		stage = 11;
@@ -189,8 +185,14 @@ else if(stage == 11) { //push into
 	}
 }
 else if(stage == 12) { //push into tower
-		surface = false;
-		textX = 550;
-		textY = 600;
-		tutText = "Standing close to enemy tower deals damage to you. \n Destroy the tower by pushing the ball into it"
+	surface = false;
+	textX = 550;
+	textY = 600;
+	tutText = "Standing close to enemy tower deals damage to you. \n Destroy the tower by pushing the ball into it"
+	if(instance_number(obj_turret) < 6) {
+		stage = 13;
+	}
+}
+else if(stage == 13) {
+	tutText = "Congrats! That's all the basics of Charlio ball!\nFeel free to explore the map more or use escape to exit and enter a real match!";
 }

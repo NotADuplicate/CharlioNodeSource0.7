@@ -1,5 +1,5 @@
 /// @description send forces
-if(speed > 0) {
+if(speed > 0 && !global.testMode) {
 	with(ball_game) {
 		node_send(buffer,"eventName","Ball Move","num",ball_player.num,"speed",other.speed,"direction",other.direction, "timestamp", current_time + global.pingOffset)
 	}

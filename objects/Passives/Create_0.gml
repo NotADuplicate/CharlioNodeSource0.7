@@ -15,3 +15,4 @@ ammoHealth = new AmmoToHealth();
 bushHop = new BushHop();
 moreKb = new MoreKB();
 healing = new Healing();
+fourthSlot = new FourthAbility()

@@ -2,14 +2,6 @@
 // You can write your code in this editor
 shooting = 0;
 invin = 0;
-/*if(global.ultdrop > 90) {
-	hp = 130;
-	maxhp = 130;
-}
-else {
-	hp = 80;
-	maxhp = 80;
-}*/
 maxhp = 90;
 hp = 90;
 if(global.gameMode == "Rumble") {

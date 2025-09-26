@@ -64,11 +64,13 @@ switch(global.shopState) {
 		if(tabs)
 			draw_rectangle_color(470,60,950,80,tabsColor,tabsColor,tabsColor,tabsColor,false);
 		//draw_rectangle_color(300,500,700,600,rectColor,rectColor,rectColor,rectColor,false);
-		draw_text_transformed(260,68,"Boots",2,2,0);
-		draw_text_transformed(260,158,"Offense",2,2,0);
-		draw_text_transformed(260,288,"Defense",2,2,0);
-		draw_text_transformed(260,418,"Resources",2,2,0);
-		draw_text_transformed(260,538,"Utility",2,2,0);
+		if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 7) {
+			draw_text_transformed(260,68,"Boots",2,2,0);
+			draw_text_transformed(260,158,"Offense",2,2,0);
+			draw_text_transformed(260,288,"Defense",2,2,0);
+			draw_text_transformed(260,418,"Resources",2,2,0);
+			draw_text_transformed(260,538,"Utility",2,2,0);
+		}
 	break;
 }
 
@@ -76,8 +78,12 @@ if(!global.shop) {
 	if(height > 0)
 		height -= 100;
 }
-else if(height < 700)
+else if(height < 700) {
+	if(height < 100) {
+		wipe = true;
+	}
 	height += 70;
+}
 
 surface_reset_target();
 

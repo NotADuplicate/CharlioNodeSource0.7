@@ -2,9 +2,10 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Shatter() constructor {
 	sprite = spr_shatter;
-	damage = 70;
+	damage = 75;
 	ammoCost = 1;
-	cooldown = 18; 
+	cooldown = 18;
+	knockback = 4
 	name = "Shatter"
 	abilityName = "shatter"
 	text = "Fire a fast moving projectile which passes through players but explodes upon contact with the ball or a wall. Explosions deal " + string(damage) + " to nearby enemies."
