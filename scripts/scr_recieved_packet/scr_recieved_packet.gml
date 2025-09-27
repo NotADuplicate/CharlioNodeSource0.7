@@ -21,12 +21,6 @@ function scr_recieved_packet() {
 				global.connected = true;
 				obj_client.pingTime = 0;
 				show_debug_message("Client Connected")
-		        /*buffer_seek(buffer,buffer_seek_start,0);
-		        buffer_write(buffer,buffer_u8,1);
-				//buffer_write(buffer,buffer_u8,num);
-		        buffer_write(buffer,buffer_string,global.name);
-		        network_send_packet(obj_client.socket,buffer,buffer_tell(buffer));*/
-
 			}
 			else if(message_id == "Ping") {
 				num = buffer[? "Num"];
@@ -44,8 +38,6 @@ function scr_recieved_packet() {
 				ready = buffer[? "Ready"];
 				name = buffer[? "Name"];
 				loadout = buffer[? "Loadout"];
-				show_debug_message("Loadout 1")
-				show_debug_message(loadout)
 				scr_createPlayer(num,name,team,ready, loadout);
 			}
 			else if(message_id = "Player Disconnect") {   

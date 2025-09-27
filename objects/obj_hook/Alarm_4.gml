@@ -14,7 +14,6 @@ if(hooked != 0) {
 			}
 		}
 		else {
-			show_debug_message("Destroyed through alarm[4]");
 			instance_destroy()
 		}
 		alarm[4] = 1;

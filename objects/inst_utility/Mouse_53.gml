@@ -10,6 +10,5 @@ else if(global.shop && global.shopState == "Abilities") {
 	yp = camera_get_view_y(view_camera[0])+obj_shop.yp+y-4000;
 	if(mouse_x < xp + 20 && mouse_x > xp - 20 && mouse_y < yp + 20 && mouse_y > yp-20) {
 		global.utilityClass = utility;
-		global.utilityHeld = true;
 	}
 }

@@ -15,5 +15,4 @@ if(instance_exists(ball_player)) {
 }
 else {
     instance_destroy();
-	show_debug_message("Destroyed through missing link");
 }

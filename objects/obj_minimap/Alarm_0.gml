@@ -13,7 +13,6 @@ for (var i = 0; i < instance_number(ball_wall); i++){
 	y2 = (inst.y+(16*inst.image_yscale))*scale 
 	draw_rectangle_color(x1,y1,x2,y2,c_black,c_black,c_black,c_black,false)
 }
-show_debug_message(instance_number(ball_wall))
 
 for (var i = 0; i < instance_number(obj_cover); i++){
     var inst = instance_find(obj_cover, i);

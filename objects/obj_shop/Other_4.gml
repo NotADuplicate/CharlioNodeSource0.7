@@ -1,7 +1,4 @@
-/// @description Simple mode
-//global.simple = false;
-show_debug_message("Shop gamemode: /n \n")
-show_debug_message(global.gameMode)
+/// @description Create item slots
 if(global.simple) {
 	with(inst_utility) { //destroy the old
 		instance_destroy();

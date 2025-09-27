@@ -88,20 +88,6 @@ function scr_mafia_receive() {
 				global.highGunScore = 0
 				global.scored = 0;
 			}
-			/*if(global.scored = global.loop) {
-				global.scored = 0;
-				i = 1;
-				var highest = 0;
-				var highestI = 1;
-				repeat(global.loop) {
-					if(global.gunScore[i] > highest) {
-						highest = global.gunScore[i];
-						highestI = i;
-					}
-					i++;
-				}
-				global.gun = highestI
-			}*/
 	    break;
 	    case 10:
 	        num = buffer_read(buffer,buffer_u8);

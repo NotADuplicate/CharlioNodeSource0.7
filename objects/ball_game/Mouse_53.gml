@@ -4,7 +4,6 @@ timer = 0;
 shootable = global.throwRange <= 0;
 with(ball_player) {
 	if(keyboard_check(global.mapKey)) {
-		show_debug_message("Holding map")
 		if(place_meeting(x,y,obj_warp)) {
 			show_debug_message("Standing on warp");
 			other.shootable = false;

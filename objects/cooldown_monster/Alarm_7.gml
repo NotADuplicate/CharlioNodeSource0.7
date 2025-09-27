@@ -10,6 +10,3 @@ else
 	poisonDmg = 0;
 	
 alarm[7] = 10;
-
-show_debug_message("CD Monster: " + string(nameNum));
-show_debug_message(maxhp);

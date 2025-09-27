@@ -8,4 +8,3 @@ ready = false
 alarm[2] = 3;
 image_xscale = 2;
 image_yscale = 2;
-show_debug_message("Made hook")

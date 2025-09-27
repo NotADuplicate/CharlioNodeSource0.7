@@ -76,13 +76,10 @@ function scr_button_receive() {
 	    case 8: //recieve scores
 			num = buffer_read(buffer,buffer_u8);
 			global.gunScore[num] = buffer_read(buffer,buffer_f32)
-			show_debug_message(string(num) + ": " + string(global.gunScore[num]))
-			show_debug_message(string(global.scored));
 			global.scored++;
 			if(global.gunScore[num] > global.highGunScore) {
 				global.highGunScore = global.gunScore[num]
 				global.highGunScorer = num;
-				show_debug_message("Surpassed");
 			}
 			if(global.scored == global.loop) {
 				global.gun = global.highGunScorer

@@ -1,6 +1,6 @@
 /// @description Initialize Client
 if(triedConnect)
-	global.serverip = get_string("IP adress:", "26.202.28.47");
+	global.serverip = get_string("IP adress:", "jazure.net");
 else {
 	global.serverip = "jazure.net";
 	triedConnect = true;

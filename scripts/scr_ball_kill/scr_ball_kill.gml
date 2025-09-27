@@ -33,10 +33,8 @@ function scr_ball_kill(deadNum,killer){
 		}
 	}
 	if(deadNum > 20) {
-		show_debug_message("Recognized death as monster's")
 		with(obj_monster) { //kill monster and give buff to the right player
 			if(nameNum == deadNum) {
-				show_debug_message("Found specific monster")
 				num = killer;
 				hp = -100;
 				path_end()

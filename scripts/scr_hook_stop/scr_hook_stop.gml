@@ -5,7 +5,6 @@ function scr_hook_stop(obType,obNum){
 	with(obType) {
 		//show_message("Whoop");
 		if(num == obNum) {
-			show_debug_message("Destroyed through stopping")
 			instance_destroy();
 		}
 	}

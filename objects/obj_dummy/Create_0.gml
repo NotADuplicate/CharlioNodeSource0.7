@@ -5,7 +5,6 @@ hp = 120;
 maxhp = 250;
 xp = x;
 yp = y;
-show_debug_message("DUMMY!")
 //game_end()
 invincibility = 0;
 burn = 0;
