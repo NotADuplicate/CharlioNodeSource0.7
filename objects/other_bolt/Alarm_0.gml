@@ -1,6 +1,6 @@
 /// @description Shoot
 speed = 75;
-alarm[1] = 13
+alarm[1] = 11
 alarm[3] = 1; //dont go through walls
 image_xscale = 2;
 image_yscale = 2;

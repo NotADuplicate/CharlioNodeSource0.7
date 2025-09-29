@@ -8,6 +8,7 @@ if(global.shop && global.shopState == "Passives" && active) {
 			selected = 1
 		}
 		else if(selected == 1 && global.leveled > 0) {
+			global.levelSpent = 12;
 			global.leveled--;
 			global.passiveCount++;
 			if(global.passiveCount > 10) {extraStacks++;
@@ -20,6 +21,9 @@ if(global.shop && global.shopState == "Passives" && active) {
 			if(stacks+extraStacks >= maxStacks) {
 				active = false;
 			}
+		}
+		else if(selected == 1) {
+			global.levelSpent = 12;
 		}
 		
 	}

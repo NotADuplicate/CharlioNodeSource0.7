@@ -17,22 +17,10 @@ if(global.teamNum[num] == 0) {
 	x = 5000;
 	y = 5000;
 }
-if(tossGrabbed > 0)
-	tossGrabbed--;
 
 
-if(broken > 0)
-	broken--;
-if(frost > 0)
-	frost--;
-
-
-	spd = point_distance(xp,yp,x,y)
-	spdDmg = min(spd,lastSpd)*5;
-	xp = x;
-	yp = y;
-	lastSpd = spd;
-//Be invis
+xp = x;
+yp = y;
 
 
 if(enraged) {
@@ -44,7 +32,6 @@ if(poison > 0)
 	poison--;
 	
 if(burn > 0) {
-	//part_particles_create(global.partSystem,x+random_range(-10,10),y+random_range(-10,10),part_fire,1);
 	burn--;
 	frost = 0;
 	if(burn mod 5 == 0) {

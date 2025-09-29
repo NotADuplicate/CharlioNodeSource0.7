@@ -13,16 +13,14 @@ if(startingSound) {
 				obj_bigBall.x = obj_bigBall.startX
 				obj_bigBall.y = obj_bigBall.startY
 			}
-			/*if(global.ultdrop > 90)
-				alarm[9] = 1; //spawn creeps*/
 			with(obj_startWall) {
 				ins = instance_create(x,y,jungle_wall)
 				ins.image_yscale = 0.1
 				ins.image_xscale = image_xscale;
 				instance_destroy()
 			}
-				     global.bb = mp_grid_create(0,0,floor(room_width/32),floor(room_height/32),32,32);
-				     mp_grid_add_instances(global.bb,ball_wall,false);
+			global.bb = mp_grid_create(0,0,floor(room_width/32),floor(room_height/32),32,32);
+			mp_grid_add_instances(global.bb,ball_wall,false);
 			}
 		}
 	}

@@ -24,7 +24,7 @@ function Chainbreaker() constructor {
 		if(scr_ball_dist(ball_player.x,ball_player.y,true) < 260 && global.ammo > ammoCost) {
 			node_send(buffer,"Dir",0,"X",ball_player.x,"Y",ball_player.y,"Num",ball_player.num,"Obj",obj_chain,"eventName","Bullet")
 			scr_ball_ammo(ammoCost)
-			cool = 7;
+			return(cooldown);
 		}
 	}
 }

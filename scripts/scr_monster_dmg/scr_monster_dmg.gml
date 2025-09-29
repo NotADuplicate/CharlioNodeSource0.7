@@ -1,6 +1,10 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_monster_dmg(dmg,n,attack){
+	if(global.testMode) {
+		hp -= dmg;
+		return;
+	}
 	if(stasis == 0) {
 		if(attack) {
 			dmg *= global.players[n].atk

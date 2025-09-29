@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(global.testMode = false) {
+if(global.testMode = false || obj_tutorial.stage > 14) {
 	monster = instance_create(x,y,mons);
 	monster.image_xscale = 3;
 	monster.image_yscale = 3;

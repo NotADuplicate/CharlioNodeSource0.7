@@ -4,7 +4,7 @@ function Telekenesis() constructor {
 	sprite = spr_telekenesis;
 	ammoCost = 2;
 	cooldown = 21;
-	duration = 5;
+	duration = 6;
 	name = "Telekenesis"
 	abilityName = "telekenesis"
 	text = "Shoot a ball that upon hitting a player applies telekenesis to them for 5 seconds. During this time they are moved towards wherever your cursor is";

@@ -1,5 +1,5 @@
    /// @description If clicked then swap out Q
-if(global.shop && global.shopState == "Abilities") {
+if(global.shop && global.shopState == "Abilities" && global.utilityClass != "") {
 	xp = camera_get_view_x(view_camera[0])+obj_shop.xp+x;
 	yp = camera_get_view_y(view_camera[0])+obj_shop.yp+y;
 	
@@ -45,6 +45,7 @@ if(global.shop && global.shopState == "Abilities") {
 					audio_play_sound(snd_buy,1,false)
 				}
 			}
+			global.levelSpent = 12;
 		}
 	}
 }

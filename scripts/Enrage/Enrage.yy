@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Enrage",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Enrage",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

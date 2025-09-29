@@ -1,6 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_ability_pressed(type){
+	if(global.throwRange > 0) {
+		return;
+	}
 	using = true;
 	with(ball_player) {
 		if(place_meeting(x,y,inst_utility)) {

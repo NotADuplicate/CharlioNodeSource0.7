@@ -1,6 +1,7 @@
 /// @description Wait a second before basing things off of num
 event_inherited()
 moveSpd = 5;
+levelDrawOffset = 0;
 pushed = false;
 sameTeam = true
 healing = 1;
@@ -112,6 +113,7 @@ controlledX = 0;
 controlledY = 0;
 
 global.throwRange = 0;
+global.levelSpent = 0;
 
 //Keep track of highest cooldowns for things in order to draw cooldown bar
 rightCoolMax = 0;

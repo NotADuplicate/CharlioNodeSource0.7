@@ -13,22 +13,24 @@ if(keyboard_check(global.mapKey)) {
 		alarm[0] = 1;
 		alarm[1] = 1;
 	} else {
-		if(failTimer == 0) {
-			if(position_meeting(ball_player.x, ball_player.y, obj_regen)) {
-				if(global.teleportTimer > 0)
-					draw_text(700, 445, string(round(global.teleportTimer)) + " seconds until teleport is available");
-				else 
-					draw_text(700, 445, "Press T on the minimap to teleport anywhere.");
+		if(!global.testMode || obj_tutorial.stage > 14) {
+			if(failTimer == 0) {
+				if(position_meeting(ball_player.x, ball_player.y, obj_regen)) {
+					if(global.teleportTimer > 0)
+						draw_text(700, 445, string(round(global.teleportTimer)) + " seconds until teleport is available");
+					else 
+						draw_text(700, 445, "Press T on the minimap to teleport anywhere.");
+				}
+				else {
+					if(global.teleportTimer > 0)
+						draw_text(700, 445, string(round(global.teleportTimer)) + " seconds until teleport is available");
+					else
+						draw_text(700, 445, "You must be at spawn to teleport");
+				}
+			} else {
+				failTimer--;
+				draw_text_color(700, 445, failMessage,c_red,c_red,c_red,c_red,1);
 			}
-			else {
-				if(global.teleportTimer > 0)
-					draw_text(700, 445, string(round(global.teleportTimer)) + " seconds until teleport is available");
-				else
-					draw_text(700, 445, "You must be at spawn to teleport");
-			}
-		} else {
-			failTimer--;
-			draw_text_color(700, 445, failMessage,c_red,c_red,c_red,c_red,1);
 		}
 		draw_surface(minimap,xp1,yp1)
 

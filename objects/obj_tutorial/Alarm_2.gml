@@ -7,7 +7,7 @@ with(inst_boots) {
 	instance_destroy();
 }
 with(obj_turret) {
-	hp = 10;
+	hp = 50;
 }
 obj_shop.tabs = false;
 with(ins_sort) {

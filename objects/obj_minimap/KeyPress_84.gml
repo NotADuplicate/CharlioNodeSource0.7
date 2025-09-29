@@ -18,10 +18,10 @@ if(position_meeting(ball_player.x, ball_player.y, obj_regen) && global.teleportT
 	}
 }
 else if(!position_meeting(ball_player.x, ball_player.y, obj_regen)) { //show why it didnt work
-	failTimer = 180;
+	failTimer = 120;
 	failMessage = "You must be in spawn to use the teleport";
 }
 else {
-	failTimer = 180;
+	failTimer = 120;
 	failMessage = "The teleport isn't ready yet";
 }

@@ -7,6 +7,7 @@ function scr_ability_release(type){
 		var class = variable_global_get(type);
 		if variable_instance_exists(class, "abilityReleased") {
 			cool = class.abilityReleased(buffer);
+			variable_instance_set(ball_player, type + "CoolMax", cool)
 		}
 		switch("variable_global_get(type)") {
 			case "Chainbreaker":

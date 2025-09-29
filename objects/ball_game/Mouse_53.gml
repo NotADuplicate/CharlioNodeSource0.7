@@ -11,6 +11,7 @@ with(ball_player) {
 	}
 }
 if((global.ammo > 0 || global.attack = obj_bullet || global.attack = chad_bullet) && global.options == false && instance_exists(ball_player) && reload == 0 && held == false && global.shop == false && global.stun == 0 && ball_player.jam == 0 && shootable) {
+	held = false;
     switch(global.attack) {
         case obj_melee:
             scr_ball_shoot();
@@ -92,9 +93,11 @@ if((global.ammo > 0 || global.attack = obj_bullet || global.attack = chad_bullet
 			}
         break;
         case obj_boomerang:
-            scr_ball_shoot();
-            reload = 45;
-            scr_ball_ammo(1);
+			if(global.ammo > 2) {
+	            scr_ball_shoot();
+	            reload = 45;
+	            scr_ball_ammo(3);
+			}
         break;
     }
 }
@@ -106,7 +109,6 @@ if((global.attack == obj_grenade || global.attack == obj_minigun) && instance_ex
 	}
 	totalspray = 0;
 }
-held = false;
 
 /* */
 /*  */

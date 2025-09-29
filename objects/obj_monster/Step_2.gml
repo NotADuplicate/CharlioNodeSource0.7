@@ -1,4 +1,8 @@
 /// @description Die
+if(hp < 0 && global.testMode) {
+	alarm[8] = 1;
+	alarm[10] = 2;
+}
 /*if(hp < 0 && num == ball_player.num && dead == false)  {
 	dead = true;
 	with(ball_game) {

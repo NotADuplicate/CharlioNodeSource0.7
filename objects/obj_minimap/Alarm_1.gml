@@ -1,5 +1,5 @@
 /// @description Draw monsters
-if(!global.testMode) {
+if(!global.testMode || obj_tutorial.stage > 14) {
 	surface_set_target(minimap)
 
 	scale = 0.077

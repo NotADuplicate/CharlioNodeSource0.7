@@ -1,7 +1,20 @@
 /// @description Draw gui
 if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 5) {
-	draw_healthbar(20,20,300,40,100*(global.xp/global.xpMax),c_dkgray,c_white,c_white,0,true,true)
-	draw_text_color(160,20,global.leveled,c_black,c_black,c_black,c_black,1);
+	if(global.levelSpent > 9) {
+		levelDrawOffset += 6;
+		global.levelSpent--
+	} else if(global.levelSpent > 3) {
+		levelDrawOffset -= 6;
+		global.levelSpent--
+	} else if(global.levelSpent > 0) {
+		levelDrawOffset += 6;
+		global.levelSpent--
+	}
+	else {
+		levelDrawOffset = 0;
+	}
+	draw_healthbar(20+levelDrawOffset,20,300+levelDrawOffset,40,100*(global.xp/global.xpMax),c_dkgray,c_white,c_white,0,true,true)
+	draw_text_color(160+levelDrawOffset,20,global.leveled,c_black,c_black,c_black,c_black,1);
 }
 
 if(keyboard_check(vk_tab) == false && (!instance_exists(obj_tutorial) || obj_tutorial.stage > 0)) {

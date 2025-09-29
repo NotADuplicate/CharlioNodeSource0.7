@@ -21,10 +21,10 @@ function scr_gun_text(gun){
 			return("Hold down click to rev up and then fire a stream of bullets. \nThe longer you shoot the more ammo it consumes ")
 		break;
 		case obj_boomerang:
-			return("Does more damage on the way back. Watch out it can kill you too")
+			return("Does more damage on the way back. Takes a lot of ammo but catching it refunds the ammo.")
 		break;
 		case obj_curve:
-			return("The bullets curve as indicated by the arrow above your character. \nAt the end of the bullets path it explodes for massive damage")
+			return("The bullets curve as indicated by barrel of the gun. \nAt the end of the bullets path it explodes for massive damage")
 		break;
 		case virgin_bullet:
 		case chad_bullet:
@@ -34,7 +34,7 @@ function scr_gun_text(gun){
 			return("Slow firing and short range but deals huge damage up close. \nGood for pushing the ball and defending against attackers.")
 		break;
 		case other_bolt:
-			return(" long range slow fire rate. Charge for longer to deal more damage ")
+			return("Long range slow fire rate. Charge for longer to deal more damage ")
 		break;
 	}
 }

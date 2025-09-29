@@ -1,6 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_dummy_damage(dmg,dealer,type){
+	if(invincibility > 0) {
+		return;
+	}
 	if(type) {
 		dmg *= ball_player.atk
 	}
@@ -9,7 +12,9 @@ function scr_dummy_damage(dmg,dealer,type){
 	}
 	if(broken > 0)
 		dmg *= 2
-	if(invincibility == 0)
-		hp -= dmg
+		
+	if(global.players[argument[1]].firePassive) {
+		magicBurn = 45;
+	}
 	scr_deal_damage(2,dmg,type);
 }

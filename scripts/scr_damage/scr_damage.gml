@@ -19,7 +19,6 @@ function scr_damage() {
 				if(global.players[argument[1]].firePassive && global.teamNum[argument[1]] != global.teamNum[ball_player.num] && burn < 45) {
 					with(ball_game) { //send plasma passive
 						node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num",53);
-						ball_player.magicBurnNum = argument[1];
 					}
 				}
 				dmg *= global.players[argument[1]].atk/global.defense;
