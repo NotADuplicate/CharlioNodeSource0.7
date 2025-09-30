@@ -1,6 +1,7 @@
 /// @description Increase text size for reminding
 if(remindingText) {
-	if(textScale < 1.5)
-		textScale += .25;
+	textShake = 8;
+	if(textScale < 1.3)
+		textScale += .15;
 	alarm[6] = reminderTimer;
 }

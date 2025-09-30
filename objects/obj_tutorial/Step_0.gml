@@ -149,8 +149,10 @@ if(stage == 6) {
 	}
 }
 else if(stage == 7 && global.shop == false) {
+	passiveBought = false;
 	if(alarm[3] < 1) 
 		alarm[3] = 150;
+		remindingText = false;
 		textX = 550;
 		textY = 600;
 		tutText = "Your 3 abilities can be activated by right click, Q, and spacebar. \n All abilities cost ammo and have a cooldown period"
@@ -170,13 +172,11 @@ if(stage == 8) {
 			tutText = "Click the passives tab in the top right"
 		}
 		else {
+			remindingText = false;
 			textY = 450
 			if(surface == false) {
 				surface = true;
 				obj_shop.wipe = true;
-				with(inst_utility) {
-					drawOnce = 2;
-				}
 			}
 			tutText = "Click on a passive to see what it does.\nDouble click it to select it"
 		}
@@ -187,7 +187,9 @@ if(stage == 8) {
 		textY = 600;
 		tutText = "Go back to the shop to select passives"
 	}
-	if(global.passiveCount > 0 && remindingText) { //progress once you buy a passive
+	if(global.passiveCount > 0 && !passiveBought) { //progress once you buy a passive
+		passiveBought = true;
+		tutText = "Try out some of the passives!"
 		remindingText = false;
 		textScale = 1;
 		alarm[4] = 300;
@@ -264,6 +266,9 @@ else if(stage == 13) {
 		ob.utility = Abilities.flash;
 		with(obj_shop) {
 			alarm[2] = 1;
+		}
+		with(inst_utility) {
+			drawOnce = 3;
 		}
 	}
 }

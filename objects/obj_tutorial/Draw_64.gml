@@ -1,17 +1,18 @@
 /// @description Draw tutorial text
 if(surface) {
+	textScale = 1;
 	if(surface_exists(global.shopSurf))
 		surface_set_target(global.shopSurf)
 }
 
-if(textShake > 9) {
-	textOffset += 6;
+if(textShake > 6) {
+	textOffset += 9;
 	textShake--
-} else if(textShake > 3) {
-	textOffset -= 6;
+} else if(textShake > 2) {
+	textOffset -= 9;
 	textShake--
 } else if(textShake > 0) {
-	textOffset += 6;
+	textOffset += 9;
 	textShake--
 }
 else {

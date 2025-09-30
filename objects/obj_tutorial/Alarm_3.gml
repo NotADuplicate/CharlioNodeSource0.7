@@ -2,6 +2,8 @@
 
 stage = 8;
 remindingText = true;
+alarm[6] = 450;
+textScale = 1
 		with(inst_utility) {
 			visible = true;
 		}

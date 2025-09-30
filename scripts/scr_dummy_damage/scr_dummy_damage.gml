@@ -2,6 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_dummy_damage(dmg,dealer,type){
 	if(invincibility > 0) {
+		show_debug_message("Invincible:")
+		show_debug_message(string(invincibility))
 		return;
 	}
 	if(type) {
@@ -10,9 +12,10 @@ function scr_dummy_damage(dmg,dealer,type){
 	else {
 		dmg *= ball_player.magic
 	}
-	if(broken > 0)
+	if(broken > 0) {
 		dmg *= 2
-		
+	}
+	hp -= dmg;
 	if(global.players[argument[1]].firePassive) {
 		magicBurn = 45;
 	}
