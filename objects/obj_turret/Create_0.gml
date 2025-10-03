@@ -14,3 +14,5 @@ layer = layer_create(-1000);
 inv = 0;
 bigRange = 200;
 pushForce = 5;
+firing = false;
+beamLength = 0;

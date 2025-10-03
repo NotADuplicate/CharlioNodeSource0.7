@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_pushBallPath",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_pushBallPath",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

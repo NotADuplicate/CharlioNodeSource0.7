@@ -1,7 +1,7 @@
 /// @description Respawn
 if(timer > 0 && ball_game.started) {
 	timer -= (delta_time/1000000)
-	if(timer < 0.5) {
+	if(timer < 0.5 && !global.testMode) {
 		timer = 0;
 		dead = false
 		x = xpos;

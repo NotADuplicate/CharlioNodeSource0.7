@@ -3,8 +3,7 @@
   "%Name":"obj_testMode",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_testMode",
@@ -13,7 +12,10 @@
     "name":"Universal",
     "path":"folders/Objects/Universal.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"inst_menuButton",
+    "path":"objects/inst_menuButton/inst_menuButton.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_connect",
-    "path":"sprites/spr_connect/spr_connect.yy",
+    "name":"spr_menuButton",
+    "path":"sprites/spr_menuButton/spr_menuButton.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -2,13 +2,19 @@
 if(hp < 1) {
 	maxhp = 250;
 	hp = maxhp;
-	x = xp;
-	y = yp;
+	path_end();
+	soul = instance_create(x,y,ball_corpse);
+	soul.num = num;
+	x = 0;
+	y = 0;
+	state = "Dead";
 	speed = 0;
 	poisonDmg = 0;
 	slayed = instance_create(0,0,slayer_marker)
-	slayed.victim = "Dummy";
+	slayed.victim = "Enemy";
 	slayed.killer = ball_player.num
+	alarm[3] = 300; //respawn
+	
 	scr_cleanse();
 }
 

@@ -21,7 +21,24 @@ if(place_meeting(x, y + vspeed, ball_wall)) {
     direction = -direction;
 	vspeed *= .7
 }
-	
+
+if(global.testMode) { //damage turrets in test mode
+	//Horizontal bounce
+	if(place_meeting(x + hspeed, y, obj_turret)) {
+		var turret = instance_nearest(x,y,obj_turret);
+		turret.hp -= speed;
+	    direction = -direction + 180;
+		hspeed *= .7
+	}
+
+	//Vertical bounce
+	if(place_meeting(x, y + vspeed, obj_turret)) {
+		var turret = instance_nearest(x,y,obj_turret);
+		turret.hp -= speed;
+	    direction = -direction;
+		vspeed *= .7
+	}
+}
 	
 	
 ///End game

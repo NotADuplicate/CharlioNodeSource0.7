@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_ability_pressed(type){
 	if(global.throwRange > 0) {
+		show_debug_message("Dont use ability because throw range");
 		return;
 	}
 	using = true;
@@ -27,7 +28,7 @@ function scr_ability_pressed(type){
 			node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num",48)
 		}
 	}
-	if(global.ammo > 0 && instance_exists(ball_player) && variable_global_get(type + "Cool") == 0 && global.stun == 0 && global.shop == false && global.dead == false && global.throwRange == 0 && !global.upgraded) {
+	if(global.ammo > 0 && instance_exists(ball_player) && variable_global_get(type + "Cool") == 0 && global.stun == 0 && global.shop == false && global.dead == false && !global.upgraded) {
 		var cool = 1;
 		class = variable_global_get(type);
 		cool = class.abilityPressed(buffer);

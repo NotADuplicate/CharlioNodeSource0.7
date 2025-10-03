@@ -108,7 +108,7 @@ if(stage == 5) {
 		ob.utility = Abilities.dash;
 		
 		with(inst_utility) {
-			drawOnce = 2;
+			drawOnce = 0;
 		}
 
 		drawAbilities = true;
@@ -116,7 +116,7 @@ if(stage == 5) {
 	}
 }
 if(stage == 6) {
-	if(global.shop && drawAbilities) {
+	if(global.shop && drawAbilities && global.shopState == "Abilities") {
 		with(inst_utility) {
 			drawOnce = 3;
 		}
@@ -162,6 +162,8 @@ if(stage == 8) {
 		if(global.shopState == "Abilities") {
 			textY = 400
 			textX = 300
+			textScale = 1;
+			remindingText = false;
 			if(surface == false) {
 				surface = true;
 				obj_shop.wipe = true;
@@ -187,7 +189,7 @@ if(stage == 8) {
 		textY = 600;
 		tutText = "Go back to the shop to select passives"
 	}
-	if(global.passiveCount > 0 && !passiveBought) { //progress once you buy a passive
+	if(global.passiveCount > 0 && !passiveBought && !global.shop) { //progress once you buy a passive
 		passiveBought = true;
 		tutText = "Try out some of the passives!"
 		remindingText = false;
@@ -206,6 +208,7 @@ else if(stage == 9) { //go to ball
 		stage = 10;
 		textScale = 1;
 		remindingText = false;
+		instance_create(0,0, obj_music);
 	}
 }
 else if(stage == 10) { //go to ball
@@ -268,14 +271,14 @@ else if(stage == 13) {
 			alarm[2] = 1;
 		}
 		with(inst_utility) {
-			drawOnce = 3;
+			drawOnce = 0;
 		}
 	}
 }
 else if(stage == 14) {
 	tutText = "There are more abilities and passives now available to you.";
 	
-	if(global.shop && drawAbilities) {
+	if(global.shop && drawAbilities && global.shopState == "Abilities") {
 		with(inst_utility) {
 			drawOnce = 3;
 		}
@@ -300,4 +303,19 @@ else if(stage == 15) {
 }
 else if(stage == 16) {
 	tutText = "Killing monsters gives you a temporary buff.";
+	if(obj_junglePass.ammo > 0 || obj_junglePass.resistance > 0 || obj_junglePass.defense > 0 || obj_junglePass.dmg > 0 || obj_junglePass.pwr > 0 || obj_junglePass.spd > 0 || obj_junglePass.jungle > 0) {
+		stage = 17;
+		instance_create(2100, 2700, obj_AI);
+		textScale = 1;
+		remindingText = true;
+		alarm[6] = 900;
+	}
+}
+else if(stage == 17) {
+	tutText = "Now you know the basics of charlio ball!\n Now go to the ball and try to destroy the next tower!";
+	if(point_distance(ball_player.x,ball_player.y,obj_bigBall.x,obj_bigBall.y) < 500) {
+		stage = 18;
+		tutText = "";
+		remindingText = false;
+	}
 }

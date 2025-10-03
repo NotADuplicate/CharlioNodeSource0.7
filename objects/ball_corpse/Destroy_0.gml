@@ -1,5 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-draw_self();
-draw_text(x,y,"Test Mode");
+if(lt != noone) {
+	instance_destroy(lt);
+}

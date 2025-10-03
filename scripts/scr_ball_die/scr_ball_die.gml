@@ -13,8 +13,6 @@ function scr_ball_die(dmg,killer){
 			ball_player.moveSpd = global.baseMove
 			ball_game.lore = scr_lore();
 			ball_player.respawnTimer = global.respawn;
-			view_set_visible(0,false)
-			view_set_visible(1,true)
 			if(killer > 10)
 				killer = ball_player.num
 			with(ball_game) {

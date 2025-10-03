@@ -1,6 +1,8 @@
 /// @description Get the client to connect
 global.testMode = true;
 obj_client.socket = network_create_socket(network_socket_ws)
+global.names[1] = global.name;
+
 
 	        global.ammo = 0;
 			global.playBall = false;

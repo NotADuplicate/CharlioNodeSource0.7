@@ -12,3 +12,7 @@ alarm[6] = 450;
 //Set grid for some reason
 global.bb = mp_grid_create(0,0,floor(room_width/32),floor(room_height/32),32,32);
 mp_grid_add_instances(global.bb,ball_wall,false);
+
+global.AiPathGrid = mp_grid_create(0,0,floor(room_width/32),floor(room_height/32),32,32);
+mp_grid_add_instances(global.AiPathGrid,ball_wall,false);
+mp_grid_add_instances(global.AiPathGrid,jungle_wall,false);

@@ -73,7 +73,7 @@ if(global.xp > global.xpMax) {
 		global.respawn += 1.5;
 	global.totalLevels++;
 }
-else if(started && global.gameMode != "Rumble") {
+else if(started && global.gameMode != "Rumble" && (!global.testMode || obj_tutorial.stage > 16)) {
 	global.xp+= (delta_time/1000000)*20
 }
 

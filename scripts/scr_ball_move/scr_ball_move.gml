@@ -4,7 +4,7 @@ function scr_ball_move(dir,spd,targetN){
 	if(obj_bigBall.inversion > 0)
 		dir += 180;
 	if(global.payload == false) {
-		if(targetN == obj_client.index) { //only actually apply if you were the one who pushed it
+		if(targetN == obj_client.index || global.testMode) { //only actually apply if you were the one who pushed it
 			if(obj_bigBall.frost > 0)
 				spd = spd/2;
 

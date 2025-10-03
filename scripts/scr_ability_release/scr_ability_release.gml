@@ -195,5 +195,6 @@ function scr_ability_release(type){
 		            network_send_packet(socket, buffer, buffer_tell(buffer));
 		}*/
 	}
-	held = false;
+	if(global.throwRange == 0)
+		held = false;
 }

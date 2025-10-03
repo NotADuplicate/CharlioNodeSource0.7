@@ -14,3 +14,19 @@ with(ball_player) {
 		}
 	}
 }
+
+if(global.teamNum[num] != global.teamNum[ball_player.num] && point_distance(x,y,ball_player.x,ball_player.y) < bigRange) {
+	if(!firing) {
+		firing = true;
+		burnSound = audio_play_sound(snd_towerBurn, 1,false,1.3,0.35);
+	}
+	if(audio_sound_get_track_position(burnSound) > 5.2) {
+		audio_sound_set_track_position(burnSound, 1);
+	}
+}
+else {
+	if(firing) {
+		audio_sound_set_track_position(burnSound, 5.35);
+	}
+	firing = false;
+}
