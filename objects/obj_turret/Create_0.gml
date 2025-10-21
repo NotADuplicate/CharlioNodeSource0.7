@@ -16,3 +16,4 @@ bigRange = 200;
 pushForce = 5;
 firing = false;
 beamLength = 0;
+target = noone;

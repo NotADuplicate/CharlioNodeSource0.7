@@ -34,14 +34,11 @@ if(global.attack == obj_minigun && instance_exists(obj_player)) {
     spray = backlog;
     backlog = 0;
     global.slow = 1;
+	node_send(buffer, "eventName", "Status", "Target", ball_player.num, "Status Num", 58);
 }
 
 ///Fire BFG
 if(global.attack == obj_BFG && global.shop == false) {
-            scr_ball_shoot();
-            global.attack = global.BFG;
-}
-
-if(audio_is_playing(snd_rev)) {
-	audio_sound_set_track_position(revSound,23);
+    scr_ball_shoot();
+    global.attack = global.BFG;
 }

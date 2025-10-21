@@ -8,12 +8,12 @@ if(broken) {
 }
 draw_circle_color(x,y,bigRange,c_red,c_red,true);
 
-if(global.teamNum[num] != global.teamNum[ball_player.num] && point_distance(x,y,ball_player.x,ball_player.y) < bigRange) {
+if(target != noone && point_distance(x,y,target.x,target.y) < bigRange) {
 	if(beamLength < bigRange)
 		beamLength+= 35;
-	targetX = ball_player.x;
-	targetY = ball_player.y;
-} else if(beamLength >0) {
+	targetX = target.x;
+	targetY = target.y;
+} else if(beamLength > 0) {
 	beamLength -= 35;
 }
 

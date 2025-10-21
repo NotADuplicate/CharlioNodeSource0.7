@@ -20,6 +20,7 @@ function scr_damage() {
 					with(ball_game) { //send plasma passive
 						node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num",53);
 					}
+					ball_player.magicBurnNum = argument[1]; 
 				}
 				dmg *= global.players[argument[1]].atk/global.defense;
 			}

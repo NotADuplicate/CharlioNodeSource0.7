@@ -21,16 +21,6 @@ if(global.spectator == false) {
 			}
 		}
 	}
-	/*if(global.shop){
-		if(keyboard_check(vk_tab)) {
-			x = 3700
-			y = 4623;
-		}
-		else {
-			x = global.shopX
-			y = 4623;
-		}
-	}*/
 
 	if(global.shop && global.dead == false) {
 		if(position_meeting(ball_player.x,ball_player.y,obj_regen) == false) {

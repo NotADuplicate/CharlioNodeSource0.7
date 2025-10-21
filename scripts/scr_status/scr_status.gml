@@ -332,5 +332,19 @@ function scr_status(status,target){
 		case 56:
 			global.players[target].firePassive = false;
 		break
+		case 57:
+			with(obj_gun) {
+				if(num == target) {
+					revving = true;
+				}
+			}
+		break;
+		case 58:
+			with(obj_gun) {
+				if(num == target) {
+					revving = false;
+				}
+			}
+		break;
 	}	
 }

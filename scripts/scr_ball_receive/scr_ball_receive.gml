@@ -23,6 +23,11 @@ function scr_ball_receive() {
 				global.pingOffset = buffer[? "serverTime"] - current_time;
 			}
 		break;
+		case "Tower Target":
+			towerNum = buffer[? "Num"];
+			target = buffer[? "Target"];
+			scr_tower_target(towerNum, target);
+		break;
 	    case "Start Game": //start game
 	        global.ammo = 0;
 			global.playBall = false;

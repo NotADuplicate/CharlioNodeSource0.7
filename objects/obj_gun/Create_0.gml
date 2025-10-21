@@ -1,5 +1,4 @@
 /// @description Size
-show_debug_message("Made")
 scale = 1;
 num = 1;
 dir = 0;
@@ -14,3 +13,6 @@ upgraded = 0;
 
 shootX = x;
 shootY = y;
+image_speed = 0;
+revving = false;
+revSound = 0;

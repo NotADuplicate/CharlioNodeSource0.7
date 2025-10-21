@@ -18,7 +18,7 @@ if(point_distance(x,y,ball_player.x,ball_player.y) < 300) {
 	else
 		scr_damage(30,num,false)
 }
-if(point_distance(x,y,obj_AI.x,obj_AI.y) < 300) {
+if(instance_exists(obj_AI) && point_distance(x,y,obj_AI.x,obj_AI.y) < 300) {
 	obj_AI.hp += 100;
 }
 scr_ball_sound(snd_healBomb,x,y)

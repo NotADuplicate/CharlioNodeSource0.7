@@ -15,7 +15,7 @@ with(ball_player) {
 	}
 }
 
-if(global.teamNum[num] != global.teamNum[ball_player.num] && point_distance(x,y,ball_player.x,ball_player.y) < bigRange) {
+if(target == instance_nearest(x,y,ball_player)) {
 	if(!firing) {
 		firing = true;
 		burnSound = audio_play_sound(snd_towerBurn, 1,false,1.3,0.35);
@@ -27,6 +27,6 @@ if(global.teamNum[num] != global.teamNum[ball_player.num] && point_distance(x,y,
 else {
 	if(firing) {
 		audio_sound_set_track_position(burnSound, 5.35);
+		firing = false;
 	}
-	firing = false;
 }

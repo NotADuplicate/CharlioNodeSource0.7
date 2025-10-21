@@ -105,7 +105,7 @@ if((global.attack == obj_grenade || global.attack == obj_minigun) && instance_ex
     global.slow = .5;
     if(global.attack == obj_minigun) {
 		revving = 24;
-		revSound = audio_play_sound(snd_rev,0,false);
+		node_send(buffer, "eventName", "Status", "Target", ball_player.num, "Status Num", 57);
 	}
 	totalspray = 0;
 }
