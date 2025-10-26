@@ -5,7 +5,7 @@ if(jungle > 0) {//if you have jungle up, everything else stays
 		jungle = 0;
 }
 else if(garren > 0) {//if you have jungle up, everything else stays
-	garren--;
+	garren -= (delta_time/1000000);
 	if(global.dead)
 		garren = 0;
 }

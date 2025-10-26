@@ -5,6 +5,8 @@ if(dist < 450) {
 	ball_player.preDuely = ball_player.y;
 	ball_player.x = 5780 + (ball_player.x-x);
 	ball_player.y = 4550 + (ball_player.y-y)*.8;
+	ball_player.postDuelx = ball_player.x
+	ball_player.postDuely = ball_player.y
 	ball_player.duel = 850;
 	with(obj_music) {
 		audio_stop_sound(global.music);

@@ -125,3 +125,5 @@ rightHover = 0;
 spaceHover = 0;
 QHover = 0;
 RHover = 0;
+
+kicking = 0;

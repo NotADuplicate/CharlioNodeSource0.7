@@ -42,6 +42,8 @@ list[39] = glassShield;
 list[40] = rest;
 list[41] = bodyslam
 list[42] = telekenesis;
+list[43] = kick;
+list[44] = enrage;
 
 var i =0;
 repeat(array_length(list)) {

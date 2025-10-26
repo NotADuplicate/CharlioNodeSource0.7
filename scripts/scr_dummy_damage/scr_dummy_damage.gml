@@ -16,7 +16,7 @@ function scr_dummy_damage(dmg,dealer,type){
 		dmg *= 2
 	}
 	hp -= dmg;
-	if(global.players[argument[1]].firePassive) {
+	if(global.players[argument[1]].firePassive && type) {
 		magicBurn = 45;
 	}
 	scr_deal_damage(2,dmg,type);

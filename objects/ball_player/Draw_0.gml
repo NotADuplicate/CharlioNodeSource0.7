@@ -90,3 +90,19 @@ if(global.throwRange > 0) {
 	if(global.throwRange < 800)
 		global.throwRange+=20;
 }
+
+//Handle losing CD on kicking 
+if(kicking > 0 && kickedBall) {
+	draw_circle(x,y,190,true);
+	if(point_distance(x,y,obj_bigBall.x,obj_bigBall.y) > 190) {
+		kicking = 0;
+		if(global.right == Abilities.kick)
+			global.rightCool = 15;
+		if(global.space == Abilities.kick)
+			global.spaceCool = 15;
+		if(global.Q == Abilities.kick)
+			global.QCool = 15;
+		if(global.R == Abilities.kick)
+			global.RCool = 15;
+	}
+}

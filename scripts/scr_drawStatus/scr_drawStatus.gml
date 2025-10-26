@@ -46,6 +46,9 @@ function scr_drawStatus(){
 	if(stunned > 0)
 		statusCount++;
 		
+	if(kicking > 80) 
+		statusCount++;
+		
 	if(controlled > 0)
 		statusCount++;
 
@@ -132,6 +135,14 @@ function scr_drawStatus(){
 		draw_sprite_ext(spr_decay,0,xp,yp,1,1,0,c_white,decay/100);
 		xp += 40;
 		decay-= dt;
+	}
+	
+	if(kicking > 80) {
+		draw_sprite_ext(spr_kick,0,xp,yp,1,1,0,c_white,1);
+		xp += 40;
+		kicking -= dt;
+	} else if(kicking > 0) {
+		kicking -= dt;
 	}
 	
 	if(spellShield > 0) {

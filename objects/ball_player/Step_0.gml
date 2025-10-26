@@ -47,8 +47,12 @@ if(duel > 0 && global.dead == false) {
 			duel = 0;
 	}
 	if(duel == 0) {
-		x = preDuelx;
-		y = preDuely;
+		x = preDuelx + (x-postDuelx);
+		y = preDuely + (y-postDuely);
+		while(place_meeting(x,y,ball_wall)) {
+			x -= sign(x-preDuelx);
+			y -= sign(y- preDuely);
+		}
 	}
 }
 if(tossGrabbed > 0) {

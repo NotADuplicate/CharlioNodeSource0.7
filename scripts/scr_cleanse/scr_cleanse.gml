@@ -19,4 +19,20 @@ function scr_cleanse(){
 	broken = 0;
 	stunned = 0;
 	glassShield = 0;
+	magicBurn = 0;
+	ghost = 0;
+	with(obj_hook) {
+		if(hooked == other) {
+			instance_destroy();
+		}
+	}
+	with(obj_gun) {
+		if(num == other.num) {
+			upgraded = 0;
+			scale = 1;
+			if(num == ball_player.num) {
+				global.upgraded = false;
+			}
+		}
+	}
 }

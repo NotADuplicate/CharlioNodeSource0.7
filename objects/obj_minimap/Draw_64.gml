@@ -50,6 +50,14 @@ if(keyboard_check(global.mapKey)) {
 				draw_rectangle_color(playerx-2,playery-2,playerx+2,playery+2,color,color,color,color,false)
 			}
 		}
+		
+		for (var i = 0; i < instance_number(obj_turret); i++) {
+		    var inst = instance_find(obj_turret, i);
+
+			towerX = inst.x*scale + xp1+1
+			towerY = inst.y*scale + yp1+1
+			draw_rectangle_color(towerX-5,towerY-5,towerX+5,towerY+10,c_maroon, c_maroon, c_maroon, c_maroon,false)
+		}
 
 		ballx = obj_bigBall.x*scale+xp1
 		bally = obj_bigBall.y*scale+yp1

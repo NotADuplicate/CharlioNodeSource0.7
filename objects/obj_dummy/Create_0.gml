@@ -49,3 +49,4 @@ bleed = 0;
 murderball = 0
 enraged = false;
 num = 2;
+kicking = 0;

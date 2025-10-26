@@ -84,6 +84,7 @@ else if(upgraded > 30) {
 	scale /= 1.025;
 	upgraded --;
 	if(upgraded == 0 && num == ball_player.num) {
+		scale = 1;
 		global.upgraded = false;
 	}
 }

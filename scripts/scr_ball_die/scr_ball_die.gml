@@ -18,6 +18,9 @@ function scr_ball_die(dmg,killer){
 			with(ball_game) {
 				node_send(buffer,"eventName","Death","Target",ball_player.num,"Killer",killer)
 				node_send(buffer,"eventName","Bullet","Num",ball_player.num,"X", ball_player.x, "Y", ball_player.y, "Obj", ball_corpse, "Dir", 0)
+				if(ball_player.duel > 0) {
+					node_send(buffer,"eventName","Bullet","Num",ball_player.num,"X", ball_player.preDuelx, "Y", ball_player.preDuely, "Obj", duel_corpse_marker, "Dir", 0)
+				}
 			}
 			with(inst_passive) {
 				if(extraStacks > 0) {

@@ -346,5 +346,8 @@ function scr_status(status,target){
 				}
 			}
 		break;
+		case 59:
+			global.players[target].kicking = 120;
+		break;
 	}	
 }
