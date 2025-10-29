@@ -15,7 +15,7 @@ if(hp < 1) {
 	slayed.killer = ball_player.num
 	alarm[3] = 300; //respawn
 	
-	scr_cleanse();
+	scr_cleanse(false);
 }
 
 	if(place_meeting(x+hspeed,y,ball_wall)) {

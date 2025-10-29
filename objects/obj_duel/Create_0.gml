@@ -1,7 +1,7 @@
-/// @description Wait to snap to player
-visible = false;
-alarm[0] = 1;
-upSpd = 9.8;
+/// @description Insert description here
+// You can write your code in this editor
+event_inherited();
 image_angle = random_range(0,360);
-depth = -100;
-grav = .33;
+throwSpd = 40;
+xp = x;
+yp = y;

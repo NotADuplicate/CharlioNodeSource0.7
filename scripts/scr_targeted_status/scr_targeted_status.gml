@@ -169,9 +169,6 @@ function scr_targeted_status(status,target,user){
 			}
 		break;
 		case 27: //finish curse
-			if(target == ball_player.num) {
-				global.slow = 1;
-			}
 			with(obj_reaper) {
 				if(userNum == target) {
 					show_debug_message("Curse:")

@@ -1,9 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Milk() constructor {
-	sprite = spr_milk;
+	sprite = SD_milk;
 	ammoCost = 3;
-	cooldown = 15; 
+	cooldown = 29;
 	name = "Milk"
 	abilityName = "milk"
 	text = "Throw a jar of milk that cleanses any status effects."

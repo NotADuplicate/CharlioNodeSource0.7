@@ -19,6 +19,9 @@ function scr_ball_kill(deadNum,killer){
 		ins = instance_create(900,50,kill_marker)
 		ins.victim = deadNum;
 		ins.killer = killer;
+		with(global.players[deadNum]) {
+			scr_cleanse(false);
+		}
 	}
 	if(deadNum > 10 && deadNum < 20) { //destroy turret
 		with(obj_turret) {

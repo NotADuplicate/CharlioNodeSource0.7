@@ -11,4 +11,4 @@ global.ammo = global.maxAmmo
 view_set_visible(0,true)
 view_set_visible(1,false)
 respawnTimer = 0;
-scr_cleanse();
+scr_cleanse(true);

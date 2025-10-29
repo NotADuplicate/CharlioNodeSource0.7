@@ -44,6 +44,9 @@ list[41] = bodyslam
 list[42] = telekenesis;
 list[43] = kick;
 list[44] = enrage;
+list[45] = milk;
+list[46] = decay;
+list[47] = glove;
 
 var i =0;
 repeat(array_length(list)) {

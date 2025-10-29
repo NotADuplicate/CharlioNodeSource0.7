@@ -9,7 +9,7 @@ if(hp < 1) {
 	slayed = instance_create(0,0,slayer_marker)
 	slayed.victim = "Dummy";
 	slayed.killer = ball_player.num
-	scr_cleanse();
+	scr_cleanse(false);
 }
 
 	if(place_meeting(x+hspeed,y,ball_wall)) {

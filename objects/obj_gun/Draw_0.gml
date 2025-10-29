@@ -7,5 +7,6 @@ if(initialized) {
 		else {
 			draw_self();
 		}
+		draw_text(x,y+80,scale)
 	}
 }

@@ -173,7 +173,7 @@ function scr_status(status,target){
 		break;
 		case 32: //milknum
 			with(global.players[target]) {
-				scr_cleanse();
+				scr_cleanse(false);
 			}
 		break;
 		case 33:

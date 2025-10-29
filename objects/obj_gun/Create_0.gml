@@ -1,5 +1,6 @@
 /// @description Size
 scale = 1;
+baseScale = 1;
 num = 1;
 dir = 0;
 alarm[0] = 3;

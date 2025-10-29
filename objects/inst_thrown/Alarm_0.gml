@@ -1,5 +1,4 @@
 /// @description Snap to player
-throwSpd = 36/direction;
 xp = x;
 yp = y;
 visible = true
@@ -8,4 +7,5 @@ y = global.players[num].y;
 hspeed = (xp-x)/throwSpd;
 vspeed = (yp-y)/throwSpd;
 alarm[1] = throwSpd;
+//upSpd = grav*throwSpd/2;
 grav = upSpd * 2/throwSpd
