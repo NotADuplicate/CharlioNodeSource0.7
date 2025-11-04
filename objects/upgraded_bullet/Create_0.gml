@@ -7,3 +7,4 @@ portaled = false
 image_xscale = 1.5;
 image_yscale = 1.4;
 scr_ball_sound(snd_shot,x,y)
+icon = spr_pistol

@@ -1,6 +1,6 @@
 /// @description Regen some health
 if(decay > 0)
-	scr_damage(5+regenRate,decayNum,false);
+	scr_damage(5+regenRate,decayNum,false, spr_decay, true);
 else if(hp < maxhp) {
 	hp += regen + (regenRate-1)*4;
 	if(hp > maxhp) {
@@ -9,7 +9,7 @@ else if(hp < maxhp) {
 	}
 }
 if(poison > 0) {
-	scr_damage(poisonDmg,poisonedNum,false)
+	scr_damage(poisonDmg,poisonedNum,false, spr_poison, true)
 	poisonDmg += 0.9;
 }
 //else

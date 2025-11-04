@@ -18,6 +18,7 @@ dir = 0;
 repeat(12) {
     ins = instance_create(x+lengthdir_x(250,dir),y+lengthdir_y(250,dir),obj_explosion);
     ins.num = num;
+	ins.icon = spr_pushBomb
     ins.dmg = 5;
     ins.direction = dir+180;
     dir += 30;

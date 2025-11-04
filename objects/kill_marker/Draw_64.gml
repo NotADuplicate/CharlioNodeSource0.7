@@ -9,12 +9,17 @@ else
 if(suicide) {
 	draw_text(x,y-35,global.names[killer]);
 	draw_set_color(c_white)
-	draw_sprite(spr_skull,0,x,y+12)
+	if(icon != 0)
+		draw_sprite(icon,0,x-26,y+12)
+	draw_sprite(spr_skull,0,x+26,y+12)
 }
 else {
 	draw_text(x,y-35,global.names[killer]);
 	draw_set_color(c_white)
-	draw_sprite(spr_attack,0,x,y);
+	if(icon == 0)
+		draw_sprite(spr_attack,0,x,y);
+	else
+		draw_sprite(icon,0,x,y);
 	if(global.teamNum[victim] == -1)
 		draw_set_color(c_blue)
 	else

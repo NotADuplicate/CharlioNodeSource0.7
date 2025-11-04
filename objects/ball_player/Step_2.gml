@@ -19,10 +19,10 @@ if(throwTime == 0) {
 }
 if(place_meeting(x,y,obj_duelDeath)) {
 	if(global.teamNum[obj_duelDeath.num] == global.teamNum[num]) {
-		scr_damage(3,num,false);
+		scr_damage(3,num,false, spr_duel, true);
 	}
 	else {
-		scr_damage(3,obj_duelDeath.num,false);
+		scr_damage(3,obj_duelDeath.num,false, spr_duel, true);
 	}
 }
 

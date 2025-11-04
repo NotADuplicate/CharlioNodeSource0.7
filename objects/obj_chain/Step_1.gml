@@ -8,7 +8,7 @@ if(timer < 0) {
 		with(obj_player) {
 			scr_player_move(point_direction(other.x,other.y,x,y),15);
 		}
-		scr_damage(Abilities.chainbreaker.damage,num,false)
+		scr_damage(Abilities.chainbreaker.damage,num,false, spr_chain, false)
 	}
 	instance_destroy();
 }

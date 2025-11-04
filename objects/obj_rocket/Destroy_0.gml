@@ -13,5 +13,6 @@ yp = y + lengthdir_y(14,direction);
 }*/
 ob = instance_create(xp,yp,rocket_explosion);
 ob.attack = true;
+ob.icon = spr_rocket
 ob.num = num;
 instance_destroy();

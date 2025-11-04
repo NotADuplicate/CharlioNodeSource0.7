@@ -62,6 +62,7 @@ switch(state) {
 					bullet.direction = dir;
 					bullet.num = 2;
 					bullet.dmg = 20;
+					bullet.icon = spr_pistol;
 					reload = 24;
 				}
 			

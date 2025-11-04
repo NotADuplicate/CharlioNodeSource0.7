@@ -14,6 +14,7 @@ image_yscale = 1.75;
 image_xscale = 2;
 image_speed = 1/2;
 depth = 2;
+recentDamageIcon = spr_attack;
 
 //Status vars
 inversion = 0;

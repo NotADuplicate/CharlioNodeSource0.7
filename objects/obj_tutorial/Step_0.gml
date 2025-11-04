@@ -251,7 +251,7 @@ else if(stage == 13) {
 		textScale = 1;
 		remindingText = false;
 		stage = 14;
-		alarm[5] = 1000;
+		alarm[5] = 400;
 		global.leveled = 5;
 		obj_shop.wipe = true;
 

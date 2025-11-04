@@ -5,6 +5,6 @@ if(other.sprite_index = garren_swing) {
 	//global.invincibility = 2;
 }
 else {
-	scr_damage(10,num,false)
+	scr_damage(10,num,false, spr_garen, false)
 	motion_add(point_direction(other.x,other.y,x,y),1);
 }

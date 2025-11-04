@@ -7,6 +7,7 @@ image_yscale = 1.5
 alarm[0] = 150;
 alarm[1] = 1;
 suicide = false;
+icon = 0;
 while(place_meeting(x,y,kill_marker) || place_meeting(x,y,slayer_marker)) {
 	y += 90;
 }

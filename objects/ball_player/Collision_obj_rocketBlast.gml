@@ -4,7 +4,7 @@ if(other.num != num) {
 		frost = 0;
 		global.slow = 1;
 	}
-    scr_damage(Abilities.blastOff.damage,other.num,false);
+    scr_damage(Abilities.blastOff.damage,other.num,false, spr_engine, false);
 	burnNum = other.num
 	scr_player_move(other.direction,8);
 	if(global.teamNum[other.num] != global.teamNum[num] && global.invincibility = 0) {

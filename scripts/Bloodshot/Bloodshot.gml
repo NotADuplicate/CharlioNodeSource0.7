@@ -15,7 +15,7 @@ function Bloodshot() constructor {
 		if(global.ammo >= ammoCost) {
 			scr_ability_shoot(obj_bloodShot);
 	        scr_ball_ammo(ammoCost);
-			scr_damage(selfDamage,ball_player.num,false)
+			scr_damage(selfDamage,ball_player.num,false, spr_blood, false)
 			return(cooldown);
 		}
 		else { return(0); }

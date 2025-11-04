@@ -148,3 +148,5 @@ repeat(5) {
 }
 global.screenShake = 0;
 global.upgraded = false;
+
+global.damageSources = ds_list_create();

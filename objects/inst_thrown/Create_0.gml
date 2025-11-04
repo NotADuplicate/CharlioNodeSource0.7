@@ -4,3 +4,4 @@ alarm[0] = 1;
 depth = -100;
 upSpd = 10;
 batted = false;
+grav = 0.33

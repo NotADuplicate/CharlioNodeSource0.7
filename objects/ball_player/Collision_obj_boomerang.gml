@@ -11,7 +11,7 @@ else if(other.num == num) {
 }
 else if(ghosting == 0) {
     if(other.hitCooldown == 0) {
-		scr_damage(round(other.dmg*1.3),other.num,true);
+		scr_damage(round(other.dmg*1.3),other.num,true, spr_boomerange, false);
 		other.hitCooldown = 10;
 		scr_player_move(other.direction,other.speed/3);
     }

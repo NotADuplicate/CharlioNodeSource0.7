@@ -12,6 +12,7 @@ if(hp < 1) {
 	poisonDmg = 0;
 	slayed = instance_create(0,0,slayer_marker)
 	slayed.victim = "Enemy";
+	slayed.icon = recentDamageIcon;
 	slayed.killer = ball_player.num
 	alarm[3] = 300; //respawn
 	
@@ -44,9 +45,9 @@ if(burn > 0) {
 	burn--;
 	if(burn mod 5 == 0) {
 		if(oil > 0)
-			scr_dummy_damage(4,ball_player.num,false);
+			scr_dummy_damage(4,ball_player.num,false, spr_anger, true);
 		else
-			scr_dummy_damage(1,ball_player.num,false);
+			scr_dummy_damage(1,ball_player.num,false, spr_anger, true);
 		instance_create(x+random_range(-16,16),y+random_range(-16,16),obj_firePart)
 	}
 }

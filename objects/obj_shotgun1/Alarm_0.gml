@@ -5,6 +5,7 @@ repeat(10) {
     ins = instance_create(x,y,obj_bullet1);
     ins.dmg = 10;
     ins.num = num;
+	ins.icon = spr_shotgun;
     ins.direction = direction;
     ins.speed = 20;
 	ins.ammo = false;

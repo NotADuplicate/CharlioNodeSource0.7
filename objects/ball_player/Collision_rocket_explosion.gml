@@ -1,7 +1,7 @@
 /// @description Knockback
 if(other.player) {
 	scr_player_move(point_direction(other.x,other.y,x,y),19);
-	scr_damage(40,other.num,false);
+	scr_damage(40,other.num,false, spr_rocket, false);
 	if(global.screenShake < 6)
 		global.screenShake = 6;
 	if(other.num == num) {

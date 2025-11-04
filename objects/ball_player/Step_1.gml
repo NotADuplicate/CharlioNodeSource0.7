@@ -39,7 +39,7 @@ if(hp > maxhp) { //handle overheal
    
 //Handle some statuses
 if(bleed > 0 && (xspd != 0 || yspd != 0)) {
-	scr_damage(3,bleedNum,false);
+	scr_damage(3,bleedNum,false, spr_blood, true);
 	if(global.screenShake < 8)
 		global.screenShake = 8;
 }
@@ -58,16 +58,16 @@ if(burn > 0) {
 	instance_create(x+random_range(-16,16),y+random_range(-16,16),obj_firePart)
 	if(burn mod 5 == 0) {
 		if(oil > 0)
-			scr_damage(3,burnNum,false);
+			scr_damage(3,burnNum,false, spr_oil, true);
 		else
-			scr_damage(1,burnNum,false);
+			scr_damage(1,burnNum,false, spr_anger, true);
 	}
 	
 }
 if(magicBurn > 0) {
 	magicBurn--;
 	if(magicBurn mod 5 == 0) {
-		scr_damage(2,magicBurnNum,false);
+		scr_damage(2,magicBurnNum,false, spr_darkness, true);
 		instance_create(x+random_range(-16,16),y+random_range(-16,16),obj_darkPart)
 	}
 }
@@ -195,7 +195,7 @@ if(invPass) {
 }
 	
 if(enraged) {
-	scr_damage(enrageDmg*global.resistance,num,false)
+	scr_damage(enrageDmg*global.resistance,num,false, spr_anger, true)
 	if(global.screenShake < enrageDmg*1.5)
 		global.screenShake = enrageDmg*1.5
 	enrageDmg += 0.001
@@ -212,7 +212,7 @@ if(rammed > 0)
 	rammed--;
 
 if(x < 0 || x > 6500) {//outside of map
-	scr_damage(5,num,false);
+	scr_damage(5,num,false, spr_edgerun, true);
 }
 
 //stand still to stop being enraged

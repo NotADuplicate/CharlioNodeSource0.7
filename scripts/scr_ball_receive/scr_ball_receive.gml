@@ -92,7 +92,9 @@ function scr_ball_receive() {
 			show_debug_message("Death received")
 	        dead = buffer[? "Target"]
 			killer = buffer[? "Killer"]
-	        scr_ball_kill(dead,killer)
+			icon = buffer[? "Icon"]
+			show_debug_message(icon)
+	        scr_ball_kill(dead,killer,icon)
 	    break;
 	    case "Hook Stop": //stop using something
 			ob = buffer[? "Obj"]
@@ -394,13 +396,14 @@ function scr_ball_receive() {
 				global.loadoutSize[num]--;
 			}
 		break;
-		case "Extra Shit":
+		case "Sponge Damage":
 			num = buffer[? "Num"]
 			if(num == ball_player.num) {
 				dmg = buffer[? "Dmg"]
 				killer =buffer[? "Killer"]
 				ad = buffer[? "Ad"]
-				scr_damage(dmg,killer,ad);
+				icon = buffer[? "Icon"]
+				scr_damage(dmg,killer,ad, icon, false);
 			}
 			
 		break;

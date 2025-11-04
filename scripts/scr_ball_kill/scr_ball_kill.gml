@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_ball_kill(deadNum,killer){
+function scr_ball_kill(deadNum,killer,icon){
 	if(deadNum > 0 && deadNum < 11) { //player deaths
 		global.players[deadNum].hp = 250; //reset the dead players HP
 		global.players[deadNum].garren = false;
@@ -17,6 +17,7 @@ function scr_ball_kill(deadNum,killer){
 				global.ammo = global.maxAmmo;
 		}
 		ins = instance_create(900,50,kill_marker)
+		ins.icon = icon;
 		ins.victim = deadNum;
 		ins.killer = killer;
 		with(global.players[deadNum]) {

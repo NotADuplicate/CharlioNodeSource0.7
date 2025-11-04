@@ -1,7 +1,7 @@
 /// @description Dribble ball
 //scr_ball_move(point_direction(x,y,other.x,other.y),1,num)
 if(other.murderball)
-	scr_damage(5+power(other.speed,2),num,false)
+	scr_damage(5+power(other.speed,2),num,false, spr_deathball, false)
 else if(other.stasis == false){
 	if(speed > 4) {
 		scr_ball_move(direction,pushing*speed/3,num)

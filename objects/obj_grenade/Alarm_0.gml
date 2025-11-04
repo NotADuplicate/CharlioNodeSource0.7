@@ -2,6 +2,7 @@
 dir = 0;
 repeat(12) {
     ins = instance_create(x,y,obj_explosion);
+	ins.icon = spr_gLauncher
 	ins.attack = true;
     ins.num = num;
     ins.dmg = 10;
@@ -11,6 +12,7 @@ repeat(12) {
 }
 ob = instance_create(x,y,obj_blast);
 ob.attack = true;
+ob.icon = spr_gLauncher
 ob.num = num;
 instance_destroy();
 

@@ -5,7 +5,7 @@ function scr_heal(amount, sourceNum){
 		amount *= global.players[sourceNum].healing;
 	}
 	if(ball_player.decay > 0) { //damage instead
-		scr_damage(amount,ball_player.decayNum,false);
+		scr_damage(amount,ball_player.decayNum,false, spr_decay, true);
 	}
 	else { //heal
 		ball_player.hp += amount;

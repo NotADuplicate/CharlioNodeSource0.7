@@ -1,6 +1,6 @@
 /// @description Get bit 
 if(other.active) {
-	scr_dummy_damage(other.dmg,other.num,false);
+	scr_dummy_damage(other.dmg,other.num,false, spr_bite, false);
 	biteNum = other.num
 	biteHeal = other.dmg * global.players[other.num].magic
 	if(chummed> 0)

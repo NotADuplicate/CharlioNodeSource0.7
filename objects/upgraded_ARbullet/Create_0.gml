@@ -11,3 +11,4 @@ portaled = false
 image_xscale = .6;
 image_yscale = .5;
 scr_ball_sound(snd_shot,x,y)
+icon = spr_popGun;
