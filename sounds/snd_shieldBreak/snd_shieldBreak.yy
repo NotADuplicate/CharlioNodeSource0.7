@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_shotgun",
+  "%Name":"snd_shieldBreak",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.351542,
-  "name":"snd_shotgun",
+  "duration":1.896,
+  "name":"snd_shieldBreak",
   "parent":{
-    "name":"BallGun",
-    "path":"folders/Sounds/BallGun.yy",
+    "name":"AbilitySounds",
+    "path":"folders/Sounds/AbilitySounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_shotgun.wav",
+  "soundFile":"snd_shieldBreak.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.79,
 }

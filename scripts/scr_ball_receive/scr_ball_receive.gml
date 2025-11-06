@@ -333,7 +333,8 @@ function scr_ball_receive() {
 				passiveIndex = buffer[? "PassiveIndex"]
 				passiveOb = Passives.list[passiveIndex];
 			} 
-			if(abilityIndex > 40) {
+			if(abilityIndex > array_length(Abilities.list)) {
+				show_debug_message("Overflow on ability list")
 				return;
 			}
 			if(abilityIndex >= 0) {

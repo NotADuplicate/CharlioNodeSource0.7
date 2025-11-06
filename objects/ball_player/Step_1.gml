@@ -231,10 +231,11 @@ if(enraged) {
 }
 
 //Telekenesis stuff
-if(controlling) {
+if(controlling > 0) {
 	with(ball_game) {
 		node_send(buffer,"eventName","Telekenesis Point","User",ball_player.num,"X",mouse_x, "Y", mouse_y)
 	}
+	controlling--;
 }
 if(controlled) {
 	dir = point_direction(x,y,controlledX, controlledY);

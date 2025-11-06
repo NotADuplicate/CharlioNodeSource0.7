@@ -114,6 +114,7 @@ function scr_drawStatus(){
 		draw_sprite_ext(spr_glass_defense,0,round(x),y,1.4,1.4,0,c_white,1);
 		glassShield -= dt;
 		if(glassShield <= 0) {
+			scr_ball_sound(snd_shatter, x, y);
 			broken = 180;
 		}
 	}

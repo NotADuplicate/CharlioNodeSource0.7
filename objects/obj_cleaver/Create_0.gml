@@ -9,3 +9,4 @@ dmg = 20;
 armed = false
 alarm[2] = 5;
 portaled = false;
+scr_ball_sound(snd_whoosh, x, y)

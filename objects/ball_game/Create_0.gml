@@ -11,6 +11,7 @@ extra = true; //only use ammo every other bullet
 started = false;
 flameAmmo = 0;
 KBable = false;
+shotgunReload = false;
 global.chargeGun = 0;
 //layer = -100;
 global.partSystem = part_system_create();

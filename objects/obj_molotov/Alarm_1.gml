@@ -3,6 +3,6 @@
 
 ins = instance_create(x,y,obj_fire)
 scr_ball_sound(scr_fire,x,y);
-scr_ball_sound(scr_shatter,x,y);
+scr_ball_sound(snd_shatter,x,y);
 ins.num = num
 instance_destroy()

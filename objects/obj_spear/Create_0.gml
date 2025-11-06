@@ -10,3 +10,4 @@ alarm[2] = 6; //activate
 wallActive = false
 visible = false;
 portaled = false;
+scr_ball_sound(snd_whoosh, x, y)
