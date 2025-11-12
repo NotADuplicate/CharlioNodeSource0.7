@@ -7,11 +7,11 @@ function AmmoRegen() constructor {
 	type = "Resources"
 	
 	static passiveGet = function(buffer) {
-		global.ammoRegen += 0.35;
+		global.ammoRegen += 0.4;
 	}
 	
 	static passiveLose = function(buffer) {
-		global.ammoRegen -= 0.35;
+		global.ammoRegen -= 0.4;
 	}
 	
 	static otherGet = function(num) {

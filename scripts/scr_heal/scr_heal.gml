@@ -14,5 +14,10 @@ function scr_heal(amount, sourceNum){
 			actual_healed -= ball_player.hp-ball_player.maxhp;
 			ball_player.hp = ball_player.maxhp;
 		}
+		if(sourceNum != ball_player.num) {
+			with(ball_game) {
+				node_send(buffer, "eventName", "Healing Dealt", "Amount", actual_healed, "Dealer", sourceNum)
+			}
+		}
 	}
 }

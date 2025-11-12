@@ -183,6 +183,40 @@ function scr_ball_receive() {
 	        ins.num = num7;
 	        ins.fire = buffer[? "Shooting"]
 	    break;
+		case "Game Over":
+			global.ballGameOver = buffer[? "Winner"]
+			var towerDamages = buffer[? "towerDamages"]
+			var ballPushes = buffer[? "playersBallPush"]
+			var healingDealt = buffer[? "healingDealt"]
+			var mvpNum = buffer[? "mvpId"]
+			show_debug_message(towerDamages[| 0])
+			show_debug_message(ballPushes[| 0])
+			show_debug_message(mvpNum)
+			//Set up all the loadout UI objects
+			leftLoadoutY = 45;
+			rightLoadoutY = 45;
+			for (var i = 0; i < instance_number(obj_loadout); i++){
+			    var inst = instance_find(obj_loadout, i);
+				var num = inst.num;
+				show_debug_message("Loadout num:")
+				show_debug_message(num)
+				global.players[num].towerDamage = towerDamages[| num-1];
+				global.players[num].ballPush = ballPushes[| num-1];
+				global.players[num].healingDealt = healingDealt[| num-1];
+				if(num == mvpNum) {
+					inst.mvp = true;
+				}
+				
+				if(global.teamNum[num] == -1) { //left side
+					inst.y = leftLoadoutY
+					leftLoadoutY += 230;
+				}
+				else if(global.teamNum[num] == -1) { //left side
+					inst.y = rightLoadoutY
+					rightLoadoutY += 230;
+				}
+			}
+		break;
 	    case "Team Name": //recieve names
 			show_debug_message("Names")
 	        num8 = buffer[? "Num"]

@@ -11,7 +11,7 @@ if(global.typing) {
 		global.stun = 5;
 }
 
-if(global.dead && global.shop == false) {
+if(global.dead && global.shop == false && global.ballGameOver == 0) {
 	draw_rectangle_color(0,10,1024,30,c_gray,c_gray,c_gray,c_gray,false)
 	draw_text(512,10,ball_game.lore);
 }
