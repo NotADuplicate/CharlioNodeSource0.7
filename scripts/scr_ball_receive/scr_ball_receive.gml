@@ -193,7 +193,7 @@ function scr_ball_receive() {
 			show_debug_message(ballPushes[| 0])
 			show_debug_message(mvpNum)
 			//Set up all the loadout UI objects
-			leftLoadoutY = 45;
+			leftLoadoutY = 65;
 			rightLoadoutY = 45;
 			for (var i = 0; i < instance_number(obj_loadout); i++){
 			    var inst = instance_find(obj_loadout, i);

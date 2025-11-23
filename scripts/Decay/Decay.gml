@@ -21,7 +21,7 @@ function Decay() constructor {
 		if(point_distance(ball_player.x,ball_player.y,mouse_x,mouse_y) < 150 && global.ammo > ammoCost) {
 			instance_create(mouse_x,mouse_y,obj_decay);
 			with(ball_other) {
-				if(global.teamNum[num] != global.teamNum[ball_player.teamNum] && point_distance(x,y,mouse_x,mouse_y) < 50) {
+				if(global.teamNum[num] != global.teamNum[ball_player.num] && point_distance(x,y,mouse_x,mouse_y) < 50) {
 					node_send(ball_game.buffer,"eventName","Targeted Status","Target",num,"Status Num", 15, "User", ball_player.num);
 				}
 			}

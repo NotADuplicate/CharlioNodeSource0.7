@@ -6,8 +6,8 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 		center = fa_left;
 		draw_rectangle_color(0,y-20,500,y+220,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
 		if(mvp) {
-			draw_circle_color(515,y-20,36,c_yellow,c_yellow, false)
-			draw_text_transformed_color(505,y-28,"MVP",2,2,0,c_black,c_black,c_black,c_black,1)
+			draw_circle_color(490,y-20,32,c_yellow,c_yellow, false)
+			draw_text_transformed_color(490,y-28,"MVP",2,2,0,c_black,c_black,c_black,c_black,1)
 		}
 		draw_set_halign(fa_right);
 		draw_text_transformed_color(480,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);
@@ -20,8 +20,8 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 		center = fa_right;
 		draw_rectangle_color(524,y-20,1024,y+220,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
 		if(mvp) {
-			draw_circle_color(520,y-28,36,c_yellow,c_yellow, false)
-			draw_text_transformed_color(510,y-20,"MVP",2,2,0,c_black,c_black,c_black,c_black,1)
+			draw_circle_color(534,y-28,32,c_yellow,c_yellow, false)
+			draw_text_transformed_color(534,y-20,"MVP",2,2,0,c_black,c_black,c_black,c_black,1)
 		}
 		draw_set_halign(fa_left);
 		draw_text_transformed_color(544,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);

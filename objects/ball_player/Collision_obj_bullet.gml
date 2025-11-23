@@ -7,4 +7,3 @@ if(other.num != num && ghosting == 0) {
 		scr_player_move(other.direction,other.dmg/5);
     instance_destroy(other);
 }
-

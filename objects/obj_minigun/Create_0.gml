@@ -9,4 +9,4 @@ portaled = false
 image_xscale = .75;
 image_yscale = .6;
 scr_ball_sound(snd_shot,x,y)
-icon = obj_minigun;
+icon = spr_minigun;
