@@ -102,6 +102,15 @@ last2X = lastX;
 last2Y = lastY
 lastX = x;
 lastY = y;
+
+if(place_meeting(x,y,ball_wall)) {
+	if(!place_meeting(x+2,y,ball_wall)) {
+		x += 2;
+	} else if(!place_meeting(x-2,y,ball_wall)) {
+		x -= 2;
+	}
+}
+
 if(stasis == false && obj_bigBall.drone != num && sleeping == 0) {
     if(!place_meeting(x+xspd,y,ball_wall)) {
 		if(oil == 0)

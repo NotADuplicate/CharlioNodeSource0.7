@@ -1,6 +1,6 @@
 /// @description Free TP
 if(position_meeting(ball_player.x, ball_player.y, obj_regen) && global.teleportTimer <= 0) {
-	if(keyboard_check(global.mapKey)) { 
+	if(global.mapShowing) { 
 		scale = 0.077
 		mouseX = mouse_x - camera_get_view_x(view_camera[0]);
 		mouseY = mouse_y - camera_get_view_y(view_camera[0]);

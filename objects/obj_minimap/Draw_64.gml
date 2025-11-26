@@ -1,5 +1,5 @@
 /// @description Draw minimap
-if(keyboard_check(global.mapKey)) {
+if(global.mapShowing) {
 	draw_set_alpha(0.5)
 
 	xp1 = 480;
