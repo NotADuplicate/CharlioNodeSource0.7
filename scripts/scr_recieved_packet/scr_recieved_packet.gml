@@ -4,7 +4,18 @@ function scr_recieved_packet() {
 
 	switch(global.game) {
 	    case 0:
-	        if(message_id == "Start Game") {
+			if(message_id == "Lobbies") {
+				lobbies = buffer[? "Lobbies"]
+				var i = 0;
+				xp = 300;
+				repeat(3) {
+					ins = instance_create(xp,350,obj_lobby);
+					ins.numPlayers = lobbies[| i]
+					i++;
+					xp += 200;
+				}
+			}
+	        else if(message_id == "Start Game") {
 	            newgame = "Ball"
 	            if(instance_exists(inst_game)) { //delete the old game object to make way for the new
 	                instance_destroy(inst_game);

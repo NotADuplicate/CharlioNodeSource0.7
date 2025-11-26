@@ -1,6 +1,6 @@
 /// @description Get bit 
 if(global.invincibility == 0 && other.active && global.teamNum[other.num] != global.teamNum[num]) {
-	scr_damage(other.dmg,other.num,false);
+	scr_damage(other.dmg,other.num,false, spr_fangs, false);
 	biteNum = other.num
 	biteHeal = other.dmg * global.players[other.num].magic/global.resistance;
 	if(chummed> 0)

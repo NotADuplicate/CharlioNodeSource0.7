@@ -46,6 +46,9 @@ function scr_drawStatus(){
 	if(stunned > 0)
 		statusCount++;
 		
+	if(kicking > 80) 
+		statusCount++;
+		
 	if(controlled > 0)
 		statusCount++;
 
@@ -111,6 +114,7 @@ function scr_drawStatus(){
 		draw_sprite_ext(spr_glass_defense,0,round(x),y,1.4,1.4,0,c_white,1);
 		glassShield -= dt;
 		if(glassShield <= 0) {
+			scr_ball_sound(snd_shatter, x, y);
 			broken = 180;
 		}
 	}
@@ -132,6 +136,14 @@ function scr_drawStatus(){
 		draw_sprite_ext(spr_decay,0,xp,yp,1,1,0,c_white,decay/100);
 		xp += 40;
 		decay-= dt;
+	}
+	
+	if(kicking > 80) {
+		draw_sprite_ext(spr_kick,0,xp,yp,1,1,0,c_white,1);
+		xp += 40;
+		kicking -= dt;
+	} else if(kicking > 0) {
+		kicking -= dt;
 	}
 	
 	if(spellShield > 0) {

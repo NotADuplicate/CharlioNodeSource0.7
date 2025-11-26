@@ -35,6 +35,12 @@ else {
 startingX = x;
 startingY = y;
 gun.num = num;
+
+if(global.atktext != "Pistol") {
+	with(ball_game) {
+		node_send(buffer,"eventName","Extra Shit 2","Gun Name",global.atktext, "Gun Num", ball_player.num);
+	}
+}
 ///Get passive
 /*switch(global.passive) {
     case "regen":

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_whoosh",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.862041,
+  "name":"snd_whoosh",
+  "parent":{
+    "name":"AbilitySounds",
+    "path":"folders/Sounds/AbilitySounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_whoosh.mp3",
+  "type":0,
+  "volume":1.0,
+}

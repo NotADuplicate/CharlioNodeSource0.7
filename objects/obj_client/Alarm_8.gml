@@ -8,7 +8,7 @@ else {
 socket = network_create_socket(network_socket_udp)
 var spec = global.spectator;
 global.spectator = false;
-node_send(buffer,"eventName","Connect","spectator",spec);
+node_send(buffer,"eventName","Get Lobbies","spectator",spec);
 global.spectator = spec;
 global.spectating = spec;
 if(spec)

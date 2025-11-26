@@ -169,9 +169,6 @@ function scr_targeted_status(status,target,user){
 			}
 		break;
 		case 27: //finish curse
-			if(target == ball_player.num) {
-				global.slow = 1;
-			}
 			with(obj_reaper) {
 				if(userNum == target) {
 					show_debug_message("Curse:")
@@ -201,9 +198,9 @@ function scr_targeted_status(status,target,user){
 		break;
 		case 30: //telekenesis
 			if(user == ball_player.num) {
-				ball_player.controlling = 180;
+				ball_player.controlling = Abilities.telekenesis.duration*30;
 			}
-			global.players[target].controlled = 300;
+			global.players[target].controlled = Abilities.telekenesis.duration*30;
 			global.players[target].controlledNum = user;
 		break;
 	}	

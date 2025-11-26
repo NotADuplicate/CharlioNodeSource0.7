@@ -1,6 +1,6 @@
 /// @descriptio Damage and bleed
 if(global.teamNum[num] != global.teamNum[other.num]) {
-	scr_damage(Abilities.frost.damage,other.num,false)
+	scr_damage(Abilities.frost.damage,other.num,false, spr_frost, false)
 	instance_destroy(other);
 	if(global.invincibility = 0) {
 		with(ball_game) {

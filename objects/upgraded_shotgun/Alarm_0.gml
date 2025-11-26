@@ -3,6 +3,7 @@
 direction -= 30;
 repeat(10) {
     ins = instance_create(x,y,obj_bullet);
+	ins.icon = spr_shotgun;
 	ins.image_xscale *= 2;
 	ins.image_yscale *= 2;
     ins.dmg = 19;

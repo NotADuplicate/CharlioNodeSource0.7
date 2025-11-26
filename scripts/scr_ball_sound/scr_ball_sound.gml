@@ -6,5 +6,7 @@ function scr_ball_sound(sound,xp,yp, offset = 0){
 	if(vol < range) {
 		vol = 1-(vol/range)
 		snd = audio_play_sound(sound,1,false,vol,offset);
+		return snd;
 	}
+	return noone;
 }

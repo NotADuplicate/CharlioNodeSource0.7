@@ -8,6 +8,7 @@ alarm[0] = 150;
 alarm[1] = 1;
 suicide = false;
 victim = "";
+icon = spr_attack
 while(place_meeting(x,y,kill_marker) || place_meeting(x,y,slayer_marker)) {
 	y += 90;
 }

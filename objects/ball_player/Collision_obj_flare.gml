@@ -4,7 +4,7 @@ if(other.num != num) {
 		frost = 0;
 		global.slow = 1;
 	}
-    scr_damage(Abilities.flareGun.damage,other.num,false);
+    scr_damage(Abilities.flareGun.damage,other.num,false, spr_flare, false);
 	burnNum = other.num
 	instance_destroy(other);
 	scr_player_move(other.direction,6);

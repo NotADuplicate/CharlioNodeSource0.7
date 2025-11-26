@@ -19,5 +19,5 @@ if(global.teamNum[num] == global.teamNum[ball_player.num] && global.dead == fals
 		scr_get_buff("Resistance", global.jungle, 5);
 		scr_get_buff("Defense", global.jungle, 5);
 		scr_get_buff("Power", global.jungle, 5);
-		obj_junglePass.garren = 5400;
+		obj_junglePass.garren = 163;
 	}

@@ -251,7 +251,7 @@ else if(stage == 13) {
 		textScale = 1;
 		remindingText = false;
 		stage = 14;
-		alarm[5] = 1000;
+		alarm[5] = 400;
 		global.leveled = 5;
 		obj_shop.wipe = true;
 
@@ -302,6 +302,8 @@ else if(stage == 15) {
 	}
 }
 else if(stage == 16) {
+	arrowX = 0;
+	arrowY = 0;
 	tutText = "Killing monsters gives you a temporary buff.";
 	if(obj_junglePass.ammo > 0 || obj_junglePass.resistance > 0 || obj_junglePass.defense > 0 || obj_junglePass.dmg > 0 || obj_junglePass.pwr > 0 || obj_junglePass.spd > 0 || obj_junglePass.jungle > 0) {
 		stage = 17;
@@ -312,10 +314,16 @@ else if(stage == 16) {
 	}
 }
 else if(stage == 17) {
-	tutText = "Now you know the basics of charlio ball!\n Now go to the ball and try to destroy the next tower!";
+	tutText = "Now you know the basics of charlio ball!\n Now go to the ball and push it left along the path until \n you score and win the game!";
 	if(point_distance(ball_player.x,ball_player.y,obj_bigBall.x,obj_bigBall.y) < 500) {
 		stage = 18;
 		tutText = "";
 		remindingText = false;
+	}
+}
+else if(stage == 18) {
+	if(obj_bigBall.x < 1) {
+		stage = 19;
+		tutText = "Good job!!! Now press escape and disconnect to leave the tutorial \n Now you're ready to play charlio ball!"
 	}
 }

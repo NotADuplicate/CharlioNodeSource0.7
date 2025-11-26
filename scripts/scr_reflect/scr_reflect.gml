@@ -2,7 +2,7 @@ function scr_reflect() {
 	ob = argument[0];
 	dir = argument[1];
 	ob.direction = direction;
-	ob.speed+= 4;
+	ob.speed+= 6;
 	if(ob.speed < 0){
 	    ob.direction += 180;
 	}

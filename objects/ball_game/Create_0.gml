@@ -11,6 +11,7 @@ extra = true; //only use ammo every other bullet
 started = false;
 flameAmmo = 0;
 KBable = false;
+shotgunReload = false;
 global.chargeGun = 0;
 //layer = -100;
 global.partSystem = part_system_create();
@@ -148,3 +149,5 @@ repeat(5) {
 }
 global.screenShake = 0;
 global.upgraded = false;
+
+global.damageSources = ds_list_create();

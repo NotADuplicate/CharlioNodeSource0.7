@@ -48,10 +48,14 @@ if(state == "Push") {
 			var bullet = instance_create(x+lengthdir_x(16,dir), y+lengthdir_y(16,dir), obj_bullet);
 			bullet.direction = dir;
 			bullet.num = 2;
+			bullet.icon = spr_pistol;
 			reload = 30;
 		}
 	}
 } else if(state == "Skirmish") {
+	if(global.dead) {
+		state = "Push";
+	}
 	var dist = 120;
 	if(hp > 150 && blastOffCooldown == 0) { dist = 30; } //get close to blast off
 	dir = point_direction(ball_player.x, ball_player.y, x, y);

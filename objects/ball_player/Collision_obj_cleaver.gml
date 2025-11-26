@@ -1,7 +1,7 @@
 
 /// @descriptio Damage and bleed
 if(global.teamNum[num] != global.teamNum[other.num]) {
-	scr_damage(Abilities.cleaver.damage,other.num,false)
+	scr_damage(Abilities.cleaver.damage,other.num,false, spr_cleaver, false)
 	instance_destroy(other);
 	bleedNum = other.num
 	if(global.invincibility = 0) {

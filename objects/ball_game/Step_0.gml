@@ -13,17 +13,29 @@ var dt = delta_time / 30000;
 ///Reload
 if(reload > 0) {
     reload-= global.shooting*dt;
+	if(global.attack == obj_shotgun && reload < 13*global.shooting*dt) {
+		if(!shotgunReload) {
+			shotgunReload = true;
+			scr_ball_sound(snd_shotgun,ball_player.x,ball_player.y)
+		}
+	}
 }
-if(reload <0)
+if(reload <0) {
+	shotgunReload = false;
     reload = 0;
+}
 	
 if(bullets < 5) {
 	if(bulletReload < 1) {
 		bullets++
+		if(bullets == 5) 
+			scr_ball_sound(snd_shotgun,ball_player.x,ball_player.y,0.08)
+		else
+			scr_ball_sound(snd_shotgun,ball_player.x,ball_player.y,0.16)
 		bulletReload = 50;
 	}
 	else
-		bulletReload -= global.shooting;
+		bulletReload -= global.shooting*dt;
 }
 //increment cooldowns and statuses
 

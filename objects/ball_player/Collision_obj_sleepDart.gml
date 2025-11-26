@@ -1,6 +1,6 @@
 /// @description Get slept
 if(other.num != num) {
-    scr_damage(Abilities.sleepDart.damage,other.num,false);
+    scr_damage(Abilities.sleepDart.damage,other.num,false, spr_dart, false);
 	instance_destroy(other);
 	if(global.teamNum[other.num] != global.teamNum[num] && global.invincibility = 0) {
 		with(ball_game) {

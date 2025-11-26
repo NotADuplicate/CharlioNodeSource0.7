@@ -9,7 +9,7 @@ else
 
 	draw_text(x,y-35,global.names[killer]);
 	draw_set_color(c_white)
-	draw_sprite(spr_attack,0,x,y);
+	draw_sprite(icon,0,x,y);
 	draw_set_color(c_purple);
 	draw_text(x,y+10,victim);
 	draw_set_color(c_white)

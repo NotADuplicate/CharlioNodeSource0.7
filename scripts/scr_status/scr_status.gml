@@ -83,9 +83,10 @@ function scr_status(status,target){
 			if(global.players[target].spellShield == 0)
 				global.players[target].decay = 300;
 		break;
-		case 16:
+		case 16: //armor break
 			if(global.players[target].spellShield == 0) {
 				global.players[target].broken = 180;
+				scr_ball_sound(snd_shieldBreak,global.players[target].x,global.players[target].y);
 			}
 		break;
 		case 17: //Frost
@@ -173,7 +174,7 @@ function scr_status(status,target){
 		break;
 		case 32: //milknum
 			with(global.players[target]) {
-				scr_cleanse();
+				scr_cleanse(false);
 			}
 		break;
 		case 33:
@@ -332,5 +333,22 @@ function scr_status(status,target){
 		case 56:
 			global.players[target].firePassive = false;
 		break
+		case 57:
+			with(obj_gun) {
+				if(num == target) {
+					revving = true;
+				}
+			}
+		break;
+		case 58:
+			with(obj_gun) {
+				if(num == target) {
+					revving = false;
+				}
+			}
+		break;
+		case 59:
+			global.players[target].kicking = 120;
+		break;
 	}	
 }

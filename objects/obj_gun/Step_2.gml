@@ -53,6 +53,25 @@ if(initialized) {
 			}
 		}
 	}
+	
+	if(revving) {
+		image_speed = 1;
+		if(revSound == 0) {
+			revSound = scr_ball_sound(snd_rev, x, y, 0);
+		}
+	} else {
+		if(revSound != 0) {
+			if(audio_sound_get_track_position(revSound) < 23) {
+				image_speed = 0.5;
+				audio_sound_set_track_position(revSound,23);
+			}
+			if(!audio_is_playing(snd_rev)) {
+				revSound = 0;
+			}
+		} else {
+			image_speed = 0;
+		}
+	}
 }
 
 if(upgraded > 270) {
@@ -67,4 +86,7 @@ else if(upgraded > 30) {
 	if(upgraded == 0 && num == ball_player.num) {
 		global.upgraded = false;
 	}
+}
+else {
+	scale = baseScale
 }

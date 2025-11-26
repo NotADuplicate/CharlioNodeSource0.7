@@ -9,3 +9,4 @@ portaled = false
 image_xscale = 2;
 image_yscale = 2;
 scr_ball_sound(snd_charge,x,y)
+icon = spr_chargeGun;

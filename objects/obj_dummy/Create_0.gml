@@ -14,6 +14,7 @@ image_yscale = 1.75;
 image_xscale = 2;
 image_speed = 1/2;
 depth = 2;
+recentDamageIcon = spr_attack;
 
 //Status vars
 inversion = 0;
@@ -49,3 +50,4 @@ bleed = 0;
 murderball = 0
 enraged = false;
 num = 2;
+kicking = 0;

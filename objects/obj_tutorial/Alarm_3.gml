@@ -1,5 +1,5 @@
 /// @description Skip tutorial, enter test mode
-
+passiveBought = false;
 stage = 8;
 remindingText = true;
 alarm[6] = 450;

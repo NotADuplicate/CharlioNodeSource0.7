@@ -5,7 +5,7 @@ if(other.num != num && active) {
 	if(global.teamNum[num] == global.teamNum[other.num])
 		global.ammo += 3;
 	else
-		scr_damage(100,other.num,false)
+		scr_damage(100,other.num,false, spr_ammo, false)
 	if(global.ammo > global.maxAmmo)
 		global.ammo = global.maxAmmo;
 	if(global.ammo < 0)

@@ -4,9 +4,9 @@ if(burn > 0) {
 	frost = 0;
 	if(burn mod 5 == 0) {
 		if(oil > 0)
-			scr_dummy_damage(3,ball_player.num,false);
+			scr_dummy_damage(3,ball_player.num,false, spr_anger, true);
 		else
-			scr_dummy_damage(1,ball_player.num,false);
+			scr_dummy_damage(1,ball_player.num,false, spr_anger, true);
 		instance_create(x+random_range(-16,16),y+random_range(-16,16),obj_firePart)
 	}
 }
@@ -14,9 +14,9 @@ if(magicBurn > 0) {
 	magicBurn--;
 	if(magicBurn mod 5 == 0) {
 		if(oil > 0)
-			scr_dummy_damage(3,ball_player.num,false);
+			scr_dummy_damage(3,ball_player.num,false, spr_darkness, true);
 		else
-			scr_dummy_damage(1,ball_player.num,false);
+			scr_dummy_damage(1,ball_player.num,false, spr_darkness, true);
 		instance_create(x+random_range(-16,16),y+random_range(-16,16),obj_darkPart)
 	}
 }

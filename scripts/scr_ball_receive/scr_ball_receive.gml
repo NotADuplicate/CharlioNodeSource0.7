@@ -23,6 +23,11 @@ function scr_ball_receive() {
 				global.pingOffset = buffer[? "serverTime"] - current_time;
 			}
 		break;
+		case "Tower Target":
+			towerNum = buffer[? "Num"];
+			target = buffer[? "Target"];
+			scr_tower_target(towerNum, target);
+		break;
 	    case "Start Game": //start game
 	        global.ammo = 0;
 			global.playBall = false;
@@ -59,7 +64,7 @@ function scr_ball_receive() {
 	        global.ammodrop = 50/30//(buffer_read(buffer,buffer_u8)/30);
 	        //global.ultdrop = buffer_read(buffer,buffer_u8)
 			global.abilityNum = 1//buffer_read(buffer,buffer_u8)/100;
-			global.leveled = buffer[? "Levels"]
+			global.leveled = 10//buffer[? "Levels"]
 			global.simple = buffer[? "Simple"]
 			global.cSwitch = true//buffer_read(buffer,buffer_bool);
 	        global.teaming = true//buffer_read(buffer,buffer_bool);
@@ -87,7 +92,9 @@ function scr_ball_receive() {
 			show_debug_message("Death received")
 	        dead = buffer[? "Target"]
 			killer = buffer[? "Killer"]
-	        scr_ball_kill(dead,killer)
+			icon = buffer[? "Icon"]
+			show_debug_message(icon)
+	        scr_ball_kill(dead,killer,icon)
 	    break;
 	    case "Hook Stop": //stop using something
 			ob = buffer[? "Obj"]
@@ -176,6 +183,40 @@ function scr_ball_receive() {
 	        ins.num = num7;
 	        ins.fire = buffer[? "Shooting"]
 	    break;
+		case "Game Over":
+			global.ballGameOver = buffer[? "Winner"]
+			var towerDamages = buffer[? "towerDamages"]
+			var ballPushes = buffer[? "playersBallPush"]
+			var healingDealt = buffer[? "healingDealt"]
+			var mvpNum = buffer[? "mvpId"]
+			show_debug_message(towerDamages[| 0])
+			show_debug_message(ballPushes[| 0])
+			show_debug_message(mvpNum)
+			//Set up all the loadout UI objects
+			leftLoadoutY = 65;
+			rightLoadoutY = 45;
+			for (var i = 0; i < instance_number(obj_loadout); i++){
+			    var inst = instance_find(obj_loadout, i);
+				var num = inst.num;
+				show_debug_message("Loadout num:")
+				show_debug_message(num)
+				global.players[num].towerDamage = towerDamages[| num-1];
+				global.players[num].ballPush = ballPushes[| num-1];
+				global.players[num].healingDealt = healingDealt[| num-1];
+				if(num == mvpNum) {
+					inst.mvp = true;
+				}
+				
+				if(global.teamNum[num] == -1) { //left side
+					inst.y = leftLoadoutY
+					leftLoadoutY += 230;
+				}
+				else if(global.teamNum[num] == -1) { //left side
+					inst.y = rightLoadoutY
+					rightLoadoutY += 230;
+				}
+			}
+		break;
 	    case "Team Name": //recieve names
 			show_debug_message("Names")
 	        num8 = buffer[? "Num"]
@@ -326,7 +367,8 @@ function scr_ball_receive() {
 				passiveIndex = buffer[? "PassiveIndex"]
 				passiveOb = Passives.list[passiveIndex];
 			} 
-			if(abilityIndex > 40) {
+			if(abilityIndex > array_length(Abilities.list)) {
+				show_debug_message("Overflow on ability list")
 				return;
 			}
 			if(abilityIndex >= 0) {
@@ -389,13 +431,14 @@ function scr_ball_receive() {
 				global.loadoutSize[num]--;
 			}
 		break;
-		case "Extra Shit":
+		case "Sponge Damage":
 			num = buffer[? "Num"]
 			if(num == ball_player.num) {
 				dmg = buffer[? "Dmg"]
 				killer =buffer[? "Killer"]
 				ad = buffer[? "Ad"]
-				scr_damage(dmg,killer,ad);
+				icon = buffer[? "Icon"]
+				scr_damage(dmg,killer,ad, icon, false);
 			}
 			
 		break;

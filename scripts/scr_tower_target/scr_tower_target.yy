@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_tower_target",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_tower_target",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -2,8 +2,8 @@
 if(other.active && other.num != num) {
 	motion_add(point_direction(other.x,other.y,x,y)+90,18)
 	if(burn > 0)
-		scr_dummy_damage(170,other.num,false);
+		scr_dummy_damage(170,other.num,false, spr_fireaxe, false);
 	else
-		scr_dummy_damage(50,other.num,false);
+		scr_dummy_damage(50,other.num,false,spr_fireaxe, false);
 	other.active = false;
 }

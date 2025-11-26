@@ -59,7 +59,7 @@ function scr_movespeed(){
 	}
 	else if(global.boot == "Charge") {
 		if(xspd == 0 && yspd == 0 && charge < 300) 
-			charge+=2;
+			charge+=3;
 		else if(charge > 0){
 			xspd *= 1 + (charge/300);
 			yspd *= 1 + (charge/300);

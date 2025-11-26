@@ -43,6 +43,11 @@ glassShield = new GlassShield();
 rest = new Rest();
 bodyslam = new BodySlam();
 telekenesis = new Telekenesis();
+kick = new Kick();
+enrage = new Enrage();
+milk = new Milk();
+decay = new Decay();
+glove = new Catch();
 
 global.loadoutSet[0] = [shuriken, flash, dash, molotov, block, cleaver, healBomb, blastOff, obj_curve, obj_bullet];
 global.loadoutSet[1] = [shuriken, flash, dash, molotov, block, cleaver, healBomb, blastOff, obj_curve, obj_bullet];

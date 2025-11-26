@@ -8,3 +8,4 @@ image_yscale = 1.5;
 dmg = 20;
 portaled = false;
 active = false;
+scr_ball_sound(snd_shuriken, x, y);

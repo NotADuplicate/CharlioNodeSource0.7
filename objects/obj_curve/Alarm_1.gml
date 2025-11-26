@@ -2,6 +2,7 @@
 dir = 0;
 	repeat(12) {
 	    ins = instance_create(x,y,obj_explosion);
+		ins.icon = spr_curveGun
 		ins.attack = true;
 	    ins.num = num;
 	    ins.dmg = 13;
@@ -11,5 +12,6 @@ dir = 0;
 	}
 	ob = instance_create(x,y,obj_blast);
 	ob.attack = true;
+	ob.icon = spr_curveGun
 	ob.num = num;
 	instance_destroy();

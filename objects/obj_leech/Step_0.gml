@@ -9,11 +9,8 @@ if(grabbed != 0) {
 }
 if(grabbed != 0) {
 	if(grabbed == ball_player)
-		scr_damage(.75,num,false);
+		scr_damage(.75,num,false, spr_leech, true);
 	else if(num == ball_player.num) {
-		if(ball_player.decay > 0)
-			scr_damage(2,ball_player.decayNum,false)
-		else if(ball_player.hp < 250)
-			ball_player.hp+=2;
+		scr_heal(2, num)
 	}
 }

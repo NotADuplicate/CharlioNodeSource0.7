@@ -1,4 +1,4 @@
-/// @description Heal allies and damage enemies
+/// @description Apply jungle buff to allies
 if(point_distance(x,y,ball_player.x,ball_player.y) < 300) {	
 	if(global.teamNum[num] == global.teamNum[ball_player.num]) {
 		scr_get_buff("Ammo", global.jungle, 450);

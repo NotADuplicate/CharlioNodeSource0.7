@@ -14,6 +14,7 @@ instance_create(0,0,obj_junglePass);
     }
     
 instance_create(0,0,obj_UI)
+global.ballGameOver = 0
 	
 if(global.abilityNum < 90) {
 	global.abilityNum = round(global.abilityNum*instance_number(inst_utility))

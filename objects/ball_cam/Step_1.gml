@@ -1,5 +1,5 @@
 /// @description Spectating
-if(global.spectator) {
+if(global.spectator || global.dead) {
 	/*if(mouse_check_button(mb_right)) {
 		x = cameraPinx + (mousePinx-mouse_x)
 		y = cameraPiny + (mousePiny-mouse_y)

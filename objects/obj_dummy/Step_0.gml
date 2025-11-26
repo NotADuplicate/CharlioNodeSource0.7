@@ -9,7 +9,8 @@ if(hp < 1) {
 	slayed = instance_create(0,0,slayer_marker)
 	slayed.victim = "Dummy";
 	slayed.killer = ball_player.num
-	scr_cleanse();
+	slayed.icon = recentDamageIcon;
+	scr_cleanse(false);
 }
 
 	if(place_meeting(x+hspeed,y,ball_wall)) {
@@ -32,15 +33,3 @@ if(speed > 0) {
 }
 if(invincibility > 0)
 	invincibility--;
-	
-	
-if(burn > 0) {
-	burn--;
-	if(burn mod 5 == 0) {
-		if(oil > 0)
-			scr_dummy_damage(4,ball_player.num,false);
-		else
-			scr_dummy_damage(1,ball_player.num,false);
-		instance_create(x+random_range(-16,16),y+random_range(-16,16),obj_firePart)
-	}
-}

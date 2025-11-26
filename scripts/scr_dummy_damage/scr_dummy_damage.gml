@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_dummy_damage(dmg,dealer,type){
+function scr_dummy_damage(dmg,dealer,type, icon, DoT){
 	if(invincibility > 0) {
 		show_debug_message("Invincible:")
 		show_debug_message(string(invincibility))
@@ -16,8 +16,9 @@ function scr_dummy_damage(dmg,dealer,type){
 		dmg *= 2
 	}
 	hp -= dmg;
-	if(global.players[argument[1]].firePassive) {
+	if(global.players[argument[1]].firePassive && type) {
 		magicBurn = 45;
 	}
+	recentDamageIcon = icon;
 	scr_deal_damage(2,dmg,type);
 }
