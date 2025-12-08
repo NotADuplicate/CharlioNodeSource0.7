@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_switch_receive",
   "isCompatibility":false,
   "isDnD":false,

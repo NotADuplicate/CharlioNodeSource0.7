@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_name_to_gun",
   "isCompatibility":false,
   "isDnD":false,

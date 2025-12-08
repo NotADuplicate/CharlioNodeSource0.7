@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Telekenesis",
   "isCompatibility":false,
   "isDnD":false,

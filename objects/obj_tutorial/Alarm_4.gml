@@ -6,3 +6,4 @@ obj_bigBall.alarm[8] = 2;
 ball_game.started = true;
 remindingText = true;
 alarm[6] = 300;
+stage = 9

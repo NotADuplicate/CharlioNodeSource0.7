@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_mafia_alignmet",
   "isCompatibility":false,
   "isDnD":false,

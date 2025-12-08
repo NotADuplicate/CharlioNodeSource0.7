@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_jumper_receive",
   "isCompatibility":false,
   "isDnD":false,

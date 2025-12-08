@@ -4,6 +4,7 @@ function scr_startThrow(obj, spr){
 	global.throwRange = 1;
 	global.thowItem = obj;
 	ball_game.held = true;
+	ball_game.range = 0
 	with(ball_game) {
 		node_send(buffer, "eventName", "Throw Sprite", "Num", ball_player.num, "Sprite", spr)
 	}

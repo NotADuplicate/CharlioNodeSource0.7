@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_gunVisual",
   "isCompatibility":false,
   "isDnD":false,

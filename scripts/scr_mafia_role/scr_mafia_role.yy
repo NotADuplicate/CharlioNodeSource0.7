@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_mafia_role",
   "isCompatibility":false,
   "isDnD":false,

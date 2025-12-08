@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"show_popsfk",
   "isCompatibility":false,
   "isDnD":false,

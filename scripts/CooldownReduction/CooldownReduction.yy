@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"CooldownReduction",
   "isCompatibility":false,
   "isDnD":false,

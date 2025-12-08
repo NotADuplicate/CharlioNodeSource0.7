@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_make_buttons",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_tileArea",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Teleport",
   "isCompatibility":false,
   "isDnD":false,

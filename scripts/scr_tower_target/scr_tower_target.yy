@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_tower_target",
   "isCompatibility":false,
   "isDnD":false,

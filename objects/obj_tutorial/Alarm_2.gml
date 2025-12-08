@@ -4,7 +4,7 @@ with(inst_passive) {
 	x += 4000;
 }
 with(inst_boots) {
-	instance_destroy();
+	y += 1000
 }
 with(obj_turret) {
 	hp = 50;

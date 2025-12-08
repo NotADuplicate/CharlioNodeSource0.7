@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Swapper",
   "isCompatibility":false,
   "isDnD":false,

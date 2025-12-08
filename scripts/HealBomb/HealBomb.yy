@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"HealBomb",
   "isCompatibility":false,
   "isDnD":false,

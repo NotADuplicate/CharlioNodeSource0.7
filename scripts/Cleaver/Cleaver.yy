@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Cleaver",
   "isCompatibility":false,
   "isDnD":false,

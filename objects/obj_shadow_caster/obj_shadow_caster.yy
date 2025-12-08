@@ -2,7 +2,7 @@
   "$GMObject":"",
   "%Name":"obj_shadow_caster",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_shadow_caster",
@@ -29,7 +29,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"","%Name":"shadow_length","filters":[
+    {"$GMObjectProperty":"v2","%Name":"shadow_length","filters":[
         "GMTileSet",
         "GMSprite",
         "GMSound",
@@ -40,7 +40,7 @@
         "GMTimeLine",
         "GMObject",
         "GMRoom",
-      ],"listItems":null,"multiselect":false,"name":"shadow_length","rangeEnabled":true,"rangeMax":65536.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"32000","varType":1,},
+      ],"listItems":null,"multiselect":false,"name":"shadow_length","rangeEnabled":true,"rangeMax":65536.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"32000","varType":1,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

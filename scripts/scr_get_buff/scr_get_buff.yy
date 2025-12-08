@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_get_buff",
   "isCompatibility":false,
   "isDnD":false,

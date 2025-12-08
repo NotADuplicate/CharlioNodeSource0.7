@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_kart_shoot",
   "isCompatibility":false,
   "isDnD":false,

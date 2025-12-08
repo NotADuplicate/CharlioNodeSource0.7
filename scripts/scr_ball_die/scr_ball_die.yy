@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_ball_die",
   "isCompatibility":false,
   "isDnD":false,

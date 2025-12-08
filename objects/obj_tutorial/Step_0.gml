@@ -143,6 +143,9 @@ if(stage == 6) {
 			with(inst_utility) {
 				drawOnce = 2;
 			}
+			with(inst_boots) {
+				y -= 1000
+			}
 			arrowX = 0;
 			arrowY = 0;
 		}
@@ -189,12 +192,13 @@ if(stage == 8) {
 		textY = 600;
 		tutText = "Go back to the shop to select passives"
 	}
-	if(global.passiveCount > 0 && !passiveBought && !global.shop) { //progress once you buy a passive
+	if(global.passiveCount > 0) { //progress once you buy a passive
 		passiveBought = true;
 		tutText = "Try out some of the passives!"
 		remindingText = false;
 		textScale = 1;
-		alarm[4] = 300;
+		alarm[4] = 300
+		stage = 8.5
 	}
 }
 else if(stage == 9) { //go to ball

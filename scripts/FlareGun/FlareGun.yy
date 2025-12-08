@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"FlareGun",
   "isCompatibility":false,
   "isDnD":false,

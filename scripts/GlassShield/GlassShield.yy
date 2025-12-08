@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GlassShield",
   "isCompatibility":false,
   "isDnD":false,

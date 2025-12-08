@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"JunglePotion",
   "isCompatibility":false,
   "isDnD":false,

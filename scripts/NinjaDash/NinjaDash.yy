@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"NinjaDash",
   "isCompatibility":false,
   "isDnD":false,

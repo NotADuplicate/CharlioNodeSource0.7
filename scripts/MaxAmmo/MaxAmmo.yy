@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"MaxAmmo",
   "isCompatibility":false,
   "isDnD":false,

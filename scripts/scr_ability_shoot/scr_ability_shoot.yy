@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_ability_shoot",
   "isCompatibility":false,
   "isDnD":false,

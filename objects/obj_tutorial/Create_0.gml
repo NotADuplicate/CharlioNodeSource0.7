@@ -17,7 +17,7 @@ textScale = 1;
 textShake = 0;
 textOffset = 0;
 
-//Skip
+/*/Skip
 alarm[1] = 5;
 alarm[4] = 7;
 alarm[7] = 10

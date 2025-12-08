@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_karts_recieve",
   "isCompatibility":false,
   "isDnD":false,

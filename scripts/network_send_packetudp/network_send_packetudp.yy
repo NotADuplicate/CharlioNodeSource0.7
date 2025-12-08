@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"network_send_packetudp",
   "isCompatibility":false,
   "isDnD":false,

@@ -2,7 +2,7 @@
   "$GMProject":"v1",
   "%Name":"CharlioNodeSource0.7",
   "AudioGroups":[
-    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -113,7 +113,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.1.193",
+    "IDEVersion":"2024.14.1.210",
   },
   "name":"CharlioNodeSource0.7",
   "resources":[
@@ -412,6 +412,7 @@
     {"id":{"name":"obj_loadouts","path":"objects/obj_loadouts/obj_loadouts.yy",},},
     {"id":{"name":"obj_loadoutScreen","path":"objects/obj_loadoutScreen/obj_loadoutScreen.yy",},},
     {"id":{"name":"obj_loadoutUI","path":"objects/obj_loadoutUI/obj_loadoutUI.yy",},},
+    {"id":{"name":"obj_lobby","path":"objects/obj_lobby/obj_lobby.yy",},},
     {"id":{"name":"obj_lock","path":"objects/obj_lock/obj_lock.yy",},},
     {"id":{"name":"obj_machete","path":"objects/obj_machete/obj_machete.yy",},},
     {"id":{"name":"obj_mapToggle","path":"objects/obj_mapToggle/obj_mapToggle.yy",},},
@@ -502,7 +503,6 @@
     {"id":{"name":"obj_windBomb","path":"objects/obj_windBomb/obj_windBomb.yy",},},
     {"id":{"name":"obj_winning","path":"objects/obj_winning/obj_winning.yy",},},
     {"id":{"name":"obj_Z","path":"objects/obj_Z/obj_Z.yy",},},
-    {"id":{"name":"obj_lobby","path":"objects/obj_lobby/obj_lobby.yy",},},
     {"id":{"name":"options_button","path":"objects/options_button/options_button.yy",},},
     {"id":{"name":"options_disconnect","path":"objects/options_disconnect/options_disconnect.yy",},},
     {"id":{"name":"orange_door","path":"objects/orange_door/orange_door.yy",},},

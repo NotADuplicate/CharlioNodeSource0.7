@@ -65,7 +65,7 @@ switch(global.shopState) {
 			draw_rectangle_color(470,60,950,80,tabsColor,tabsColor,tabsColor,tabsColor,false);
 		//draw_rectangle_color(300,500,700,600,rectColor,rectColor,rectColor,rectColor,false);
 		if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 7) {
-			draw_text_transformed(260,68,"Boots",2,2,0);
+			draw_text_transformed(260,68,"Boots (Pick 1)",2,2,0);
 			draw_text_transformed(260,158,"Offense",2,2,0);
 			draw_text_transformed(260,288,"Defense",2,2,0);
 			if(!global.testMode || obj_tutorial.stage > 13) {

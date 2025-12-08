@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"BlastOff",
   "isCompatibility":false,
   "isDnD":false,
