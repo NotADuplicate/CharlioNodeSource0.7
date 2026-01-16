@@ -50,6 +50,16 @@ function scr_recieved_packet() {
 				name = buffer[? "Name"];
 				loadout = buffer[? "Loadout"];
 				scr_createPlayer(num,name,team,ready, loadout);
+			} else if(message_id = "Comp Loadout Pick") {
+				if(!obj_client.loadoutPicking) { //if first one, remove all ready buttons
+					with(obj_playerUI) { loadoutPicked = false; }
+				}
+				obj_client.loadoutPicking = true;
+				num = buffer[? "playerDraftIndex"];
+				obj_client.loadoutPickingIndex = num;
+				if(num == obj_client.index) {
+					obj_client.loadoutTimer = 30;
+				}
 			}
 			else if(message_id = "Player Disconnect") {   
 				num = buffer[? "Name"];

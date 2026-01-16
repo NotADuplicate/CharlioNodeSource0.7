@@ -17,9 +17,6 @@ with(inst_utility) {
 	instance_destroy()
 }
 
-instance_destroy(choose_void)
-instance_destroy(choose_curve)
-
 ob = instance_create(150,4500,choose_molotov)
 ob.drawOnce = 0;
 global.shopState = "Passives"

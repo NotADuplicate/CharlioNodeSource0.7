@@ -56,7 +56,8 @@ else if(global.gameMode == "Comp"){
 		instance_destroy()
 	}
 	i = 0;
-	while(i < array_length(Abilities.gun)){
+	numGuns = global.testMode ? 6 : array_length(Abilities.gun);
+	while(i < numGuns){
 		xPos = 1600 + (i mod 4)*70
 		yPos = 4690 + 70*floor(i/4)
 		ins = instance_create(xPos,yPos,inst_atk);
@@ -71,25 +72,29 @@ numDefense = 4;
 numResources = 3;
 numUtility = 4;
 while(i < numOffense){
-	xPos = 1050 + 450/numOffense * (i+.5);
-	yPos = 4430;
-	ins = instance_create(xPos,yPos,inst_passive);
-	passiveOb = Passives.list[i];
-	ins.spr = passiveOb.sprite;
-	ins.str = passiveOb.text;
-	ins.passiveIndex = i;
-	ins.maxStacks = passiveOb.maxStacks;
+	if(!global.testMode || i < 2) {
+		xPos = 1050 + 450/numOffense * (i+.5);
+		yPos = 4430;
+		ins = instance_create(xPos,yPos,inst_passive);
+		passiveOb = Passives.list[i];
+		ins.spr = passiveOb.sprite;
+		ins.str = passiveOb.text;
+		ins.passiveIndex = i;
+		ins.maxStacks = passiveOb.maxStacks;
+	}
 	i++
 }
 while(i < numOffense+numDefense){
-	xPos = 1050 + 450/numDefense * (i-numOffense+.5);
-	yPos = 4560;
-	ins = instance_create(xPos,yPos,inst_passive);
-	passiveOb = Passives.list[i];
-	ins.spr = passiveOb.sprite;
-	ins.str = passiveOb.text;
-	ins.passiveIndex = i;
-	ins.maxStacks = passiveOb.maxStacks;
+	if(!global.testMode || i < 2+numOffense) {
+		xPos = 1050 + 450/numDefense * (i-numOffense+.5);
+		yPos = 4560;
+		ins = instance_create(xPos,yPos,inst_passive);
+		passiveOb = Passives.list[i];
+		ins.spr = passiveOb.sprite;
+		ins.str = passiveOb.text;
+		ins.passiveIndex = i;
+		ins.maxStacks = passiveOb.maxStacks;
+	}
 	i++
 }
 if(!global.testMode) {

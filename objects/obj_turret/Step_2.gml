@@ -15,6 +15,17 @@ with(ball_player) {
 	}
 }
 
+if(global.testMode) {
+	if(target == noone) {
+		if(point_distance(obj_bigBall.x,obj_bigBall.y,x,y) < bigRange) {
+			target = obj_bigBall;
+		}
+		else if(global.teamNum[num] != global.teamNum[ball_player.num] && point_distance(ball_player.x,ball_player.y,x,y) < bigRange) {
+			target = instance_nearest(x,y,ball_player)
+		} 
+	} else if(point_distance(x,y,target.x,target.y) > bigRange) {target = noone}
+}
+
 if(target == instance_nearest(x,y,ball_player)) {
 	if(!firing) {
 		firing = true;

@@ -17,6 +17,7 @@ function scr_createPlayer(Num,Name,Team,Ready,loadout){ //all arguments start w 
 	ins.ready = Ready;
 	show_debug_message(typeof(loadout))
 	if(loadout != "" && loadout != undefined) {
+		ins.loadoutPicked = true;
 		for(i = 0; i <10; i++) {
 			ins.loadout[i] = (loadout[| i])
 			show_debug_message(loadout[| i])

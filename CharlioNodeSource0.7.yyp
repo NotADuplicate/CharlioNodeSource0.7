@@ -113,7 +113,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"CharlioNodeSource0.7",
   "resources":[
@@ -406,6 +406,7 @@
     {"id":{"name":"obj_light","path":"objects/obj_light/obj_light.yy",},},
     {"id":{"name":"obj_lightDust","path":"objects/obj_lightDust/obj_lightDust.yy",},},
     {"id":{"name":"obj_lighting_init","path":"objects/obj_lighting_init/obj_lighting_init.yy",},},
+    {"id":{"name":"obj_loadout_lock","path":"objects/obj_loadout_lock/obj_loadout_lock.yy",},},
     {"id":{"name":"obj_loadout_select","path":"objects/obj_loadout_select/obj_loadout_select.yy",},},
     {"id":{"name":"obj_loadout","path":"objects/obj_loadout/obj_loadout.yy",},},
     {"id":{"name":"obj_loadouts_save","path":"objects/obj_loadouts_save/obj_loadouts_save.yy",},},
@@ -832,6 +833,7 @@
     {"id":{"name":"scr_pirate_others","path":"scripts/scr_pirate_others/scr_pirate_others.yy",},},
     {"id":{"name":"scr_pirate_receive","path":"scripts/scr_pirate_receive/scr_pirate_receive.yy",},},
     {"id":{"name":"scr_pirate_shoot","path":"scripts/scr_pirate_shoot/scr_pirate_shoot.yy",},},
+    {"id":{"name":"scr_player_loadout_picking","path":"scripts/scr_player_loadout_picking/scr_player_loadout_picking.yy",},},
     {"id":{"name":"scr_player_move","path":"scripts/scr_player_move/scr_player_move.yy",},},
     {"id":{"name":"scr_pushBallPath","path":"scripts/scr_pushBallPath/scr_pushBallPath.yy",},},
     {"id":{"name":"scr_recieved_packet","path":"scripts/scr_recieved_packet/scr_recieved_packet.yy",},},

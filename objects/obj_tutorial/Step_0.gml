@@ -267,10 +267,6 @@ else if(stage == 13) {
 		ob.utility = Abilities.frost;
 		ob = instance_create(200,4300,inst_utility);
 		ob.utility = Abilities.block;
-		ob = instance_create(250,4300,inst_utility)
-		ob.utility = Abilities.healBomb;
-		ob = instance_create(300,4300,inst_utility)
-		ob.utility = Abilities.flash;
 		with(obj_shop) {
 			alarm[2] = 1;
 		}

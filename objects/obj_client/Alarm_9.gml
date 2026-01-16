@@ -12,3 +12,4 @@ if(global.connected) {
 }
 global.connected = false;
 global.game = 0;
+loadoutPicking = false;

@@ -3,21 +3,22 @@ if(surface) {
 	textScale = 1;
 	if(surface_exists(global.shopSurf))
 		surface_set_target(global.shopSurf)
+} else {
+	if(textShake > 6) {
+		textOffset += 9;
+		textShake--
+	} else if(textShake > 2) {
+		textOffset -= 9;
+		textShake--
+	} else if(textShake > 0) {
+		textOffset += 9;
+		textShake--
+	}
+	else {
+		textOffset = 0;
+	}
 }
 
-if(textShake > 6) {
-	textOffset += 9;
-	textShake--
-} else if(textShake > 2) {
-	textOffset -= 9;
-	textShake--
-} else if(textShake > 0) {
-	textOffset += 9;
-	textShake--
-}
-else {
-	textOffset = 0;
-}
 
 draw_text_transformed(textX+textOffset,textY,tutText,textScale, textScale, 0);
 

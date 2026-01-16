@@ -55,13 +55,13 @@ repeat(array_length(list)) {
 }
 
 gun[0] = obj_bullet;
-gun[1] = obj_curve;
-gun[2] = obj_melee;
-gun[3] = virgin_bullet;
-gun[4] = obj_ARbullet;
-gun[5] = obj_void;
-gun[6] = obj_grenade;
-gun[7] = obj_shotgun;
-gun[8] = obj_minigun;
-gun[9] = other_bolt;
-gun[10] = obj_boomerang;
+gun[1] = obj_melee;
+gun[2] = virgin_bullet;
+gun[3] = obj_ARbullet;
+gun[4] = obj_shotgun;
+gun[5] = obj_minigun;
+gun[6] = obj_curve;
+gun[7] = other_bolt;
+gun[8] = obj_boomerang;
+gun[9] = obj_void;
+gun[10] = obj_grenade;

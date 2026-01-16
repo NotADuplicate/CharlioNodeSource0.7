@@ -13,14 +13,18 @@ if(global.connected && !global.loadoutView) {
 	draw_set_halign(center)
 	draw_text_transformed_color(xp,y,named,2,2,0,col,col,col,col,1);
 	
-	if(ready) {
-		draw_sprite(spr_checkedbox,0,xp-64,y+20);
-	}
-	else {
-		draw_sprite(spr_checkbox,0,xp-64,y+20);
+	if(!obj_client.loadoutPicking) {
+		if(ready) {
+			draw_sprite(spr_checkedbox,0,xp-64,y+20);
+		}
+		else {
+			draw_sprite(spr_checkbox,0,xp-64,y+20);
+		}
+	} else if(obj_client.loadoutPickingIndex == num) { //pending to pick
+		draw_sprite(spr_yellow,0,xp-64,y+20);
 	}
 	
-	if(global.gameMode == "Comp" && ready) {
+	if(global.gameMode == "Comp" && loadoutPicked) {
 		xp -= 155
 		for(i = 0; i < 8; i++) {
 			draw_sprite(loadout[i],0,xp+i*40,y+60)

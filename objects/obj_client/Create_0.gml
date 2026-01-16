@@ -10,6 +10,9 @@ extra = true;
 global.playBall = false;
 draw_set_color(c_white)
 ping = 0;
+loadoutPicking = false;
+loadoutPickingIndex = 0;
+loadoutTimer = 0;
 
 global.gameMode = "Comp"
 pingTime = 3;
