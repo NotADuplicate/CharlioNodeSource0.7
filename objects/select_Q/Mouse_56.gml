@@ -1,5 +1,5 @@
-   /// @description If clicked then swap out Q
-if(global.shop && global.shopState == "Abilities" && global.utilityClass != "") {
+/// @description If clicked then swap out Q
+if(room != room1 && global.shop && global.shopState == "Abilities" && global.utilityClass != "") {
 	xp = camera_get_view_x(view_camera[0])+obj_shop.xp+x;
 	yp = camera_get_view_y(view_camera[0])+obj_shop.yp+y;
 	

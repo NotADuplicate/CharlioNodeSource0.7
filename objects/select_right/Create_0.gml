@@ -3,3 +3,4 @@
 abilityVar = "right"
 clicked = false;
 slot = 1;
+global.right = 0;

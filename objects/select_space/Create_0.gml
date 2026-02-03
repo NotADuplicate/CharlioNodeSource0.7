@@ -3,3 +3,4 @@
 abilityVar = "space"
 clicked = false;
 slot = 3;
+global.space = 0;

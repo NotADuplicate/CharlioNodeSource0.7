@@ -3,7 +3,7 @@
 draw_text(x+25,y+20,statOrder[0])
 draw_text(x-25,y+20,statAmmmo)*/
 if(room == room1) {
-	if(global.loadoutScreen == "Abilities") {
+	if(global.loadoutScreen == "Abilities" || obj_client.rumbleSetup) {
 		draw_sprite(sprite0,0,x,y);
 		draw_sprite(utility.sprite,0,x,y);
 	}

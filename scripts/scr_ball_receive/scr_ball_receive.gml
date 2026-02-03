@@ -6,12 +6,8 @@ function scr_ball_receive() {
 	    case 0:
 	        global.game = buffer_read(buffer,buffer_string);
 	    case 1: 
-	        //index = buffer_read(buffer, buffer_u8);
 	        xp = buffer_read(buffer, buffer_u16);
 	        yp = buffer_read(buffer, buffer_u16);
-	        //scr_others(xp,yp);
-	        //var mx = buffer_read(buffer,buffer_u16);
-	        //var my = buffer_read(buffer,buffer_u16);
 	        instance_create(xp,yp,obj_click);
 	    break;
 		case "Ping":

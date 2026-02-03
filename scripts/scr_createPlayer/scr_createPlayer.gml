@@ -23,4 +23,21 @@ function scr_createPlayer(Num,Name,Team,Ready,loadout){ //all arguments start w 
 			show_debug_message(loadout[| i])
 		}
 	}
+
+	leftTeamY = 140;
+	rightTeamY = 140;
+	if(obj_client.loadoutPicking) {
+		leftTeamY = 60;
+		rightTeamY = 60;
+	}
+	with(obj_playerUI) {
+		if(team == -1) {
+			y = other.leftTeamY;
+			other.leftTeamY += 65;
+		}
+		else {
+			y = other.rightTeamY;
+			other.rightTeamY += 65;
+		}
+	}
 }

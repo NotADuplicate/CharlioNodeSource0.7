@@ -8,3 +8,4 @@ team = -1;
 xp = 0;
 loadout = [spr_airstrike]
 loadoutPicked = false;
+height = 55;

@@ -1,4 +1,5 @@
-/// @description Sort
+selected = true;
+
 if(selected) {
 	order = 1;
 	with(inst_utility) {

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_rumble_setup",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_rumble_setup",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

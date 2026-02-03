@@ -8,7 +8,7 @@ function scr_recieved_packet() {
 				lobbies = buffer[? "Lobbies"]
 				var i = 0;
 				xp = 300;
-				repeat(3) {
+				repeat(4) {
 					ins = instance_create(xp,350,obj_lobby);
 					ins.numPlayers = lobbies[| i]
 					i++;
@@ -51,15 +51,36 @@ function scr_recieved_packet() {
 				loadout = buffer[? "Loadout"];
 				scr_createPlayer(num,name,team,ready, loadout);
 			} else if(message_id = "Comp Loadout Pick") {
-				if(!obj_client.loadoutPicking) { //if first one, remove all ready buttons
-					with(obj_playerUI) { loadoutPicked = false; }
-				}
-				obj_client.loadoutPicking = true;
 				num = buffer[? "playerDraftIndex"];
 				obj_client.loadoutPickingIndex = num;
 				if(num == obj_client.index) {
 					obj_client.loadoutTimer = 30;
 				}
+				
+				if(!obj_client.loadoutPicking) { //if first one, remove all ready buttons
+					with(obj_playerUI) {
+						loadoutPicked = 0; 
+						y -= 80;
+						height = 70;
+					}
+					with(obj_loadouts) {
+						if(str != "Back") {
+							y = 650;
+						}
+					}
+				}
+				obj_client.loadoutPicking = true;
+
+			} else if(message_id == "Rumble Set") {
+				random_set_seed(buffer[? "Seed"]);
+				show_debug_message("Seed")
+				show_debug_message(random_get_seed())
+				scr_rumble_setup();
+			} else if(message_id == "Rumble Select") {
+				var type = buffer[? "Type"];
+				var selecterNum = buffer[? "Num"]
+				var selectedIndex = buffer[? "Index"]
+				scr_rumble_select(type, selecterNum, selectedIndex);
 			}
 			else if(message_id = "Player Disconnect") {   
 				num = buffer[? "Name"];

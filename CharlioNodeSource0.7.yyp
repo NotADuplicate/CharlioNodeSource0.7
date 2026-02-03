@@ -839,6 +839,8 @@
     {"id":{"name":"scr_recieved_packet","path":"scripts/scr_recieved_packet/scr_recieved_packet.yy",},},
     {"id":{"name":"scr_reflect","path":"scripts/scr_reflect/scr_reflect.yy",},},
     {"id":{"name":"scr_resetVote","path":"scripts/scr_resetVote/scr_resetVote.yy",},},
+    {"id":{"name":"scr_rumble_select","path":"scripts/scr_rumble_select/scr_rumble_select.yy",},},
+    {"id":{"name":"scr_rumble_setup","path":"scripts/scr_rumble_setup/scr_rumble_setup.yy",},},
     {"id":{"name":"scr_save_options","path":"scripts/scr_save_options/scr_save_options.yy",},},
     {"id":{"name":"scr_save","path":"scripts/scr_save/scr_save.yy",},},
     {"id":{"name":"scr_shoot","path":"scripts/scr_shoot/scr_shoot.yy",},},

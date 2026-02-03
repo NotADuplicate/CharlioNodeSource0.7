@@ -13,6 +13,7 @@ ping = 0;
 loadoutPicking = false;
 loadoutPickingIndex = 0;
 loadoutTimer = 0;
+rumbleSetup = false;
 
 global.gameMode = "Comp"
 pingTime = 3;

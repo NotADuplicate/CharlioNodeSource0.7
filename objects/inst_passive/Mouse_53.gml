@@ -1,5 +1,21 @@
 /// @description Unselect
-if(global.shop && global.shopState == "Passives" && active) {
+if(room == room1) { //get for rumble mode
+	if(mouse_x < x + 40 && mouse_x > x - 40 && mouse_y < y + 40 && mouse_y > y-40) {
+		if(selected == 0) {
+			selected = 1
+		}
+		else if(selected == 1) {
+			with(ball_game) {
+				node_send(buffer,"eventName","Rumble Select","Num",obj_client.index,"Type","Passive","Index",other.passiveIndex)
+			}
+			audio_play_sound(snd_buy,1,false)
+		}
+	}
+	else 
+		selected = 0;
+	clicked = true;
+}
+else if(global.shop && global.shopState == "Passives" && active) {
 	xp = camera_get_view_x(view_camera[0])+obj_shop.xp+x-1000;
 	yp = camera_get_view_y(view_camera[0])+obj_shop.yp+y-4200;
 	if(mouse_x < xp + 40 && mouse_x > xp - 40 && mouse_y < yp + 40 && mouse_y > yp-40) {

@@ -7,6 +7,6 @@ with(obj_testMode) {
 }
 with(obj_loadouts) {
 	if(str != "Back") {
-		y = 650;
+		y = -500;
 	}
 }
