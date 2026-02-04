@@ -495,9 +495,9 @@ function scr_ball_receive() {
 				}
 			}
 		break;
-		case "Extra Shit 2":
+		case "Gun Picked":
 			gunName = buffer[? "Gun Name"];
-			gunNum = buffer[? "Gun Num"];
+			gunNum = buffer[? "Num"];
 			gunObj = global.players[gunNum].gun;
 			scr_gunVisual(gunName,gunObj);
 		break;

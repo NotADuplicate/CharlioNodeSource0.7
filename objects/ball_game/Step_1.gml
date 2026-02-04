@@ -9,10 +9,10 @@ if(startingSound) {
 			alarm[10] = 30;
 			layer = 1;
 			obj_bigBall.alarm[8] = 450;
-			if(global.gameMode = "Rumble") {
+			/*if(global.gameMode = "Rumble") {
 				obj_bigBall.x = obj_bigBall.startX
 				obj_bigBall.y = obj_bigBall.startY
-			}
+			}*/
 			with(obj_startWall) {
 				ins = instance_create(x,y,jungle_wall)
 				ins.image_yscale = 0.1

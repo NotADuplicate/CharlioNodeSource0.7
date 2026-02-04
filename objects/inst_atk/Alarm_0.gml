@@ -6,6 +6,6 @@ if(global.attack != atk) {
 	global.atktext = scr_gun_name(atk)
 
 	with(ball_game) {
-		node_send(buffer,"eventName","Extra Shit 2","Gun Name",global.atktext, "Gun Num", ball_player.num);
+		node_send(buffer,"eventName","Gun Picked","Gun Name",global.atktext, "Num", ball_player.num);
 	}
 }

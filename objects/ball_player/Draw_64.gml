@@ -14,8 +14,10 @@ if(global.ballGameOver == 0) {
 		else {
 			levelDrawOffset = 0;
 		}
-		draw_healthbar(20+levelDrawOffset,20,300+levelDrawOffset,40,100*(global.xp/global.xpMax),c_dkgray,c_white,c_white,0,true,true)
-		draw_text_color(160+levelDrawOffset,20,global.leveled,c_black,c_black,c_black,c_black,1);
+		if(global.gameMode != "Rumble") {
+			draw_healthbar(20+levelDrawOffset,20,300+levelDrawOffset,40,100*(global.xp/global.xpMax),c_dkgray,c_white,c_white,0,true,true)
+			draw_text_color(160+levelDrawOffset,20,global.leveled,c_black,c_black,c_black,c_black,1);
+		}
 	}
 
 	if(keyboard_check(vk_tab) == false && (!instance_exists(obj_tutorial) || obj_tutorial.stage > 0)) {

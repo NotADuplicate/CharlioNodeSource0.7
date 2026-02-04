@@ -8,4 +8,6 @@ if(global.gameMode == "Comp" && loadoutPicking && loadoutPickingIndex == index) 
 	loadout[9] = scr_gun_sprite(global.loadoutSet[global.selectedLoadout][9])
 
 	node_send(buffer,"eventName","Loadout Picked","Num",index, "Loadout", loadout)
+} else if(rumbleSetup) {
+	//pick random passive (TODO)
 }

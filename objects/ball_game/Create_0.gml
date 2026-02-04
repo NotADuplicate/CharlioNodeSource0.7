@@ -73,14 +73,12 @@ global.bugging = false;
 
 held = false;
 range = 1;
-global.right = 0
+
 global.free = 0;
 global.rightCool = 0;
-global.Q = 0;
 global.QCool = 0;
 global.R = 0;
 global.RCool = 0;
-global.space = 0;
 global.spaceCool = 0;
 global.stun = 60;
 global.dead = false
@@ -92,6 +90,15 @@ global.totalLevels = 0;
 global.totalLevels2 = 0;
 global.coolReduc = 1;
 global.garren = 0;
+
+if(obj_client.rumbleSetup) { //if rumble gamemode, don't override abilities
+	global.attack = obj_client.rumbleGun;
+	alarm[4] = 15; //send gun sprite
+} else {
+	global.Q = 0;
+	global.space = 0;
+	global.right = 0
+}
 
 global.respawn = 8;
 global.respawn2 = 8;

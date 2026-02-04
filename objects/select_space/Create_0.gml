@@ -3,4 +3,5 @@
 abilityVar = "space"
 clicked = false;
 slot = 3;
-global.space = 0;
+if(room == room1)
+	global.space = 0;

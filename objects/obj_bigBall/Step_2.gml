@@ -43,11 +43,11 @@ if(global.testMode) { //damage turrets in test mode
 	
 ///End game
 if(ball_game.started) {
-	if(x < 0) {
+	if(x < 0 || (x < 2070 && global.gameMode == "Rumble")) {
 		ending = instance_create(x,y,obj_ending);
 		ending.lore = "Right team wins!";
 	}
-	if((x > 6500) || (x > 2665 && global.gameMode == "Rumble")) {
+	if((x > 6500) || (x > 4650 && global.gameMode == "Rumble")) {
 		ending = instance_create(x,y,obj_ending);
 		ending.lore = "Left team wins!";
 	}

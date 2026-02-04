@@ -23,6 +23,13 @@ if(global.gameMode == "Royale") {
 	spawn = instance_find(royale_spwanPoints,(num+seed) mod instance_number(royale_spwanPoints))
 	x = spawn.x;
 	y = spawn.y;
+} else if(obj_client.rumbleSetup) {
+	y = 740;
+	if(global.teamNum[num] == -1) {
+		x = 1900;
+	} else {
+		x = 4790;
+	}
 }
 else {
 	with(obj_regen) {
@@ -31,16 +38,15 @@ else {
 			other.y = y;
 		}
 	}
+if(global.atktext != "Pistol") {
+	with(ball_game) {
+		node_send(buffer,"eventName","Gun Picked","Gun Name",global.atktext, "Gun Num", ball_player.num);
+	}
+}
 }
 startingX = x;
 startingY = y;
 gun.num = num;
-
-if(global.atktext != "Pistol") {
-	with(ball_game) {
-		node_send(buffer,"eventName","Extra Shit 2","Gun Name",global.atktext, "Gun Num", ball_player.num);
-	}
-}
 ///Get passive
 /*switch(global.passive) {
     case "regen":

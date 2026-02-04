@@ -3,6 +3,9 @@
 if(room = room1) {
 	if(global.loadoutScreen == "Abilities" && mouse_x < x + 20 && mouse_x > x - 20 && mouse_y < y + 20 && mouse_y > y-20) {
 		global.utilityClass = utility;
+		if(obj_client.rumbleSetup) {
+			obj_client.rumblePicking = "Ability"
+		}
 	}
 }
 else if(global.shop && global.shopState == "Abilities") {

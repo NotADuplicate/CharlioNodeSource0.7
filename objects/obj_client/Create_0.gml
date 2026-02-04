@@ -14,6 +14,7 @@ loadoutPicking = false;
 loadoutPickingIndex = 0;
 loadoutTimer = 0;
 rumbleSetup = false;
+rumbleGun = undefined;
 
 global.gameMode = "Comp"
 pingTime = 3;
@@ -52,6 +53,8 @@ spray = 0;
 draw_set_halign(fa_center);
 global.game = 0;
 global.spectator = false;
+rumblePicking = "None";
+maxLoadoutTimer = 0;
 
 
 global.testMode = false;

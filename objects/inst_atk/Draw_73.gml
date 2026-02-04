@@ -1,7 +1,7 @@
 /// @description Draw onto surface
 if(room == room1) {
-	if(global.loadoutScreen == "Guns") {
-		draw_sprite(spr_white,0,x,y);
+	if(global.loadoutScreen == "Guns" || obj_client.rumbleSetup) {
+		draw_sprite_ext(spr_white,0,x,y,1.5,1.5,0,c_white,0.8);
 		draw_sprite(spr,0,x,y);
 	}
 }

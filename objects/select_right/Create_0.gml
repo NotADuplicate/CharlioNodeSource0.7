@@ -3,4 +3,5 @@
 abilityVar = "right"
 clicked = false;
 slot = 1;
-global.right = 0;
+if(room == room1)
+	global.right = 0;

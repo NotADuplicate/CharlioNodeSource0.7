@@ -15,8 +15,27 @@ function scr_rumble_select(type, selecter, index){
 					deletedPassive = true;
 				}
 			}
+			with(obj_playerUI) { //show gun 
+				if(num == selecter) {
+					loadoutPicked = true;
+					array_push(passives, index)
+					show_debug_message(passives)
+				}
+			}
 		break;
-		case "": 
+		case "Gun":
+			show_debug_message("Destroying gun")
+			with(inst_atk) {
+				if(spr == index) {
+					instance_destroy();
+				}
+			}
+			with(obj_playerUI) { //show gun 
+				if(num == selecter) {
+					loadoutPicked = true;
+					gun = index;
+				}
+			}
 		break;
 	}
 }

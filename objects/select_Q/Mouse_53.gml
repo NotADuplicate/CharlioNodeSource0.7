@@ -1,6 +1,6 @@
 /// @description Release to select or start dragging to swap abilities
 if(room == room1) { //instant buy for rumble mode
-	if(mouse_x < x + 16 && mouse_x > x - 16 && mouse_y < y + 16 && mouse_y > y-16) {
+	if(mouse_x < x + 16 && mouse_x > x - 16 && mouse_y < y + 16 && mouse_y > y-16 && obj_client.loadoutPickingIndex == obj_client.index) {
 		variable_global_set(abilityVar, global.utilityClass);
 		with(obj_client) {
 			node_send(buffer,"eventName","Rumble Select","Num",obj_client.index,"type","Ability","Index",variable_global_get(other.abilityVar).abilityIndex)

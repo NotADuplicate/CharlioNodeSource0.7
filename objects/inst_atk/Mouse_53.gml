@@ -2,6 +2,27 @@
 if(room = room1) {
 	if(global.loadoutScreen == "Guns" && mouse_x < x + 20 && mouse_x > x - 20 && mouse_y < y + 20 && mouse_y > y-20) {
 		alarm[0] = 1;
+	} else if(obj_client.rumbleSetup && mouse_x < x + 20 && mouse_x > x - 20 && mouse_y < y + 20 && mouse_y > y-20) {
+		show_debug_message("Clicked gun")
+		if(obj_client.rumblePicking == "Gun" && global.attack == atk) {
+			show_debug_message("Here")
+			with(obj_client) {
+				node_send(buffer,"eventName","Rumble Select","Num",obj_client.index,"type","Gun","Index",other.spr)
+			}
+			obj_client.rumbleGun = atk;
+			audio_play_sound(snd_buy,1,false)
+		} else {
+			show_debug_message(obj_client.rumblePicking)
+			show_debug_message(global.attack)
+			show_debug_message(atk)
+			obj_client.rumblePicking = "Gun"
+			global.attack = atk;
+			global.atktext = scr_gun_name(atk)
+			show_debug_message(scr_gun_text(global.attack))
+		}
+	} else {
+		//show_debug_message("wrong")
+		//show_debug_message(obj_client.rumblePicking)
 	}
 }
 else if(global.shop && global.shopState == "Passives") {

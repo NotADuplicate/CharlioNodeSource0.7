@@ -1,12 +1,13 @@
 /// @description Unselect
 if(room == room1) { //get for rumble mode
 	if(mouse_x < x + 40 && mouse_x > x - 40 && mouse_y < y + 40 && mouse_y > y-40) {
+		obj_client.rumblePicking = "Passive";
 		if(selected == 0) {
 			selected = 1
 		}
 		else if(selected == 1) {
-			with(ball_game) {
-				node_send(buffer,"eventName","Rumble Select","Num",obj_client.index,"Type","Passive","Index",other.passiveIndex)
+			with(obj_client) {
+				node_send(buffer,"eventName","Rumble Select","Num",obj_client.index,"type","Passive","Index",other.passiveIndex)
 			}
 			audio_play_sound(snd_buy,1,false)
 		}

@@ -55,6 +55,7 @@ function scr_recieved_packet() {
 				obj_client.loadoutPickingIndex = num;
 				if(num == obj_client.index) {
 					obj_client.loadoutTimer = 30;
+					obj_client.maxLoadoutTimer = 30;
 				}
 				
 				if(!obj_client.loadoutPicking) { //if first one, remove all ready buttons
@@ -68,19 +69,40 @@ function scr_recieved_packet() {
 							y = 650;
 						}
 					}
+					if(num == obj_client.index) {
+						obj_client.loadoutTimer = 60;
+						obj_client.maxLoadoutTimer = 60;
+					}
 				}
 				obj_client.loadoutPicking = true;
 
 			} else if(message_id == "Rumble Set") {
 				random_set_seed(buffer[? "Seed"]);
-				show_debug_message("Seed")
-				show_debug_message(random_get_seed())
+				obj_client.loadoutPickingIndex = buffer[? "playerIndex"]
+				show_debug_message(obj_client.loadoutPickingIndex)
+				show_debug_message(obj_client.index)
 				scr_rumble_setup();
+				if(obj_client.index == obj_client.loadoutPickingIndex) {
+					obj_client.loadoutTimer = 25;
+					obj_client.maxLoadoutTimer = 25;
+				}
 			} else if(message_id == "Rumble Select") {
-				var type = buffer[? "Type"];
+				show_debug_message("Rumble select")
+				
+				var type = buffer[? "type"];
+				show_debug_message(type)
 				var selecterNum = buffer[? "Num"]
 				var selectedIndex = buffer[? "Index"]
+				obj_client.loadoutPickingIndex = buffer[? "playerDraftIndex"]
 				scr_rumble_select(type, selecterNum, selectedIndex);
+				if(buffer[? "rumblePicks"] >= 10) {
+					obj_client.loadoutPickingIndex = -1;
+					obj_client.loadoutTimer = 100;
+				}
+				if(obj_client.index == obj_client.loadoutPickingIndex) {
+					obj_client.loadoutTimer = 15;
+					obj_client.maxLoadoutTimer = 15;
+				}
 			}
 			else if(message_id = "Player Disconnect") {   
 				num = buffer[? "Name"];

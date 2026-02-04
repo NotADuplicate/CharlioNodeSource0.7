@@ -23,7 +23,21 @@ if(global.connected && !global.loadoutView) {
 		draw_sprite(spr_yellow,0,xp-64,y+20);
 	}
 	
-	if(loadoutPicked) {
+	if(obj_client.rumbleSetup && loadoutPicked) {
+		xp -= 155
+		for(i = 0; i < 3; i++) {
+			if(loadout[i] != undefined) 
+				draw_sprite(Abilities.list[loadout[i]].sprite,0,xp+i*40,y+50)
+		}
+		xp += 160;
+		for(i = 0; i < 5; i++) {
+			if(i < array_length(passives)) 
+				draw_sprite(Passives.list[passives[i]].sprite,0,xp+i*40,y+50)
+		}
+		if(gun != "Unset")
+			draw_sprite(gun,0,xp+260,y+50)
+	}
+	else if(loadoutPicked) {
 		xp -= 155
 		for(i = 0; i < 8; i++) {
 			if(loadout[i] != undefined) 

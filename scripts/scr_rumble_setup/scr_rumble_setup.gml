@@ -25,16 +25,21 @@ function scr_rumble_setup(){
 	instance_destroy(right_team);
 	NUMBER_OF_ABILITIES = 8;
 	NUMBER_OF_PASSIVES = 8;
+	NUMBER_OF_GUNS = 4;
+	
 	abilityLength = array_length(Abilities.list)
 	passiveLength = array_length(Passives.list)-4
+	gunLength = array_length(Abilities.gun);
 	pickedAbilities = [];
 	pickedPassives = [];
+	pickedGuns = [];
 	var xposition = 80;
 	var yposition = 180;
+	
 	repeat(NUMBER_OF_ABILITIES) {
 		abilityIndex = irandom_range(0,abilityLength-1)
 		while(array_contains(pickedAbilities, abilityIndex) || array_contains(non_rumble_abilities, abilityIndex)) {
-			abilityIndex = irandom_range(0,abilityLength);
+			abilityIndex = irandom_range(0,abilityLength-1);
 		}
 		ob = instance_create(xposition, yposition, inst_utility);
 		ob.utility = Abilities.list[abilityIndex];
@@ -62,6 +67,7 @@ function scr_rumble_setup(){
 		array_push(pickedPassives, passiveIndex)
 		ins.spr = passiveOb.sprite;
 		ins.str = passiveOb.text;
+		ins.passiveIndex = passiveIndex
 		xposition += 70;
 		if(xposition > 350) {
 			xposition = 80;
@@ -69,7 +75,22 @@ function scr_rumble_setup(){
 		}
 	}
 	
-	instance_create(60,600,select_right);
-	instance_create(120,600,select_Q);
-	instance_create(180,600,select_space);
+	xposition = 80;
+	yposition = 580;
+	
+	repeat(NUMBER_OF_GUNS) {
+		gunIndex = irandom_range(0,gunLength-1)
+		while(array_contains(pickedGuns, gunIndex)) {
+			gunIndex = irandom_range(0,gunLength-1)
+		}
+		ins = instance_create(xposition,yposition,inst_atk);
+		ins.atk = Abilities.gun[gunIndex];
+		ins.spr = scr_gun_sprite(Abilities.gun[gunIndex])
+		array_push(pickedGuns, gunIndex)
+		xposition += 70;
+	}
+	
+	instance_create(660,630,select_right);
+	instance_create(720,630,select_Q);
+	instance_create(780,630,select_space);
 }
