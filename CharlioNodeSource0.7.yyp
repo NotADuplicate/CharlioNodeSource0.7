@@ -780,6 +780,7 @@
     {"id":{"name":"scr_clientStart","path":"scripts/scr_clientStart/scr_clientStart.yy",},},
     {"id":{"name":"scr_clue","path":"scripts/scr_clue/scr_clue.yy",},},
     {"id":{"name":"scr_CNN_other","path":"scripts/scr_CNN_other/scr_CNN_other.yy",},},
+    {"id":{"name":"scr_createBallPlayer","path":"scripts/scr_createBallPlayer/scr_createBallPlayer.yy",},},
     {"id":{"name":"scr_createPlayer","path":"scripts/scr_createPlayer/scr_createPlayer.yy",},},
     {"id":{"name":"scr_creep_damage","path":"scripts/scr_creep_damage/scr_creep_damage.yy",},},
     {"id":{"name":"scr_crossfade","path":"scripts/scr_crossfade/scr_crossfade.yy",},},

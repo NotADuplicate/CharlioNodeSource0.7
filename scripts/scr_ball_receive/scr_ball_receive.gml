@@ -50,6 +50,7 @@ function scr_ball_receive() {
 	        ins.loop = int64(buffer[? "Players"])
 	        obj_client.index = int64(buffer[? "Num"])
 			if(obj_client.index > ins.loop) {
+				
 				show_message("This is crashing the game with some extra information. Please relay the following message to Charlie!")
 				show_message("Players: " + string(ins.loop) + " \nNum: " + string(obj_client.index))
 				popsfk = penispenis;
@@ -516,6 +517,18 @@ function scr_ball_receive() {
 					controlledX = other.xp;
 					controlledY = other.yp;
 				}
+			}
+		break;
+		case "Add Player":
+	        num8 = buffer[? "Num"]
+			if(num8 != obj_client.index) {
+		        global.names[num8] = buffer[? "Name"]
+				if(global.teaming != 0) {
+					show_debug_message(num8)
+					global.teamNum[num8] = buffer[? "Team"]
+					show_debug_message(buffer[? "Team"])
+				}
+				scr_createBallPlayer(num8);
 			}
 		break;
 	}

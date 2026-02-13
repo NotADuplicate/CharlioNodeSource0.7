@@ -35,7 +35,7 @@ if(wipe) {
 //draw_rectangle_color(350,480,550,520,rectColor,rectColor,rectColor,rectColor,false);
 //draw_text(450,500,global.utility);
 
-draw_rectangle_color(0,60,950,80,rectColor,rectColor,rectColor,rectColor,false);
+//draw_rectangle_color(0,60,950,80,rectColor,rectColor,rectColor,rectColor,false);
 switch(global.shopState) {
 	case "Abilities":
 		if(recentlyHeld > 0) {

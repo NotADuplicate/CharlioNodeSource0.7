@@ -32,50 +32,7 @@ if(global.abilityNum < 90) {
 	rightLoadoutY = 80//4338
 	global.loop = loop
     repeat(loop) {
-		global.loadoutSize[i] = 4;
-		global.deaths[i] = 0;
-		global.kills[i] = 0;
-		n = 0;
-		repeat(5) {
-			global.loadout[i,n] = 0;
-			global.knownLoadout[i,n] = 0;
-			n++;
-		}
-		
-		//make loadouts
-		if(global.gameMode == "Royale") {
-				load = instance_create(40/*3225*/,leftLoadoutY,obj_loadout);
-				load.num = obj_client.index;
-		}
-		else {
-			if(global.teamNum[i] == -1) { //left side
-				load = instance_create(40,leftLoadoutY,obj_loadout);
-				load.num = i;
-				leftLoadoutY += 180;
-			}
-			else if(global.teamNum[i] == 1){
-				load = instance_create(860,rightLoadoutY,obj_loadout);
-				load.num = i;
-				rightLoadoutY += 180;
-			}
-		}
-		//if(global.teaming == 0 || global.teamNum[i] != 0) {
-		if(i == obj_client.index) {
-			ins = instance_create(0,0,ball_player);
-			ins.num = i;
-			global.players[i] = ins
-			if(global.teamNum[i] == 0)
-				ins.spectating = true;
-		}
-		else {
-			ins = instance_create(0,0,ball_other);
-			ins.num = i;
-			global.players[i] = ins
-			if(global.teamNum[i] != 0) {
-				ins.spectating = true;
-			}
-		}
-		//}
+		scr_createBallPlayer(i);
 		i++;
 	}
 if(global.spectator) { //make fake player ig
@@ -89,22 +46,3 @@ global.ballStart = true;
 
 
 var i = 0;
-/*repeat(9) {
-	statList[i] = ds_list_create()
-	with(inst_utility) { //add all the stats to the list
-		if(scr_statFind(i,-1) != 0) {
-			scr_statFind(i,scr_statFind(i,-1)+random_range(-.3,.3))
-			ds_list_add(other.statList[i],scr_statFind(i,-1))
-		}
-	}
-	
-	ds_list_sort(statList[i],true) //sort
-	with(inst_utility) { //set new stats to the order of the list
-		if(scr_statFind(i,-1) != 0) {
-			statOrder[i] = ds_list_find_index(other.statList[i],scr_statFind(i,-1))
-		}
-	}
-	i++;
-}
-
-//instance_create(0,0,obj_music)

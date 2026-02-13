@@ -13,7 +13,7 @@ function array_count(_array, num) {
 }
 
 function scr_rumble_setup(){
-	non_rumble_abilities = [20, 28, 38]; //TP, holster, revive
+	non_rumble_abilities = [20, 28, 38, 47]; //TP, holster, revive, catch
 	
 	obj_client.rumbleSetup = true;
 	obj_client.loadoutPicking = true;
@@ -23,8 +23,8 @@ function scr_rumble_setup(){
 	}
 	instance_destroy(left_team);
 	instance_destroy(right_team);
-	NUMBER_OF_ABILITIES = 8;
-	NUMBER_OF_PASSIVES = 8;
+	NUMBER_OF_ABILITIES = 10;
+	NUMBER_OF_PASSIVES = 12
 	NUMBER_OF_GUNS = 4;
 	
 	abilityLength = array_length(Abilities.list)
@@ -45,7 +45,7 @@ function scr_rumble_setup(){
 		ob.utility = Abilities.list[abilityIndex];
 		array_push(pickedAbilities, abilityIndex)
 		xposition += 70;
-		if(xposition > 350) {
+		if(xposition > 410) {
 			xposition = 80;
 			yposition += 70;
 		}
@@ -55,6 +55,9 @@ function scr_rumble_setup(){
 	
 	repeat(NUMBER_OF_PASSIVES) {
 		passiveIndex = irandom_range(0,passiveLength-1)
+		if(random(5) < 1) {
+			passiveIndex = 8; //higher chance for ammo regen
+		}
 		passiveOb = Passives.list[passiveIndex];
 		
 		while(array_count(pickedPassives,passiveIndex) >= passiveOb.maxStacks) {
@@ -76,7 +79,7 @@ function scr_rumble_setup(){
 	}
 	
 	xposition = 80;
-	yposition = 580;
+	yposition = 650;
 	
 	repeat(NUMBER_OF_GUNS) {
 		gunIndex = irandom_range(0,gunLength-1)

@@ -6,9 +6,11 @@ function scr_ball_kill(deadNum,killer,icon){
 		global.players[deadNum].garren = false;
 		if(global.teamNum[deadNum] != global.teamNum[ball_player.num]) {//set respawn timer
 			global.players[deadNum].respawnTimer = global.respawn2
+			global.respawn2 += 8;
 		}
 		else {
 			global.players[deadNum].respawnTimer = global.respawn
+			global.respawn += 8;
 		}
 		if(killer == ball_player.num) { //killing while enraged
 			if(ball_player.enraged == true)

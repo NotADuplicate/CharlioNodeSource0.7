@@ -628,6 +628,7 @@
     {"name":"scr_clientStart","order":19,"path":"scripts/scr_clientStart/scr_clientStart.yy",},
     {"name":"scr_clue","order":5,"path":"scripts/scr_clue/scr_clue.yy",},
     {"name":"scr_CNN_other","order":3,"path":"scripts/scr_CNN_other/scr_CNN_other.yy",},
+    {"name":"scr_createBallPlayer","order":57,"path":"scripts/scr_createBallPlayer/scr_createBallPlayer.yy",},
     {"name":"scr_createPlayer","order":21,"path":"scripts/scr_createPlayer/scr_createPlayer.yy",},
     {"name":"scr_creep_damage","order":15,"path":"scripts/scr_creep_damage/scr_creep_damage.yy",},
     {"name":"scr_crossfade","order":40,"path":"scripts/scr_crossfade/scr_crossfade.yy",},
