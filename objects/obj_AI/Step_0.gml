@@ -23,13 +23,13 @@ if(hp < 1) {
 		if(place_meeting(x,y,ball_wall)) {
 			x -= hspeed;
 		}
-	    hspeed = 0;
+	    hspeed *= -0.2;
 	}
 	if(place_meeting(x,y+vspeed,ball_wall)) {
 		if(place_meeting(x,y,ball_wall)) {
 			y -= vspeed;
 		}
-	    vspeed = 0;
+	    vspeed *= -0.2;
 	}
 
 if(speed > 0) {

@@ -192,7 +192,7 @@ if(stage == 8) {
 		textY = 600;
 		tutText = "Go back to the shop to select passives"
 	}
-	if(global.passiveCount > 0) { //progress once you buy a passive
+	if(global.passiveCount > 0 && !global.shop) { //progress once you buy a passive
 		passiveBought = true;
 		tutText = "Try out some of the passives!"
 		remindingText = false;

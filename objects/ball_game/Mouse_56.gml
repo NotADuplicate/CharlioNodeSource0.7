@@ -30,11 +30,16 @@ if(global.attack == obj_grenade && instance_exists(ball_player) && global.throwR
 timer = 0;
 
 ///Spray minigun
-if(global.attack == obj_minigun && instance_exists(obj_player)) {
+if(global.attack == obj_minigun && instance_exists(ball_player)) {
     spray = backlog;
     backlog = 0;
     global.slow = 1;
 	node_send(buffer, "eventName", "Status", "Target", ball_player.num, "Status Num", 58);
+	with(obj_gun) {
+		if(num == ball_player.num) {
+			revving = false;
+		}
+	}
 }
 
 ///Fire BFG

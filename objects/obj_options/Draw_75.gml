@@ -18,7 +18,7 @@ if(firstDraw) {
 }
 
 if(wipe) {
-	draw_rectangle_color(0,110,950,700,rectColor,rectColor,rectColor,rectColor,false);
+	draw_rectangle_color(0,110,950,800,rectColor,rectColor,rectColor,rectColor,false);
 	wipe = false;
 }
 

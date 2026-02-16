@@ -14,4 +14,9 @@ if(global.options) {
 			global.optionState = "Controls";
 		}
 	}
+	mouseX = mouse_x - camera_get_view_x(view_camera[0]);
+	mouseY = mouse_y - camera_get_view_y(view_camera[0]);
+	if(mouseX < xp || mouseX > xp2 || mouseY < yp || mouseY > yp+height) {
+		global.options = false;
+	}
 }

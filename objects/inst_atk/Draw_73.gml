@@ -10,6 +10,11 @@ else if(surface_exists(global.shopSurf) && global.shopState == "Passives") {
 	
 	xp = x - 930;
 	yp = y - 4250;
+	if(global.attack == atk) {
+		draw_rectangle_colour(xp-30,yp-30,xp+30,yp+30,c_green,c_green,c_green,c_green,false)
+	} else {
+		draw_rectangle_colour(xp-30,yp-30,xp+30,yp+30,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,false)
+	}
 	draw_sprite_ext(spr_white,0,xp,yp,1.5,1.5,0,c_white,0.8);
 	draw_sprite(spr,0,xp,yp);
 	

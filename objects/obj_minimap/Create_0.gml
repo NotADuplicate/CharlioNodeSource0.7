@@ -5,4 +5,3 @@ minimap = surface_create(500,276)
 failTimer = 0;
 failMessage = "";
 global.mapShowing = false
-global.mapToggle = false

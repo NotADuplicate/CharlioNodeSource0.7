@@ -55,23 +55,28 @@ if(initialized) {
 	}
 	
 	if(revving) {
+		if(!previousRev) { //just started revving
+			audio_stop_sound(revSound);
+			revSound = 0;
+		}
 		image_speed = 1;
 		if(revSound == 0) {
 			revSound = scr_ball_sound(snd_rev, x, y, 0);
 		}
 	} else {
 		if(revSound != 0) {
-			if(audio_sound_get_track_position(revSound) < 23) {
+			if(!audio_is_playing(snd_rev)) {
+				revSound = 0;
+			} else if(audio_sound_get_track_position(revSound) < 23) {
 				image_speed = 0.5;
 				audio_sound_set_track_position(revSound,23);
 			}
-			if(!audio_is_playing(snd_rev)) {
-				revSound = 0;
-			}
+			
 		} else {
 			image_speed = 0;
 		}
 	}
+	previousRev = revving;
 }
 
 if(upgraded > 270) {

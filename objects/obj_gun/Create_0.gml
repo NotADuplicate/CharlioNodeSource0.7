@@ -16,4 +16,5 @@ shootX = x;
 shootY = y;
 image_speed = 0;
 revving = false;
+previousRev = false;
 revSound = 0;

@@ -61,7 +61,7 @@ function scr_ball_receive() {
 	        global.ammodrop = 50/30//(buffer_read(buffer,buffer_u8)/30);
 	        //global.ultdrop = buffer_read(buffer,buffer_u8)
 			global.abilityNum = 1//buffer_read(buffer,buffer_u8)/100;
-			global.leveled = 10//buffer[? "Levels"]
+			global.leveled = buffer[? "Levels"]
 			global.simple = buffer[? "Simple"]
 			global.cSwitch = true//buffer_read(buffer,buffer_bool);
 	        global.teaming = true//buffer_read(buffer,buffer_bool);

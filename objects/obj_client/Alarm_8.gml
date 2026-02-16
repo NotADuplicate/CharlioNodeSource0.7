@@ -1,10 +1,5 @@
 /// @description Initialize Client
-if(triedConnect)
-	global.serverip = get_string("IP adress:", "jazure.net");
-else {
-	global.serverip = "jazure.net";
-	triedConnect = true;
-}
+global.serverip = "jazure.net";
 socket = network_create_socket(network_socket_udp)
 var spec = global.spectator;
 global.spectator = false;

@@ -43,7 +43,30 @@ else if(global.gameMode == "Comp"){
 	ins2 = instance_find(inst_atk,1) 
 	ins2.spr = scr_gun_sprite(global.loadoutSet[global.selectedLoadout][9])
 	ins2.atk = global.loadoutSet[global.selectedLoadout][9]
-} else {
+} else if(global.gameMode == "Simple") {
+	i = 0;
+	while(i < 16){
+		xPos = 58 + ((i) mod 4)*140
+		yPos = 4155 + 95*floor((i/4))
+		ins = instance_create(xPos,yPos,inst_utility);
+		ins.utility = global.loadoutSet[floor(i/8)][i mod 8];
+		i++
+	}
+	with(inst_atk) {
+		instance_destroy()
+	}
+	i = 0;
+	numGuns = 7;
+	while(i < numGuns){
+		xPos = 1600 + (i mod 4)*70
+		yPos = 4690 + 70*floor(i/4)
+		ins = instance_create(xPos,yPos,inst_atk);
+		ins.atk = Abilities.gun[i];
+		ins.spr = scr_gun_sprite(Abilities.gun[i])
+		i++
+	}
+}
+else {
 	i = 0;
 	while(i < array_length(Abilities.list)){
 		xPos = 48 + ((i) mod 8)*60

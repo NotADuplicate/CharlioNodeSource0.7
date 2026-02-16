@@ -5,6 +5,12 @@ instance_destroy()
 with(obj_testMode) {
 	x = -500;
 }
+with(obj_quit) {
+	x = -500;
+}
+with(obj_optionButton) {
+	x = -500;
+}
 with(obj_loadouts) {
 	if(str != "Back") {
 		y = -500;

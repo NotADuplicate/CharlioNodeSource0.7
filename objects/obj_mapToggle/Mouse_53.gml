@@ -4,6 +4,7 @@ yp = camera_get_view_y(view_camera[0])+y+obj_options.yp;
 //instance_create(xp,yp,obj_dashing);
 if(global.options && mouse_x > xp-20 && mouse_x < xp + 20 && mouse_y > yp-20 && mouse_y < yp+20 && global.optionState = "General") { //actually be clicked
 	obj_options.firstDraw = true;
+	obj_options.wipe = true;
 	
 	if global.mapToggle{
 	    global.mapToggle = false;

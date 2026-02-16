@@ -1,4 +1,5 @@
 /// @description Get the client to connect
+if(global.options == false) {
 global.testMode = true;
 obj_client.socket = network_create_socket(network_socket_ws)
 global.names[1] = global.name;
@@ -33,4 +34,4 @@ global.names[1] = global.name;
 			global.leveled = 5//round(global.ultdrop/10)
 			global.cSwitch = true//buffer_read(buffer,buffer_bool);
 	        global.teaming = true//buffer_read(buffer,buffer_bool);
-			
+}
