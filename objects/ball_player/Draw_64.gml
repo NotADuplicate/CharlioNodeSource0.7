@@ -1,6 +1,6 @@
 /// @description Draw gui
 if(global.ballGameOver == 0) {
-	if((!instance_exists(obj_tutorial) || obj_tutorial.stage > 5)) {
+	/*if((!instance_exists(obj_tutorial) || obj_tutorial.stage > 5)) {
 		if(global.levelSpent > 9) {
 			levelDrawOffset += 6;
 			global.levelSpent--
@@ -18,7 +18,10 @@ if(global.ballGameOver == 0) {
 			draw_healthbar(20+levelDrawOffset,20,300+levelDrawOffset,40,100*(global.xp/global.xpMax),c_dkgray,c_white,c_white,0,true,true)
 			draw_text_color(160+levelDrawOffset,20,global.leveled,c_black,c_black,c_black,c_black,1);
 		}
-	}
+	}*/
+	draw_text_transformed(500,50,scr_minutes(global.gameTimer),2,2,0);
+	draw_text_transformed(450,70,global.leftTeamPoints,1.5,1.5,0);
+	draw_text_transformed(550,70,global.rightTeamPoints,1.5,1.5,0);
 
 	if(keyboard_check(vk_tab) == false && (!instance_exists(obj_tutorial) || obj_tutorial.stage > 0)) {
 		if(global.dead)

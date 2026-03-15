@@ -13,6 +13,9 @@ if(startingSound) {
 				obj_bigBall.x = obj_bigBall.startX
 				obj_bigBall.y = obj_bigBall.startY
 			}*/
+			if(global.gameMode == "Fighting") {
+				global.gameTimer = 60*8;
+			}
 			with(obj_startWall) {
 				ins = instance_create(x,y,jungle_wall)
 				ins.image_yscale = 0.1
@@ -26,3 +29,6 @@ if(startingSound) {
 	}
 	
 
+if(global.gameTimer > 0) {
+	global.gameTimer -= delta_time/1000000;
+}

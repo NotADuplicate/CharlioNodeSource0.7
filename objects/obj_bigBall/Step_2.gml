@@ -42,7 +42,7 @@ if(global.testMode) { //damage turrets in test mode
 	
 	
 ///End game
-if(ball_game.started) {
+if(ball_game.started && global.gameMode != "Fighting") {
 	if(x < 0 || (x < 2070 && global.gameMode == "Rumble")) {
 		ending = instance_create(x,y,obj_ending);
 		ending.lore = "Right team wins!";
@@ -52,7 +52,7 @@ if(ball_game.started) {
 		ending.lore = "Left team wins!";
 	}
 }
-else if(global.gameMode != "Rumble"){
+else if(global.gameMode != "Rumble" && room == baby_room){
 	x = 3000;
 	y = -100;
 }

@@ -1,5 +1,5 @@
 /// @description Regen health and ammo
-if(global.teamNum[num] == global.teamNum[other.num]) {
+/*if(global.teamNum[num] == global.teamNum[other.num]) {
 	if(hp < maxhp)
 		hp += 1;
 	if(decay > 0)

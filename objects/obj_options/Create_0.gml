@@ -5,6 +5,7 @@ xp2 = 1000;
 yp = 40;
 global.options = false;
 global.optionState = "General";
+global.healthText = true;
 
 scr_load_options();
 

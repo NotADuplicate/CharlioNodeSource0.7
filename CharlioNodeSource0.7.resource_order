@@ -7,6 +7,7 @@
     {"name":"BallAbilities","order":22,"path":"folders/Scripts/BallAbilities.yy",},
     {"name":"BallPassives","order":23,"path":"folders/Scripts/BallPassives.yy",},
     {"name":"Music","order":9,"path":"folders/Sounds/Music.yy",},
+    {"name":"Naduko","order":51,"path":"folders/Sprites/Naduko.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"compatibility_report_050620_1028482848","order":1,"path":"notes/compatibility_report_050620_1028482848/compatibility_report_050620_1028482848.yy",},
@@ -503,6 +504,7 @@
     {"name":"room211","order":4,"path":"rooms/room211/room211.yy",},
     {"name":"room2111","order":5,"path":"rooms/room2111/room2111.yy",},
     {"name":"rumble_room","order":20,"path":"rooms/rumble_room/rumble_room.yy",},
+    {"name":"simplest_room","order":22,"path":"rooms/simplest_room/simplest_room.yy",},
     {"name":"standoff_room","order":7,"path":"rooms/standoff_room/standoff_room.yy",},
     {"name":"switch_room","order":10,"path":"rooms/switch_room/switch_room.yy",},
     {"name":"trump_room51","order":8,"path":"rooms/trump_room51/trump_room51.yy",},
@@ -1024,6 +1026,7 @@
     {"name":"Sprite254","order":127,"path":"sprites/Sprite254/Sprite254.yy",},
     {"name":"Sprite256","order":129,"path":"sprites/Sprite256/Sprite256.yy",},
     {"name":"Sprite258","order":131,"path":"sprites/Sprite258/Sprite258.yy",},
+    {"name":"Sprite278","order":1,"path":"sprites/Sprite278/Sprite278.yy",},
     {"name":"Timeline1","order":46,"path":"timelines/Timeline1/Timeline1.yy",},
   ],
 }

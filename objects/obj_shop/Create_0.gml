@@ -4,7 +4,7 @@ xp = 50;
 xp2 = 1000;
 yp = 40;
 global.shop = false;
-global.shopState = "Passives";
+global.shopState = "Abilities";
 tabs = true;
 depth = 1;
 
@@ -14,6 +14,7 @@ borderColor = c_black;
 rectColor = c_dkgray;
 otherRectColor = c_dkgray
 tabsColor = c_gray;
+alarm[3] = 4;
 
 
 recentlyHeld = 0;

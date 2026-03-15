@@ -50,7 +50,7 @@ switch(global.shopState) {
 			recentlyHeld = 2;
 		}
 		draw_rectangle_color(0,60,470,80,tabsColor,tabsColor,tabsColor,tabsColor,false);
-		draw_rectangle_color(550,150,940,700,rectColor,rectColor,rectColor,rectColor,false);
+		draw_rectangle_color(550,100,940,700,rectColor,rectColor,rectColor,rectColor,false);
 		if(global.utilityClass != "") {
 			draw_text_transformed(770,160,global.utilityClass.name,2,2,0);
 			draw_text_ext(790,200,global.utilityClass.text,20,250)

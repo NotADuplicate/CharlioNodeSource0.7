@@ -5,7 +5,7 @@ if(room == room1) {
 		draw_sprite(spr,0,x,y);
 	}
 }
-else if(surface_exists(global.shopSurf) && global.shopState == "Passives") {
+else if(surface_exists(global.shopSurf)) {// && global.shopState == "Passives") {
 	surface_set_target(global.shopSurf);
 	
 	xp = x - 930;

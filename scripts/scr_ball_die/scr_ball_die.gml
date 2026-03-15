@@ -8,6 +8,8 @@ function scr_ball_die(dmg,killer,icon){
 			global.throwRange = 0;
 			ball_player.moveSpd = global.baseMove
 			ball_game.lore = scr_lore();
+			if(global.gameMode == "Fighting") 
+				global.respawn = 10;
 			ball_player.respawnTimer = global.respawn;
 			if(killer > 10)
 				killer = ball_player.num

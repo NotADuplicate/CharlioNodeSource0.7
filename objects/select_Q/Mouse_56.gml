@@ -2,6 +2,12 @@
 if(room != room1 && global.shop && global.shopState == "Abilities" && global.utilityClass != "") {
 	xp = camera_get_view_x(view_camera[0])+obj_shop.xp+x;
 	yp = camera_get_view_y(view_camera[0])+obj_shop.yp+y;
+	show_debug_message("HERE:")
+	show_debug_message(xp)
+	show_debug_message(yp)
+	show_debug_message("MOUSE:")
+	show_debug_message(mouse_x)
+	show_debug_message(mouse_y)
 	
 	//drag other slot to swap
 	if(mouse_x < xp + 18 && mouse_x > xp - 18 && mouse_y < yp + 18 && mouse_y > yp-18) {

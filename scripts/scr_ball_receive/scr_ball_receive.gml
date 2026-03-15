@@ -44,7 +44,7 @@ function scr_ball_receive() {
 			show_debug_message(global.gameMode)
 			ins = instance_create_depth(0,0,0,ball_game);
 			
-			room_goto(baby_room);
+			room_goto(simplest_room);
 			
 	        ins.alarm[3] = 1;
 	        ins.loop = int64(buffer[? "Players"])
@@ -529,6 +529,17 @@ function scr_ball_receive() {
 					show_debug_message(buffer[? "Team"])
 				}
 				scr_createBallPlayer(num8);
+			}
+		break;
+		case "Point Scored":
+			if(buffer[? "ScoringTeam"] == -1) {
+				global.leftTeamPoints++;
+			} else {
+				global.rightTeamPoints++;
+			}
+			with(obj_turret) {
+				hp = maxhp;
+				y = startingY;
 			}
 		break;
 	}

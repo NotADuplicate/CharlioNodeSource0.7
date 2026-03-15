@@ -11,18 +11,18 @@ if(global.simple) {
 		instance_create(xPos,yPos,simpleAbilities[i])
 		i++
 	}
-	instance_destroy(passive_charge);
+	/*instance_destroy(passive_charge);
 	instance_destroy(passive_bushBoots);
 	instance_destroy(passive_KBoots);
 	instance_destroy(passive_overheal);
 	instance_destroy(passive_knockback);
-	instance_destroy(passive_manaSus);
+	//instance_destroy(passive_manaSus);
 	instance_destroy(passive_ammoSeeing);
-	instance_destroy(passive_size);
+	//instance_destroy(passive_size);
 	instance_destroy(passive_moreKB);
 	instance_destroy(passive_invis);
 	instance_destroy(passive_sponge);
-	instance_destroy(passive_ultimate);
+	instance_destroy(passive_ultimate);*/
 	instance_destroy(choose_curve);
 	instance_destroy(choose_void);
 	instance_destroy(choose_pistol);
@@ -43,7 +43,7 @@ else if(global.gameMode == "Comp"){
 	ins2 = instance_find(inst_atk,1) 
 	ins2.spr = scr_gun_sprite(global.loadoutSet[global.selectedLoadout][9])
 	ins2.atk = global.loadoutSet[global.selectedLoadout][9]
-} else if(global.gameMode == "Simple") {
+} else if(global.gameMode == "Simple" || global.gameMode == "Fighting") {
 	i = 0;
 	while(i < 16){
 		xPos = 58 + ((i) mod 4)*140

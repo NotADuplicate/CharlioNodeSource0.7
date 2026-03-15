@@ -1,5 +1,5 @@
 /// @description Switch options state
-if(global.shop) {
+if(global.shop && global.gameMode != "Fighting") {
 	relativeX = xp + camera_get_view_x(view_camera[0]);
 	relativeY = yp + camera_get_view_y(view_camera[0]);
 	if(mouse_y > relativeY && mouse_y < relativeY+90 && mouse_x > relativeX && mouse_x < relativeX + 950) {

@@ -1,18 +1,31 @@
 /// @description Movement
 if(confuse = 0) {
-    xspd = moveSpd*global.slow*(keyboard_check(ord("D"))-keyboard_check(ord("A")))
-    yspd = moveSpd*global.slow*(keyboard_check(ord("S"))-keyboard_check(ord("W")))
+    xmov = global.slow*(keyboard_check(ord("D"))-keyboard_check(ord("A")))
+    ymov = global.slow*(keyboard_check(ord("S"))-keyboard_check(ord("W")))
 }
 else {
-    xspd = moveSpd*global.slow*sign(xspd)
-    yspd = moveSpd*global.slow*sign(yspd)
+    xmov = global.slow*sign(xspd)
+    ymov = global.slow*sign(yspd)
 }
 if(global.typing) {
-	xspd = 0;
-	yspd = 0;
+	xmov = 0;
+	ymov = 0;
+}
+tempSpd = moveSpd*1.4;
+scr_movespeed();
+if(abs(xspd) < tempSpd) {
+	xspd += tempSpd*xmov/2
+}
+if(abs(yspd) < tempSpd) {
+	yspd += tempSpd*ymov/2
 }
 
-scr_movespeed();
+if(abs(xspd) < tempSpd/8) 
+	xspd = 0;
+if(abs(yspd) < tempSpd/8)
+	yspd = 0;
+yspd -= sign(yspd)*tempSpd/7;
+xspd -= sign(xspd)*tempSpd/7;
 var dt = delta_time / 35000;
 xspd *= dt;
 yspd *= dt;

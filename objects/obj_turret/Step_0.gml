@@ -36,5 +36,5 @@ if(invin > 0)
 	invin--;
 	
 if(hp < 3)  {
-	instance_destroy();
+	y = 10000;
 }

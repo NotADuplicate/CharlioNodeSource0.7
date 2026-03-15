@@ -179,7 +179,7 @@ else if(keyboard_check(vk_tab)) {
 			yp += 40;
 		}
 	}
-	if(num == 1 && global.gameMode != "Royale") {//draw timers for drag and garren
+	if(num == 1 && room == baby_room) {//draw timers for drag and garren
 		draw_sprite_ext(spr_purp,0,440,50,.5,.5,0,c_white,1)
 		if(obj_drag.dead) 
 			draw_text(460,35,scr_minutes(round(obj_drag.timer)));

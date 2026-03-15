@@ -15,7 +15,7 @@ shotgunReload = false;
 global.chargeGun = 0;
 //layer = -100;
 global.partSystem = part_system_create();
-global.pushSpd = 1;
+global.pushSpd = 1.2;
 global.poke = false;
 global.ammoSeeing = false
 global.marked = 0;
@@ -45,6 +45,7 @@ global.resistance = 1;
 global.defense = 1;
 global.utilityHeld = false
 global.utilitySwapHeld = false;
+global.gameTimer = 0;
 
 depth = -1000;
 
@@ -158,5 +159,7 @@ global.screenShake = 0;
 global.upgraded = false;
 
 global.damageSources = ds_list_create();
+global.leftTeamPoints = 0;
+global.rightTeamPoints = 0;
 
 alarm[6] = 90; //dc timeout

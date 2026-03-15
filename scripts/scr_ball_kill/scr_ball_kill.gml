@@ -29,7 +29,7 @@ function scr_ball_kill(deadNum,killer,icon){
 	if(deadNum > 10 && deadNum < 20) { //destroy turret
 		with(obj_turret) {
 			if(num == deadNum) 
-				instance_destroy()
+				y = 10000
 		}
 		if(instance_number(obj_turret) == 3) {
 			with(jungle_wall) {

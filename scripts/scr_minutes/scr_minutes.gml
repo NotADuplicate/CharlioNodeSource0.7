@@ -5,7 +5,7 @@ function scr_minutes() {
 	if(sec < 10) {
 		sec = "0" + string(sec)
 	}
-	return(string(minute) +":" + string(sec))
+	return(string(minute) +":" + string(round(sec)))
 
 
 }
