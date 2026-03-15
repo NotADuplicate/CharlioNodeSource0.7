@@ -91,7 +91,7 @@ global.totalLevels2 = 0;
 global.coolReduc = 1;
 global.garren = 0;
 
-if(obj_client.rumbleSetup) { //if rumble gamemode, don't override abilities
+if(global.gameMode == "Rumble") { //if rumble gamemode, don't override abilities
 	global.attack = obj_client.rumbleGun;
 	alarm[4] = 15; //send gun sprite
 } else {

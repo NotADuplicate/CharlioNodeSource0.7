@@ -23,7 +23,7 @@ if(global.gameMode == "Royale") {
 	spawn = instance_find(royale_spwanPoints,(num+seed) mod instance_number(royale_spwanPoints))
 	x = spawn.x;
 	y = spawn.y;
-} else if(obj_client.rumbleSetup) {
+} else if(global.gameMode == "Rumble") {
 	y = 740;
 	if(global.teamNum[num] == -1) {
 		x = 1900;
