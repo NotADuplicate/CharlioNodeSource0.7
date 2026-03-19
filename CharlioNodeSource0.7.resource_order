@@ -490,6 +490,7 @@
     {"name":"Path2","order":14,"path":"paths/Path2/Path2.yy",},
     {"name":"Path3","order":15,"path":"paths/Path3/Path3.yy",},
     {"name":"baby_room","order":15,"path":"rooms/baby_room/baby_room.yy",},
+    {"name":"demo_room","order":22,"path":"rooms/demo_room/demo_room.yy",},
     {"name":"drawShoot","order":18,"path":"rooms/drawShoot/drawShoot.yy",},
     {"name":"Jumper2","order":1,"path":"rooms/Jumper2/Jumper2.yy",},
     {"name":"Jumper3","order":2,"path":"rooms/Jumper3/Jumper3.yy",},
@@ -1025,6 +1026,7 @@
     {"name":"Sprite254","order":127,"path":"sprites/Sprite254/Sprite254.yy",},
     {"name":"Sprite256","order":129,"path":"sprites/Sprite256/Sprite256.yy",},
     {"name":"Sprite258","order":131,"path":"sprites/Sprite258/Sprite258.yy",},
+    {"name":"Sprite277","order":1,"path":"sprites/Sprite277/Sprite277.yy",},
     {"name":"Timeline1","order":46,"path":"timelines/Timeline1/Timeline1.yy",},
   ],
 }

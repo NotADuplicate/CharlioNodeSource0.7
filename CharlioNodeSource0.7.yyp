@@ -627,6 +627,7 @@
     {"id":{"name":"Path2","path":"paths/Path2/Path2.yy",},},
     {"id":{"name":"Path3","path":"paths/Path3/Path3.yy",},},
     {"id":{"name":"baby_room","path":"rooms/baby_room/baby_room.yy",},},
+    {"id":{"name":"demo_room","path":"rooms/demo_room/demo_room.yy",},},
     {"id":{"name":"drawShoot","path":"rooms/drawShoot/drawShoot.yy",},},
     {"id":{"name":"Jumper1","path":"rooms/Jumper1/Jumper1.yy",},},
     {"id":{"name":"Jumper2","path":"rooms/Jumper2/Jumper2.yy",},},
@@ -1210,6 +1211,7 @@
     {"id":{"name":"Sprite254","path":"sprites/Sprite254/Sprite254.yy",},},
     {"id":{"name":"Sprite256","path":"sprites/Sprite256/Sprite256.yy",},},
     {"id":{"name":"Sprite258","path":"sprites/Sprite258/Sprite258.yy",},},
+    {"id":{"name":"Sprite277","path":"sprites/Sprite277/Sprite277.yy",},},
     {"id":{"name":"tl_bricks","path":"tilesets/tl_bricks/tl_bricks.yy",},},
     {"id":{"name":"Timeline1","path":"timelines/Timeline1/Timeline1.yy",},},
   ],
@@ -1237,6 +1239,7 @@
     {"roomId":{"name":"mafia_room","path":"rooms/mafia_room/mafia_room.yy",},},
     {"roomId":{"name":"rumble_room","path":"rooms/rumble_room/rumble_room.yy",},},
     {"roomId":{"name":"quantum_room","path":"rooms/quantum_room/quantum_room.yy",},},
+    {"roomId":{"name":"demo_room","path":"rooms/demo_room/demo_room.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
