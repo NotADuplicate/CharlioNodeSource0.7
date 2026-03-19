@@ -68,7 +68,7 @@ switch(global.shopState) {
 			draw_text_transformed(260,68,"Boots (Pick 1)",2,2,0);
 			draw_text_transformed(260,158,"Offense",2,2,0);
 			draw_text_transformed(260,288,"Defense",2,2,0);
-			if(!global.testMode || obj_tutorial.stage > 13) {
+			if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 13) {
 				draw_text_transformed(260,418,"Resources",2,2,0);
 				draw_text_transformed(260,538,"Utility",2,2,0);
 			}

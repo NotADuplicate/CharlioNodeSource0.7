@@ -333,6 +333,7 @@
     {"name":"obj_revive","order":89,"path":"objects/obj_revive/obj_revive.yy",},
     {"name":"obj_rocket","order":83,"path":"objects/obj_rocket/obj_rocket.yy",},
     {"name":"obj_rocketBlast","order":21,"path":"objects/obj_rocketBlast/obj_rocketBlast.yy",},
+    {"name":"obj_sandbox","order":29,"path":"objects/obj_sandbox/obj_sandbox.yy",},
     {"name":"obj_scan","order":2,"path":"objects/obj_scan/obj_scan.yy",},
     {"name":"obj_shadow_caster","order":1,"path":"objects/obj_shadow_caster/obj_shadow_caster.yy",},
     {"name":"obj_shatter","order":84,"path":"objects/obj_shatter/obj_shatter.yy",},

@@ -13,7 +13,7 @@ if(global.mapShowing) {
 		alarm[0] = 1;
 		alarm[1] = 1;
 	} else {
-		if(!global.testMode || obj_tutorial.stage > 14) {
+		if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 14) {
 			if(failTimer == 0) {
 				if(position_meeting(ball_player.x, ball_player.y, obj_regen)) {
 					if(global.teleportTimer > 0)

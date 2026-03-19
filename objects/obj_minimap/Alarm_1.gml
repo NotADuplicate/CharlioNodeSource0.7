@@ -4,7 +4,7 @@ if(!surface_exists(minimap)) {
 	alarm[0] = 1;
 	alarm[1] = 1;
 }
-else if(!global.testMode || obj_tutorial.stage > 14) {
+else if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 14) {
 	surface_set_target(minimap)
 
 	scale = 0.077

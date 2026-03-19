@@ -2,6 +2,7 @@
 if(global.options == false) {
 global.testMode = true;
 obj_client.socket = network_create_socket(network_socket_ws)
+global.teamside = 1;
 global.names[1] = global.name;
 
 
@@ -20,7 +21,9 @@ global.names[1] = global.name;
 	            }
 			global.gameMode = "Norms"//buffer_read(buffer,buffer_string)
 			ins = instance_create_depth(0,0,-1000,ball_game);
-			instance_create(0,0,obj_tutorial)
+			if(!keyboard_check_pressed(vk_shift)) {
+				instance_create(0,0,obj_tutorial)
+			}
 			
 			room_goto(baby_room);
 			

@@ -65,6 +65,11 @@ function scr_ball_receive() {
 			global.simple = buffer[? "Simple"]
 			global.cSwitch = true//buffer_read(buffer,buffer_bool);
 	        global.teaming = true//buffer_read(buffer,buffer_bool);
+			if(buffer[? "Active"]) {
+				instance_create(0,0,obj_music);
+				ball_game.startingSound = true;
+				ball_game.startTimer = 0.1
+			}
 			
 	    break;
 	    case "Player Update"://player positions 
@@ -315,7 +320,6 @@ function scr_ball_receive() {
 				global.players[num12].maxAmmo = global.players[num12].ammo
 		break;
 		case "Open Gates":
-			//audio_play_sound(snd_dash,1,false);
 			instance_create(0,0,obj_music);
 			ball_game.startingSound = true;
 		break;

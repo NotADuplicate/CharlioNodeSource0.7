@@ -6,7 +6,7 @@ function scr_pushBallPath(targetX, targetY, push_distance){
 
     if (!success) {
         path_delete(path);
-        return undefined; // no path found
+        return {x: ball_player.x, y: ball_player.y }; // no path found
     }
 
     // get first point along ball's path (the direction ball should move)

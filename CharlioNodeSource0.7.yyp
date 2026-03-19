@@ -461,6 +461,7 @@
     {"id":{"name":"obj_revive","path":"objects/obj_revive/obj_revive.yy",},},
     {"id":{"name":"obj_rocket","path":"objects/obj_rocket/obj_rocket.yy",},},
     {"id":{"name":"obj_rocketBlast","path":"objects/obj_rocketBlast/obj_rocketBlast.yy",},},
+    {"id":{"name":"obj_sandbox","path":"objects/obj_sandbox/obj_sandbox.yy",},},
     {"id":{"name":"obj_scan","path":"objects/obj_scan/obj_scan.yy",},},
     {"id":{"name":"obj_search","path":"objects/obj_search/obj_search.yy",},},
     {"id":{"name":"obj_shadow_caster","path":"objects/obj_shadow_caster/obj_shadow_caster.yy",},},
