@@ -21,15 +21,20 @@ if(hp < 1) {
 
 	if(place_meeting(x+hspeed,y,ball_wall)) {
 		if(place_meeting(x,y,ball_wall)) {
-			x -= hspeed;
+			x -= hspeed*1.5;
 		}
 	    hspeed *= -0.2;
 	}
 	if(place_meeting(x,y+vspeed,ball_wall)) {
 		if(place_meeting(x,y,ball_wall)) {
-			y -= vspeed;
+			y -= vspeed*1.5;
 		}
 	    vspeed *= -0.2;
+	}
+	if(place_meeting(x,y,ball_wall)) {
+		var playerDir = point_direction(x,y,ball_player.x,ball_player.y);
+		x += lengthdir_x(5,playerDir);
+		y += lengthdir_y(5,playerDir);
 	}
 
 if(speed > 0) {

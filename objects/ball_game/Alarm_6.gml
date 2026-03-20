@@ -2,7 +2,8 @@
 if(!global.testMode && !global.received) {
 	obj_client.alarm[9] = 1;
 	instance_destroy();
-	instance_create(0,0,obj_dcModal);
+	modal = instance_create(0,0,obj_modal);
+	modal.txt = "Connection Lost."
 	room_goto(room1);
 }
 global.received = false;

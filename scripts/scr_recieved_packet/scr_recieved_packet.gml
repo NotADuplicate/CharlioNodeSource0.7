@@ -8,7 +8,7 @@ function scr_recieved_packet() {
 				lobbies = buffer[? "Lobbies"]
 				var i = 0;
 				xp = 300;
-				repeat(1) {
+				repeat(3) {
 					ins = instance_create(xp,350,obj_lobby);
 					ins.numPlayers = lobbies[| i]
 					i++;
@@ -26,6 +26,12 @@ function scr_recieved_packet() {
 			else if(message_id == "Num") {//recieve num and send name
 				num = buffer[? "Number"]
 				global.gameMode = buffer[? "Mode"]
+				if(buffer[? "Active"]) {
+					obj_client.alarm[9] = 1;
+					modal = instance_create(0,0,obj_modal);
+					modal.txt = "Lobby already in game."
+					return;
+				}
 				obj_client.index = int64(num);
 				obj_client.alarm[6] = 1; //send packet
 				obj_client.ping = current_time-obj_client.pingSet
@@ -105,9 +111,10 @@ function scr_recieved_packet() {
 				}
 			}
 			else if(message_id = "Player Disconnect") {   
-				num = buffer[? "Name"];
+				show_debug_message("Player disconnect")
+				num = buffer[? "Number"];
 				with(obj_playerUI) {
-					if(named == other.num) {
+					if(num == other.num) {
 						instance_destroy();
 					}
 				}
