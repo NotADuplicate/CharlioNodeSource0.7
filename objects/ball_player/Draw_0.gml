@@ -17,6 +17,14 @@ if(global.healthText)
 if(back > 0)
 	draw_healthbar(round(x)-30,round(y)-36,round(x)+30,round(y)-28,(back/backMax)*100,c_ltgray,c_white,c_white,0,true,true);
 	
+if(instance_exists(obj_free_TP)) {
+	with(obj_free_TP) {
+		if(num == other.num) {
+			draw_healthbar(round(other.x)-30,round(other.y)-36,round(other.x)+30,round(other.y)-28,(time/3)*100,c_ltgray,c_white,c_white,0,true,true);
+		}
+	}
+}
+	
 if(curseCharge > 0)
 	draw_healthbar(round(x)-30,round(y)-36,round(x)+30,round(y)-28,curseCharge/(1.5),c_ltgray,c_white,c_white,0,true,true);
 	

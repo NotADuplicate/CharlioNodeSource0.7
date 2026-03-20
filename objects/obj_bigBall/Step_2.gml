@@ -11,13 +11,13 @@ lastTouched--;
 //hspeed += .1*global.garren
 
 //Horizontal bounce
-if(place_meeting(x + hspeed, y, ball_wall)) {
+if(place_meeting(x + hspeed, y, ball_wall) || place_meeting(x + hspeed, y, jungle_wall)) {
     direction = -direction + 180;
 	hspeed *= .7
 }
 
 //Vertical bounce
-if(place_meeting(x, y + vspeed, ball_wall)) {
+if(place_meeting(x, y + vspeed, ball_wall) || place_meeting(x, y + vspeed, jungle_wall)) {
     direction = -direction;
 	vspeed *= .7
 }
