@@ -13,14 +13,14 @@ if(global.typing == false && ball_player.y > 10 && global.shop == false && globa
 	if(keyboard_check_pressed(global.Rkey)) {
 		scr_ability_pressed("R")
 	}
-	if(keyboard_check_pressed(global.jamesKey)) {
+	/*if(keyboard_check_pressed(global.jamesKey)) {
 		if(ball_player.sponge) {
 			node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num", 33)
 		}
 		else if(spongeable) {
 			node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num", 29)
 		}
-	}
+	}*/
 	if(keyboard_check_pressed(global.KBkey) && KBable) {
 		if(global.pushSpd = 1) {
 			global.pushSpd = .7;

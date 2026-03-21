@@ -22,10 +22,10 @@ global.names[1] = global.name;
 			global.gameMode = "Norms"//buffer_read(buffer,buffer_string)
 			ins = instance_create_depth(0,0,-1000,ball_game);
 			if(!keyboard_check_pressed(vk_shift)) {
-				instance_create(0,0,obj_tutorial)
+				instance_create(0,0,obj_sandbox)
 			}
 			
-			room_goto(baby_room);
+			room_goto(demo_room);
 			
 	        ins.alarm[3] = 1;
 	        ins.loop = 1

@@ -9,8 +9,11 @@ function scr_ball_shoot() {
 			if(num == ball_player.num) {
 				other.xp = shootX;
 				other.yp = shootY;
+				obj_gun.image_speed = 2;
 			}
 		}
+		instance_create(xp,yp,obj_smoke);
+		instance_create(xp,yp,obj_smoke);
 	    buffer = ball_game.buffer;
 		var ob;
 		if(global.upgraded) {

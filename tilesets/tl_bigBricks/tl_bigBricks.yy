@@ -1,0 +1,47 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"tl_bigBricks",
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
+        15,15,15,15,5,15,15,15,7,15,15,15,15,15,15,15,14,14,14,14,1,1,1,1,16,16,16,16,29,29,29,29,15,15,72,72,
+        2,2,30,30,28,28,15,15,15,15,15,
+      ],},
+    {"$GMAutoTileSet":"","%Name":"autotile_2","closed_edge":false,"name":"autotile_2","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
+        43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,42,42,42,42,43,43,43,43,44,44,44,44,57,57,57,57,57,57,
+        42,42,44,44,58,58,56,56,20,57,57,57,57,
+      ],},
+  ],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"tl_bigBricks",
+  "out_columns":9,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Tile Sets",
+    "path":"folders/Tile Sets.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"big_bricks",
+    "path":"sprites/big_bricks/big_bricks.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":32,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":32,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":84,
+}

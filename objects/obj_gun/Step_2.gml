@@ -14,7 +14,7 @@ if(initialized) {
 		 shootY = ball_player.y + lengthdir_y(18*scale,dir);
 	}
 	else {		
-		y = global.players[num].y+10;
+		y = global.players[num].y+4;
 		image_yscale = scale;
 		if(dir < 270 && dir > 90)  {
 			image_xscale = -scale;
@@ -25,7 +25,7 @@ if(initialized) {
 			image_angle = dir;
 		}
 	
-		if(sprite_index == spr_pistol || sprite_index == spr_biggun || sprite_index == spr_shotgun || sprite_index == spr_chargeGun) {
+		if(sprite_index == spr_pistol || sprite_index == spr_biggun || sprite_index == spr_chargeGun) {
 			x = global.players[num].x+6*sign(image_xscale)*global.players[num].scale;
 			if(dir > 20 && dir < 160)
 				depth = 2;
@@ -54,7 +54,7 @@ if(initialized) {
 		}
 	}
 	
-	if(revving) {
+	/*if(revving) {
 		if(!previousRev) { //just started revving
 			audio_stop_sound(revSound);
 			revSound = 0;
@@ -76,7 +76,7 @@ if(initialized) {
 			image_speed = 0;
 		}
 	}
-	previousRev = revving;
+	previousRev = revving;*/
 }
 
 if(upgraded > 270) {

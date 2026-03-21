@@ -36,7 +36,7 @@ function scr_gunVisual(gunName,gunObj){
 		break;
 		case "Shotgun":
 			gunObj.sprite_index = spr_shotgun;
-			gunObj.baseScale = 1.5;
+			gunObj.baseScale = 2;
 		break;
 		case "Melee":
 			gunObj.sprite_index = spr_melee;
