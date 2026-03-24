@@ -19,12 +19,14 @@ yspd *= dt;
 
 //Do walking sprite
 if(xspd != 0 || yspd != 0) {
-	if(global.teamNum[num] == 1)
-		sprite_index = spr_redRun
+	if(global.teamNum[num] == 1) 
+		sprite_index = spr_redWalkForward
 	else
 		sprite_index = spr_bAdventureWalk
+	if(sign(xspd) != sign(image_xscale)) { image_speed = -1; }
 }
 else {
+	image_speed = 1;
 	if(global.teamNum[num] == 1)
 		sprite_index = spr_redIdle
 	else

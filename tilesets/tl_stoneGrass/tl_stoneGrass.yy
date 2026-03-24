@@ -1,0 +1,48 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"tl_stoneGrass",
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
+        110,73,75,110,147,110,110,110,145,110,110,110,110,110,110,110,108,108,108,108,38,38,38,38,112,112,112,
+        112,182,182,182,182,110,110,37,37,39,39,148,148,144,144,110,112,110,110,110,
+      ],},
+  ],
+  "macroPageTiles":{
+    "SerialiseHeight":18,
+    "SerialiseWidth":23,
+    "TileCompressedData":[
+      -100,0,1,56,-43,0,5,91,0,92,0,93,-7,0,5,457,0,458,0,459,-25,0,1,270,-12,0,2,455,456,-21,0,2,491,492,
+      -10,0,1,271,-5,0,1,128,-39,0,1,273,-10,0,5,306,307,308,309,310,-18,0,5,342,343,344,345,346,-9,0,3,272,
+      0,274,-6,0,5,378,379,380,381,382,-18,0,5,414,415,416,417,418,-18,0,5,450,451,452,453,454,-26,0,
+    ],
+    "TileDataFormat":1,
+  },
+  "name":"tl_stoneGrass",
+  "out_columns":22,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Tile Sets",
+    "path":"folders/Tile Sets.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"Sprite282",
+    "path":"sprites/Sprite282/Sprite282.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":32,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":32,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":504,
+}

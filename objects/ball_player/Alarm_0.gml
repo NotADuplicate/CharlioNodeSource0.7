@@ -8,7 +8,7 @@ if(global.gameMode == "Royale") { //set colors
 }
 else {//same team = same colors
 	if(global.teamNum[num] == 1)
-		sprite_index = spr_redRun//spr_adventurer;
+		sprite_index = spr_redIdle//spr_adventurer;
 	else
 		sprite_index = spr_blue;
 }
