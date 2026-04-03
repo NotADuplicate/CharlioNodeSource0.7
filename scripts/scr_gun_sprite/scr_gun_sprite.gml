@@ -9,7 +9,7 @@ function scr_gun_sprite(gun){
 			return(spr_gLauncher);
 		break;
 		case obj_minigun:
-			return(spr_minigun);
+			return(nad_minigun);
 		break;
 		case obj_shotgun:
 			return(spr_shotgun);

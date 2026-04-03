@@ -1,11 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
-hp = 200;
-maxhp = 200;
+hp = 250;
+maxhp = 250;
 regen = 0.5;
 invin = 0;
 xp = 60;
-nameNum = global.mons
+nameNum = global.mons+1
 global.players[nameNum] = self;
 alarm[11] = 2;
 global.mons++;

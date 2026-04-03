@@ -1,0 +1,1 @@
+global.teleportTimer = 1

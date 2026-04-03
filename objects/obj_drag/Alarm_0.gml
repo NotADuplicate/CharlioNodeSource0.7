@@ -1,5 +1,6 @@
 /// @description Get revived
 if(!global.testMode) {
+	//game_end()
 	dead = false
 	x = xpos;
 	y = ypos;

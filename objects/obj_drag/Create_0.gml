@@ -6,14 +6,14 @@ regen = 0.5;
 invin = 0;
 xp = 0;
 burn = 0;
-nameNum = global.mons
+nameNum = 22
 global.mons++;
 dead = true;
 image_alpha = 0.1;
 xpos = x;
 ypos = y;
-x = 0;
-y = 0;
+x = -1000;
+y = -1000;
 pokeNum = 0;
 alarm[2] = 1;
 //alarm[0] = 1;

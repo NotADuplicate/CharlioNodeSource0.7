@@ -2,6 +2,6 @@
 dead = true
 image_alpha = .1;
 timer = deathTime;
-x = 0;
-y = 0;
+x = -1000;
+y = -1000;
 hp = 1000;

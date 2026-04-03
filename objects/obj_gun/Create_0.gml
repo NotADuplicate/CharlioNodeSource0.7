@@ -18,3 +18,4 @@ image_speed = 0;
 revving = false;
 previousRev = false;
 revSound = 0;
+swung = false;

@@ -10,7 +10,7 @@ else {//same team = same colors
 	if(global.teamNum[num] == 1)
 		sprite_index = spr_redIdle//spr_adventurer;
 	else
-		sprite_index = spr_blue;
+		sprite_index = spr_blueIdle;
 }
 
 maxhp = 250;

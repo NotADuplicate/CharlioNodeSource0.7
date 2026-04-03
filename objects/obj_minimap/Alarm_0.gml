@@ -1,8 +1,7 @@
 /// @description Draw walls to surface
 surface_set_target(minimap)
 
-scale = 0.077
-draw_rectangle_color(0,0,500,276,c_ltgray,c_ltgray,c_ltgray,c_ltgray,false);
+draw_rectangle_color(0,0,width,height,c_ltgray,c_ltgray,c_ltgray,c_ltgray,false);
 
 for (var i = 0; i < instance_number(ball_wall); i++){
     var inst = instance_find(ball_wall, i);

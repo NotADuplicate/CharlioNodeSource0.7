@@ -6,7 +6,6 @@ if(initialized) {
 		}
 		else {
 			draw_self();
-			draw_text(x,y+60,image_speed)
 		}
 	}
 }

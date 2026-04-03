@@ -5,5 +5,5 @@ spr = spr_speed;
 scale = 2;
 knownAlpha = 1;
 layer = layer_create(-1000);
-maxhp = 200;
+maxhp = 250;
 regen = 0.5;

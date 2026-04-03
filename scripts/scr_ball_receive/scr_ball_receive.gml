@@ -44,7 +44,7 @@ function scr_ball_receive() {
 			show_debug_message(global.gameMode)
 			ins = instance_create_depth(0,0,0,ball_game);
 			
-			room_goto(baby_room);
+			room_goto(demo_room);
 			
 	        ins.alarm[3] = 1;
 	        ins.loop = int64(buffer[? "Players"])
@@ -120,8 +120,19 @@ function scr_ball_receive() {
 	        yp = buffer[? "Y"]
 	        dir = buffer[? "Dir"]
 	        ob = buffer[? "Obj"]
+			primary = buffer[? "Primary"];
+
 	        bullet = instance_create(xp,yp,ob);
 			var num = buffer[? "Num"];
+			
+			if(primary) {
+				with(obj_gun) {
+					if(self.num == num) {
+						event_user(0);
+					}
+				}
+			}
+			
 	        bullet.num = num;
 	        if(ob == obj_grenade || ob == upgraded_grenade)
 	            bullet.alarm[0] = buffer[? "Timer"]+1;
@@ -493,6 +504,8 @@ function scr_ball_receive() {
 		break;
 		case "Monster Respawn":
 			monsNum = buffer[? "Num"];
+			show_debug_message("Respawn Monster:")
+			show_debug_message(monsNum);
 			with(obj_monster) {
 				if(nameNum == other.monsNum) {
 					image_alpha = 1;

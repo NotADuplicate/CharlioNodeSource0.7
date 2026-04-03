@@ -6,6 +6,6 @@ if(respawnTimer > 0 && instance_exists(obj_ending) == false) {
 }
 
 if(gun.dir > 90 && gun.dir < 270)
-	image_xscale = -2*scale;
+	walkDirection = -2*scale;
 else
-	image_xscale = 2*scale;
+	walkDirection = 2*scale;

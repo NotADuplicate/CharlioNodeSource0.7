@@ -35,8 +35,7 @@ if(sponge)
 	draw_circle(round(x),round(y),300,true);
 
 if(stasis == 0) { //draw self i guess???
-	draw_self();
-	//draw_sprite_ext(spr_redRun,image_index,round(x),round(y),2,2,image_angle,c_white,image_alpha)
+	draw_sprite_ext(sprite_index,image_index,round(x),round(y),walkDirection,2,image_angle,c_white,image_alpha)
 }
 else {
 	draw_sprite_ext(spr_stasisAdventure,image_index,round(x),round(y),image_xscale,image_yscale,image_angle,c_white,1)

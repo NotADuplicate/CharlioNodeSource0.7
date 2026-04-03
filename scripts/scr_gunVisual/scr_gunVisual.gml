@@ -23,8 +23,8 @@ function scr_gunVisual(gunName,gunObj){
 			gunObj.baseScale = 1.5;
 		break;
 		case "Minigun":
-			gunObj.sprite_index = spr_minigun;
-			gunObj.baseScale = 1.5;
+			gunObj.sprite_index = nad_minigun;
+			gunObj.baseScale = 2;
 		break;
 		case "Pistol":
 			gunObj.sprite_index = spr_pistol;

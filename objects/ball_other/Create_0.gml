@@ -33,10 +33,11 @@ ammo = 10;
 maxAmmo = 10;
 seen = 0;
 spectating = false;
+walkDirection = 1;
 
 
 gun = instance_create(0,0,obj_gun);
-image_yscale = 1.75;
+image_yscale = 2;
 image_speed = 1/2;
 depth = 2;
 

@@ -15,8 +15,8 @@ if(startingSound) {
 			}*/
 			with(obj_startWall) {
 				ins = instance_create(x,y,jungle_wall)
-				ins.image_yscale = 0.1
-				ins.image_xscale = image_xscale;
+				ins.image_yscale = image_yscale
+				ins.image_xscale = 0.1;
 				instance_destroy()
 			}
 			global.bb = mp_grid_create(0,0,floor(room_width/32),floor(room_height/32),32,32);

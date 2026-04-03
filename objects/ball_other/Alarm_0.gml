@@ -6,9 +6,9 @@ if(global.gameMode == "Royale") { //set colors
 }
 else {//same team = same colors
 	if(global.teamNum[num] == 1)
-		sprite_index = spr_adventureWalk;
+		sprite_index = spr_redWalkForward;
 	else if(global.teamNum[num] == -1)
-		sprite_index = spr_bAdventureWalk;
+		sprite_index = spr_blueWalkForward;
 	else if(global.teamNum[num] == 0) 
 		spectating = false;
 }

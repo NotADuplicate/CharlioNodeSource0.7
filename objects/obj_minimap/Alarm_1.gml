@@ -1,13 +1,11 @@
 /// @description Draw monsters
 if(!surface_exists(minimap)) {
-	minimap = surface_create(500,276)
+	minimap = surface_create(width,height)
 	alarm[0] = 1;
 	alarm[1] = 1;
 }
 else if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 14) {
 	surface_set_target(minimap)
-
-	scale = 0.077
 
 	for (var i = 0; i < instance_number(obj_monster); i++){
 	    var inst = instance_find(obj_monster, i);
@@ -42,7 +40,7 @@ else if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 14) {
 					spr = spr_speed;
 				break;
 			}
-			draw_sprite_ext(spr,0,(x1+x2)/2,(y1+y2)/2,0.35,0.35,0,c_white,1)
+			draw_sprite_ext(spr,0,(x1+x2)/2,(y1+y2)/2,0.25,0.25,0,c_white,1)
 		}
 	}
 

@@ -2,14 +2,13 @@
 if(global.mapShowing) {
 	draw_set_alpha(0.5)
 
-	xp1 = 480;
-	xp2= 980
-	yp1 = 470
-	yp2= 746
-	scale = 0.077
+	xp1 = 1024 - width;
+	xp2= 1024
+	yp1 = 768 - height;
+	yp2= 768
 
 	if(!surface_exists(minimap)) {
-		minimap = surface_create(500,276)
+		minimap = surface_create(width,height)
 		alarm[0] = 1;
 		alarm[1] = 1;
 	} else {

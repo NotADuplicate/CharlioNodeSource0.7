@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bush",
-    "path":"sprites/spr_bush/spr_bush.yy",
+    "name":"spr_green",
+    "path":"sprites/spr_green/spr_green.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -184,8 +184,8 @@ else if(keyboard_check(vk_tab)) {
 		if(obj_drag.dead) 
 			draw_text(460,35,scr_minutes(round(obj_drag.timer)));
 		draw_sprite_ext(spr_purp,0,520,50,.5,.5,0,c_white,1)
-		if(obj_garren.dead) 
-			draw_text(540,35,scr_minutes(round(obj_garren.timer)));
+		//if(obj_garren.dead) 
+			//draw_text(540,35,scr_minutes(round(obj_garren.timer)));
 	}
 	draw_set_halign(fa_center)
 }

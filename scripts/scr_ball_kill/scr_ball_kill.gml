@@ -69,7 +69,7 @@ function scr_ball_kill(deadNum,killer,icon){
 						ins.victim = "Dragon";
 					}
 				}
-				else if(global.gameMode != "Royale" && nameNum == obj_garren.nameNum) { //garren
+				/*else if(global.gameMode != "Royale" && nameNum == obj_garren.nameNum) { //garren
 					if(instance_exists(slayer_marker) == false || slayer_marker.victim != "Garren Nashor") {
 						ins = instance_create(0,0,slayer_marker);
 						ins.killer = killer
@@ -82,7 +82,7 @@ function scr_ball_kill(deadNum,killer,icon){
 							i++;
 						}
 					}
-				}
+				}*/
 				
 			}
 		}

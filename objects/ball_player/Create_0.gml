@@ -110,6 +110,7 @@ controlling = 0;
 controlledNum = 0;
 controlledX = 0;
 controlledY = 0;
+walkDirection = 1; //image_xscale
 
 global.throwRange = 0;
 global.levelSpent = 0;

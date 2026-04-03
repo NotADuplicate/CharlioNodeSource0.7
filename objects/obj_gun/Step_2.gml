@@ -1,7 +1,13 @@
 /// @description Move to correct place
 if(initialized) {
 	dir = global.players[num].gunDir;
-	if(sprite_index == spr_boomerange || sprite_index == spr_melee || throwing) {
+	if(sprite_index == spr_melee && swung) {
+		image_angle = dir-45;;
+		image_xscale = scale //*sign(global.players[num].image_xscale);
+		image_yscale = scale;
+		x = global.players[num].x+14*global.players[num].scale;
+		y = global.players[num].y;
+	} else if(sprite_index == spr_boomerange || sprite_index == spr_melee || throwing) {
 		image_angle = 0;
 		if(dir < 270 && dir > 90)
 			x = global.players[num].x+14*global.players[num].scale;
@@ -9,7 +15,7 @@ if(initialized) {
 			x = global.players[num].x-14*global.players[num].scale;
 		 y = global.players[num].y;
 		 image_yscale = scale;
-		 image_xscale = scale*sign(global.players[num].image_xscale)*-1;
+		 image_xscale = scale*sign(global.players[num].walkDirection)*-1;
 		 shootX = ball_player.x + lengthdir_x(18*scale,dir);
 		 shootY = ball_player.y + lengthdir_y(18*scale,dir);
 	}
@@ -54,29 +60,31 @@ if(initialized) {
 		}
 	}
 	
-	/*if(revving) {
-		if(!previousRev) { //just started revving
-			audio_stop_sound(revSound);
-			revSound = 0;
-		}
-		image_speed = 1;
-		if(revSound == 0) {
-			revSound = scr_ball_sound(snd_rev, x, y, 0);
-		}
-	} else {
-		if(revSound != 0) {
-			if(!audio_is_playing(snd_rev)) {
+	if(sprite_index == nad_minigun) {
+		if(revving) {
+			if(!previousRev) { //just started revving
+				audio_stop_sound(revSound);
 				revSound = 0;
-			} else if(audio_sound_get_track_position(revSound) < 23) {
-				image_speed = 0.5;
-				audio_sound_set_track_position(revSound,23);
 			}
-			
+			//image_speed = 1;
+			if(revSound == 0) {
+				revSound = scr_ball_sound(snd_rev, x, y, 0);
+			}
 		} else {
-			image_speed = 0;
+			if(revSound != 0) {
+				if(!audio_is_playing(snd_rev)) {
+					revSound = 0;
+				} else if(audio_sound_get_track_position(revSound) < 23) {
+					//image_speed = 0.5;
+					audio_sound_set_track_position(revSound,23);
+				}
+			
+			} else {
+				//image_speed = 0;
+			}
 		}
+		previousRev = revving;
 	}
-	previousRev = revving;*/
 }
 
 if(upgraded > 270) {

@@ -4,4 +4,4 @@ image_alpha = .6;
 seen = false;
 alarm[9] = 1;
 visible = false;
-sprite_index = spr_bush
+sprite_index = james_bush

@@ -83,9 +83,9 @@ if(throwTime > 0) {
 	}
 }
 else if(mouse_x > x)
-	image_xscale = 2;
+	walkDirection = 2;
 else
-	image_xscale = -2;
+	walkDirection = -2;
 
 if(loadoutUnseen) { //enemy team doesnt know what your loadout is till they see you
 	

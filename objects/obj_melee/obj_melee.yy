@@ -41,5 +41,5 @@
     "path":"sprites/spr_boomer/spr_boomer.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
