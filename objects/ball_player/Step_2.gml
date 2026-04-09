@@ -12,10 +12,6 @@ if(throwTime == 0) {
 		}
 	    vspeed = 0;
 	}
-
-	/*if(collision_line(x,y,x+hspeed,y+vspeed,ball_wall,false,false)) {
-		speed = 0;
-	}*/
 }
 if(place_meeting(x,y,obj_duelDeath)) {
 	if(global.teamNum[obj_duelDeath.num] == global.teamNum[num]) {

@@ -629,6 +629,7 @@
     {"id":{"name":"Path1","path":"paths/Path1/Path1.yy",},},
     {"id":{"name":"Path2","path":"paths/Path2/Path2.yy",},},
     {"id":{"name":"Path3","path":"paths/Path3/Path3.yy",},},
+    {"id":{"name":"Path4","path":"paths/Path4/Path4.yy",},},
     {"id":{"name":"baby_room","path":"rooms/baby_room/baby_room.yy",},},
     {"id":{"name":"demo_room","path":"rooms/demo_room/demo_room.yy",},},
     {"id":{"name":"drawShoot","path":"rooms/drawShoot/drawShoot.yy",},},

@@ -6,6 +6,8 @@ if(stage == 0 && obj_dummy.hp > 200) {
 	remindingText = true;
 	reminderTimer = 450;
 	alarm[6] = 450;
+		//arrowX = 975;
+		//arrowY = 707;
 }
 else if(stage == 1 && global.shop) {
 	tutText = "Click on a gun to select your new primary fire. \n Press P to exit the shop and test it."
@@ -219,7 +221,7 @@ else if(stage == 10) { //go to ball
 		surface = false;
 		textX = 550;
 		textY = 200;
-		tutText = "Go to the ball in the middle of the top of the map"
+		tutText = "Go to the ball in the middle of the bottom of the map"
 	if(point_distance(ball_player.x,ball_player.y,obj_bigBall.x,obj_bigBall.y) < 500) {
 		stage = 11;
 		remindingText = true;
@@ -231,7 +233,7 @@ else if(stage == 11) { //push into
 		textX = 550;
 		textY = 600;
 		tutText = "Push the ball left to the enemy tower\n The ball can be pushed with your body or your gun and some abilities"
-		if(point_distance(2100,700,obj_bigBall.x,obj_bigBall.y) < 500) { //ball gets close to tower
+		if(point_distance(600,2500,obj_bigBall.x,obj_bigBall.y) < 500) { //ball gets close to tower
 			stage = 12;
 			textScale = 1;
 			alarm[6] = 3000;
@@ -242,7 +244,7 @@ else if(stage == 12) { //push into tower
 	textX = 550;
 	textY = 600;
 	tutText = "Standing close to enemy tower deals damage to you. \n Destroy the tower by pushing the ball into it"
-	if(instance_number(obj_turret) < 6) {
+	if(instance_number(obj_turret) < 2) {
 		stage = 13;
 		textScale = 1;
 		alarm[6] = 450;
@@ -287,17 +289,17 @@ else if(stage == 14) {
 }
 else if(stage == 15) { 
 	global.teleportTimer = 0;
-	tutText = "There are monsters that are represented by icons on the map. \n Press M to view the map and teleport to a monster";
+	tutText = "There are monsters that are represented by icons on the map. \n Press M to view the map find the monster";
 	if(keyboard_check(global.mapKey)) { 
-		arrowX = 875;
-		arrowY = 577;
+		arrowX = 1011;
+		arrowY = 648;
 	} else {
 		arrowX = 0;
 		arrowY = 0;
 	}
 	
 	nearestMonster = instance_nearest(ball_player.x,ball_player.y,obj_monster);
-	if(point_distance(ball_player.x,ball_player.y, nearestMonster.x, nearestMonster.y) < 300) {
+	if(point_distance(ball_player.x,ball_player.y, nearestMonster.x, nearestMonster.y) < 400) {
 		stage = 16;
 	}
 }
@@ -307,7 +309,7 @@ else if(stage == 16) {
 	tutText = "Killing monsters gives you a temporary buff.";
 	if(obj_junglePass.ammo > 0 || obj_junglePass.resistance > 0 || obj_junglePass.defense > 0 || obj_junglePass.dmg > 0 || obj_junglePass.pwr > 0 || obj_junglePass.spd > 0 || obj_junglePass.jungle > 0) {
 		stage = 17;
-		instance_create(2100, 2700, obj_AI);
+		instance_create(100, 550, obj_AI);
 		textScale = 1;
 		remindingText = true;
 		alarm[6] = 900;

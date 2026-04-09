@@ -8,7 +8,7 @@ function scr_recieved_packet() {
 				lobbies = buffer[? "Lobbies"]
 				var i = 0;
 				xp = 300;
-				repeat(3) {
+				repeat(2) {
 					ins = instance_create(xp,350,obj_lobby);
 					ins.numPlayers = lobbies[| i]
 					i++;

@@ -82,7 +82,7 @@ if(global.xp > global.xpMax) {
 	global.xpMax += 250;
 	global.leveled++;
 	if(global.respawn < 25)
-		global.respawn += 1.5;
+		global.respawn += 2;
 	global.totalLevels++;
 }
 else if(started && global.gameMode != "Rumble" && (!instance_exists(obj_tutorial) || obj_tutorial.stage > 16)) {
@@ -93,7 +93,7 @@ if(global.xp2 > global.xpMax2) {
 	global.xp2-= global.xpMax2
 	global.xpMax2 += 250;
 	if(global.respawn2 < 25)
-		global.respawn2 += 1.5;
+		global.respawn2 += 2;
 	global.totalLevels2++;
 }
 else if(started) {

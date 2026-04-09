@@ -62,8 +62,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adventureWalk",
-    "path":"sprites/spr_adventureWalk/spr_adventureWalk.yy",
+    "name":"spr_blueIdle",
+    "path":"sprites/spr_blueIdle/spr_blueIdle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -492,6 +492,7 @@
     {"name":"Path1","order":13,"path":"paths/Path1/Path1.yy",},
     {"name":"Path2","order":14,"path":"paths/Path2/Path2.yy",},
     {"name":"Path3","order":15,"path":"paths/Path3/Path3.yy",},
+    {"name":"Path4","order":24,"path":"paths/Path4/Path4.yy",},
     {"name":"baby_room","order":15,"path":"rooms/baby_room/baby_room.yy",},
     {"name":"demo_room","order":22,"path":"rooms/demo_room/demo_room.yy",},
     {"name":"drawShoot","order":18,"path":"rooms/drawShoot/drawShoot.yy",},

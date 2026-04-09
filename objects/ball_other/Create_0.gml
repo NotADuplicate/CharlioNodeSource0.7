@@ -2,6 +2,7 @@
 alarm[0] = 1;
 alarm[3] = 300;
 
+depth = 500;
 respawnTimer = 0;
 hp = 250;
 maxhp = 250;
@@ -39,7 +40,6 @@ walkDirection = 1;
 gun = instance_create(0,0,obj_gun);
 image_yscale = 2;
 image_speed = 1/2;
-depth = 2;
 
 position_known = false;
 

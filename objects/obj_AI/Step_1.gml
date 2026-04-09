@@ -126,7 +126,10 @@ if(hp < 150 && healCooldown == 0) {
 		xp = x + lengthdir_x(90, dir);
 		yp = y + lengthdir_y(90, dir);
 		if(collision_line(x,y,xp,yp,ball_wall,false,false) == noone) { //if no walls behind them, blast off
+			show_debug_message("Blasting off towards player")
+			
 			blastOffDir = dir-180;
+			show_debug_message(blastOffDir)
 			alarm[4] = 1;
 			blastOffCooldown = 600;
 		}
@@ -135,6 +138,7 @@ if(hp < 150 && healCooldown == 0) {
 
 if(blastOffCooldown == 0 && point_distance(x,y,ball_player.x,ball_player.y) < 60) {
 	dir = point_direction(ball_player.x, ball_player.y, x,y);
+	blastOffDir = dir-180;
 	alarm[4] = 1;
 	blastOffCooldown = 600;
 }

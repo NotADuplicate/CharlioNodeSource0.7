@@ -5,8 +5,8 @@ if(hp < 1) {
 	path_end();
 	soul = instance_create(x,y,ball_corpse);
 	soul.num = num;
-	x = 0;
-	y = 0;
+	x = -500;
+	y = -500;
 	state = "Dead";
 	speed = 0;
 	poisonDmg = 0;

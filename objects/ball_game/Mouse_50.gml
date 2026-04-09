@@ -30,7 +30,7 @@ if(global.attack == obj_minigun && timer > 1 && global.shop == false && global.s
 			}
 		}
 		else if(global.ammo > minigunAmmo){
-			totalspray = 15;
+			totalspray = 10;
 			minigunAmmo += 0//.15;
 			scr_ball_ammo(round(minigunAmmo))
 		}
@@ -38,6 +38,6 @@ if(global.attack == obj_minigun && timer > 1 && global.shop == false && global.s
 	else {
 		revving--;
 		if(revving = 0)
-			minigunAmmo = 2;
+			minigunAmmo = 1;
 	}
 }

@@ -2,10 +2,10 @@
 if(state == "Push") {
 	//check how far should be away from ball if ball under tower
 	tower = instance_nearest(x,y,obj_turret);
-	if(point_distance(obj_bigBall.x,obj_bigBall.y,tower.x,tower.y) < 150) {
-		pushPos = scr_pushBallPath(6000,1500,190);
+	if(point_distance(obj_bigBall.x,obj_bigBall.y,tower.x,tower.y) < 150 && global.teamNum[tower.num] != global.teamNum[num]) {
+		pushPos = scr_pushBallPath(tower.x,tower.y,190);
 	} else {
-		pushPos = scr_pushBallPath(6000,1500,80);
+		pushPos = scr_pushBallPath(tower.x,tower.y,80);
 	}
 	if(collision_line(pushPos.x, pushPos.y, obj_bigBall.x, obj_bigBall.y, ball_wall, false, false) != noone) {
 		show_debug_message("Walk through ball");
@@ -114,7 +114,9 @@ if(state == "Dodge Fire") {
 		}
 	}
 	if(collision_point(x,y,obj_fire,false,false) && blastOffCooldown == 0) { //blast off away from fire
+		show_debug_message("Blasting off away from fire")
 		blastOffDir = point_direction(x,y,targetX,targetY)+180;
+		show_debug_message(blastOffDir)
 		alarm[4] = 1;
 		blastOffCooldown = 600;
 	}

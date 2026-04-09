@@ -4,31 +4,31 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 	nameCol = global.teamNum[num] == -1 ? c_teal : c_red;
 	if(global.teamNum[num] == -1) { //draw box for left team
 		center = fa_left;
-		draw_rectangle_color(0,y-20,500,y+220,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+		draw_rectangle_color(0,y-20,500,y+190,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
 		if(mvp) {
-			draw_circle_color(490,y-20,32,c_yellow,c_yellow, false)
+			draw_circle_color(490,y-8,32,c_yellow,c_yellow, false)
 			draw_text_transformed_color(490,y-28,"MVP",2,2,0,c_black,c_black,c_black,c_black,1)
 		}
 		draw_set_halign(fa_right);
 		draw_text_transformed_color(480,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);
-		draw_text(450,y+40,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
+		draw_text(450,y+40,y)//"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
 		xp = 200;
 		passiveXp = 30;
 		statXp = 100
 	}
 	else { //box for right team
 		center = fa_right;
-		draw_rectangle_color(524,y-20,1024,y+220,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+		draw_rectangle_color(584,y-20,1104,y+190,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
 		if(mvp) {
-			draw_circle_color(534,y-28,32,c_yellow,c_yellow, false)
-			draw_text_transformed_color(534,y-20,"MVP",2,2,0,c_black,c_black,c_black,c_black,1)
+			draw_circle_color(619,y-8,32,c_yellow,c_yellow, false)
+			draw_text_transformed_color(614,y-20,"MVP",2,2,0,c_black,c_black,c_black,c_black,1)
 		}
 		draw_set_halign(fa_left);
-		draw_text_transformed_color(544,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);
-		draw_text(574,y+40,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
-		xp = 824;
-		passiveXp = 990;
-		statXp = 620
+		draw_text_transformed_color(624,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);
+		draw_text(654,y+40,y)//"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
+		xp = 904;
+		passiveXp = 1070;
+		statXp = 700
 	}
 	draw_set_halign(center)
 	i = 1;
@@ -86,14 +86,14 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 	draw_text(statXp+300,y+160,round(global.players[num].healingDealt))
 	
 	if(num == 1) {//draw timers for drag and garren
-		if(global.ballGameOver == ball_player.num) {
+		if(global.ballGameOver == global.teamNum[ball_player.num]) {
 			text = "VICTORY!"
 			color = c_green;
 		} else {
 			text = "DEFEAT"
 			color = c_red
 		}
-		draw_text_ext_transformed_color(530,18,text, 0, 500, 2,2,0,color,color,color,color,1)
+		draw_text_ext_transformed_color(530,10,text, 0, 500, 2,2,0,color,color,color,color,1)
 	}
 }
 else if(keyboard_check(vk_tab)) {

@@ -8,6 +8,8 @@ event_inherited();
 
 global.players[2] = self;
 alarm[2] = 10;
+position_known = false;
+alarm[5] = 10;
 
 reload = 0;
 wallPassive = false;

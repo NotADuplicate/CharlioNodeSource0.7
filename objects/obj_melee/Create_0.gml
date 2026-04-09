@@ -5,6 +5,7 @@ alarm[1] = 5;
 image_xscale = 2;
 image_yscale = 2;
 active = true;
+swipe = noone;
 
 portaled = false;
 scr_ball_sound(snd_slash,x,y)
