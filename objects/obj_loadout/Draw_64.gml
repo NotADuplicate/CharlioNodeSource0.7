@@ -4,30 +4,30 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 	nameCol = global.teamNum[num] == -1 ? c_teal : c_red;
 	if(global.teamNum[num] == -1) { //draw box for left team
 		center = fa_left;
-		draw_rectangle_color(0,y-20,500,y+190,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+		draw_rectangle_color(0,y-20,485,y+160,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
 		if(mvp) {
-			draw_circle_color(490,y-8,32,c_yellow,c_yellow, false)
-			draw_text_transformed_color(490,y-28,"MVP",2,2,0,c_black,c_black,c_black,c_black,1)
+			draw_circle_color(485,y-8,32,c_yellow,c_yellow, false)
+			draw_text_transformed_color(485,y-28,"MVP",2,2,0,c_black,c_black,c_black,c_black,1)
 		}
 		draw_set_halign(fa_right);
-		draw_text_transformed_color(480,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);
-		draw_text(450,y+40,y)//"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
-		xp = 200;
+		draw_text_transformed_color(485,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);
+		draw_text(435,y+35,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
+		xp = 150;
 		passiveXp = 30;
 		statXp = 100
 	}
 	else { //box for right team
 		center = fa_right;
-		draw_rectangle_color(584,y-20,1104,y+190,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+		draw_rectangle_color(550,y-20,1040,y+160,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
 		if(mvp) {
-			draw_circle_color(619,y-8,32,c_yellow,c_yellow, false)
-			draw_text_transformed_color(614,y-20,"MVP",2,2,0,c_black,c_black,c_black,c_black,1)
+			draw_circle_color(550,y-6,32,c_yellow,c_yellow, false)
+			draw_text_transformed_color(560,y-20,"MVP",2,2,0,c_black,c_black,c_black,c_black,1)
 		}
 		draw_set_halign(fa_left);
-		draw_text_transformed_color(624,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);
-		draw_text(654,y+40,y)//"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
-		xp = 904;
-		passiveXp = 1070;
+		draw_text_transformed_color(550,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);
+		draw_text(654,y+35,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
+		xp = 880;
+		passiveXp = 1040;
 		statXp = 700
 	}
 	draw_set_halign(center)
@@ -36,7 +36,10 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 		draw_sprite(spr_white,0,xp,y+16)
 		if(global.knownLoadout[num,i] != 0) {
 			abilitySprite = global.knownLoadout[num,i].sprite;
-			scr_stats_UI(xp,y+16,global.knownLoadout[num,i], self, "hover"+string(i),-1);
+			statUi = scr_stats_UI(global.knownLoadout[num,i], -1);
+			var statText = statUi[0];
+			var height = statUi[1];
+			scr_hover_UI(xp,y+16,statText,self,"hover"+string(i),-1,height)
 			if(sprite_exists(abilitySprite)) {
 				draw_sprite(abilitySprite,0,xp,y+16);
 			}
@@ -47,7 +50,10 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 	if(global.knownLoadout[num,4] != 0) {
 		draw_sprite(spr_white,0,xp,y+16)
 		abilitySprite = global.knownLoadout[num,4].sprite;
-		scr_stats_UI(xp,y+16,global.knownLoadout[num,i], self, "hover"+string(i),-1);
+		statUi = scr_stats_UI(global.knownLoadout[num,i], -1);
+		var statText = statUi[0];
+		var height = statUi[1];
+		scr_hover_UI(xp,y+16,statText,self,"hover"+string(i),-1,height)
 		if(sprite_exists(abilitySprite)) {
 			if(global.knownLoadout[num,4] != 1) 
 				draw_sprite(abilitySprite,0,xp,y+16);
@@ -70,20 +76,20 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 		}
 		passiveXp -= 30 * global.teamNum[num];
 		i++;
-		if(passiveXp > 270 && passiveXp < 750) {
+		if(passiveXp > 270 && passiveXp < 650) {
 			passiveXp = baseXp;
 			yp += 40;
 		}
 	}
 	draw_set_halign(fa_center)
-	draw_sprite(spr_attack, 0, statXp, y+130);
-	draw_text(statXp,y+160,round(global.players[num].totalDamage))
-	draw_sprite(spr_kick, 0, statXp+100, y+130);
-	draw_text(statXp+100,y+160,round(global.players[num].ballPush))
-	draw_sprite(spr_light_spot, 0, statXp+200, y+130);
-	draw_text(statXp+200,y+160,round(global.players[num].towerDamage))
-	draw_sprite(spr_heal, 0, statXp+300, y+130);
-	draw_text(statXp+300,y+160,round(global.players[num].healingDealt))
+	draw_sprite(spr_attack, 0, statXp, y+110);
+	draw_text(statXp,y+130,round(global.players[num].totalDamage))
+	draw_sprite(spr_kick, 0, statXp+100, y+110);
+	draw_text(statXp+100,y+130,round(global.players[num].ballPush))
+	draw_sprite(spr_light_spot, 0, statXp+200, y+110);
+	draw_text(statXp+200,y+130,round(global.players[num].towerDamage))
+	draw_sprite(spr_heal, 0, statXp+300, y+110);
+	draw_text(statXp+300,y+130,round(global.players[num].healingDealt))
 	
 	if(num == 1) {//draw timers for drag and garren
 		if(global.ballGameOver == global.teamNum[ball_player.num]) {
@@ -140,7 +146,10 @@ else if(keyboard_check(vk_tab)) {
 		draw_sprite(spr_white,0,xp,y+16)
 		if(global.knownLoadout[num,i] != 0) {
 			abilitySprite = global.knownLoadout[num,i].sprite;
-			scr_stats_UI(xp,y+16,global.knownLoadout[num,i], self, "hover"+string(i),-1);
+			statUi = scr_stats_UI(global.knownLoadout[num,i], -1);
+			var statText = statUi[0];
+			var height = statUi[1];
+			scr_hover_UI(xp,y+16,statText,self,"hover"+string(i),-1,height)
 			if(sprite_exists(abilitySprite)) {
 				draw_sprite(abilitySprite,0,xp,y+16);
 			}
@@ -151,7 +160,10 @@ else if(keyboard_check(vk_tab)) {
 	if(global.knownLoadout[num,4] != 0) {
 		draw_sprite(spr_white,0,xp,y+16)
 		abilitySprite = global.knownLoadout[num,4].sprite;
-		scr_stats_UI(xp,y+16,global.knownLoadout[num,i], self, "hover"+string(i),-1);
+		statUi = scr_stats_UI(global.knownLoadout[num,i], -1);
+		var statText = statUi[0];
+		var height = statUi[1];
+		scr_hover_UI(xp,y+16,statText,self,"hover"+string(i),-1,height)
 		if(sprite_exists(abilitySprite)) {
 			if(global.knownLoadout[num,4] != 1) 
 				draw_sprite(abilitySprite,0,xp,y+16);

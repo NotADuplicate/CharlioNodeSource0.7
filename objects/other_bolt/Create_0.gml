@@ -8,3 +8,4 @@ image_xscale = 1.2;
 portaled = false
 charge = 0;
 dmgRamp = 0
+show_debug_message("Other bolt created")

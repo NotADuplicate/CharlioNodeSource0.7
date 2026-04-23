@@ -280,7 +280,8 @@ function scr_status(status,target){
 			}
 		break;
 		case 50: //dashing
-			global.players[target].dashing = 10;
+			global.players[target].dashing = 8;
+			show_debug_message("Status dash")
 			scr_ball_sound(snd_dash,global.players[target].x,global.players[target].y);
 		break;
 		case 51: //destroy corpse with no XP

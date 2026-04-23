@@ -8,6 +8,7 @@ alarm[0] = 150;
 alarm[1] = 1;
 drag = true;
 suicide = false;
+jungleWall = false;
 while(place_meeting(x,y,kill_marker) || place_meeting(x,y,slayer_marker)) {
 	y += 90;
 }

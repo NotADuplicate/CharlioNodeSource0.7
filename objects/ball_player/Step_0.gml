@@ -19,14 +19,14 @@ if(respawnTimer > 0 && instance_exists(obj_ending) == false) {
 //Ninja slash
 if(ninja > 0) {
 	if(ninjaSlash) {
-		ninja-= 4;
+		ninja-= 5;
 	}
 	else if(ninja < 120)
-		ninja+=2;
+		ninja+=1.5;
 }
 		if(ninjaSlash && ninja < 1) {
 			ninjaSlash = false;
-			speed *= .7;
+			speed *= .4;
 		}
 		
 if(portaled > 0)

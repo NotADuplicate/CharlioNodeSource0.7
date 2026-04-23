@@ -9,36 +9,43 @@ else {
 	if(jungle > 0) {
 		draw_sprite(spr_jungle,0,xp,60)
 		draw_healthbar(xp-30,80,xp+30,90,jungle/18,c_dkgray,c_white,c_white,0,true,true)
+		scr_hover_UI(xp,70,"Other jungle buffs don't tick down",self,"hoverJungle",-1, -80)
 		xp += 80;
 	}
 	if(ammo > 0) {
 		draw_sprite(spr_ammo,0,xp,60)
 		draw_healthbar(xp-30,80,xp+30,90,ammo/18,c_dkgray,c_white,c_white,0,true,true)
+		scr_hover_UI(xp,70,"+20% ammo regen",self,"hoverAmmo",-1, -80)
 		xp += 80;
 	}
 	if(resistance > 0) {
 		draw_sprite(spr_spellShield,0,xp,60)
 		draw_healthbar(xp-30,80,xp+30,90,resistance/18,c_dkgray,c_white,c_white,0,true,true)
+		scr_hover_UI(xp,70,"+20% resistance",self,"hoverResistance",-1, -80)
 		xp += 80;
 	}
 	if(defense > 0) {
 		draw_sprite(spr_defense,0,xp,60)
 		draw_healthbar(xp-30,80,xp+30,90,defense/18,c_dkgray,c_white,c_white,0,true,true)
+		scr_hover_UI(xp,70,"+20% defense",self,"hoverDefense",-1, -80)
 		xp += 80;
 	}
 	if(spd > 0) {
 		draw_sprite(spr_speed,0,xp,60)
 		draw_healthbar(xp-30,80,xp+30,90,spd/18,c_dkgray,c_white,c_white,0,true,true)
+		scr_hover_UI(xp,70,"+20% move speed",self,"hoverSpd",-1, -80)
 		xp += 80;
 	}
 	if(dmg > 0) {
 		draw_sprite(spr_attack,0,xp,60)
 		draw_healthbar(xp-30,80,xp+30,90,dmg/18,c_dkgray,c_white,c_white,0,true,true)
+		scr_hover_UI(xp,70,"+20% attack damage",self,"hoverDmg",-1, -80)
 		xp += 80;
 	}
 	if(pwr > 0) {
 		draw_sprite(spr_wand,0,xp,60)
 		draw_healthbar(xp-30,80,xp+30,90,pwr/18,c_dkgray,c_white,c_white,0,true,true)
+		scr_hover_UI(xp,70,"+20% ability power",self,"hoverPwr",-1, -80)
 		xp += 80;
 	}
 }

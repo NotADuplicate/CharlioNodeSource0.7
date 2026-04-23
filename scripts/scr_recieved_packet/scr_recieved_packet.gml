@@ -1,6 +1,8 @@
 function scr_recieved_packet() {
 	var buffer = argument[0];
 	message_id = buffer[? "eventName"]
+	show_debug_message("Got packet:")
+	show_debug_message(message_id)
 
 	switch(global.game) {
 	    case 0:
@@ -16,6 +18,7 @@ function scr_recieved_packet() {
 				}
 			}
 	        else if(message_id == "Start Game") {
+				show_debug_message("Start game")
 	            newgame = "Ball"
 	            if(instance_exists(inst_game)) { //delete the old game object to make way for the new
 	                instance_destroy(inst_game);
@@ -24,16 +27,19 @@ function scr_recieved_packet() {
 				scr_ball_receive(buffer)
 	        }
 			else if(message_id == "Num") {//recieve num and send name
+				show_debug_message("Num")
 				num = buffer[? "Number"]
+				show_debug_message(num)
 				global.gameMode = buffer[? "Mode"]
 				if(buffer[? "Active"]) {
-					obj_client.alarm[9] = 1;
 					modal = instance_create(0,0,obj_modal);
-					modal.txt = "Lobby already in game."
-					return;
+					modal.txt = "Lobby already active. \n Ready up to join mid-game"
 				}
+				obj_client.activeGame = buffer[? "Active"];
 				obj_client.index = int64(num);
-				obj_client.alarm[6] = 1; //send packet
+				if(buffer[? "ActiveTeam"] == 0) {
+					obj_client.alarm[6] = 1; //send packet
+				}
 				obj_client.ping = current_time-obj_client.pingSet
 				global.connected = true;
 				obj_client.pingTime = 0;
@@ -49,9 +55,12 @@ function scr_recieved_packet() {
 				}
 			}
 			else if(message_id = "Player UI") {
-				show_debug_message(buffer)
+				show_debug_message("Player UI")
+				
 				num = buffer[? "Number"];
+				show_debug_message(num)
 				team = buffer[? "Team"];
+				show_debug_message(team)
 				ready = buffer[? "Ready"];
 				name = buffer[? "Name"];
 				loadout = buffer[? "Loadout"];

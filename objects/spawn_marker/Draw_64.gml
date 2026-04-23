@@ -3,7 +3,9 @@
 draw_set_alpha(.5)
 draw_self();
 	draw_set_color(c_purple);
-	if(drag)
+	if(jungleWall) 
+		draw_text(x,y-15,"Jungle path \n has opened");
+	else if(drag)
 		draw_text(x,y,"Dragon Spawned");
 	else
 		draw_text(x,y,"Garren Spawned");

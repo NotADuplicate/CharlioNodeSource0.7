@@ -1,9 +1,27 @@
-/*//Create barrier (TEST)
-dir = point_direction(x,y,mouse_x,mouse_y);
-xp = x + lengthdir_x(70,dir);
-yp = y + lengthdir_y(70,dir);
-ins = instance_create(xp,yp,obj_barrier);
-ins.dir = dir;
+/// @description Toggle shop or back
+if(global.shopKey == 700 && global.typing == false) {
+	if(global.shop) {
+		global.shop = false;
+		ball_cam.y = ball_player.y;
+		if(global.dead) { //go back to whole map
+			view_set_visible(0,false)
+			view_set_visible(1,true)
+		}
+	}
+	else {
+		if(position_meeting(x,y,obj_regen) || global.dead) {
+			global.shop = true;
+			if(global.dead) {
+				view_set_visible(0,true)
+				view_set_visible(1,false)
+			}
+		}
+	}
+}
 
-/* */
-/*  */
+if(global.backKey == 700 && global.typing == false) {
+	if(back < 2)
+		back++;
+	else
+		back = 0;
+}

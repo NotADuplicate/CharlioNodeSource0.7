@@ -11,5 +11,3 @@ if(surface_exists(global.optionsSurf)) {
 else {
 	global.optionsSurf = surface_create(950,600);
 }
-
-

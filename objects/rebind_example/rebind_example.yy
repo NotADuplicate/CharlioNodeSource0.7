@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_white",
-    "path":"sprites/spr_white/spr_white.yy",
+    "name":"spr_menuButton",
+    "path":"sprites/spr_menuButton/spr_menuButton.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,5 +1,5 @@
 /// @description Draw death recap
-if(global.dead) {
+if(global.dead && global.ballGameOver == 0) {
 	i = 0;
 	draw_set_alpha(.5)
 	xp = 550 - (array_length(damageDealers)-1)*150;

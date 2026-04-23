@@ -4,5 +4,5 @@ visible = true
 x = global.players[num].x;
 x += lengthdir_x(24,direction);
 y += lengthdir_y(24,direction);
-speed = 26;
+speed = 31;
 alarm[1] = round(xp/3)

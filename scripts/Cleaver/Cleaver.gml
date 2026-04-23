@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Cleaver() constructor {
 	sprite = spr_cleaver;
-	damage = 40;
+	damage = 50;
 	bleedDamage = 90;
 	ammoCost = 2;
 	cooldown = 13; 

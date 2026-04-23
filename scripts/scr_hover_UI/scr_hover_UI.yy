@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_hover_UI",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_hover_UI",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

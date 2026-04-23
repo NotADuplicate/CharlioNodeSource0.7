@@ -24,11 +24,12 @@ instance_create(500,300,obj_mapToggle);
 instance_create(700,300,obj_chatToggle);
 instance_create(475,550,options_disconnect);
 
+scr_makeBind(500,140, "RC", "rightkey", "rightbutton", "First Ability")
+scr_makeBind(500,210,"Q","Qkey","Qbutton","Second Ability");
+scr_makeBind(500,280,"space","spacekey","spacebutton","Third Ability");
+scr_makeBind(500,350,"R","Rkey","Rbutton","Fourth Ability");
+scr_makeBind(500,420,"M","mapKey","mapbutton","Map");
+scr_makeBind(500,490,"P","shopKey","shopbutton","Shop");
+scr_makeBind(500,560,"B","backKey","backbutton","Back");
 
-scr_makeBind(150,300,"Q","Qkey","Qbutton","Second Ability");
-scr_makeBind(300,300,"space","spacekey","spacebutton","Third Ability");
-scr_makeBind(450,300,"R","Rkey","Rbutton","Fourth Ability");
-scr_makeBind(600,300,"M","mapKey","mapbutton","Map");
-//instance_create(600,300,rebind_map);
-
-instance_create(300,400,unbind_button);
+instance_create(500,630,unbind_button);

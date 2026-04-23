@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(damager != 0) {
+if(damager != 0 && global.ballGameOver == 0) {
 	draw_set_alpha(.5)
 	draw_self();
 	if(global.teamNum[damager] == -1)

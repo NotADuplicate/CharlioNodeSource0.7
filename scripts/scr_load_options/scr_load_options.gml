@@ -8,7 +8,8 @@ function scr_load_options(){
 	global.Qkey = ini_read_real("Save1","Qkey",ord("Q"));
 	global.spacebutton = ini_read_string("Save1","spacebutton","Space");
 	global.Qbutton = ini_read_string("Save1","Qbutton","Q");
-	global.rightbutton = "RC";//ini_read_string("Save1","rightbutton","RC");
+	global.rightbutton = ini_read_string("Save1","rightbutton","RC");
+	global.rightkey = ini_read_string("Save1","rightkey",700);
 	global.mapbutton = ini_read_string("Save1","mapbutton","M");
 	global.mapKey = ini_read_real("Save1","mapKey",ord("M"));
 	global.backbutton = ini_read_string("Save1","backbutton","B");
@@ -20,5 +21,6 @@ function scr_load_options(){
 	global.musVolume = ini_read_real("Save1", "musicVolume", 50);
 	global.vol = ini_read_real("Save1", "soundVolume", 50);
 	global.shakeVol = ini_read_real("Save1", "screenShake", 1);
+	global.mapToggle = ini_read_real("Save1", "mapToggle", false);
 	ini_close()
 }

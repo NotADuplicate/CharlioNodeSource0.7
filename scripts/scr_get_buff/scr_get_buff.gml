@@ -19,9 +19,9 @@ function scr_get_buff(buffType, doubleBuff, duration = 1800){
 		case "Ammo":
 			if(obj_junglePass.ammo <= 0) {	
 				if(doubleBuff)
-					global.ammoRegen -= 0.6;
+					global.ammoRegen += 0.8;
 				else
-					global.ammoRegen -= 0.3;
+					global.ammoRegen += 0.4;
 			}
 			obj_junglePass.ammo = duration;
 		break; 

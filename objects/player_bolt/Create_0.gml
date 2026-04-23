@@ -15,5 +15,6 @@ if(instance_exists(obj_player)) {
 } else {
 	instance_destroy()
 }
+show_debug_message("Player bolt made")
 
 alarm[0] = 1;

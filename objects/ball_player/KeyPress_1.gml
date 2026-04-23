@@ -1,4 +1,4 @@
-/// @description Toggle shop
+/// @description Toggle shop or back
 if(keyboard_check_pressed(global.shopKey) && global.typing == false) {
 	if(global.shop) {
 		global.shop = false;
@@ -17,4 +17,11 @@ if(keyboard_check_pressed(global.shopKey) && global.typing == false) {
 			}
 		}
 	}
+}
+
+if(keyboard_check_pressed(global.backKey) && global.typing == false) {
+	if(back < 2)
+		back++;
+	else
+		back = 0;
 }

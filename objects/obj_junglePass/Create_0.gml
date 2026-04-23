@@ -8,3 +8,13 @@ dmg = 0;
 pwr = 0;
 jungle = 0;
 garren = 0;
+
+//hover vars
+hoverAmmo = 0;
+hoverResistance = 0;
+hoverDefense = 0;
+hoverSpd = 0;
+hoverDmg = 0;
+hoverPwr = 0;
+hoverJungle = 0;
+hoverGarren = 0;

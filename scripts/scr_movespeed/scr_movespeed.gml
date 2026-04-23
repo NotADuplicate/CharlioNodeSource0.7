@@ -13,8 +13,8 @@ function scr_movespeed(){
 		ghosting--;
 	}
 	if(ninja > 0) { //charging ninja slash
-		xspd *= .5;
-		yspd *= .5;
+		xspd *= .35;
+		yspd *= .35;
 	}
 	if(stunned > 0) { //body slammed
 		xspd *= .35;

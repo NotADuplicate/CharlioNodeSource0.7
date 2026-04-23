@@ -206,8 +206,8 @@ function scr_ball_receive() {
 			show_debug_message(ballPushes[| 0])
 			show_debug_message(mvpNum)
 			//Set up all the loadout UI objects
-			leftLoadoutY = 115;
-			rightLoadoutY = 115;
+			leftLoadoutY = 105;
+			rightLoadoutY = 105;
 			for (var i = 0; i < instance_number(obj_loadout); i++){
 			    var inst = instance_find(obj_loadout, i);
 				var num = inst.num;
@@ -222,14 +222,15 @@ function scr_ball_receive() {
 				
 				if(global.teamNum[num] == -1) { //left side
 					inst.y = leftLoadoutY
-					leftLoadoutY += 210;
+					leftLoadoutY += 190;
 				}
 				else if(global.teamNum[num] == 1) { //right side
 					inst.y = rightLoadoutY
-					rightLoadoutY += 210;
+					rightLoadoutY += 190;
 				}
 			}
-			instance_create(530,720,obj_disconnect);
+			instance_create(250,720,obj_lobbyButton);
+			instance_create(700, 720, obj_replayButton);
 		break;
 	    case "Team Name": //recieve names
 			show_debug_message("Names")

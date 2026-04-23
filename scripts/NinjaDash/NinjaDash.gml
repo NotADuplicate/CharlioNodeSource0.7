@@ -15,13 +15,14 @@ function NinjaDash() constructor {
 		if(global.ammo >= ammoCost) {
 			ball_player.ninja = 1;
 			ball_game.held = true;
+			ball_game.range = 0;
 		}
 		return(0);
 	}
 	
 	static abilityReleased = function(buffer) {
 		ball_player.ninjaSlash = true;
-		ball_player.speed = 26;
+		ball_player.speed = 31;
 		ball_player.direction = point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y)
 		global.slow = 0;
 		cool = 18;

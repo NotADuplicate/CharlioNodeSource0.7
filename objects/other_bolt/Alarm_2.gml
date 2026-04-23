@@ -12,5 +12,7 @@ if(instance_exists(obj_player)) {
         }
     }
 }
-else
+else {
+	show_debug_message("No player found")
     instance_destroy();
+}

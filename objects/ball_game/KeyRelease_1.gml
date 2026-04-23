@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(keyboard_check_released(global.binded2Right)) {
+if(keyboard_check_released(global.rightkey)) {
 	scr_ability_release("right")
 }
 if(keyboard_check_released(global.spacekey)) {

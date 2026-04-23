@@ -35,6 +35,16 @@ if(shooting > 0)
 if(invin > 0)
 	invin--;
 	
-if(hp < 3)  {
+if(hp < 3) {
+	if(instance_number(obj_turret) == 3) {
+		ins = instance_create(0,0,spawn_marker)
+		ins.jungleWall = true;
+		ins.drag = false
+		with(jungle_wall) {
+			if(jungleReset) {
+				instance_destroy();
+			}
+		}
+	}
 	instance_destroy();
 }

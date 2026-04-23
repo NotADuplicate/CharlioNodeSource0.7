@@ -13,7 +13,7 @@ if(global.connected && !global.loadoutView) {
 	draw_text_transformed_color(xp,y,named,2,2,0,col,col,col,col,1);
 	
 	if(!obj_client.loadoutPicking) {
-		if(ready) {
+		if(ready || (obj_client.activeGame && num != obj_client.index)) {
 			draw_sprite(spr_checkedbox,0,xp-64,y+20);
 		}
 		else {

@@ -6,6 +6,7 @@ function scr_save_options(){
 	ini_write_string("Save1","Qbutton",global.Qbutton);
 	ini_write_real("Save1","Qkey",global.Qkey);
 	ini_write_string("Save1","rightbutton",global.rightbutton);
+	ini_write_string("Save1","rightkey",global.rightkey);
 	ini_write_real("Save1","binded2Right",global.binded2Right);
 	ini_write_string("Save1","spacebutton",global.spacebutton);
 	ini_write_real("Save1","spacekey",global.spacekey);
@@ -20,5 +21,6 @@ function scr_save_options(){
 	ini_write_real("Save1", "musicVolume", global.musVolume);
 	ini_write_real("Save1", "soundVolume", global.vol);
 	ini_write_real("Save1", "screenShake", global.shakeVol);
+	ini_write_real("Save1","mapToggle",global.mapToggle);
 	ini_close()
 }

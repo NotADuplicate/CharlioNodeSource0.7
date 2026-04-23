@@ -13,7 +13,7 @@ if(global.mapShowing) {
 		alarm[1] = 1;
 	} else {
 		if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 14) {
-			if(failTimer == 0) {
+			/*if(failTimer == 0) {
 				if(position_meeting(ball_player.x, ball_player.y, obj_regen)) {
 					if(global.teleportTimer > 0)
 						draw_text(700, 445, string(round(global.teleportTimer)) + " seconds until teleport is available");
@@ -29,7 +29,7 @@ if(global.mapShowing) {
 			} else {
 				failTimer--;
 				draw_text_color(700, 445, failMessage,c_red,c_red,c_red,c_red,1);
-			}
+			}*/
 		}
 		draw_surface(minimap,xp1,yp1)
 

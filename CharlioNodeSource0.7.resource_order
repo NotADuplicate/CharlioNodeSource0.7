@@ -1,5 +1,6 @@
 {
   "FolderOrderSettings":[
+    {"name":"GameOver","order":30,"path":"folders/Objects/Ball/UI/GameOver.yy",},
     {"name":"Options","order":19,"path":"folders/Objects/Ball/UI/Options.yy",},
     {"name":"Shop","order":22,"path":"folders/Objects/Ball/UI/Shop.yy",},
     {"name":"Sort","order":1,"path":"folders/Objects/Ball/UI/Sort.yy",},
@@ -327,8 +328,10 @@
     {"name":"obj_quill","order":54,"path":"objects/obj_quill/obj_quill.yy",},
     {"name":"obj_quit","order":19,"path":"objects/obj_quit/obj_quit.yy",},
     {"name":"obj_reaper","order":76,"path":"objects/obj_reaper/obj_reaper.yy",},
+    {"name":"obj_rebinds","order":19,"path":"objects/obj_rebinds/obj_rebinds.yy",},
     {"name":"obj_reflect","order":19,"path":"objects/obj_reflect/obj_reflect.yy",},
     {"name":"obj_regen","order":3,"path":"objects/obj_regen/obj_regen.yy",},
+    {"name":"obj_replayButton","order":1,"path":"objects/obj_replayButton/obj_replayButton.yy",},
     {"name":"obj_reticle","order":6,"path":"objects/obj_reticle/obj_reticle.yy",},
     {"name":"obj_revive","order":89,"path":"objects/obj_revive/obj_revive.yy",},
     {"name":"obj_rocket","order":83,"path":"objects/obj_rocket/obj_rocket.yy",},
@@ -662,6 +665,7 @@
     {"name":"scr_gunVisual","order":38,"path":"scripts/scr_gunVisual/scr_gunVisual.yy",},
     {"name":"scr_heal","order":36,"path":"scripts/scr_heal/scr_heal.yy",},
     {"name":"scr_hook_stop","order":8,"path":"scripts/scr_hook_stop/scr_hook_stop.yy",},
+    {"name":"scr_hover_UI","order":58,"path":"scripts/scr_hover_UI/scr_hover_UI.yy",},
     {"name":"scr_insert_damage_source","order":55,"path":"scripts/scr_insert_damage_source/scr_insert_damage_source.yy",},
     {"name":"scr_jug","order":2,"path":"scripts/scr_jug/scr_jug.yy",},
     {"name":"scr_jump","order":6,"path":"scripts/scr_jump/scr_jump.yy",},

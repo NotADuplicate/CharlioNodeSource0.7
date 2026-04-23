@@ -1,5 +1,5 @@
 /// @description Free TP
-if(position_meeting(ball_player.x, ball_player.y, obj_regen) && global.teleportTimer <= 0) {
+/*if(position_meeting(ball_player.x, ball_player.y, obj_regen) && global.teleportTimer <= 0) {
 	if(global.mapShowing) { 
 		mouseX = mouse_x - camera_get_view_x(view_camera[0]);
 		mouseY = mouse_y - camera_get_view_y(view_camera[0]);
@@ -24,3 +24,4 @@ else {
 	failTimer = 120;
 	failMessage = "The teleport isn't ready yet";
 }
+*/
