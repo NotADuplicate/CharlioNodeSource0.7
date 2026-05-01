@@ -1,11 +1,10 @@
 function scr_recieved_packet() {
 	var buffer = argument[0];
 	message_id = buffer[? "eventName"]
-	show_debug_message("Got packet:")
-	show_debug_message(message_id)
 
 	switch(global.game) {
 	    case 0:
+			show_debug_message("Game is 0");
 			if(message_id == "Lobbies") {
 				lobbies = buffer[? "Lobbies"]
 				var i = 0;

@@ -18,7 +18,7 @@ function Enrage() constructor {
 	}
 	
 	static abilityReleased = function(buffer) {
-		if(scr_ball_dist(mouse_x,mouse_y,false) < 60 && global.ammo > ammoCost) {
+		if(scr_ball_dist(mouse_x,mouse_y,false) < 45 && point_distance(mouse_x,mouse_y,ball_player.x,ball_player.y) < 150 && global.ammo >= ammoCost) {
 			instance_create(mouse_x,mouse_y,obj_anger);
 			scr_ball_ammo(ammoCost)
 			return(cooldown);

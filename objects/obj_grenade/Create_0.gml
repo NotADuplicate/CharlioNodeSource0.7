@@ -8,3 +8,4 @@ image_yscale = .5;
 
 portaled = false;
 scr_ball_sound(snd_grenade,x,y)
+alarm[1] = 1;// link to player

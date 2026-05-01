@@ -1,8 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_ball_dist(xp,yp,exclude){
+function scr_ball_dist(xp,yp,excludeSelf){
 	dist = 1000;
-	if(exclude == false)
+	if(excludeSelf == false)
 		dist = point_distance(xp,yp,ball_player.x,ball_player.y);
 	if(point_distance(xp,yp,obj_bigBall.x,obj_bigBall.y) < dist) {
 		dist = point_distance(xp,yp,obj_bigBall.x,obj_bigBall.y)

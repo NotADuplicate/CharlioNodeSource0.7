@@ -77,3 +77,9 @@ bleed = 0;
 murderball = 0
 enraged = false;
 kicking = 0;
+scope = 1;
+accuracy = 1;
+
+shadow = instance_create(x,y+30,obj_shadow);
+shadow.link = self;
+shadow.depth = 600;

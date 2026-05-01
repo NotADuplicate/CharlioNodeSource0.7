@@ -15,8 +15,8 @@
     "path":"folders/Objects/Shooter/Attacks.yy",
   },
   "parentObjectId":{
-    "name":"inst_damager",
-    "path":"objects/inst_damager/inst_damager.yy",
+    "name":"obj_melee",
+    "path":"objects/obj_melee/obj_melee.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -61,7 +61,7 @@ else {
 	}
 }
 i = 0;
-numOffense = 4;
+numOffense = 5;
 numDefense = 4;
 numResources = 3;
 numUtility = 4;

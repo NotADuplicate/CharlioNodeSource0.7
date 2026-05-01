@@ -10,3 +10,4 @@ image_xscale = .75;
 image_yscale = .7;
 scr_ball_sound(snd_shot,x,y)
 icon = spr_chargeGun;
+scope = 1;

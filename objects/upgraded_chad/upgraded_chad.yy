@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_blast",
-    "path":"sprites/spr_blast/spr_blast.yy",
+    "name":"spr_bigShot",
+    "path":"sprites/spr_bigShot/spr_bigShot.yy",
   },
   "spriteMaskId":null,
   "visible":true,

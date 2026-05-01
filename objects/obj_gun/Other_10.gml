@@ -19,3 +19,11 @@ if(sprite_index == spr_melee) {
 	swung = true;
 	alarm[1] = 4;
 }
+if(sprite_index == spr_chargeGunStrong || sprite_index == spr_chargeGunWeak) {
+	if(global.chargeGun == 0) {
+		sprite_index = spr_chargeGunStrong;
+	} else {
+		sprite_index = spr_chargeGunWeak;
+	}
+	image_speed = 2;
+}

@@ -26,3 +26,7 @@ global.names[num] = "Enemy";
 totalDamage = 0;
 recentlySwithced = 0;
 blastOffDir = 0;
+
+shadow = instance_create(x,y+30,obj_shadow);
+shadow.link = self;
+shadow.depth = 600;

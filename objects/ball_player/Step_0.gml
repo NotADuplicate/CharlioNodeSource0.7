@@ -71,8 +71,8 @@ if(throwTime > 0) {
 	if(throwTime == 0) {
 		scr_outside();
 		speed = 0;
-		image_xscale = scale*2;
-		image_yscale = scale*1.75;
+		image_xscale = scale;
+		image_yscale = scale*2;
 		if(bodySlam) {
 			with(ball_game) {
 				node_send(buffer,"eventName","Bullet","X",ball_player.x,"Y",ball_player.y,"Dir",0,"Obj",obj_shockwave,"Num",ball_player.num)

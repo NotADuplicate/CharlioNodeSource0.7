@@ -53,7 +53,7 @@ function scr_ball_receive() {
 				
 				show_message("This is crashing the game with some extra information. Please relay the following message to Charlie!")
 				show_message("Players: " + string(ins.loop) + " \nNum: " + string(obj_client.index))
-				popsfk = penispenis;
+				popsfk = phgfbnjds;
 			}
 			
 
@@ -526,17 +526,21 @@ function scr_ball_receive() {
 			scr_gunVisual(gunName,gunObj);
 		break;
 		case "Telekenesis Point":
-			num = buffer[? "User"];
+			
+			var tKNum = buffer[? "User"];
+			show_debug_message("Controlled num:" + string(tKNum));
 			xp = buffer[? "X"];
 			yp = buffer[? "Y"];
 			with(ball_player) {
-				if(controlledNum == other.num) {
+				if(controlledNum == tKNum) {
+					show_debug_message("Self controlled:" + string(other.xp));
 					controlledX = other.xp;
 					controlledY = other.yp;
 				}
 			}
 			with(ball_other) {
-				if(controlledNum == other.num) {
+				if(controlledNum == tKNum) {
+					show_debug_message("other controlled:" + string(other.xp));
 					controlledX = other.xp;
 					controlledY = other.yp;
 				}

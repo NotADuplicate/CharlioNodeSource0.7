@@ -1,16 +1,14 @@
 /// @description Scattershot
-//range = 325
-direction -= 30;
+scope = global.players[num].accuracy
 repeat(10) {
     ins = instance_create(x,y,obj_bullet);
-    ins.dmg = 13;
+    ins.dmg = 12;
     ins.num = num;
 	ins.icon = spr_shot;
-    ins.direction = direction;
-    ins.speed = 23;
+    ins.direction = direction+random_range(-30/scope,30/scope);
+    ins.speed = random_range(20,28);
 	ins.ammo = false;
-    //ins.alarm[1] = 15;
     ins.slow = .8;
-    direction += 7.5;
+    //direction += 5;
 }
 

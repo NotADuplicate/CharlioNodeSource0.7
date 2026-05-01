@@ -27,10 +27,10 @@ list[24] = wall;
 list[25] = implosion;
 list[26] = chomp;
 list[27] = finisher;
-list[28] = holster;
+list[28] = milk//holster;
 list[29] = frost;
 list[30] = axe;
-list[31] = duelBomb;
+list[31] = decay//duelBomb;
 list[32] = swapper;
 list[33] = push
 list[34] = chainbreaker;
@@ -44,9 +44,8 @@ list[41] = bodyslam
 list[42] = telekenesis;
 list[43] = kick;
 list[44] = enrage;
-list[45] = milk;
-list[46] = decay;
-list[47] = glove;
+//list[45] = milk;
+//list[47] = glove;
 
 var i =0;
 repeat(array_length(list)) {

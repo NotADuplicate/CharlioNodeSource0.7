@@ -11,8 +11,8 @@ function scr_gunVisual(gunName,gunObj){
 			gunObj.baseScale = 0.8;
 		break;
 		case "Charge Pistol":
-			gunObj.sprite_index = spr_chargeGun;
-			gunObj.baseScale = 1;
+			gunObj.sprite_index = spr_chargeGunWeak;
+			gunObj.baseScale = 2;
 		break;
 		case "Curve Gun":
 			gunObj.sprite_index = spr_curveGun;

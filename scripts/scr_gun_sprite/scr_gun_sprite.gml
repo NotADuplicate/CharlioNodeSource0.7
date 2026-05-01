@@ -31,7 +31,7 @@ function scr_gun_sprite(gun){
 		break;
 		case virgin_bullet:
 		case chad_bullet:
-			return(spr_chargeGun);
+			return(spr_chargeGunWeak);
 		break;
 		case obj_melee:
 			return(spr_melee);

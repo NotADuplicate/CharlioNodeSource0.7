@@ -1,6 +1,5 @@
 /// @description Create buffer
 #macro network_send_packet network_send_packetudp
-#macro show_message show_popsfk
 var size = 1024;
 var type = buffer_grow;
 var alignment = 1;

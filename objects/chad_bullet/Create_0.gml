@@ -1,7 +1,8 @@
 dmg = 115;
 //Range = 405
-speed = 30;
-alarm[0] = 1;
+speed = 0;
+visible = false;
+alarm[0] = 3;
 //alarm[1] = 60;
 slow = 1;
 ammo = true;

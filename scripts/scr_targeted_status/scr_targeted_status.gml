@@ -34,7 +34,7 @@ function scr_targeted_status(status,target,user){
 					}
 					//start music
 					audio_stop_sound(global.music);
-					global.music = audio_play_sound(mus_shredIntro,0,false);
+					global.music = audio_play_sound(mus_shredIntro,0,false,global.musVolume);
 				}
 			}
 		break;
@@ -197,7 +197,11 @@ function scr_targeted_status(status,target,user){
 			}
 		break;
 		case 30: //telekenesis
+			show_debug_message("Telekenesis")
+			show_debug_message(user)
+			show_debug_message(target)
 			if(user == ball_player.num) {
+				show_debug_message("Ball player is controlling")
 				ball_player.controlling = Abilities.telekenesis.duration*30;
 			}
 			global.players[target].controlled = Abilities.telekenesis.duration*30;

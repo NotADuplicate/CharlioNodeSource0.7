@@ -31,7 +31,7 @@ if(initialized) {
 			image_angle = dir;
 		}
 	
-		if(sprite_index == spr_pistol || sprite_index == spr_biggun || sprite_index == spr_chargeGun) {
+		if(sprite_index == spr_pistol || sprite_index == spr_biggun || sprite_index == spr_chargeGunWeak || sprite_index == spr_chargeGunStrong) {
 			x = global.players[num].x+6*sign(image_xscale)*global.players[num].scale;
 			if(dir > 20 && dir < 160)
 				depth = 2;
@@ -46,7 +46,7 @@ if(initialized) {
 			shootY = y + lengthdir_y(20*scale,newDir);
 		}
 		else {
-			x = global.players[num].x-6*sign(image_xscale)*global.players[num].scale;
+			x = global.players[num].x - lengthdir_x(8,dir)*sign(image_xscale) * global.players[num].scale;
 			depth = 0;
 			shootX = x + lengthdir_x(20*scale,dir) + 7*scale*sign(image_xscale);
 			shootY = y + lengthdir_y(20*scale,dir);

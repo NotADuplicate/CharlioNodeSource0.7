@@ -8,3 +8,4 @@ portaled = false;
 hitCooldown = 0;
 visible = false;
 alarm[1] = 1;
+scope = 1;

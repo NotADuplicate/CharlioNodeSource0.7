@@ -66,8 +66,8 @@ if(throwTime > 0) {
 	upSpd -= grav
 	if(throwTime == 0) {
 		speed = 0;
-		image_xscale = scale*2;
-		image_yscale = scale*1.75;
+		image_xscale = scale;
+		image_yscale = scale*2;
 	}
 }
 if(dashing > 0) {

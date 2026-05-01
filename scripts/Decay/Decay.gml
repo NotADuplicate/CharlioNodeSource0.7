@@ -11,7 +11,7 @@ function Decay() constructor {
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
 			ball_game.held = true;
-			ball_game.range = 150;
+			ball_game.range = 210;
 			return(0)
 		}
 		else { return(0); }

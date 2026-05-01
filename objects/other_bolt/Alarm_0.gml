@@ -1,5 +1,6 @@
 /// @description Shoot
-speed = 75;
+scope = global.players[num].scope
+speed = 65*scope;
 alarm[1] = 11
 alarm[3] = 1; //dont go through walls
 image_xscale = 2;
