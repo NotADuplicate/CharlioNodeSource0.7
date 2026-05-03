@@ -7,7 +7,6 @@ respawnTimer = 0;
 hp = 250;
 maxhp = 250;
 healing = 1;
-sponge = false;
 dc = 90;
 jug = false;
 xp = 0;

@@ -6,3 +6,4 @@ if(num == ball_player.num) {
 	if(global.screenShake < 12)
 		global.screenShake = 12;
 }
+scr_ball_sound(snd_charge,x,y)

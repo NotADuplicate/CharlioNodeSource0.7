@@ -3,4 +3,3 @@
 image_xscale = .5;
 image_yscale = .5;
 image_alpha = .6
-depth = -200

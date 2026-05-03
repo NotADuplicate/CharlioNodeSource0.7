@@ -30,9 +30,6 @@ if(curseCharge > 0)
 	
 if(batCharge > 0)
 	draw_healthbar(round(x)-30,round(y)-36,round(x)+30,round(y)-28,batCharge,c_ltgray,c_white,c_white,0,true,true);
-	
-if(sponge)
-	draw_circle(round(x),round(y),300,true);
 
 if(stasis == 0) { //draw self i guess???
 	draw_sprite_ext(sprite_index,image_index,round(x),round(y),walkDirection*image_xscale,image_yscale,image_angle,c_white,image_alpha)

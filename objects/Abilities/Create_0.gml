@@ -48,6 +48,9 @@ enrage = new Enrage();
 milk = new Milk();
 decay = new Decay();
 glove = new Catch();
+plasmaBomb = new PlasmaBomb();
+sponge = new Protect();
+malpractice = new Malpractice();
 
 global.loadoutSet[0] = [shuriken, flash, bloodshot, frost, armorBreak, cleaver, healBomb, blastOff, obj_ARbullet, virgin_bullet];
 global.loadoutSet[1] = [axe, dash, flareGun, molotov, block, rocket, implosion, heal, obj_grenade, obj_melee];

@@ -18,9 +18,6 @@ if(hp > maxhp)
 	if(blocking) 
 		draw_sprite(spr_defense,0,x,y);
 }
-///Draw status
-	if(sponge)
-		draw_circle(x,y,300,true);
 		
 if(shield > 0) {
 	draw_sprite_ext(spr_sponge,0,x,y-30*(image_yscale/2+.5),1,1,0,c_white,shield/100);

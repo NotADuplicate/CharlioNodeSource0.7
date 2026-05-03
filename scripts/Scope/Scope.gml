@@ -13,12 +13,12 @@ function Scope() constructor {
 	}
 	
 	static otherGet = function(num) {
-		global.players[num].scope *= 1.2;
+		global.players[num].scope *= 1.17;
 		global.players[num].accuracy *= 1.3;
 	}
 	
 	static otherLose = function(num) {
-		global.players[num].scope /= 1.2;
+		global.players[num].scope /= 1.17;
 		global.players[num].accuracy /= 1.3;
 	}
 }

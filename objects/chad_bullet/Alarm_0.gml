@@ -1,5 +1,6 @@
 /// @description Face direction
 image_angle = direction;
+scr_ball_sound(snd_charge,x,y)
 visible = true;
 scope = global.players[num].scope
 speed = 30*scope;

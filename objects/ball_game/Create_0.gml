@@ -160,3 +160,4 @@ global.upgraded = false;
 global.damageSources = ds_list_create();
 
 alarm[6] = 90; //dc timeout
+malpractice = 0;

@@ -296,18 +296,18 @@ function scr_status(status,target){
 				if(num = target) {
 					instance_destroy()
 					if(global.teamNum[num] != global.teamNum[ball_player.num]) {// give xp for the kill
-						var xpPercent = max(20 + 5*(global.totalLevels2-global.totalLevels),5);
+						var xpPercent = max(25 + 5*(global.totalLevels2-global.totalLevels),15);
 						global.xp += global.xpMax*xpPercent/100;
 					}
 					else {
-						var xpPercent = max(20 + 5*(global.totalLevels-global.totalLevels2),5);
+						var xpPercent = max(25 + 5*(global.totalLevels-global.totalLevels2),15);
 						global.xp2 += global.xpMax2*xpPercent/100;
 					}
 				}
 			}
 		break;
 		case 53: //get plasma'ed
-			if(global.players[target].spellShield == 0)
+			if(global.players[target].spellShield == 0 && global.players[target].magicBurn < 45)
 				global.players[target].magicBurn = 45;
 		break;
 		case 54: //get gun upgraded
@@ -350,6 +350,10 @@ function scr_status(status,target){
 		break;
 		case 59:
 			global.players[target].kicking = 120;
+		break;
+		case 60: //get plasma bombed
+			if(global.players[target].spellShield == 0)
+				global.players[target].magicBurn = 300;
 		break;
 	}	
 }

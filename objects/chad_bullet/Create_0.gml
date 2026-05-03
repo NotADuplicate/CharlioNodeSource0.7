@@ -9,5 +9,4 @@ ammo = true;
 portaled = false
 image_xscale = 1.25;
 image_yscale = 1.25;
-scr_ball_sound(snd_charge,x,y)
 icon = spr_chargeGun

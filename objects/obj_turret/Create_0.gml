@@ -17,3 +17,5 @@ pushForce = 5;
 firing = false;
 beamLength = 0;
 target = noone;
+targetX = 0;
+targetY = 0;

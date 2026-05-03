@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Protect",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Protect",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

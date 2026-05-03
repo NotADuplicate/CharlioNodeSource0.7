@@ -3,7 +3,7 @@
 function Healing() constructor {
 	sprite = spr_health
 	text = "Increase healing given to other players by 50%"
-	maxStacks = 1;
+	maxStacks = 2;
 	type = "Utility"
 	
 	static passiveGet = function(buffer) {
@@ -13,10 +13,10 @@ function Healing() constructor {
 	}
 	
 	static otherGet = function(num) {
-		global.players[num].healing = 1.5;
+		global.players[num].healing *= 1.5;
 	}
 	
 	static otherLose = function(num) {
-		global.players[num].healing = 1;
+		global.players[num].healing /= 1.5;
 	}
 }

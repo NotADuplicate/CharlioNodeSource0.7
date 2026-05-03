@@ -4,7 +4,7 @@ function Rest() constructor {
 	sprite = spr_sleeping;
 	ammoCost = 2;
 	cooldown = 10;
-	damage = 135;
+	damage = 150;
 	duration = 5;
 	name = "Rest"
 	abilityName = "rest"

@@ -1,7 +1,7 @@
 ///Go back to lobby
 xp = camera_get_view_x(view_camera[0])+x;
 yp = camera_get_view_y(view_camera[0])+y;
-highlighted = mouse_x > xp - 150 && mouse_x < xp + 150 && mouse_y < yp + 20 && mouse_y > yp - 20
+highlighted = mouse_x > xp - 180 && mouse_x < xp + 180 && mouse_y < yp + 20 && mouse_y > yp - 20
 if(highlighted) {
 	global.game = 0;
 	with(ball_game) {

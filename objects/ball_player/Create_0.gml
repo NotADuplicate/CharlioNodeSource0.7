@@ -7,7 +7,6 @@ sameTeam = true
 healing = 1;
 still = 0;
 size = 1;
-sponge = false;
 bushDash = 0;
 tossGrabbed = 0;
 charge = 0;
@@ -133,3 +132,5 @@ kicking = 0;
 shadow = instance_create(x,y+30,obj_shadow);
 shadow.link = self;
 shadow.depth = 600;
+
+seen = 0;

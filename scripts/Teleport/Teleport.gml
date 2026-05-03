@@ -1,6 +1,6 @@
 function Teleport() constructor {
 	sprite = spr_revenant;
-	ammoCost = 3;
+	ammoCost = 4;
 	cooldown = 30; 
 	name = "Warp"
 	abilityName = "teleport"

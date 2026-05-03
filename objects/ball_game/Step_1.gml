@@ -25,4 +25,11 @@ if(startingSound) {
 		}
 	}
 	
-
+// Shoot malpractice shots
+if(malpractice > 0) {
+	malpractice--;
+	if(malpractice <= 100) {
+		spread = random_range(-22, 22);
+		node_send(buffer,"eventName","Bullet","Num",ball_player.num,"X", ball_player.x, "Y", ball_player.y, "Obj", obj_malpractice, "Dir", point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y)+spread)
+	}
+}

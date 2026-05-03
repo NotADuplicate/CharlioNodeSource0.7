@@ -1,15 +1,25 @@
 function scr_damage(amount, damager, type, icon, DoT) {
 	if(global.invincibility == 0 && global.dead == false) {
-		if(global.sponge != -1 && point_distance(x,y,global.sponge.x,global.sponge.y) < 300) { //deal damage to tank instead
-				if(damager == ball_player.num)
-					thing = global.sponge.num
-				else
-					thing = damager;
-			with(ball_game) {
-				node_send(buffer,"eventName","Sponge Damage","Num",global.sponge.num,"Ad",type,"Killer",other.thing,"Dmg",amount)
+		var sponge = noone;
+		var sponging = false;
+		with(obj_sponge) {
+			if(team == global.teamNum[ball_player.num] && num != ball_player.num && point_distance(x,y,ball_player.x,ball_player.y) < 230) {
+				sponge = self;
+			}
+			if(num == ball_player.num) {
+				sponging = true;
 			}
 		}
-		else {
+		if(sponge != noone && sponging = false) {
+			if(damager == ball_player.num) //reset damage onto tank so that they can take damage from it
+				thing = sponge.num
+			else
+				thing = damager;
+			with(ball_game) {
+				node_send(buffer,"eventName","Sponge Damage","Num",sponge.num,"Ad",type,"Killer",other.thing,"Dmg",amount/2, "Icon", icon, "DoT", DoT)
+			}
+			amount /= 2;
+		}
 		if(ball_player.broken > 0) {
 			amount *= 2;
 		}
@@ -96,7 +106,6 @@ function scr_damage(amount, damager, type, icon, DoT) {
 				node_send(buffer,"eventName","Player Health","Num",ball_player.num,"Hp",ball_player.hp)
 			}
 		}
-	}
 	}
 	else if(ball_player.blocking > 0 && amount > 10) {
 		scr_ball_sound(snd_block,ball_player.x,ball_player.y)

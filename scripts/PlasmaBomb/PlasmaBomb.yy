@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"PlasmaBomb",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PlasmaBomb",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

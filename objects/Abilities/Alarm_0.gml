@@ -44,6 +44,9 @@ list[41] = bodyslam
 list[42] = telekenesis;
 list[43] = kick;
 list[44] = enrage;
+list[45] = plasmaBomb;
+list[46] = sponge;
+list[47] = malpractice;
 //list[45] = milk;
 //list[47] = glove;
 

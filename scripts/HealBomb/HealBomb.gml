@@ -3,7 +3,7 @@
 function HealBomb() constructor {
 	sprite = spr_healthBomb;
 	damage = 30;
-	healing = 50;
+	healing = 40;
 	ammoCost = 4;
 	cooldown = 15; 
 	name = "Heal Bomb"

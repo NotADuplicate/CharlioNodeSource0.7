@@ -446,15 +446,30 @@ function scr_ball_receive() {
 			}
 		break;
 		case "Sponge Damage":
+		show_debug_message("Sponge damage")
 			num = buffer[? "Num"]
+			show_debug_message(num)
+			show_debug_message(buffer);
 			if(num == ball_player.num) {
 				dmg = buffer[? "Dmg"]
 				killer =buffer[? "Killer"]
 				ad = buffer[? "Ad"]
 				icon = buffer[? "Icon"]
-				scr_damage(dmg,killer,ad, icon, false);
+				DoT = buffer[? "DoT"];
+				scr_damage(dmg,killer,ad, icon, DoT);
 			}
 			
+		break;
+		case "Healing Dealt": //reduce CD on malpractice
+			var amount = buffer[? "Amount"];
+			if(global.right == Abilities.malpractice)
+				global.rightCool = max(global.rightCool - amount/2, 0);
+			if(global.space == Abilities.malpractice)
+				global.spaceCool = max(global.spaceCool - amount/2, 0);
+			if(global.Q == Abilities.malpractice)
+				global.QCool = max(global.QCool - amount/2, 0);
+			if(global.R == Abilities.malpractice)
+				global.RCool = max(global.RCool - amount/2, 0);
 		break;
 		case "Airborne": //get thrown by toss grab 
 			num = buffer[? "Num"]
@@ -521,7 +536,11 @@ function scr_ball_receive() {
 			if(global.testMode) {
 				gunObj =obj_gun;
 			} else {
-				gunObj = global.players[gunNum].gun;
+				if(!instance_exists(global.players[gunNum])) {
+					gunObj = instance_create(0,0,obj_gun);
+				} else {
+					gunObj = global.players[gunNum].gun;
+				}
 			}
 			scr_gunVisual(gunName,gunObj);
 		break;
