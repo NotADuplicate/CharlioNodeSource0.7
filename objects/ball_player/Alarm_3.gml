@@ -15,6 +15,3 @@ if(poison > 0) {
 //else
 	//poisonDmg = 0;
 alarm[3] = 30;
-with(ball_game) {
-	node_send(buffer,"eventName","Player Health","Num",ball_player.num,"Hp",round(ball_player.hp))		
-}

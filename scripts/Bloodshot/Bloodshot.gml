@@ -2,14 +2,13 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Bloodshot() constructor {
 	sprite = spr_blood;
-	damage = 100;
+	damage = 110;
 	selfDamage = 50;
 	ammoCost = 1;
 	cooldown = 4; 
 	name = "Blood Shot"
 	abilityName = "bloodshot"
 	text = "Fire a projectile which deals " + string(damage) + " damage. Using this ability makes you take " + string(selfDamage) + " damage"
-	
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

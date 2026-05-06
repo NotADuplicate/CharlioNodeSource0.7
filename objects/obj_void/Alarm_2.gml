@@ -9,3 +9,4 @@ with(obj_gun) {
 }
 scope = global.players[num].scope
 speed *= scope;
+speed *= scope;

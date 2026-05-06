@@ -58,10 +58,10 @@ function scr_ball_kill(deadNum,killer,icon){
 				if(global.gameMode != "Royale" && nameNum == obj_drag.nameNum) { //dragon
 					if(instance_exists(slayer_marker) == false || slayer_marker.victim != "Dragon") {
 						obj_drag.dead = true;
-						if(global.teamNum[killer] == global.teamNum[ball_player.num]) 
+						/*if(global.teamNum[killer] == global.teamNum[ball_player.num]) 
 							global.xp += global.xpMax;
 						else
-							global.xp2 += global.xpMax2
+							global.xp2 += global.xpMax2*/
 						ins = instance_create(0,0,slayer_marker);
 						ins.killer = killer
 						ins.victim = "Dragon";

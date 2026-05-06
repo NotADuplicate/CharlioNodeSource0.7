@@ -72,16 +72,13 @@ function scr_ball_receive() {
 			}
 			
 	    break;
-	    case "Player Update"://player positions 
-	        num1 = buffer[? "Num"]
-	        xp = buffer[? "X"]
-	        yp = buffer[? "Y"]
-			gunDir = buffer[? "Dir"]
-	        if(num1 != ball_player.num && instance_exists(global.players[num1])) {
-				global.players[num1].x = xp;
-				global.players[num1].y = yp;
-				global.players[num1].gunDir = gunDir;
-			}
+	    case "Players Update"://player positions 
+	        nums = buffer[? "nums"]
+	        xps = buffer[? "Xs"]
+	        yps = buffer[? "Ys"]
+			gunDirs = buffer[? "dirs"]
+			healths = buffer[? "healths"]
+			scr_playerUpdate(nums,xps,yps,healths,gunDirs)
 	    break;
 	    case 9:
 	        readying = buffer_read(buffer,buffer_bool);
@@ -491,7 +488,7 @@ function scr_ball_receive() {
 				}
 			}
 			with(ball_other) { //others get thrown
-				if(num == other.num) {
+				if(self.num == other.num) {
 					throwTime = other.throwSpd;
 					upSpd = 9;
 					grav = upSpd * 2/throwTime
@@ -532,14 +529,17 @@ function scr_ball_receive() {
 		break;
 		case "Gun Picked":
 			gunName = buffer[? "Gun Name"];
-			gunNum = buffer[? "Num"];
+			var gunNum = buffer[? "Num"];
+			var gunObj = noone;
 			if(global.testMode) {
 				gunObj =obj_gun;
 			} else {
-				if(!instance_exists(global.players[gunNum])) {
+				with(obj_gun) {
+					if(self.num == gunNum) { gunObj = self; }
+				}
+				if(gunObj == noone) {
 					gunObj = instance_create(0,0,obj_gun);
-				} else {
-					gunObj = global.players[gunNum].gun;
+					gunObj.num = gunNum;
 				}
 			}
 			scr_gunVisual(gunName,gunObj);
@@ -577,6 +577,12 @@ function scr_ball_receive() {
 				scr_createBallPlayer(num8);
 			}
 		break;
+		case "Tower State":
+	        nums = buffer[? "ids"]
+			maxHealths = buffer[? "maxHps"]
+			healths = buffer[? "hps"]
+			scr_towerUpdate(nums,healths,maxHealths)
+	    break;
 	}
 	}
 

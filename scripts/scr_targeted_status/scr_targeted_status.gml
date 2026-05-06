@@ -8,6 +8,7 @@ function scr_targeted_status(status,target,user){
 					hooked = global.players[user]
 					alarm[0] = 60;
 					if(ball_player.num = user) {
+						hooked = ball_player;
 						alarm[4] = 1;
 					}
 				}
@@ -158,6 +159,7 @@ function scr_targeted_status(status,target,user){
 				global.players[user].curseX = ball_player.x;
 				global.players[user].curseY = ball_player.y;
 				ball_game.held = true;
+				ball_game.range = 0;
 				if(global.right == Abilities.curse)
 					global.rightCool = 0;
 				if(global.space == Abilities.curse)
@@ -206,6 +208,11 @@ function scr_targeted_status(status,target,user){
 			}
 			global.players[target].controlled = Abilities.telekenesis.duration*30;
 			global.players[target].controlledNum = user;
+		break;
+		case 31:
+			var duration = global.players[user].firePassive * 30;
+			if(global.players[target].spellShield == 0 && global.players[target].magicBurn < duration)
+				global.players[target].magicBurn = duration;
 		break;
 	}	
 }

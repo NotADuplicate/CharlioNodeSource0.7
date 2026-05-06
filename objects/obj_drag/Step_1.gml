@@ -1,7 +1,7 @@
 /// @description Respawn
 if(timer > 0 && ball_game.started) {
-	/*timer -= (delta_time/1000000)
-	if(timer < 0.5) {
+	timer -= (delta_time/1000000)
+	/*if(timer < 0.5) {
 		dead = false
 		x = xpos;
 		y = ypos;

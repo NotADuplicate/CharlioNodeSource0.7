@@ -6,7 +6,7 @@ function Kick() constructor {
 	cooldown = 11; 
 	name = "Dribble"
 	abilityName = "dribble"
-	text = "Apply force to yourself, nearby players, and the ball towards your mouse. If used on the ball the cooldown is only 3 seconds unless you exit range of the ball.";
+	text = "Apply force to yourself, nearby players, and the ball towards your mouse. If used on the ball the cooldown is only 2 seconds unless you exit range of the ball.";
 	
 	
 	static abilityPressed = function(buffer) {
@@ -27,9 +27,9 @@ function Kick() constructor {
 		scr_ball_ammo(ammoCost)
 		
 		if(point_distance(ball_player.x,ball_player.y, obj_bigBall.x, obj_bigBall.y) < 190) {
-			scr_ball_move(dir, 12, ball_player.num);
+			scr_ball_move(dir, 15, ball_player.num);
 			ball_player.kickedBall = true;
-			return(3);
+			return(2);
 		}
 		ball_player.kickedBall = false;
 		return(cooldown);

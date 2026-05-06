@@ -69,7 +69,8 @@ if(burn > 0) {
 if(magicBurn > 0) {
 	magicBurn--;
 	if(magicBurn mod 5 == 0) {
-		scr_damage(2,magicBurnNum,false, spr_darkness, true);
+		dmg = oil > 0 ? 6 : 2;
+		scr_damage(dmg,magicBurnNum,false, spr_darkness, true);
 		instance_create(x+random_range(-16,16),y+random_range(-16,16),obj_darkPart)
 	}
 }
@@ -115,7 +116,7 @@ if(place_meeting(x,y,ball_wall)) {
 
 if(stasis == false && obj_bigBall.drone != num && sleeping == 0) {
     if(!place_meeting(x+xspd,y,ball_wall)) {
-		if(oil == 0)
+		if(oil <= 0)
 			x += xspd;
 		else if(abs(hspeed) < abs(xspd))
 			hspeed += xspd/10;
@@ -127,7 +128,7 @@ if(stasis == false && obj_bigBall.drone != num && sleeping == 0) {
 			hopping+=2;
 	}
     if(!place_meeting(x,y+yspd,ball_wall)) {
-		if(oil == 0)
+		if(oil <= 0)
 			y += yspd;
 		else if(abs(vspeed) < abs(yspd))
 			vspeed += yspd/10;

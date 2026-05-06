@@ -3,8 +3,8 @@
 function Malpractice() constructor {
 	sprite = spr_malpractice;
 	ammoCost = 3;
-	duration = 6;
-	cooldown = 220; 
+	duration = 4;
+	cooldown = 300; 
 	name = "Malpractice"
 	abilityName = "malpractice"
 	text = "Any healing to other players reduces this ability's cooldown. Shoot a cone of projectiles that bleed enemies for 5 seconds."

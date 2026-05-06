@@ -3,7 +3,7 @@ function scr_damage(amount, damager, type, icon, DoT) {
 		var sponge = noone;
 		var sponging = false;
 		with(obj_sponge) {
-			if(team == global.teamNum[ball_player.num] && num != ball_player.num && point_distance(x,y,ball_player.x,ball_player.y) < 230) {
+			if(team == global.teamNum[ball_player.num] && num != ball_player.num && point_distance(x,y,ball_player.x,ball_player.y) < 280) {
 				sponge = self;
 			}
 			if(num == ball_player.num) {
@@ -25,9 +25,9 @@ function scr_damage(amount, damager, type, icon, DoT) {
 		}
 		if(damager < 10 && global.game == "Ball" && damager != ball_player.num) {
 			if(type) {
-				if(global.players[damager].firePassive && global.teamNum[damager] != global.teamNum[ball_player.num] && burn < 45) {
+				if(global.players[damager].firePassive > 0 && global.teamNum[damager] != global.teamNum[ball_player.num] && ball_player.burn < 45) {
 					with(ball_game) { //send plasma passive
-						node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num",53);
+						node_send(buffer,"eventName","Targeted Status","Target",ball_player.num, "User", damager, "Status Num",31);
 					}
 					ball_player.magicBurnNum = damager; 
 				}
@@ -101,11 +101,6 @@ function scr_damage(amount, damager, type, icon, DoT) {
 	            death.num = damager;
 	        }
 	    }
-		if(instance_exists(ball_player)) {
-			with(ball_game) {
-				node_send(buffer,"eventName","Player Health","Num",ball_player.num,"Hp",ball_player.hp)
-			}
-		}
 	}
 	else if(ball_player.blocking > 0 && amount > 10) {
 		scr_ball_sound(snd_block,ball_player.x,ball_player.y)

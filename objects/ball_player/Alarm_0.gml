@@ -46,6 +46,7 @@ if(global.atktext != "Pistol") {
 }
 startingX = x;
 startingY = y;
+gun = instance_create(0,0,obj_gun)
 gun.num = num;
 ///Get passive
 /*switch(global.passive) {

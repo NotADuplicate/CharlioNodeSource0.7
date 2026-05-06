@@ -20,7 +20,10 @@ if(sprite_index == spr_melee) {
 	alarm[1] = 4;
 }
 if(sprite_index == spr_chargeGunStrong || sprite_index == spr_chargeGunWeak) {
-	if(global.chargeGun == 0 && num == ball_player.num) {
+	chargeGun++;
+	if(chargeGun >= 4) { chargeGun = 0; }
+	
+	if(chargeGun == 0) {
 		sprite_index = spr_chargeGunStrong;
 	} else {
 		sprite_index = spr_chargeGunWeak;

@@ -7,3 +7,6 @@ with(obj_gun) {
 		other.dmg *= 1.5;
 	}
 }
+scope = global.players[num].scope
+speed *= scope;
+speed *= scope;

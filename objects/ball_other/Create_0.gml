@@ -17,7 +17,7 @@ scale = 1;
 invis = true;
 totalDamage = 0;
 vis = true;
-firePassive = false;
+firePassive = 0;
 garren = false
 gunDir = 0;
 ramming = false
@@ -35,8 +35,6 @@ seen = 0;
 spectating = false;
 walkDirection = 1;
 
-
-gun = instance_create(0,0,obj_gun);
 image_yscale = 2;
 image_speed = 1/2;
 

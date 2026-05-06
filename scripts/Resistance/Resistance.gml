@@ -7,11 +7,11 @@ function Resistance() constructor {
 	type = "Defense"
 	
 	static passiveGet = function(buffer) {
-		global.resistance *= 1.25
+		global.resistance *= 1.275
 	}
 	
 	static passiveLose = function(buffer) {
-		global.resistance /= 1.25
+		global.resistance /= 1.275
 	}
 	
 	static otherGet = function(num) {

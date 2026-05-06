@@ -51,6 +51,7 @@ glove = new Catch();
 plasmaBomb = new PlasmaBomb();
 sponge = new Protect();
 malpractice = new Malpractice();
+oil = new Oil();
 
 global.loadoutSet[0] = [shuriken, flash, bloodshot, frost, armorBreak, cleaver, healBomb, blastOff, obj_ARbullet, virgin_bullet];
 global.loadoutSet[1] = [axe, dash, flareGun, molotov, block, rocket, implosion, heal, obj_grenade, obj_melee];

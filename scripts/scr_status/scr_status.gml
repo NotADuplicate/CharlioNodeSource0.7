@@ -106,7 +106,7 @@ function scr_status(status,target){
 		break;
 		case 19: //oil
 			if(global.players[target].spellShield == 0)
-				global.players[target].oil = 240;
+				global.players[target].oil = Abilities.oil.duration * 30;
 		break;
 		case 20: //cryo
 			if(global.players[target].spellShield == 0) {
@@ -160,9 +160,6 @@ function scr_status(status,target){
 					instance_destroy(passive_sponge)
 			}
 		break;
-		case 30:
-			global.players[target].firePassive = true;
-		break
 		case 31: //see loadout
 			//if(global.teamNum[target] != global.teamNum[ball_player]) {
 				i = 0
@@ -331,9 +328,6 @@ function scr_status(status,target){
 					global.invincibility = 45;
 			}
 		break;
-		case 56:
-			global.players[target].firePassive = false;
-		break
 		case 57:
 			with(obj_gun) {
 				if(num == target) {

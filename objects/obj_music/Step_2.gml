@@ -18,6 +18,11 @@ if(obj_junglePass.garren > 0) {
 		global.music = audio_play_sound(track,0,false,0);
 		audio_sound_gain(global.music,global.musVolume,500)
 	}
+} else if(track == mus_garen) {
+		audio_stop_sound(global.music)
+		track = mus_letsBall;
+		global.music = audio_play_sound(track,0,false,0);
+		audio_sound_gain(global.music,global.musVolume,500)
 }
 else if(ballZone) {
 	if(audio_is_playing(track) && track != mus_lastStand) {

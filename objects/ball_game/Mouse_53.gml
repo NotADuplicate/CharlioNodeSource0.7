@@ -63,7 +63,7 @@ if((global.ammo > 0 || global.attack = obj_bullet || global.attack = chad_bullet
         case obj_shotgun:
             scr_ball_shoot();
             reload = 55;
-            scr_ball_ammo(1);
+            scr_ball_ammo(2);
 			if(global.upgraded)
 				scr_player_move(point_direction(mouse_x,mouse_y,ball_player.x,ball_player.y),9);
         break;

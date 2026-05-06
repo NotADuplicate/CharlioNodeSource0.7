@@ -16,8 +16,8 @@
     "path":"folders/Objects/Ball/Attacks.yy",
   },
   "parentObjectId":{
-    "name":"inst_damager",
-    "path":"objects/inst_damager/inst_damager.yy",
+    "name":"obj_void",
+    "path":"objects/obj_void/obj_void.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

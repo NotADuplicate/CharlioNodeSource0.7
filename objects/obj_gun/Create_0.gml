@@ -19,3 +19,4 @@ revving = false;
 previousRev = false;
 revSound = 0;
 swung = false;
+chargeGun = 0;

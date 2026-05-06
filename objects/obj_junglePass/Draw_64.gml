@@ -1,7 +1,7 @@
 /// @description Draw jungle passives with cooldowns
 xp = 70;
 if(garren > 0) {
-	draw_sprite_ext(spr_garen,0,xp,60,.1,.1,0,c_white,1)
+	draw_sprite_ext(spr_purple,0,xp,60,2,2,0,c_white,1)
 	draw_healthbar(xp-30,80,xp+30,90,garren/1.6,c_dkgray,c_white,c_white,0,true,true)
 	xp += 80;
 }

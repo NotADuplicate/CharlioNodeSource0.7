@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Shuriken() constructor {
 	sprite = spr_shuriken;
-	damage = 50;
+	damage = 55;
 	ammoCost = 2;
 	cooldown = 10; 
 	name = "Shuriken"

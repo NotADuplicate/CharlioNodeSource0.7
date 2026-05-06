@@ -47,6 +47,7 @@ list[44] = enrage;
 list[45] = plasmaBomb;
 list[46] = sponge;
 list[47] = malpractice;
+list[48] = oil;
 //list[45] = milk;
 //list[47] = glove;
 

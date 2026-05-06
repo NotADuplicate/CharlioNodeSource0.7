@@ -5,7 +5,7 @@ if(respawnTimer > 0 && instance_exists(obj_ending) == false) {
 		respawnTimer = 0;
 }
 
-if(gun.dir > 90 && gun.dir < 270){
+if(gunDir > 90 && gunDir < 270){
 	walkDirection = -2*scale;
 }
 else
