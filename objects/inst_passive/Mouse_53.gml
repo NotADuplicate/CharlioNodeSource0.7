@@ -26,7 +26,6 @@ else if(global.shop && global.shopState == "Passives" && active) {
 		}
 		else if(selected == 1 && global.leveled > 0) {
 			global.levelSpent = 12;
-			global.leveled--;
 			global.passiveCount++;
 			if(global.passiveCount > 10) {extraStacks++;
 			} else { stacks++;}

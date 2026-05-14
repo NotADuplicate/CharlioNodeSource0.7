@@ -190,9 +190,9 @@ if(throwTime > 0 && instance_exists(obj_gravity)) {
 ///Slow down from knockback
 if(speed > 0 && ninjaSlash == false && throwTime == 0) {
 	if(oil == 0)
-		speed -= knockback;
+		speed -= knockback * global.pushSpd;
 	else
-		speed -= knockback/2;
+		speed -= global.pushSpd * knockback/2;
 }
 else if(speed <0) {
     speed = 0;

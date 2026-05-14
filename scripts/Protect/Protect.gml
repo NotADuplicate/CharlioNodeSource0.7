@@ -4,6 +4,7 @@ function Protect() constructor {
 	sprite = spr_sponge;
 	ammoCost = 2;
 	cooldown = 21; 
+	range = 330;
 	name = "Protect"
 	abilityName = "protect"
 	text = "For the next 6 seconds, any damage dealt to allies near you is split evenly between you and the ally."

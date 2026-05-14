@@ -167,8 +167,8 @@ function scr_ball_receive() {
 					obj_bigBall.stasisy = yspd
 				} 
 				else {
-					obj_bigBall.hspeed = xspd;
-					obj_bigBall.vspeed = yspd;
+					obj_bigBall.xspd = xspd;
+					obj_bigBall.yspd = yspd;
 				}
 			}
 	    break;
@@ -283,34 +283,53 @@ function scr_ball_receive() {
 				global.players[num10].hp = hpVal
 		break;
 		case "Ball Pos":
-		if(obj_client.ping < current_time - global.lastTouchTime) {
+		//if(obj_client.ping < current_time - global.lastTouchTime) {
 			xp = buffer[? "X"]
 			yp = buffer[? "Y"]
 			xspd = buffer[? "Xspd"]
 			yspd = buffer[? "Yspd"]
 			serverTime = buffer[? "Time"]
-			obj_bigBall.x = xp;
-			obj_bigBall.y = yp;
-			timeAgo = current_time - serverTime + global.pingOffset;
-			var predictionTime = 0;
-			/*while(predictionTime < timeAgo/2 && global.predict) {
-				with(obj_bigBall) {
-					if(place_meeting(x + other.xspd, y, ball_wall)) {
-						other.xspd *= -0.7
+			local_ball.x = xp;
+			local_ball.y = yp;
+			local_ball.xspd = xspd;
+			local_ball.yspd = yspd;
+			var dist = point_distance(ball_player.x,ball_player.y,local_ball.x,local_ball.y);
+			if(dist > 800 || !obj_bigBall.started) {
+				obj_bigBall.x = xp;
+				obj_bigBall.y = yp;
+				obj_bigBall.xspd = xspd;
+				obj_bigBall.yspd = yspd;
+				return;
+			}
+				//timeAgo = current_time - serverTime + global.pingOffset;
+				/*var predictionTime = -20;
+				var dt_scale = 30 * delta_time / 1000000;
+				while(predictionTime < timeAgo && global.predict && abs(local_ball.xspd) + abs(local_ball.yspd) > 0.5) {
+					var lastX = local_ball.x;
+					with(local_ball) {
+						scr_ballStep(dt_scale);
 					}
-					if(place_meeting(x, y+other.yspd, ball_wall)) {
-						other.yspd *= -0.7
-					}
-					x += other.xspd;
-					y += other.yspd;
-				}
-				xspd *= 0.97;
-				yspd *= 0.97;
-				predictionTime += 33;
-			}*/
-			obj_bigBall.hspeed = xspd;
-			obj_bigBall.vspeed = yspd;
-		}
+					predictionTime += 33;
+				}*/
+				//extraPredictedX = local_ball.x + obj_bigBall.xspd * (obj_client.ping/33);
+				//extraPredictedY = local_ball.y + obj_bigBall.yspd * (obj_client.ping/33);
+				//if(obj_client.ping+20 < (current_time - global.lastTouchTime)/2) {// || (abs(obj_bigBall.x-local_ball.x) + abs(obj_bigBall.y-local_ball.y))/2 > (abs(obj_bigBall.xspd) + abs(obj_bigBall.yspd)) * ((10+obj_client.ping)/33)) {
+					//if(scr_distFromHistory(local_ball.x, local_ball.y) < 30) { return; }
+					//show_debug_message("dist from hist")
+					//show_debug_message(scr_distFromHistory(local_ball.x, local_ball.y))
+			snapDist = 3
+			if(abs(obj_bigBall.x-local_ball.x) < snapDist)
+				obj_bigBall.x = local_ball.x;
+					
+			if(abs(obj_bigBall.y-local_ball.y) < snapDist)
+				obj_bigBall.y = local_ball.y;
+					
+			localWeight = max(50 - scr_distFromHistory(local_ball.x, local_ball.y),0.5);//max((abs(obj_bigBall.xspd) + abs(obj_bigBall.yspd)+10) - abs(obj_bigBall.y-local_ball.y) - abs(obj_bigBall.x-local_ball.x),0);
+			obj_bigBall.x = (obj_bigBall.x*localWeight + local_ball.x)/(localWeight+1);
+			obj_bigBall.y = (obj_bigBall.y*localWeight + local_ball.y)/(localWeight+1);
+			obj_bigBall.xspd = (obj_bigBall.xspd*localWeight + local_ball.xspd)/(localWeight+1);
+			obj_bigBall.yspd = (obj_bigBall.yspd*localWeight + local_ball.yspd)/(localWeight+1);
+				//}
 		break;
 		case "Tower Damage":
 			towerNum = buffer[? "Num"]
@@ -583,6 +602,27 @@ function scr_ball_receive() {
 			healths = buffer[? "hps"]
 			scr_towerUpdate(nums,healths,maxHealths)
 	    break;
+		case "Player Xp":
+			num = buffer[? "id"];
+			xp = buffer[? "xp"];
+			xpMax = buffer[? "xpMax"];
+			level = buffer[? "level"];
+			respawnTimer = buffer[? "respawnTimer"];
+			global.players[num].setRespawnTimer = respawnTimer;
+			if(num == ball_player.num) {
+				global.xp = xp;
+				global.xpMax = xpMax;
+				global.leveled = level;
+			}
+		break;
+		case "Collect Soul":
+			var soulNum = buffer[? "Target"];
+			with(ball_corpse) {
+				if(self.num == soulNum) {
+					instance_destroy();
+				}
+			}
+		break;
 	}
 	}
 

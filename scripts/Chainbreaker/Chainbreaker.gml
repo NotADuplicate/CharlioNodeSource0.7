@@ -8,7 +8,7 @@ function Chainbreaker() constructor {
 	duration = 3;
 	name = "Chainbreaker"
 	abilityName = "chainbreaker"
-	text = "Chain yourself to any nearby enemy or ball. If they are still in range of the chain after 3 seconds of being chained, they take 175 damage and lots of knockback. Particularly good at pushing the ball.";
+	text = "Chain yourself to any nearby enemy or ball. If they are still in range of the chain after 3 seconds of being chained, they take " + string(damage) + " damage and lots of knockback. Particularly good at pushing the ball.";
 	
 	
 	static abilityPressed = function(buffer) {

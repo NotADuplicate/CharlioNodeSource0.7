@@ -4,7 +4,8 @@ function Revive() constructor {
 	sprite = spr_heart;
 	ammoCost = 5;
 	cooldown = 40;
-	duration = 1;
+	duration = 1.5;
+	healing = 75;
 	name = "Revive"
 	abilityName = "revive"
 	text = "Chain yourself to a nearby ally soul. If you are still attached in " + string(duration) + " seconds, they are revived.";

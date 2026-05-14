@@ -3,20 +3,26 @@
 function scr_ball_move(dir,spd,targetN){
 	if(obj_bigBall.inversion > 0)
 		dir += 180;
+	if(obj_bigBall.frost > 0)
+		spd = spd/2;
+		
+	xMotion = lengthdir_x(spd,dir)
+	yMotion = lengthdir_y(spd,dir)
+	
+	with(obj_bigBall) {
+		xspd += other.xMotion;
+		yspd += other.yMotion;
+		lastTouched = 1;
+	}
+	if(targetN !== 0) {
+		global.lastTouchTime = current_time;
+	}
 	if(global.payload == false) {
-		if(targetN == obj_client.index || global.testMode) { //only actually apply if you were the one who pushed it
-			if(obj_bigBall.frost > 0)
-				spd = spd/2;
+		if(targetN == obj_client.index) { //only actually apply if you were the one who pushed it
 
-			with(obj_bigBall) {
-				motion_add(dir,spd)
-				lastTouched = 1;
-			}
 			with(obj_ballGhost) {
 				motion_add(dir, spd);
 			}
-			if(global.predict)
-				global.lastTouchTime = current_time;
 		}
 	}
 }

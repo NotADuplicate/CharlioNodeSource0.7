@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Flash() constructor {
 	sprite = spr_flash;
-	ammoCost = 2;
+	ammoCost = 1;
 	cooldown = 21; 
 	name = "Flash"
 	abilityName = "flash"

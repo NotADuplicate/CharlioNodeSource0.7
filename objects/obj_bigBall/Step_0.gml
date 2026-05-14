@@ -28,6 +28,3 @@ if(oil > 0)
 	
 if(melee > 0)
 	melee--;
-
-if(speed > 70)
-	speed = 70;

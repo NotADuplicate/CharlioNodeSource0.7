@@ -95,7 +95,8 @@ function scr_status(status,target){
 				scr_ball_sound(snd_frost,global.players[target].x,global.players[target].y);
 				global.players[target].frost = 30*Abilities.frost.duration;
 				if(target == 100) { //slow ball
-					obj_bigBall.speed = round(obj_bigBall.speed/2)
+					obj_bigBall.xspd = round(obj_bigBall.xspd/2)
+					obj_bigBall.yspd = round(obj_bigBall.yspd/2)
 				}
 			}
 		break;
@@ -285,21 +286,6 @@ function scr_status(status,target){
 			with(ball_corpse) {
 				if(num = target) {
 					instance_destroy()
-				}
-			}
-		break;
-		case 52: //destroy corpse with XP
-			with(ball_corpse) {
-				if(num = target) {
-					instance_destroy()
-					if(global.teamNum[num] != global.teamNum[ball_player.num]) {// give xp for the kill
-						var xpPercent = max(25 + 5*(global.totalLevels2-global.totalLevels),15);
-						global.xp += global.xpMax*xpPercent/100;
-					}
-					else {
-						var xpPercent = max(25 + 5*(global.totalLevels-global.totalLevels2),15);
-						global.xp2 += global.xpMax2*xpPercent/100;
-					}
 				}
 			}
 		break;

@@ -1,6 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_movespeed(){
+	if(ballPushing > 0) {
+		xspd *= 0.5;
+		yspd *= 0.5;
+		ballPushing--;
+	}
 	if(enraged) {
 		xspd *= 1.5;
 		yspd *= 1.5;

@@ -3,7 +3,7 @@ function scr_damage(amount, damager, type, icon, DoT) {
 		var sponge = noone;
 		var sponging = false;
 		with(obj_sponge) {
-			if(team == global.teamNum[ball_player.num] && num != ball_player.num && point_distance(x,y,ball_player.x,ball_player.y) < 280) {
+			if(team == global.teamNum[ball_player.num] && num != ball_player.num && point_distance(x,y,ball_player.x,ball_player.y) < Abilities.sponge.range) {
 				sponge = self;
 			}
 			if(num == ball_player.num) {

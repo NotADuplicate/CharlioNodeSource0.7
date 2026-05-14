@@ -2,10 +2,9 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function HealBomb() constructor {
 	sprite = spr_healthBomb;
-	damage = 30;
-	healing = 45;
+	healing = 50;
 	ammoCost = 4;
-	cooldown = 15; 
+	cooldown = 14; 
 	name = "Heal Bomb"
 	abilityName = "healBomb"
 	text = "Throw a bomb which heals all players by " + string(healing) + " health when it lands";

@@ -5,6 +5,6 @@ if(global.teamNum[num] != global.teamNum[other.num]) { //be collected as a soul
 		global.ammo = global.maxAmmo;
 	}
 	with(ball_game) {
-		node_send(buffer,"eventName","Status","Target",other.num,"Status Num", 52);
+		node_send(buffer,"eventName","Collect Soul","Target",other.num,"Collector", ball_player.num);
 	}
 }

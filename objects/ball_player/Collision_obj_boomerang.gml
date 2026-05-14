@@ -4,7 +4,7 @@ if(other.num == num && other.speed > 0) {
 }
 else if(other.num == num) {
 	instance_destroy(other);
-	global.ammo += 3;
+	global.ammo += 2;
 	if(global.ammo > global.maxAmmo) {
 		global.ammo = global.maxAmmo;
 	}

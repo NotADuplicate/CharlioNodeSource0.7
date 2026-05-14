@@ -2,8 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Heal() constructor {
 	sprite = spr_heal;
-	healing = 120;
-	ammoCost = 4;
+	healing = 90;
+	ammoCost = 5;
 	cooldown = 4; 
 	name = "Health Shot"
 	abilityName = "heal"

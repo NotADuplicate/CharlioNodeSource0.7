@@ -12,7 +12,7 @@ function NinjaDash() constructor {
 	
 	
 	static abilityPressed = function(buffer) {
-		if(global.ammo >= ammoCost) {
+		if(global.ammo >= ammoCost && ball_player.ninja <= 0 && !ball_player.ninjaSlash) {
 			ball_player.ninja = 1;
 			ball_game.held = true;
 			ball_game.range = 0;
@@ -25,7 +25,6 @@ function NinjaDash() constructor {
 		ball_player.speed = 31;
 		ball_player.direction = point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y)
 		global.slow = 0;
-		cool = 18;
 		scr_ball_ammo(ammoCost);
 		node_send(buffer,"Dir",point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y),"X",ball_player.ninja,"Y",ball_player.y,"Num",ball_player.num,"Obj",obj_ninjaSlash,"eventName","Bullet")
 		return(cooldown);

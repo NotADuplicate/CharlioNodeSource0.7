@@ -10,7 +10,7 @@ function Dash() constructor {
 	
 	
 	static abilityPressed = function(buffer) {
-		if(ball_player.frost <= 0 && global.ammo >= ammoCost) {
+		if(global.ammo >= ammoCost) {
 	        global.slow = 4;
 	        ball_game.alarm[7] = 8;
 			ball_player.dashing = 8;

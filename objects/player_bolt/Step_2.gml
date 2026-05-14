@@ -16,7 +16,7 @@ if(instance_exists(obj_player)) {
 	}
 }
 if(charge < 75) 
-	charge += global.shooting;
+	charge += global.shooting*1.2;
 else {
 	instance_destroy();
 	global.slow = 1;

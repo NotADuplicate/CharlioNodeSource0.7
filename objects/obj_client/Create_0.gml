@@ -16,6 +16,7 @@ rumbleSetup = false;
 rumbleGun = undefined;
 
 global.gameMode = "Comp"
+global.resolved = false;
 pingTime = 3;
 global.mons = 21;
 global.colors[0] = spr_white;

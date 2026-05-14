@@ -1,18 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"inst_passive",
+  "%Name":"local_ball",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":53,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":52,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"inst_passive",
+  "name":"local_ball",
   "overriddenProperties":[],
   "parent":{
-    "name":"Passive",
-    "path":"folders/Objects/Ball/Passive.yy",
+    "name":"Ball",
+    "path":"folders/Objects/Ball.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -33,9 +32,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_white",
-    "path":"sprites/spr_white/spr_white.yy",
+    "name":"spr_ult",
+    "path":"sprites/spr_ult/spr_ult.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

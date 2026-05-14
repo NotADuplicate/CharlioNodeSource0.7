@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_ballStep",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_ballStep",
+  "parent":{
+    "name":"Ball",
+    "path":"folders/Scripts/Ball.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

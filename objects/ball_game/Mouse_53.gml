@@ -1,5 +1,8 @@
 ///Shoot bullet (switch)
-ball_player.ninja = 0;
+if(held || ball_player.ninja) {
+	held = false;
+	ball_player.ninja = 0;
+}
 timer = 0;
 shootable = global.throwRange <= 0;
 with(ball_player) {
@@ -61,11 +64,13 @@ if((global.ammo > 0 || global.attack = obj_bullet || global.attack = chad_bullet
 				scr_player_move(point_direction(mouse_x,mouse_y,ball_player.x,ball_player.y),9);
         break;
         case obj_shotgun:
-            scr_ball_shoot();
-            reload = 55;
-            scr_ball_ammo(2);
-			if(global.upgraded)
-				scr_player_move(point_direction(mouse_x,mouse_y,ball_player.x,ball_player.y),9);
+			if(global.ammo >= 2) {
+	            scr_ball_shoot();
+	            reload = 55;
+	            scr_ball_ammo(2);
+				if(global.upgraded)
+					scr_player_move(point_direction(mouse_x,mouse_y,ball_player.x,ball_player.y),9);
+			}
         break;
         case obj_bullet:
             scr_ball_shoot();
@@ -93,10 +98,10 @@ if((global.ammo > 0 || global.attack = obj_bullet || global.attack = chad_bullet
 			}
         break;
         case obj_boomerang:
-			if(global.ammo > 2) {
+			if(global.ammo >= 2) {
 	            scr_ball_shoot();
 	            reload = 45;
-	            scr_ball_ammo(3);
+	            scr_ball_ammo(2);
 			}
         break;
     }

@@ -31,6 +31,19 @@ function scr_cleanse(player){
 		if(num == other.num) {
 			instance_destroy();
 		}
+		if(userNum == ball_player.num) {
+			ball_game.held = false;
+			ball_player.curseCharge = 0;
+			global.slow = 1;
+			if(global.right == Abilities.curse)
+				global.rightCool = Abilities.curse.cooldown;
+			if(global.space == Abilities.curse)
+				global.spaceCool = Abilities.curse.cooldown;
+			if(global.Q == Abilities.curse)
+				global.QCool = Abilities.curse.cooldown;
+			if(global.R == Abilities.curse)
+				global.RCool = Abilities.curse.cooldown;
+		}
 	}
 	with(obj_gun) {
 		if(num == other.num) {

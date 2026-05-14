@@ -1,26 +1,18 @@
-/// @description Insert description here
-// You can write your code in this editor
-if(oil == 0) {
-	if(speed > 0.75 || lastTouched > 0) {
-		speed *= 0.97;
-	}
-	else
-		speed = 0;
+/// @description Custom movement and 
+lastPos = {
+	time: current_time,
+	xp: x,
+	yp: y,
 }
+array_push(ballHistory, lastPos);
+if(ballHistory[0].time < current_time - obj_client.ping - 40) {
+	array_shift(ballHistory);
+}
+var dt_scale = 30 * delta_time / 1000000;
+scr_ballStep(dt_scale);
 lastTouched--;
 //hspeed += .1*global.garren
 
-//Horizontal bounce
-if(place_meeting(x + hspeed, y, ball_wall) || place_meeting(x + hspeed, y, jungle_wall)) {
-    direction = -direction + 180;
-	hspeed *= .7
-}
-
-//Vertical bounce
-if(place_meeting(x, y + vspeed, ball_wall) || place_meeting(x, y + vspeed, jungle_wall)) {
-    direction = -direction;
-	vspeed *= .7
-}
 
 if(global.testMode) { //damage turrets in test mode
 	//Horizontal bounce

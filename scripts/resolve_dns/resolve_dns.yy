@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"resolve_dns",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"resolve_dns",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

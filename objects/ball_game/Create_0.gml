@@ -38,7 +38,7 @@ global.spellBlade = false;
 global.lastTouch = 1;
 global.utilityClass = "";
 global.lastTouchTime = current_time;
-global.predict = false;
+global.predict = true;
 global.KBmult = 1;
 global.teleportTimer = 150;
 global.resistance = 1;
@@ -84,10 +84,6 @@ global.stun = 60;
 global.dead = false
 global.xp = 0;
 global.xpMax = 1500
-global.xp2 = 0;
-global.xpMax2 = 1500;
-global.totalLevels = 0;
-global.totalLevels2 = 0;
 global.coolReduc = 1;
 global.garren = 0;
 
@@ -100,8 +96,6 @@ if(global.gameMode == "Rumble") { //if rumble gamemode, don't override abilities
 	global.right = 0
 }
 
-global.respawn = 8;
-global.respawn2 = 8;
 global.caustic = 0;
 global.waves = 0;
 global.portal = false;

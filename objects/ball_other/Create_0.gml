@@ -4,6 +4,7 @@ alarm[3] = 300;
 
 depth = 500;
 respawnTimer = 0;
+setRespawnTimer = 0;
 hp = 250;
 maxhp = 250;
 healing = 1;

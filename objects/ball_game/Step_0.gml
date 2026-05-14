@@ -77,27 +77,6 @@ if(global.teleportTimer > 0 && started) {
 else
 	global.free = 0;
 	
-if(global.xp > global.xpMax) {
-	global.xp-= global.xpMax
-	global.xpMax += 250;
-	global.leveled++;
-	if(global.respawn < 30)
-		global.respawn += 2.2;
-	global.totalLevels++;
-}
-else if(started && global.gameMode != "Rumble" && (!instance_exists(obj_tutorial) || obj_tutorial.stage > 16)) {
+if(started && global.gameMode != "Rumble" && (!instance_exists(obj_tutorial) || obj_tutorial.stage > 16)) {
 	global.xp+= (delta_time/1000000)*20
 }
-
-if(global.xp2 > global.xpMax2) {
-	global.xp2-= global.xpMax2
-	global.xpMax2 += 250;
-	if(global.respawn2 < 30)
-		global.respawn2 += 2.2;
-	global.totalLevels2++;
-}
-else if(started) {
-	global.xp2 += (delta_time/1000000)*20
-}
-
-

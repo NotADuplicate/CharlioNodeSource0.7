@@ -45,6 +45,11 @@ if(hp < 3) {
 				instance_destroy();
 			}
 		}
+		with(server_walls) {
+			if(jungleReset) {
+				instance_destroy();
+			}
+		}
 	}
 	instance_destroy();
 }

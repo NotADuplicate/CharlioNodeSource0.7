@@ -120,6 +120,7 @@ if(curseCharge > 0) {
 		if(curseCharge > 3) {
 			with(ball_game) {
 				ball_player.curseCharge = 0
+				held = false;
 				node_send(buffer,"eventName","Targeted Status","Target",ball_player.num,"User",ball_player.curseCharge,"Status Num", 28)
 			}
 			curseCharge = 0;
