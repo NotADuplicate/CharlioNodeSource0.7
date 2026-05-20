@@ -11,8 +11,8 @@ else if(other.stasis == false){
 	xDir = lengthdir_x(1, point_direction(other.x,other.y,x,y))
 	yDir = lengthdir_y(1, point_direction(other.x,other.y,x,y))
 	
-	xPush = xDir * (1+ abs(xspd))
-	yPush = yDir * (1+ abs(yspd))
+	xPush = xDir * (1+ abs(xspd)/3)
+	yPush = yDir * (1+ abs(yspd)/3)
 	
 	if(sign(other.xspd) == sign(xDir)) { //get pushed back if ball is moving towards you
 		xPush += (abs(other.xspd)) * sign(xPush)/3;

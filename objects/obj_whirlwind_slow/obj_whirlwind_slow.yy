@@ -1,14 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_sleep",
+  "%Name":"obj_whirlwind_slow",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"ball_player","path":"objects/ball_player/ball_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_dummy","path":"objects/obj_dummy/obj_dummy.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_sleep",
+  "name":"obj_whirlwind_slow",
   "overriddenProperties":[],
   "parent":{
     "name":"Attacks",
@@ -37,5 +36,5 @@
     "path":"sprites/spr_blast/spr_blast.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

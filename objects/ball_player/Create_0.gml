@@ -135,3 +135,4 @@ shadow.link = self;
 shadow.depth = 600;
 
 seen = 0;
+whirlwind = false;

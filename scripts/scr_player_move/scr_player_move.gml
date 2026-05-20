@@ -1,6 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_player_move(moveDirection,moveSpeed){
+	if(ball_player.whirlwind) {
+		return;
+	}
 	if(ball_player.throwTime == 0) {
 		dir = moveDirection;
 		pushSpd = moveSpeed*global.pushSpd*0.8;

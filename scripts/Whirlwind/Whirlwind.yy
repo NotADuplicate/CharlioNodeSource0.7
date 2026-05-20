@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Whirlwind",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Whirlwind",
+  "parent":{
+    "name":"BallAbilities",
+    "path":"folders/Scripts/BallAbilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

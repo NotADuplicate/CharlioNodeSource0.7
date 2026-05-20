@@ -1,6 +1,5 @@
 /// @description Heal all players
 var heals = Abilities.healBomb.healing;
-var dmg = Abilities.healBomb.damage;
 if(point_distance(x,y,ball_player.x,ball_player.y) < 300) {	
 	scr_heal(heals,num);
 }

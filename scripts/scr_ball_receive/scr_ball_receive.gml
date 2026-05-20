@@ -301,8 +301,8 @@ function scr_ball_receive() {
 				obj_bigBall.yspd = yspd;
 				return;
 			}
-				//timeAgo = current_time - serverTime + global.pingOffset;
-				/*var predictionTime = -20;
+				timeAgo = current_time - serverTime + global.pingOffset;
+				var predictionTime = -20;
 				var dt_scale = 30 * delta_time / 1000000;
 				while(predictionTime < timeAgo && global.predict && abs(local_ball.xspd) + abs(local_ball.yspd) > 0.5) {
 					var lastX = local_ball.x;
@@ -310,7 +310,7 @@ function scr_ball_receive() {
 						scr_ballStep(dt_scale);
 					}
 					predictionTime += 33;
-				}*/
+				}
 				//extraPredictedX = local_ball.x + obj_bigBall.xspd * (obj_client.ping/33);
 				//extraPredictedY = local_ball.y + obj_bigBall.yspd * (obj_client.ping/33);
 				//if(obj_client.ping+20 < (current_time - global.lastTouchTime)/2) {// || (abs(obj_bigBall.x-local_ball.x) + abs(obj_bigBall.y-local_ball.y))/2 > (abs(obj_bigBall.xspd) + abs(obj_bigBall.yspd)) * ((10+obj_client.ping)/33)) {

@@ -16,7 +16,7 @@ function scr_dummy_damage(dmg,dealer,type, icon, DoT){
 		dmg *= 2
 	}
 	hp -= dmg;
-	if(global.players[argument[1]].firePassive > 0 && type) {
+	if(type && global.players[argument[1]].firePassive > 0) {
 		var duration = global.players[argument[1]].firePassive*30;
 		magicBurn = max(magicBurn, duration);
 	}

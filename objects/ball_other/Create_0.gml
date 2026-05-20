@@ -3,6 +3,7 @@ alarm[0] = 1;
 alarm[3] = 300;
 
 depth = 500;
+pushing = 0.8;
 respawnTimer = 0;
 setRespawnTimer = 0;
 hp = 250;

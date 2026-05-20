@@ -1,6 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
-if(global.players[num].wallPassive == false) {
-	instance_create(x+lengthdir_x(38,image_angle),y+lengthdir_y(38,image_angle),obj_impact)
-	instance_destroy()
+/// @description Make impact and posibly refund ammo
+instance_create(x+lengthdir_x(38,image_angle),y+lengthdir_y(38,image_angle),obj_impact)
+instance_destroy()
+if(ammo && num == ball_player.num && global.ammo < global.maxAmmo) {
+	global.ammo++;
 }

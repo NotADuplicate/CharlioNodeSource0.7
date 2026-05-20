@@ -14,7 +14,7 @@ function scr_ball_move(dir,spd,targetN){
 		yspd += other.yMotion;
 		lastTouched = 1;
 	}
-	if(targetN !== 0) {
+	if(targetN == obj_client.index) {
 		global.lastTouchTime = current_time;
 	}
 	if(global.payload == false) {
