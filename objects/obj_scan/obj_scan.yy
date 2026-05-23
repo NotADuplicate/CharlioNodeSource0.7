@@ -14,10 +14,7 @@
     "name":"Attacks",
     "path":"folders/Objects/Pirate/Attacks.yy",
   },
-  "parentObjectId":{
-    "name":"obj_light",
-    "path":"objects/obj_light/obj_light.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
