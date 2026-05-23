@@ -335,5 +335,9 @@ function scr_status(status,target){
 			if(global.players[target].spellShield == 0)
 				global.players[target].magicBurn = 300;
 		break;
+		case 61: //malpractice bleed
+			if(global.players[target].spellShield == 0)
+				global.players[target].bleed = 30*Abilities.malpractice.duration;
+		break;
 	}	
 }

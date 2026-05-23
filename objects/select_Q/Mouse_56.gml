@@ -7,20 +7,24 @@ if(room != room1 && global.shop && global.shopState == "Abilities" && global.uti
 	if(mouse_x < xp + 18 && mouse_x > xp - 18 && mouse_y < yp + 18 && mouse_y > yp-18) {
 		if(global.utilitySwapHeld) {
 			if(global.utilityClass == global.right) {
-				global.right = variable_global_get(abilityVar);
-				variable_global_set(abilityVar, global.utilityClass);
+				//global.right = variable_global_get(abilityVar);
+				//variable_global_set(abilityVar, global.utilityClass);
+				swappedSlot = 1;
+			} else if(global.utilityClass == global.space) {
+				//global.space = variable_global_get(abilityVar);
+				//variable_global_set(abilityVar, global.utilityClass);
+				swappedSlot = 3;
+			} else if(global.utilityClass == global.R) {
+				//global.R = variable_global_get(abilityVar);
+				//variable_global_set(abilityVar, global.utilityClass);
+				swappedSlot = 4;
+			} else if(global.utilityClass == global.Q) {
+				//global.Q = variable_global_get(abilityVar);
+				//variable_global_set(abilityVar, global.utilityClass);
+				swappedSlot = 2;
 			}
-			if(global.utilityClass == global.space) {
-				global.space = variable_global_get(abilityVar);
-				variable_global_set(abilityVar, global.utilityClass);
-			}
-			if(global.utilityClass == global.R) {
-				global.R = variable_global_get(abilityVar);
-				variable_global_set(abilityVar, global.utilityClass);
-			}
-			if(global.utilityClass == global.Q) {
-				global.Q = variable_global_get(abilityVar);
-				variable_global_set(abilityVar, global.utilityClass);
+			with(ball_game) {
+				node_send(buffer,"eventName","Loadout Swap","Num",ball_player.num,"Slot1",other.slot,"Slot2",other.swappedSlot)
 			}
 		}
 		
@@ -36,9 +40,9 @@ if(room != room1 && global.shop && global.shopState == "Abilities" && global.uti
 				if(global.leveled < 0) {
 					global.leveled = 0;
 				} else {
-					variable_global_set(abilityVar, global.utilityClass);
+					//variable_global_set(abilityVar, global.utilityClass);
 					with(ball_game) {
-						node_send(buffer,"eventName","Loadout","Num",ball_player.num,"Slot",other.slot,"Ability",variable_global_get(other.abilityVar).abilityIndex)
+						node_send(buffer,"eventName","Loadout","Num",ball_player.num,"Slot",other.slot,"Ability",global.utilityClass.abilityIndex)
 					}
 					audio_play_sound(snd_buy,1,false)
 				}

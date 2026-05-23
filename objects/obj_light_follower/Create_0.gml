@@ -2,7 +2,7 @@
 ins = self
 switch(Light_Type) {
 	case "Point Light":
-		light = light_create_point(x, y, Light_Shadow_Length, Light_Color, 1000, 10);
+		light = light_create_point(x, y, Light_Shadow_Length, Light_Color, 700, 10);
 		//sprite_index = spr_light_point;
 		break;
 	case "Spot Light":

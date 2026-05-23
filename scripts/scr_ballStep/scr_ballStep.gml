@@ -88,6 +88,7 @@ if (oil == 0) {
 
     if (spd > 0) {
         var new_spd = max(spd - fric * dt_scale, 0);
+		new_spd = min(new_spd, 40);
         var scale = new_spd / spd;
 
         xspd *= scale;

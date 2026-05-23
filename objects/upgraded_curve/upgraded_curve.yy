@@ -1,21 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_deathTouch",
+  "%Name":"upgraded_curve",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_portal","path":"objects/obj_portal/obj_portal.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"ball_wall","path":"objects/ball_wall/ball_wall.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_deathTouch",
+  "name":"upgraded_curve",
   "overriddenProperties":[],
   "parent":{
     "name":"Attacks",
     "path":"folders/Objects/Ball/Attacks.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_curve",
+    "path":"objects/obj_curve/obj_curve.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_deathball",
-    "path":"sprites/spr_deathball/spr_deathball.yy",
+    "name":"spr_swap",
+    "path":"sprites/spr_swap/spr_swap.yy",
   },
   "spriteMaskId":null,
   "visible":true,

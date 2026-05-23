@@ -344,9 +344,11 @@ function scr_ball_receive() {
 		break;
 		case "Ammo": // FIX LATER, IMPLEMENT REAL AMMO
 			num12 = buffer[? "Num"]
-			global.players[num12].ammo = buffer[? "Ammo"]
-			if(global.players[num12].ammo > global.players[num12].maxAmmo)
-				global.players[num12].maxAmmo = global.players[num12].ammo
+			if(num12 < global.loop) {
+				global.players[num12].ammo = buffer[? "Ammo"]
+				if(global.players[num12].ammo > global.players[num12].maxAmmo)
+					global.players[num12].maxAmmo = global.players[num12].ammo
+			}
 		break;
 		case "Open Gates":
 			instance_create(0,0,obj_music);
@@ -412,6 +414,8 @@ function scr_ball_receive() {
 					global.knownLoadout[num,index2] = passiveSprite;
 			}
 			else if(index2 < 4) { //update one of your ability slots
+				if(num == ball_player.num)
+					scr_abilitySet(abilityIndex, index2);
 				global.loadout[num,index2] = ability;
 				if(global.teamNum[num] == global.teamNum[ball_player.num]) //if on same team, update known loadouts
 					global.knownLoadout[num,index2] = ability;
@@ -436,6 +440,30 @@ function scr_ball_receive() {
 				else
 					global.knownLoadout[num,global.loadoutSize[num]] = 0;
 					
+			}
+			show_debug_message(global.loadout[num,index2])
+		break;
+		case "Loadout Swap":
+			show_debug_message("loadout switch")
+			num = buffer[? "Num"]
+			index1 = buffer[? "Slot1"]
+			index2 = buffer[? "Slot2"]
+			swap = global.loadout[num,index1]
+			global.loadout[num,index1] = global.loadout[num,index2]
+			global.loadout[num,index2] = swap;
+			global.knownLoadout[num,index1] = global.loadout[num,index1]
+			global.knownLoadout[num,index2] = global.loadout[num,index2]
+			if(num == ball_player.num) {
+				if(global.loadout[num,index1] != 0) {
+					scr_abilitySet(global.loadout[num,index1].abilityIndex, index1);
+				} else {
+					scr_abilitySet(-1, index1);
+				}
+				if(global.loadout[num,index2] != 0) {
+					scr_abilitySet(global.loadout[num,index2].abilityIndex, index2);
+				} else {
+					scr_abilitySet(-1, index2);
+				}
 			}
 		break;
 		case "Passive Lost":
@@ -547,6 +575,7 @@ function scr_ball_receive() {
 			}
 		break;
 		case "Gun Picked":
+			show_debug_message("gun picked")
 			gunName = buffer[? "Gun Name"];
 			var gunNum = buffer[? "Num"];
 			var gunObj = noone;
@@ -593,6 +622,7 @@ function scr_ball_receive() {
 					global.teamNum[num8] = buffer[? "Team"]
 					show_debug_message(buffer[? "Team"])
 				}
+				global.loop++;
 				scr_createBallPlayer(num8);
 			}
 		break;

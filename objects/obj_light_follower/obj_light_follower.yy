@@ -138,7 +138,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"racing_ice",
+    "path":"sprites/racing_ice/racing_ice.yy",
+  },
   "spriteMaskId":null,
   "visible":false,
 }

@@ -45,6 +45,12 @@ function scr_ball_shoot() {
 				case obj_melee:
 					ob = upgraded_melee;
 					break;
+				case obj_curve:
+					ob = upgraded_curve;
+					break;
+				case obj_ARbullet:
+					ob = upgraded_ARbullet;
+					break;
 			}
 		} else {
 			ob = global.attack;

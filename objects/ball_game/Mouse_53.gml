@@ -2,6 +2,11 @@
 if(held || ball_player.ninja) {
 	held = false;
 	ball_player.ninja = 0;
+	if(global.throwRange > 0) {
+		global.throwRange = 0;
+		node_send(buffer, "eventName", "Throw Sprite", "Num", ball_player.num, "Sprite", -1)
+	}
+	return;
 }
 timer = 0;
 shootable = global.throwRange <= 0;

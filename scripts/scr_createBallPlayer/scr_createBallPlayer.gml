@@ -1,4 +1,5 @@
 function scr_createBallPlayer(i){
+	show_debug_message("Create ball player")
 	global.loadoutSize[i] = 4;
 	global.deaths[i] = 0;
 	global.kills[i] = 0;
@@ -34,6 +35,7 @@ function scr_createBallPlayer(i){
 			ins.spectating = true;
 	}
 	else {
+		show_debug_message("Actually creating ball player")
 		ins = instance_create(0,0,ball_other);
 		ins.num = i;
 		global.players[i] = ins

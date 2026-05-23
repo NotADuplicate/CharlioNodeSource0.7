@@ -1,5 +1,5 @@
 function scr_damage(amount, damager, type, icon, DoT) {
-	if(global.invincibility == 0 && global.dead == false) {
+	if(global.invincibility == 0 && global.dead == false && global.spectator == false) {
 		var sponge = noone;
 		var sponging = false;
 		with(obj_sponge) {

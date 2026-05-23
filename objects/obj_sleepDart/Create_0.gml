@@ -4,3 +4,5 @@ image_xscale = 1.5;
 image_yscale = 1.5;
 portaled = false
 scr_ball_sound(snd_dart,x,y);
+active = false;
+alarm[0] = 1;

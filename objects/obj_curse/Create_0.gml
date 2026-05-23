@@ -9,3 +9,4 @@ alarm[2] = 5;
 portaled = false;
 image_xscale = 1.25;
 image_yscale = 1.25;
+alarm[2] = 1;

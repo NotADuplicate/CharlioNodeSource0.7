@@ -1,53 +1,54 @@
 /// @description Pick color and place
 seed = random_get_seed();
-if(spectating)
-	visible = false;
-if(global.gameMode == "Royale") { //set colors
-	sprite_index = global.colors[(num+seed) mod 6];
-	global.teamNum[num] = num;
-}
-else {//same team = same colors
-	if(global.teamNum[num] == 1)
-		sprite_index = spr_redIdle//spr_adventurer;
-	else
-		sprite_index = spr_blueIdle;
-}
-
 maxhp = 250;
 hp = maxhp;
-
-///Go to random place
-visible = true;
-if(global.gameMode == "Royale") {
-	global.attack = obj_bullet;
-	spawn = instance_find(royale_spwanPoints,(num+seed) mod instance_number(royale_spwanPoints))
-	x = spawn.x;
-	y = spawn.y;
-} else if(global.gameMode == "Rumble") {
-	y = 740;
-	if(global.teamNum[num] == -1) {
-		x = 1900;
-	} else {
-		x = 4790;
+if(spectating) {
+	visible = false;
+} else {
+	if(global.gameMode == "Royale") { //set colors
+		sprite_index = global.colors[(num+seed) mod 6];
+		global.teamNum[num] = num;
 	}
-}
-else {
-	with(obj_regen) {
-		if(global.teamNum[num] = global.teamNum[other.num]) {
-			other.x = x;
-			other.y = y;
+	else {//same team = same colors
+		if(global.teamNum[num] == 1)
+			sprite_index = spr_redIdle//spr_adventurer;
+		else
+			sprite_index = spr_blueIdle;
+	}
+
+	///Go to random place
+	visible = true;
+	if(global.gameMode == "Royale") {
+		global.attack = obj_bullet;
+		spawn = instance_find(royale_spwanPoints,(num+seed) mod instance_number(royale_spwanPoints))
+		x = spawn.x;
+		y = spawn.y;
+	} else if(global.gameMode == "Rumble") {
+		y = 740;
+		if(global.teamNum[num] == -1) {
+			x = 1900;
+		} else {
+			x = 4790;
 		}
 	}
-if(global.atktext != "Pistol") {
-	with(ball_game) {
-		node_send(buffer,"eventName","Gun Picked","Gun Name",global.atktext, "Num", ball_player.num);
+	else {
+		with(obj_regen) {
+			if(global.teamNum[num] = global.teamNum[other.num]) {
+				other.x = x;
+				other.y = y;
+			}
+		}
+	if(global.atktext != "Pistol") {
+		with(ball_game) {
+			node_send(buffer,"eventName","Gun Picked","Gun Name",global.atktext, "Num", ball_player.num);
+		}
 	}
+	}
+	startingX = x;
+	startingY = y;
+	gun = instance_create(0,0,obj_gun)
+	gun.num = num;
 }
-}
-startingX = x;
-startingY = y;
-gun = instance_create(0,0,obj_gun)
-gun.num = num;
 ///Get passive
 /*switch(global.passive) {
     case "regen":

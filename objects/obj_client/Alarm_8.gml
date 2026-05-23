@@ -3,6 +3,7 @@ global.serverip = "jazure.net";
 socket = network_create_socket(network_socket_udp)
 var spec = global.spectator;
 global.spectator = false;
+show_debug_message("Sending get lobbies")
 node_send(buffer,"eventName","Get Lobbies","spectator",spec);
 activeGame = false;
 global.spectator = spec;

@@ -1,5 +1,5 @@
 /// @description Spectating toggle map or player
-if(global.spectator || global.dead) {
+/*if(global.spectator || global.dead) {
 	if(view_get_visible(0)) { //go from zoomed in to map
 		show_debug_message("Zooming out to map")
 		view_set_visible(0,false)
@@ -15,5 +15,5 @@ if(global.spectator || global.dead) {
 		/*mousePinx = mouse_x;
 		mousePiny = mouse_y;
 		cameraPinx = x;
-		cameraPiny = y;*/
+		cameraPiny = y;
 }

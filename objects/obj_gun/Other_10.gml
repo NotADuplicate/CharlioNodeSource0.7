@@ -30,3 +30,6 @@ if(sprite_index == spr_chargeGunStrong || sprite_index == spr_chargeGunWeak) {
 	}
 	image_speed = 2;
 }
+if(sprite_index == spr_curveGun || sprite_index == spr_curveGunDown) {
+	clockwise = !clockwise;
+}

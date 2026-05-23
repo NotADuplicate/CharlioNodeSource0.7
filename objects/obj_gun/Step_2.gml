@@ -1,5 +1,5 @@
 /// @description Move to correct place
-if(initialized) {
+if(initialized && instance_exists(global.players[num])) {
 	dir = global.players[num].gunDir;
 	if(sprite_index == spr_melee && swung) {
 		image_angle = dir-45;;
@@ -16,8 +16,8 @@ if(initialized) {
 		 y = global.players[num].y;
 		 image_yscale = scale;
 		 image_xscale = scale*sign(global.players[num].walkDirection)*-1;
-		 shootX = ball_player.x + lengthdir_x(18*scale,dir);
-		 shootY = ball_player.y + lengthdir_y(18*scale,dir);
+		 shootX = ball_player.x + lengthdir_x(9*scale,dir);
+		 shootY = ball_player.y + lengthdir_y(9*scale,dir);
 	}
 	else {		
 		y = global.players[num].y+4;
@@ -42,14 +42,14 @@ if(initialized) {
 				newDir = dir-27;
 			if(dir < 90 || dir > 270)
 				newDir = dir+27
-			shootX = x + lengthdir_x(20*scale,newDir) + 7*scale*sign(image_xscale);
-			shootY = y + lengthdir_y(20*scale,newDir);
+			shootX = x + lengthdir_x(10*scale,newDir) + 7*scale*sign(image_xscale);
+			shootY = y + lengthdir_y(10*scale,newDir);
 		}
 		else {
 			x = global.players[num].x - lengthdir_x(8,dir)*sign(image_xscale) * global.players[num].scale;
 			depth = 0;
-			shootX = x + lengthdir_x(20*scale,dir) + 7*scale*sign(image_xscale);
-			shootY = y + lengthdir_y(20*scale,dir);
+			shootX = x + lengthdir_x(10*scale,dir) + 7*scale*sign(image_xscale);
+			shootY = y + lengthdir_y(10*scale,dir);
 			if(sprite_index == spr_curveGun || sprite_index == spr_curveGunDown) {
 				if(clockwise) {
 					sprite_index = image_xscale < 0 ? spr_curveGunDown : spr_curveGun
