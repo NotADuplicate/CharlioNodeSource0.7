@@ -1,0 +1,1 @@
+light_caster_delete(caster);

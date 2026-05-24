@@ -6,7 +6,7 @@
   "name":"light_create",
   "parent":{
     "name":"Lights",
-    "path":"folders/Scripts/Lighting/Lights.yy",
+    "path":"folders/Scripts/Fast Lights/Lights.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

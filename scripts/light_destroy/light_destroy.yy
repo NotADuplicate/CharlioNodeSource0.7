@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"light_destroy",
   "parent":{
-    "name":"Lights",
-    "path":"folders/Scripts/Lighting/Lights.yy",
+    "name":"Light System",
+    "path":"folders/Scripts/Fast Lights/Light System.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
