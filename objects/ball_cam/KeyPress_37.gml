@@ -16,13 +16,15 @@ if(global.spectator || global.dead) {
 	done = 5;
 	show_debug_message("LinkI:")
 	show_debug_message(linkI)
-	validPlayer = linkI == 100 || (global.players[linkI].respawnTimer <= 0 && (global.spectator || global.players[linkI].team == ball_player.team))
+	validPlayer = linkI == 100 || (global.players[linkI].respawnTimer <= 0 && (global.spectator || (linkI <= global.loop && global.teamNum[linkI] == ball_player.team)))
 	while(!validPlayer && done > 0) {
 		linkI--;
 		done--;
 		if(linkI < 1)
 			linkI = 100;
-		validPlayer = linkI == 100 || (global.players[linkI].respawnTimer <= 0 && (global.spectator || global.players[linkI].team == ball_player.team))
+		else if(linkI == 100)
+			linkI = global.loop;
+		validPlayer = linkI == 100 || (global.players[linkI].respawnTimer <= 0 && (global.spectator || (linkI <= global.loop && global.teamNum[linkI] == ball_player.team)))
 	}
 	if(linkI == 100) {
 		link = obj_bigBall;

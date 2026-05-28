@@ -11,14 +11,14 @@ function Decay() constructor {
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
 			ball_game.held = true;
-			ball_game.range = 210;
+			ball_game.range = 230;
 			return(0)
 		}
 		else { return(0); }
 	}
 	
 	static abilityReleased = function(buffer) {
-		if(point_distance(ball_player.x,ball_player.y,mouse_x,mouse_y) < 210 && global.ammo > ammoCost) {
+		if(point_distance(ball_player.x,ball_player.y,mouse_x,mouse_y) < 230 && global.ammo > ammoCost) {
 			instance_create(mouse_x,mouse_y,obj_decay);
 			with(ball_other) {
 				if(global.teamNum[num] != global.teamNum[ball_player.num] && point_distance(x,y,mouse_x,mouse_y) < 50) {

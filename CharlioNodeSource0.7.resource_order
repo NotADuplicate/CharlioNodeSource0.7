@@ -407,7 +407,6 @@
     {"name":"passive_bush","order":24,"path":"objects/passive_bush/passive_bush.yy",},
     {"name":"passive_bushBoots","order":3,"path":"objects/passive_bushBoots/passive_bushBoots.yy",},
     {"name":"passive_button","order":4,"path":"objects/passive_button/passive_button.yy",},
-    {"name":"passive_charge","order":4,"path":"objects/passive_charge/passive_charge.yy",},
     {"name":"passive_def","order":5,"path":"objects/passive_def/passive_def.yy",},
     {"name":"passive_healing","order":25,"path":"objects/passive_healing/passive_healing.yy",},
     {"name":"passive_health","order":4,"path":"objects/passive_health/passive_health.yy",},

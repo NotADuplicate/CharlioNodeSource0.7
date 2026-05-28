@@ -54,7 +54,7 @@ if((global.ammo > 0 || global.attack = obj_bullet || global.attack = chad_bullet
 		    xp = ball_player.x + lengthdir_x(15,dir);
 		    yp = ball_player.y + lengthdir_y(15,dir);
 		    buffer = ball_game.buffer;
-			node_send(buffer,"eventName","Bullet","X",xp,"Y",yp,"Dir",dir+curving,"Obj",global.attack,"Num",ball_player.num)
+			node_send(buffer,"eventName","Bullet","X",xp,"Y",yp,"Dir",dir+curving,"Obj",global.attack,"Num",ball_player.num, "Primary", true)
 			if(curving == 0)
 				curving = 360;
 			else

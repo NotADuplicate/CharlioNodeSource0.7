@@ -1,4 +1,6 @@
 /// @description Destroy
-instance_destroy();
-explode = instance_create(x,y,obj_shatterExplosion);
-explode.num = num;
+if(active) {
+	instance_destroy();
+	explode = instance_create(x,y,obj_shatterExplosion);
+	explode.num = num;
+}

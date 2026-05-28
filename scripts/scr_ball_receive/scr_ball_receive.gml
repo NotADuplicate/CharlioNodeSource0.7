@@ -123,6 +123,7 @@ function scr_ball_receive() {
 			var num = buffer[? "Num"];
 			
 			if(primary) {
+				show_debug_message("primary")
 				with(obj_gun) {
 					if(self.num == num) {
 						event_user(0);
@@ -344,7 +345,7 @@ function scr_ball_receive() {
 		break;
 		case "Ammo": // FIX LATER, IMPLEMENT REAL AMMO
 			num12 = buffer[? "Num"]
-			if(num12 < global.loop) {
+			if(num12 < global.loop && instance_exists(global.players[num12])) {
 				global.players[num12].ammo = buffer[? "Ammo"]
 				if(global.players[num12].ammo > global.players[num12].maxAmmo)
 					global.players[num12].maxAmmo = global.players[num12].ammo

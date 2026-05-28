@@ -2,7 +2,7 @@
 alarm[0] = 1;
 alarm[3] = 300;
 
-depth = 500;
+depth = 0;
 pushing = 0.8;
 respawnTimer = 0;
 setRespawnTimer = 0;

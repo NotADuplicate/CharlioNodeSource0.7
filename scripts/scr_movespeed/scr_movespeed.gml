@@ -6,6 +6,10 @@ function scr_movespeed(){
 		yspd = 0;
 		return;
 	}
+	if(xspd != 0 && yspd != 0) {
+		xspd *= 0.8;
+		yspd *= 0.8;
+	}
 	if(ballPushing > 0) {
 		xspd *= 0.5;
 		yspd *= 0.5;

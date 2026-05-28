@@ -3,7 +3,7 @@
 function Dash() constructor {
 	sprite = spr_speed;
 	ammoCost = 1;
-	cooldown = 3; 
+	cooldown = 4; 
 	name = "Dash"
 	abilityName = "dash"
 	text = "Quadruples your speed for 0.25 seconds."
@@ -12,8 +12,8 @@ function Dash() constructor {
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
 	        global.slow = 4;
-	        ball_game.alarm[7] = 8;
-			ball_player.dashing = 8;
+	        ball_game.alarm[7] = 7;
+			ball_player.dashing = 7;
 	        scr_ball_ammo(ammoCost);
 			node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num", 50)
 			return(cooldown);	

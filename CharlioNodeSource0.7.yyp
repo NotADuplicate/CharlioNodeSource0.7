@@ -114,7 +114,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.213",
+    "IDEVersion":"2024.14.4.222",
   },
   "name":"CharlioNodeSource0.7",
   "resources":[
@@ -538,7 +538,6 @@
     {"id":{"name":"passive_bush","path":"objects/passive_bush/passive_bush.yy",},},
     {"id":{"name":"passive_bushBoots","path":"objects/passive_bushBoots/passive_bushBoots.yy",},},
     {"id":{"name":"passive_button","path":"objects/passive_button/passive_button.yy",},},
-    {"id":{"name":"passive_charge","path":"objects/passive_charge/passive_charge.yy",},},
     {"id":{"name":"passive_def","path":"objects/passive_def/passive_def.yy",},},
     {"id":{"name":"passive_healing","path":"objects/passive_healing/passive_healing.yy",},},
     {"id":{"name":"passive_health","path":"objects/passive_health/passive_health.yy",},},

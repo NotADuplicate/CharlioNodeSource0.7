@@ -1,4 +1,6 @@
 /// Fire
+show_debug_message("shootin")
+show_debug_message(sprite_index)
 if(sprite_index == spr_pistol || sprite_index == spr_shotgun) {
 	image_speed = 2;
 	if(sprite_index == spr_shotgun) {
@@ -31,5 +33,8 @@ if(sprite_index == spr_chargeGunStrong || sprite_index == spr_chargeGunWeak) {
 	image_speed = 2;
 }
 if(sprite_index == spr_curveGun || sprite_index == spr_curveGunDown) {
+	show_debug_message("clockwise")
+	show_debug_message(clockwise)
 	clockwise = !clockwise;
+	show_debug_message(clockwise)
 }

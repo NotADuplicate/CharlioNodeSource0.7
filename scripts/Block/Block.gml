@@ -3,7 +3,7 @@
 function Block() constructor {
 	sprite = spr_defense;
 	duration = 0.67
-	cooldown = 10; 
+	cooldown = 11; 
 	ammoCost = 1;
 	name = "Block"
 	abilityName = "block"

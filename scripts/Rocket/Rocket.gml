@@ -3,7 +3,7 @@
 function Rocket() constructor {
 	sprite = spr_rocket;
 	damage = 40;
-	ammoCost = 2;
+	ammoCost = 1;
 	cooldown = 20; 
 	name = "Rocket"
 	abilityName = "rocket"

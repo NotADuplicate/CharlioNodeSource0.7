@@ -2,5 +2,5 @@
 // You can write your code in this editor
 if(other.active) {
 	instance_destroy(other)
-	scr_ball_move(other.direction,20,other.num);
+	scr_ball_move(other.direction,19,other.num);
 }

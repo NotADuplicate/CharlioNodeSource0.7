@@ -16,9 +16,9 @@ function scr_damage(amount, damager, type, icon, DoT) {
 			else
 				thing = damager;
 			with(ball_game) {
-				node_send(buffer,"eventName","Sponge Damage","Num",sponge.num,"Ad",type,"Killer",other.thing,"Dmg",amount/2, "Icon", icon, "DoT", DoT)
+				node_send(buffer,"eventName","Sponge Damage","Num",sponge.num,"Ad",type,"Killer",other.thing,"Dmg",amount * (2/3), "Icon", icon, "DoT", DoT)
 			}
-			amount /= 2;
+			amount /= 3;
 		}
 		if(ball_player.broken > 0) {
 			amount *= 2;

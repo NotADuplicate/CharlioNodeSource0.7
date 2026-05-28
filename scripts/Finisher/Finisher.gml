@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Finisher() constructor {
 	sprite = spr_grave;
-	ammoCost = 1;
+	ammoCost = 2;
 	cooldown = 8; 
 	name = "Finisher"
 	abilityName = "finisher"
