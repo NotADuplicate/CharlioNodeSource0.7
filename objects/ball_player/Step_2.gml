@@ -1,16 +1,28 @@
 /// @description Slam into walls and update light
-if(throwTime == 0) {
+if(throwTime == 0) {	
+	collided = false;
+	if(place_meeting(x,y,ball_wall)) {
+		x -= hspeed;
+		y -= vspeed;
+		collided = true;
+	}
 	if(place_meeting(x+hspeed,y,ball_wall)) {
-		if(place_meeting(x,y,ball_wall)) {
-			x -= hspeed;
-		}
 	    hspeed = 0;
+		collided = true;
 	}
 	if(place_meeting(x,y+vspeed,ball_wall)) {
-		if(place_meeting(x,y,ball_wall)) {
-			y -= vspeed;
-		}
 	    vspeed = 0;
+		collided = true;
+	}
+	iterations = ceil(speed/30)
+	i = 0
+	repeat(iterations) {
+		i += 1/iterations;
+		if(!collided && place_meeting(x-hspeed*i,y-vspeed*i,ball_wall)) {
+			x -= hspeed;
+			y -= vspeed;
+			collided = true;
+		}
 	}
 }
 if(place_meeting(x,y,obj_duelDeath)) {

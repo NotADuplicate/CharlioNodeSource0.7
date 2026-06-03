@@ -61,7 +61,7 @@ function scr_ball_receive() {
 	        global.ammodrop = 50/30//(buffer_read(buffer,buffer_u8)/30);
 	        //global.ultdrop = buffer_read(buffer,buffer_u8)
 			global.abilityNum = 1//buffer_read(buffer,buffer_u8)/100;
-			global.leveled = buffer[? "Levels"]
+			global.leveled = 5//buffer[? "Levels"]
 			global.simple = buffer[? "Simple"]
 			global.cSwitch = true//buffer_read(buffer,buffer_bool);
 	        global.teaming = true//buffer_read(buffer,buffer_bool);
@@ -199,6 +199,9 @@ function scr_ball_receive() {
 			var towerDamages = buffer[? "towerDamages"]
 			var ballPushes = buffer[? "playersBallPush"]
 			var healingDealt = buffer[? "healingDealt"]
+			var damageBlocked = buffer[? "damageBlocked"]
+			var soulsCollected = buffer[? "soulsCollected"]
+			var selfDamageBlocked = buffer[? "selfDamageBlocked"]
 			var mvpNum = buffer[? "mvpId"]
 			show_debug_message(towerDamages[| 0])
 			show_debug_message(ballPushes[| 0])
@@ -214,6 +217,9 @@ function scr_ball_receive() {
 				global.players[num].towerDamage = towerDamages[| num-1];
 				global.players[num].ballPush = ballPushes[| num-1];
 				global.players[num].healingDealt = healingDealt[| num-1];
+				global.players[num].soulsCollected = soulsCollected[| num-1];
+				global.players[num].damageBlocked = damageBlocked[| num-1];
+				global.players[num].selfDamageBlocked = selfDamageBlocked[| num-1];
 				if(num == mvpNum) {
 					inst.mvp = true;
 				}
@@ -287,6 +293,10 @@ function scr_ball_receive() {
 		//if(obj_client.ping < current_time - global.lastTouchTime) {
 			xp = buffer[? "X"]
 			yp = buffer[? "Y"]
+			if(xp < 0 || xp > 3905) {
+				ending = instance_create(xp,yp,obj_ending);
+				ending.lore = "Right team wins!";
+			}
 			xspd = buffer[? "Xspd"]
 			yspd = buffer[? "Yspd"]
 			serverTime = buffer[? "Time"]
@@ -347,8 +357,10 @@ function scr_ball_receive() {
 			num12 = buffer[? "Num"]
 			if(num12 < global.loop && instance_exists(global.players[num12])) {
 				global.players[num12].ammo = buffer[? "Ammo"]
-				if(global.players[num12].ammo > global.players[num12].maxAmmo)
-					global.players[num12].maxAmmo = global.players[num12].ammo
+				try {
+					if(global.players[num12].ammo > global.players[num12].maxAmmo)
+						global.players[num12].maxAmmo = global.players[num12].ammo
+				}
 			}
 		break;
 		case "Open Gates":
@@ -414,7 +426,7 @@ function scr_ball_receive() {
 				if(global.teamNum[num] == global.teamNum[ball_player.num]) //if on same team, update known loadouts
 					global.knownLoadout[num,index2] = passiveSprite;
 			}
-			else if(index2 < 4) { //update one of your ability slots
+			else if(index2 <= 4) { //update one of your ability slots
 				if(num == ball_player.num)
 					scr_abilitySet(abilityIndex, index2);
 				global.loadout[num,index2] = ability;

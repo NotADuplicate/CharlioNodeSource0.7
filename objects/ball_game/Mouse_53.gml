@@ -6,10 +6,11 @@ if(held || ball_player.ninja) {
 		global.throwRange = 0;
 		node_send(buffer, "eventName", "Throw Sprite", "Num", ball_player.num, "Sprite", -1)
 	}
-	return;
+	if(global.attack != obj_minigun) {
+		return;
+	}
 }
 timer = 0;
-shootable = global.throwRange <= 0;
 with(ball_player) {
 	if(global.mapShowing) {
 		if(place_meeting(x,y,obj_warp)) {
@@ -18,7 +19,7 @@ with(ball_player) {
 		}
 	}
 }
-if((global.ammo > 0 || global.attack = obj_bullet || global.attack = chad_bullet) && global.options == false && instance_exists(ball_player) && reload == 0 && held == false && global.shop == false && global.stun == 0 && ball_player.jam == 0 && shootable) {
+if((global.ammo > 0 || global.attack = obj_bullet || global.attack = chad_bullet) && reload == 0 && scr_shootable()) {
 	held = false;
     switch(global.attack) {
         case obj_melee:
@@ -111,7 +112,7 @@ if((global.ammo > 0 || global.attack = obj_bullet || global.attack = chad_bullet
         break;
     }
 }
-if((global.attack == obj_grenade || global.attack == obj_minigun) && instance_exists(ball_player) && ball_player.jam == 0 && shootable && global.shop == false && global.options == false) {
+if((global.attack == obj_grenade || global.attack == obj_minigun) && scr_shootable()) {
     global.slow = .5;
     if(global.attack == obj_minigun) {
 		revving = 24;

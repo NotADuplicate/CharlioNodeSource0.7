@@ -4,7 +4,7 @@ if(timer < 250)
 if(global.stun != 0) {
 	timer = 0;
 }
-if(global.attack == obj_minigun && timer > 1 && global.shop == false && global.stun == 0 && ball_player.jam == 0) {
+if(global.attack == obj_minigun && timer > 1 && scr_shootable()) {
     if(revving == 0) {
 		if(totalspray > 0) {
 			repeat(global.shooting) {

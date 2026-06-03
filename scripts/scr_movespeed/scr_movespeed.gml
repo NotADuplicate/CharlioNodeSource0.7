@@ -10,6 +10,10 @@ function scr_movespeed(){
 		xspd *= 0.8;
 		yspd *= 0.8;
 	}
+	if(obj_junglePass.spd > 0) {
+		xspd *= 1.2;
+		yspd *= 1.2;
+	}
 	if(ballPushing > 0) {
 		xspd *= 0.5;
 		yspd *= 0.5;
@@ -18,10 +22,6 @@ function scr_movespeed(){
 	if(enraged) {
 		xspd *= 1.5;
 		yspd *= 1.5;
-	}
-	if(global.upgraded) {
-		xspd *= 0.9;
-		yspd *= 0.9;
 	}
 	if(ghosting > 0) {
 		ghosting--;
@@ -90,5 +90,8 @@ function scr_movespeed(){
 		xspd *= 1.4;
 		yspd *= 1.4;
 		bloodThirst--;
+	} else if(global.boot == "Speed") {
+		xspd *= 1.2;
+		yspd *= 1.2;
 	}
 }

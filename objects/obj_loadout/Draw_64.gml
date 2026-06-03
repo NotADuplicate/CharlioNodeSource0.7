@@ -14,7 +14,7 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 		draw_text(435,y+35,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
 		xp = 150;
 		passiveXp = 30;
-		statXp = 100
+		statXp = 50
 	}
 	else { //box for right team
 		center = fa_right;
@@ -28,7 +28,7 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 		draw_text(654,y+35,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
 		xp = 880;
 		passiveXp = 1040;
-		statXp = 700
+		statXp = 650
 	}
 	draw_set_halign(center)
 	i = 1;
@@ -76,20 +76,54 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 		}
 		passiveXp -= 30 * global.teamNum[num];
 		i++;
-		if(passiveXp > 270 && passiveXp < 650) {
+		if(passiveXp > 400 && passiveXp < 650) {
 			passiveXp = baseXp;
 			yp += 40;
 		}
 	}
+	numStats = (global.players[num].totalDamage > 450 ? 1 : 0) + (global.players[num].ballPush > 200 ? 1 : 0)
+		+ (global.players[num].towerDamage > 10 ? 1 : 0) + (global.players[num].healingDealt > 95 ? 1 : 0)
+		+ (global.players[num].soulsCollected > 2 ? 1 : 0) + (global.players[num].damageBlocked > 200 ? 1 : 0)
+		+ (global.players[num].selfDamageBlocked > 200 ? 1 : 0);
+	show_debug_message("num stats")
+	show_debug_message(numStats)
+	xDist = 400 / max(1,numStats);
 	draw_set_halign(fa_center)
-	draw_sprite(spr_attack, 0, statXp, y+110);
-	draw_text(statXp,y+130,round(global.players[num].totalDamage))
-	draw_sprite(spr_kick, 0, statXp+100, y+110);
-	draw_text(statXp+100,y+130,round(global.players[num].ballPush))
-	draw_sprite(spr_light_spot, 0, statXp+200, y+110);
-	draw_text(statXp+200,y+130,round(global.players[num].towerDamage))
-	draw_sprite(spr_heal, 0, statXp+300, y+110);
-	draw_text(statXp+300,y+130,round(global.players[num].healingDealt))
+	if(global.players[num].totalDamage >= 450) {
+		draw_sprite(spr_attack, 0, statXp, y+110);
+		draw_text(statXp,y+130,round(global.players[num].totalDamage))
+		statXp += xDist;
+	}
+	if(global.players[num].ballPush > 200) {
+		draw_sprite(spr_kick, 0, statXp, y+110);
+		draw_text(statXp,y+130,round(global.players[num].ballPush))
+		statXp += xDist;
+	}
+	if(global.players[num].towerDamage > 10) {
+		draw_sprite(spr_light_spot, 0, statXp, y+110);
+		draw_text(statXp,y+130,round(global.players[num].towerDamage))
+		statXp += xDist;
+	}
+	if(global.players[num].healingDealt > 95) {
+		draw_sprite(spr_heal, 0, statXp, y+110);
+		draw_text(statXp,y+130,round(global.players[num].healingDealt))
+		statXp += xDist;
+	}
+	if(global.players[num].damageBlocked > 200) {
+		draw_sprite(spr_sponge, 0, statXp, y+110);
+		draw_text(statXp,y+130,round(global.players[num].damageBlocked))
+		statXp += xDist;
+	}
+	if(global.players[num].soulsCollected > 2) {
+		draw_sprite(dead_cowboy, 0, statXp, y+110);
+		draw_text(statXp,y+130,round(global.players[num].soulsCollected))
+		statXp += xDist;
+	}
+	if(global.players[num].selfDamageBlocked > 400) {
+		draw_sprite(spr_defense, 0, statXp, y+110);
+		draw_text(statXp,y+130,round(global.players[num].selfDamageBlocked))
+		statXp += xDist;
+	}
 	
 	if(num == 1) {//draw timers for drag and garren
 		if(global.ballGameOver == global.teamNum[ball_player.num]) {

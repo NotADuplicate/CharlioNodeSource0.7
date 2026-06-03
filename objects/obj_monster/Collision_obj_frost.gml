@@ -1,4 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-/*if(keyboard_check(vk_shift))
-	global.predict = !global.predict;
+scr_monster_dmg(30,other.num,false)
+instance_destroy(other)

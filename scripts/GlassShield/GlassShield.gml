@@ -20,7 +20,7 @@ function GlassShield() constructor {
 				}
 			}
 			scr_ball_ammo(ammoCost)
-			node_send(buffer,"eventName","Status","Target",target,"Status Num", 55);
+			node_send(buffer,"eventName","Targeted Status","Target",target, "User", ball_player.num, "Status Num", 33);
 			return(cooldown);
 		}
 		else { return(0); }

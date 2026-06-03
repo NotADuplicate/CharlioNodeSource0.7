@@ -102,8 +102,15 @@ function scr_damage(amount, damager, type, icon, DoT) {
 	        }
 	    }
 	}
-	else if(ball_player.blocking > 0 && amount > 10) {
-		scr_ball_sound(snd_block,ball_player.x,ball_player.y)
+	else if(global.invincibility > 0) {
+		if(ball_player.invincibilityNum != 0 && global.teamNum[ball_player.invincibilityNum] == global.teamNum[ball_player.num]) {
+			with(ball_game) {
+				node_send(buffer, "eventName", "Damage Blocked", "Target", ball_player.num, "Blocker", ball_player.invincibilityNum, "Dmg", min(amount, ball_player.hp))
+			}
+			if(ball_player.blocking > 0 && amount > 10) {
+				scr_ball_sound(snd_block,ball_player.x,ball_player.y)
+			}
+		}
 	}
 
 

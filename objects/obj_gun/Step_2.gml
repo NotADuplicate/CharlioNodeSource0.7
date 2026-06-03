@@ -1,5 +1,5 @@
 /// @description Move to correct place
-if(initialized && instance_exists(global.players[num])) {
+if(initialized && instance_exists(global.players[num]) && variable_instance_exists(global.players[num], "gunDir") && variable_instance_exists(global.players[num], "scale")) {
 	dir = global.players[num].gunDir;
 	if(sprite_index == spr_melee && swung) {
 		image_angle = dir-45;;

@@ -12,3 +12,4 @@ cameraPiny = y;
 linkI = 1;
 linked = false;
 num = 1;
+alarm[1] = 10;

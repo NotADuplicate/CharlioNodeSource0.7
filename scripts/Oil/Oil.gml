@@ -17,7 +17,7 @@ function Oil() constructor {
 	
 	static abilityReleased = function(buffer) {
 		scr_endThrow(buffer);
-		scr_ball_ammo(2);
+		scr_ball_ammo(ammoCost);
 		return(cooldown)
 	}
 }

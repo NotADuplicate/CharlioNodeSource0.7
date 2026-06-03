@@ -214,5 +214,14 @@ function scr_targeted_status(status,target,user){
 			if(global.players[target].spellShield == 0 && global.players[target].magicBurn < duration)
 				global.players[target].magicBurn = duration;
 		break;
+		case 33: //glass shield
+			if(global.players[target].spellShield == 0) {
+				global.players[target].glassShield = 45;
+				if(target == ball_player.num) {
+					global.invincibility = 45;
+					ball_player.invincibilityNum = user;
+				}
+			}
+		break;
 	}	
 }

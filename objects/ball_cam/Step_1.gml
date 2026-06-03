@@ -17,6 +17,10 @@ if(global.spectator || global.dead) {
 	else {
 	    x += 8*(keyboard_check(ord("D"))-keyboard_check(ord("A")))
 	    y += 8*(keyboard_check(ord("S"))-keyboard_check(ord("W")))
+		if(keyboard_check(vk_shift)) {
+		    x += 8*(keyboard_check(ord("D"))-keyboard_check(ord("A")))
+		    y += 8*(keyboard_check(ord("S"))-keyboard_check(ord("W")))
+		}
 	}
 }
 /*		mousePinx = mouse_x;

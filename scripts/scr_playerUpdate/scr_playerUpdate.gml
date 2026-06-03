@@ -7,7 +7,7 @@ function scr_playerUpdate(nums, xps, yps, hps, gundirs){
 	for(i = 0; i < global.loop; i++) {
 		num = (nums[| i])
 		
-		if(num != ball_player.num && instance_exists(global.players[num])) {
+		if(num != ball_player.num && array_length(global.players) > num) {
 			player = global.players[num];
 			player.x = (xps[| i]);
 			player.y = (yps[| i]);

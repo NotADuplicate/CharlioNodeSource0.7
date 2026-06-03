@@ -1,0 +1,1 @@
+node_send(buffer,"eventName","Bullet","Num",ball_player.num,"X",mouse_x,"Y",mouse_y,"Dir",0,"Obj",obj_ping)

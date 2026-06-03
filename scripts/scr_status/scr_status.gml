@@ -52,8 +52,10 @@ function scr_status(status,target){
 		break;
 		case 8: //block
 			global.players[target].blocking = 30;
-			if(target == ball_player.num)
+			if(target == ball_player.num) {
 				global.invincibility = 30;
+				ball_player.invincibilityNum = target;
+			}
 		break;
 		case 9: //passive shooting for bolt
 			global.players[target].fireRate+= 0.5

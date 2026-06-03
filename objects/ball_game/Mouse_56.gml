@@ -1,18 +1,7 @@
 /// @description Fire grenade
-if(global.attack == obj_grenade && instance_exists(ball_player) && global.throwRange <= 0) {
+if(global.attack == obj_grenade && global.slow < 1) {
 	//game_end()
-    if(global.ammo > 0 && global.shop == false && global.stun == 0 && reload == 0 && ball_player.jam == 0) {
-        /*buffer_seek(buffer, buffer_seek_start, 0);
-        buffer_write(buffer, buffer_u8, 7); //bullet   
-        xp = obj_player.x + lengthdir_x(40,point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y));
-        yp = obj_player.y + lengthdir_y(40,point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y)); 
-        buffer_write(buffer, buffer_u16, xp);
-        buffer_write(buffer, buffer_u16, yp);
-        buffer_write(buffer,buffer_u16,round(point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y)));
-        buffer_write(buffer,buffer_u16,global.attack);
-        buffer_write(buffer,buffer_u8,obj_player.num);
-        buffer_write(buffer,buffer_u8,timer);
-        network_send_packet(socket,buffer,buffer_tell(buffer));*/
+    if(global.ammo > 0 && reload == 0 && scr_shootable()) {
 		
         xp = obj_player.x + lengthdir_x(40,point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y));
         yp = obj_player.y + lengthdir_y(40,point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y)); 
@@ -33,6 +22,7 @@ timer = 0;
 if(global.attack == obj_minigun && instance_exists(ball_player)) {
     spray = backlog;
     backlog = 0;
+	revving = 100
     global.slow = 1;
 	node_send(buffer, "eventName", "Status", "Target", ball_player.num, "Status Num", 58);
 	with(obj_gun) {

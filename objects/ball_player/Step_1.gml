@@ -1,7 +1,7 @@
 /// @description Movement
 if(confuse = 0) {
-    xspd = moveSpd*global.slow*(keyboard_check(ord("D"))-keyboard_check(ord("A")))
-    yspd = moveSpd*global.slow*(keyboard_check(ord("S"))-keyboard_check(ord("W")))
+    xspd = 5*global.slow*(keyboard_check(ord("D"))-keyboard_check(ord("A")))
+    yspd = 5*global.slow*(keyboard_check(ord("S"))-keyboard_check(ord("W")))
 }
 else {
     xspd = moveSpd*global.slow*sign(xspd)
@@ -115,29 +115,34 @@ if(place_meeting(x,y,ball_wall)) {
 }
 
 if(stasis == false && obj_bigBall.drone != num && sleeping == 0) {
-    if(!place_meeting(x+xspd,y,ball_wall)) {
-		if(oil <= 0)
-			x += xspd;
-		else if(abs(hspeed) < abs(xspd))
-			hspeed += xspd/10;
-    }
-	else if(bushHop && position_meeting(x,y,obj_cover) && yspd == 0 && place_meeting(x+sign(xspd)*80,y,ball_wall) == false) {
-		if(hopping > 15)
-			x += 80 * sign(xspd);
-		else
-			hopping+=2;
+	iterations = ceil(abs(xspd)/25)
+	repeat(iterations) {
+	    if(!place_meeting(x+xspd/iterations,y,ball_wall)) {
+			if(oil <= 0)
+				x += xspd/iterations;
+			else if(abs(hspeed) < abs(xspd))
+				hspeed += (xspd/iterations)/10;
+	    } else if(bushHop && position_meeting(x,y,obj_cover) && yspd == 0 && place_meeting(x+sign(xspd)*80,y,ball_wall) == false) {
+			if(hopping > 15)
+				x += 80 * sign(xspd);
+			else
+				hopping+=2/iterations;
+		}
 	}
-    if(!place_meeting(x,y+yspd,ball_wall)) {
-		if(oil <= 0)
-			y += yspd;
-		else if(abs(vspeed) < abs(yspd))
-			vspeed += yspd/10;
-    }
-	else if(bushHop && position_meeting(x,y,obj_cover) && xspd == 0 && place_meeting(x,y+sign(yspd)*100,ball_wall) == false) {
-		if(hopping > 15)
-			y += 100 * sign(yspd);
-		else
-			hopping+=2;
+	iterations = ceil(abs(yspd)/25)
+	repeat(iterations) {
+	    if(!place_meeting(x,y+yspd/iterations,ball_wall)) {
+			if(oil <= 0)
+				y += yspd/iterations;
+			else if(abs(vspeed) < abs(yspd))
+				vspeed += yspd/10;
+	    }
+		else if(bushHop && position_meeting(x,y,obj_cover) && xspd == 0 && place_meeting(x,y+sign(yspd)*100,ball_wall) == false) {
+			if(hopping > 15)
+				y += 100 * sign(yspd);
+			else
+				hopping+=2/iterations;
+		}
 	}
 }
 
