@@ -6,5 +6,6 @@ if(global.teamNum[num] != global.teamNum[other.num]) {
 		with(ball_game) {
 			node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num", 16)
 		}
+		brokenNum = other.num;
 	}
 }

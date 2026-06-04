@@ -75,6 +75,7 @@ repeat(10) {
     global.kills[i] = 0;
     global.deaths[i] = 0;
     global.wins[i] = 0;
+	global.assists[i] = 0;
     i++;
 }
 

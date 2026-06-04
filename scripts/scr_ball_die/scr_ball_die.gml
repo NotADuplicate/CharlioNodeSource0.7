@@ -9,11 +9,12 @@ function scr_ball_die(dmg,killer,icon){
 			ball_player.moveSpd = global.baseMove
 			ball_game.lore = scr_lore();
 			ball_player.respawnTimer = ball_player.setRespawnTimer;
+			assister = calculate_assist(killer);
 			if(killer > 10)
 				killer = ball_player.num
 			with(ball_game) {
 				show_debug_message(icon);
-				node_send(buffer,"eventName","Death","Target",ball_player.num,"Killer",killer, "Icon", icon)
+				node_send(buffer,"eventName","Death","Target",ball_player.num,"Killer",killer, "Icon", icon, "Assister", other.assister)
 				node_send(buffer,"eventName","Bullet","Num",ball_player.num,"X", ball_player.x, "Y", ball_player.y, "Obj", ball_corpse, "Dir", 0)
 				if(ball_player.duel > 0) {
 					node_send(buffer,"eventName","Bullet","Num",ball_player.num,"X", ball_player.preDuelx, "Y", ball_player.preDuely, "Obj", duel_corpse_marker, "Dir", 0)

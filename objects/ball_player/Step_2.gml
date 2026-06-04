@@ -16,14 +16,14 @@ if(throwTime == 0) {
 	}
 	iterations = ceil(speed/30)
 	i = 0
-	repeat(iterations) {
+	/*repeat(iterations) {
 		i += 1/iterations;
 		if(!collided && place_meeting(x-hspeed*i,y-vspeed*i,ball_wall)) {
-			x -= hspeed;
-			y -= vspeed;
+			x -= hspeed*i;
+			y -= vspeed*i;
 			collided = true;
 		}
-	}
+	}*/
 }
 if(place_meeting(x,y,obj_duelDeath)) {
 	if(global.teamNum[obj_duelDeath.num] == global.teamNum[num]) {

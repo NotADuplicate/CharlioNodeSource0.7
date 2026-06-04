@@ -75,6 +75,7 @@ blocking = 0;
 bleed = 0;
 murderball = 0
 enraged = false;
+enrageNum = 0;
 kicking = 0;
 scope = 1;
 accuracy = 1;

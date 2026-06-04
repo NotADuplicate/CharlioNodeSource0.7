@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_ball_kill(deadNum,killer,icon){
+function scr_ball_kill(deadNum,killer,icon,assister){
 	if(deadNum > 0 && deadNum < 11) { //player deaths
 		global.players[deadNum].hp = 250; //reset the dead players HP
 		global.players[deadNum].garren = false;
@@ -15,6 +15,7 @@ function scr_ball_kill(deadNum,killer,icon){
 		ins.icon = icon;
 		ins.victim = deadNum;
 		ins.killer = killer;
+		ins.assister = assister;
 		with(global.players[deadNum]) {
 			scr_cleanse(false);
 		}

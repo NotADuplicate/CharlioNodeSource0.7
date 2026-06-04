@@ -24,18 +24,20 @@ function scr_targeted_status(status,target,user){
 		case 6: //enrage
 			if(global.players[target].spellShield == 0 && global.players[target].enraged == false) {
 				global.players[target].enraged = true;
+				global.players[target].enrageNum = user;
 				if(target > 10)
 					global.players[target].num = user;
 				if(target == ball_player.num) {
 					with(ball_player) {
-						enrageNum = user;
 						enrageDmg = 0.4;
 						global.shooting*= 2;
 						global.coolReduc *= 2;
 					}
 					//start music
-					audio_stop_sound(global.music);
-					global.music = audio_play_sound(mus_shredIntro,0,false,global.musVolume);
+					if(variable_global_exists("music")) {
+						audio_stop_sound(global.music);
+						global.music = audio_play_sound(mus_shredIntro,0,false,global.musVolume);
+					}
 				}
 			}
 		break;
@@ -220,6 +222,7 @@ function scr_targeted_status(status,target,user){
 				if(target == ball_player.num) {
 					global.invincibility = 45;
 					ball_player.invincibilityNum = user;
+					ball_player.brokenNum = user;
 				}
 			}
 		break;

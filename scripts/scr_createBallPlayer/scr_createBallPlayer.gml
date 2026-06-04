@@ -3,6 +3,8 @@ function scr_createBallPlayer(i){
 	global.loadoutSize[i] = 4;
 	global.deaths[i] = 0;
 	global.kills[i] = 0;
+	global.assists[i] = 0;
+	global.assistScore[i] = 0;
 	n = 0;
 	repeat(5) {
 		global.loadout[i,n] = 0;

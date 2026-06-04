@@ -91,9 +91,10 @@ function scr_ball_receive() {
 			show_debug_message("Death received")
 	        dead = buffer[? "Target"]
 			killer = buffer[? "Killer"]
+			assister = buffer[? "Assister"]
 			icon = buffer[? "Icon"]
 			show_debug_message(icon)
-	        scr_ball_kill(dead,killer,icon)
+	        scr_ball_kill(dead,killer,icon, assister)
 	    break;
 	    case "Hook Stop": //stop using something
 			ob = buffer[? "Obj"]
@@ -259,28 +260,6 @@ function scr_ball_receive() {
 						gun.throwSprite = spr
 					}
 				}
-			}
-		break;
-	    case 15: //who wins a game
-			
-	    break;
-	    case 16:
-	        index = buffer_read(buffer,buffer_u8);
-	        global.deaths[index] = buffer_read(buffer,buffer_u8);
-	        global.kills[index] = buffer_read(buffer,buffer_u8);
-	        global.wins[index] = buffer_read(buffer,buffer_u8);
-	    break;
-	    case 17: //who wins a game
-	        var teamwin = buffer_read(buffer,buffer_u8);
-	        ins = instance_create(0,0,gui_win);
-	        ins.teamwin = teamwin;
-			ins.num = -1;
-	    break;
-		case 23:
-			num9 = buffer_read(buffer,buffer_u8);
-			if(num9 == obj_client.index) {
-				obj_client.alarm[9] = 1;
-				room_goto(0);
 			}
 		break;
 		case "Player Health": //recieve hp

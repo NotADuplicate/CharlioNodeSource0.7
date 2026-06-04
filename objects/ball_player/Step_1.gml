@@ -84,6 +84,9 @@ if(drowsy  > 0) {
 	}
 }
 if(sleeping > 0) {
+	if(sleepNum > 0) {
+		global.assistScore[sleepNum] += 1.5;
+	}
 	sleeping--;
 	global.stun = 8;
 	if(sleeping mod 10 == 0) {
@@ -107,17 +110,17 @@ lastX = x;
 lastY = y;
 
 if(place_meeting(x,y,ball_wall)) {
-	if(!place_meeting(x+2,y,ball_wall)) {
-		x += 2;
-	} else if(!place_meeting(x-2,y,ball_wall)) {
-		x -= 2;
+	if(!place_meeting(x+4,y,ball_wall)) {
+		x += 4;
+	} else if(!place_meeting(x-4,y,ball_wall)) {
+		x -= 4;
 	}
 }
 
 if(stasis == false && obj_bigBall.drone != num && sleeping == 0) {
 	iterations = ceil(abs(xspd)/25)
 	repeat(iterations) {
-	    if(!place_meeting(x+xspd/iterations,y,ball_wall)) {
+	    if(!place_meeting(x+xspd/iterations,y,ball_wall) || keyboard_check(vk_shift)) {
 			if(oil <= 0)
 				x += xspd/iterations;
 			else if(abs(hspeed) < abs(xspd))

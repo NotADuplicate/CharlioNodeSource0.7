@@ -6,6 +6,7 @@ if(global.teamNum[num] != global.teamNum[other.num]) {
 		with(ball_game) {
 			node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num", 17)
 		}
+		frostNum = other.num;
 	}
 }
 else if(other.num != num) { //unfire

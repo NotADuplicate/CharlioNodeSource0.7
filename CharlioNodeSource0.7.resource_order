@@ -546,6 +546,7 @@
     {"name":"BodySlam","order":42,"path":"scripts/BodySlam/BodySlam.yy",},
     {"name":"Bump","order":10,"path":"scripts/Bump/Bump.yy",},
     {"name":"BushHop","order":13,"path":"scripts/BushHop/BushHop.yy",},
+    {"name":"calculate_assist","order":65,"path":"scripts/calculate_assist/calculate_assist.yy",},
     {"name":"Catch","order":47,"path":"scripts/Catch/Catch.yy",},
     {"name":"Chainbreaker","order":34,"path":"scripts/Chainbreaker/Chainbreaker.yy",},
     {"name":"Chomp","order":26,"path":"scripts/Chomp/Chomp.yy",},

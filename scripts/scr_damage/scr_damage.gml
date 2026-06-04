@@ -21,6 +21,9 @@ function scr_damage(amount, damager, type, icon, DoT) {
 			amount /= 3;
 		}
 		if(ball_player.broken > 0) {
+			if(ball_player.brokenNum > 0) {
+				global.assistScore[ball_player.brokenNum] += amount;
+			}
 			amount *= 2;
 		}
 		if(damager < 10 && global.game == "Ball" && damager != ball_player.num) {
@@ -68,6 +71,8 @@ function scr_damage(amount, damager, type, icon, DoT) {
 		}
 		if(ball_player.sleeping > 0 && amount > 0) {
 			ball_player.sleeping = 0;
+			if(ball_player.sleepNum > 0) 
+				global.assistScore[ball_player.sleepNum] += amount;
 			global.slow = 1;
 			with(ball_game) {
 				node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num", 25)

@@ -3,10 +3,16 @@
 if(point_distance(x,y,ball_player.x,ball_player.y) < 300) {
 	dir = point_direction(x,y,ball_player.x,ball_player.y)+180
 	scr_player_move(dir,30)
+	if(global.teamNum[num] != global.teamNum[ball_player.num]) {
+		global.assistScore[num] += 90;
+	}
 }
 else if(point_distance(x,y,ball_player.x,ball_player.y) < 500) {
 	dir = point_direction(x,y,ball_player.x,ball_player.y)+180
 	scr_player_move(dir,15)
+	if(global.teamNum[num] != global.teamNum[ball_player.num]) {
+		global.assistScore[num] += 60;
+	}
 }
 ins = instance_create(x,y,obj_implosion)
 ins.num = num

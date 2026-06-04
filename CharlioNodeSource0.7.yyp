@@ -689,6 +689,7 @@
     {"id":{"name":"BodySlam","path":"scripts/BodySlam/BodySlam.yy",},},
     {"id":{"name":"Bump","path":"scripts/Bump/Bump.yy",},},
     {"id":{"name":"BushHop","path":"scripts/BushHop/BushHop.yy",},},
+    {"id":{"name":"calculate_assist","path":"scripts/calculate_assist/calculate_assist.yy",},},
     {"id":{"name":"Catch","path":"scripts/Catch/Catch.yy",},},
     {"id":{"name":"Chainbreaker","path":"scripts/Chainbreaker/Chainbreaker.yy",},},
     {"id":{"name":"Chomp","path":"scripts/Chomp/Chomp.yy",},},

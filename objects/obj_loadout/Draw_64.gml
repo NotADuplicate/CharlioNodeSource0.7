@@ -11,7 +11,7 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 		}
 		draw_set_halign(fa_right);
 		draw_text_transformed_color(485,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);
-		draw_text(435,y+35,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
+		draw_text(435,y+35,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + "/" + string(global.assists[num]) + ")")
 		xp = 150;
 		passiveXp = 30;
 		statXp = 50
@@ -25,7 +25,7 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 		}
 		draw_set_halign(fa_left);
 		draw_text_transformed_color(550,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);
-		draw_text(654,y+35,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
+		draw_text(654,y+35,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + "/" + string(global.assists[num]) + ")")
 		xp = 880;
 		passiveXp = 1040;
 		statXp = 650
@@ -153,7 +153,7 @@ else if(keyboard_check(vk_tab)) {
 		else if(global.testMode == false){ //if they're living show ping
 			draw_text(480,y-15,"Ping: " + string(global.ping[num]))
 		}
-		draw_text(450,y+40,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
+		draw_text(450,y+40,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + "/" + string(global.assists[num]) + ")");
 		draw_text(375,y+40,"Damage:" + string(round(global.players[num].totalDamage)))
 		xp = 200;
 		passiveXp = 30;
@@ -169,7 +169,7 @@ else if(keyboard_check(vk_tab)) {
 		else if(global.testMode == false){ //if they're living show ping
 			draw_text(544,y-15,"Ping: " + string(global.ping[num]))
 		}
-		draw_text(574,y+40,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + ")")
+		draw_text(574,y+40,"(" + string(global.kills[num]) + "/" + string(global.deaths[num]) + "/" + string(global.assists[num]) + ")")
 		draw_text(629,y+40,"Damage:" + string(round(global.players[num].totalDamage)))
 		xp = 824;
 		passiveXp = 990;

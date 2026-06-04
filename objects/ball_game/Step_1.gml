@@ -33,3 +33,12 @@ if(malpractice > 0) {
 		node_send(buffer,"eventName","Bullet","Num",ball_player.num,"X", ball_player.x, "Y", ball_player.y, "Obj", obj_malpractice, "Dir", point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y)+spread)
 	}
 }
+
+//Tick down assist scores
+if(started) {
+	for(i = 0; i < global.loop; i++) {
+		if(global.assistScore[i] > 0) {
+			global.assistScore[i]-= 0.5;
+		}
+	}
+}
