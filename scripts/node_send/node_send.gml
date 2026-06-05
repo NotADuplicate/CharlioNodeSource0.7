@@ -7,7 +7,7 @@ function node_send(){
 	var data = ds_map_create();
 	buffer = argument[0]
 	i = 1
-	while(i < argument_count) {
+	while(i < argument_count && i < 100) {
 		data[? argument[i]] = argument[i+1]
 		i += 2
 	}

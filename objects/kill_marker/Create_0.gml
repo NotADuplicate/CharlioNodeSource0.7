@@ -9,6 +9,6 @@ alarm[1] = 1;
 suicide = false;
 icon = 0;
 while(place_meeting(x,y,kill_marker) || place_meeting(x,y,slayer_marker)) {
-	y += 90;
+	y += 110;
 }
 depth = -100;

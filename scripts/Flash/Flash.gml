@@ -19,22 +19,26 @@ function Flash() constructor {
 	
 	static abilityReleased = function(buffer) {
 		if(global.ammo > 0 && ball_game.started) {
-			global.flashDir = point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y) + 180
-					node_send(buffer,"Dir",0,"X",ball_player.x,"Y",ball_player.y,"Num",ball_player.num,"Obj",obj_sparker,"eventName","Bullet")
+			var flashDir = point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y)
+			node_send(buffer,"Dir",0,"X",ball_player.x,"Y",ball_player.y,"Num",ball_player.num,"Obj",obj_sparker,"eventName","Bullet")
 			if(point_distance(ball_player.x,ball_player.y,mouse_x,mouse_y) < 200) {
 				ball_player.x = mouse_x;
 				ball_player.y = mouse_y;
 				scr_ball_ammo(ammoCost);
 			}
 			else {
-				ball_player.x += lengthdir_x(200,point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y))
-				ball_player.y += lengthdir_y(200,point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y))
+				ball_player.x += lengthdir_x(200,flashDir)
+				ball_player.y += lengthdir_y(200,flashDir)
 				scr_ball_ammo(ammoCost);
 			}
 			with(ball_player) {
+				if(place_meeting(x,y,ball_wall) && !place_meeting(x+lengthdir_x(10,flashDir),y+lengthdir_y(10,flashDir),ball_wall)) {
+					x += lengthdir_x(10,flashDir);
+					y += lengthdir_y(10,flashDir);
+				}
 				while(place_meeting(x,y,ball_wall)) {
-					x += lengthdir_x(5,global.flashDir);
-					y += lengthdir_y(5,global.flashDir);
+					x -= lengthdir_x(5,flashDir);
+					y -= lengthdir_y(5,flashDir);
 				}
 			}
 			return(cooldown);

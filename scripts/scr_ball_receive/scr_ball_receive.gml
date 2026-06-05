@@ -284,7 +284,7 @@ function scr_ball_receive() {
 			local_ball.xspd = xspd;
 			local_ball.yspd = yspd;
 			var dist = point_distance(ball_player.x,ball_player.y,local_ball.x,local_ball.y);
-			if(dist > 800 || !obj_bigBall.started) {
+			if(dist > 800 || !obj_bigBall.started || global.spectator) {
 				obj_bigBall.x = xp;
 				obj_bigBall.y = yp;
 				obj_bigBall.xspd = xspd;
@@ -336,10 +336,10 @@ function scr_ball_receive() {
 			num12 = buffer[? "Num"]
 			if(num12 < global.loop && instance_exists(global.players[num12])) {
 				global.players[num12].ammo = buffer[? "Ammo"]
-				try {
+				/*try {
 					if(global.players[num12].ammo > global.players[num12].maxAmmo)
 						global.players[num12].maxAmmo = global.players[num12].ammo
-				}
+				}*/
 			}
 		break;
 		case "Open Gates":
@@ -469,15 +469,7 @@ function scr_ball_receive() {
 					global.passiveCount--;
 				}
 				passiveOb.otherLose(num);
-				
-				/*var i = 15;
-				var deleted = false;
-				while(i < global.loadoutSize[num]) {
-					if(!deleted && global.loadout[num,i] == passiveOb.sprite) {
-						
-					}
-					
-				}*/
+
 				global.loadoutSize[num]--;
 			}
 		break;

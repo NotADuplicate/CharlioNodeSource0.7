@@ -1,7 +1,7 @@
 function calculate_assist(killer){
 	global.assistScore[killer] = 0;
 	var i = 0;
-	while(i < ds_list_size(global.damageSources)) {
+	while(i < ds_list_size(global.damageSources) && i < 100) {
 		source = global.damageSources[|i];
 		if(source.dealer != killer && source.dealer != ball_player.num) {
 			global.assistScore[source.dealer] += source.dmg;
