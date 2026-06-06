@@ -36,7 +36,7 @@ if(malpractice > 0) {
 
 //Tick down assist scores
 if(started) {
-	for(i = 0; i < global.loop; i++) {
+	for(i = 0; i < array_length(global.assistScore); i++) {
 		if(global.assistScore[i] > 0) {
 			global.assistScore[i]-= 0.5;
 		}

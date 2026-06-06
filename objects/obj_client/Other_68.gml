@@ -10,6 +10,7 @@ switch(type_event) {
 		var realData = json_decode(buffer_processed)
 		global.received = true;
 		scr_recieved_packet(realData)
+		ds_map_destroy(realData);
     break;
 }
 

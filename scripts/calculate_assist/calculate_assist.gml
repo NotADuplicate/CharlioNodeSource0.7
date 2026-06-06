@@ -20,10 +20,16 @@ function calculate_assist(killer){
 		if(stunned > 0 && stunNum > 0) {
 			global.assistScore[stunNum] += 150;
 		}
+		if(controlled) {
+			global.assistScore[controlledNum] += 90;
+		}
 	}
 	
 	if(global.players[killer].enraged && global.players[killer].enrageNum > 0 && global.players[killer].enrageNum != killer) {
 		global.assistScore[global.players[killer].enrageNum] += 170;
+	}
+	if(global.players[killer].controlled) {
+		global.assistScore[global.players[killer].controlledNum] += 100;
 	}
 	
 	maxScore = 65;

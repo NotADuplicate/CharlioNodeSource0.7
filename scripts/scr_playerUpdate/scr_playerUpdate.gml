@@ -1,18 +1,16 @@
-function scr_playerUpdate(nums, xps, yps, hps, gundirs){
-	if(nums == "" || nums == undefined || xps == undefined || yps == undefined || hps == undefined || gundirs == undefined) {
-		show_debug_message("Nums undefined")
-		return;
-	}
-	
-	for(i = 0; i < global.loop; i++) {
-		num = (nums[| i])
+function scr_playerUpdate(players){	
+	var j = 0;
+	var num = 0;
+	while(j < ds_list_size(players)) {
+		num = players[| j][? "n"];
 		
 		if(num != ball_player.num && array_length(global.players) > num) {
 			player = global.players[num];
-			player.x = (xps[| i]);
-			player.y = (yps[| i]);
-			player.hp = (hps[| i]);
-			player.gunDir = (gundirs[| i]);
+			if(players[| j][? "X"] != undefined) { player.x = players[| j][? "X"]; }
+			if(players[| j][? "Y"] != undefined) { player.y = players[| j][? "Y"]; }
+			if(players[| j][? "hp"] != undefined) { player.hp = players[| j][? "hp"]; }
+			if(players[| j][? "dir"] != undefined) { player.gunDir = players[| j][? "dir"]; }
 		}
+		j++;
 	}
 }

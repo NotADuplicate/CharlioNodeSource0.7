@@ -72,13 +72,9 @@ function scr_ball_receive() {
 			}
 			
 	    break;
-	    case "Players Update"://player positions 
-	        nums = buffer[? "nums"]
-	        xps = buffer[? "Xs"]
-	        yps = buffer[? "Ys"]
-			gunDirs = buffer[? "dirs"]
-			healths = buffer[? "healths"]
-			scr_playerUpdate(nums,xps,yps,healths,gunDirs)
+	    case "Tick"://player positions 
+	        players = buffer[? "p"];
+			scr_playerUpdate(players)
 	    break;
 	    case 9:
 	        readying = buffer_read(buffer,buffer_bool);
