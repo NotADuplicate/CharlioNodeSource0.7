@@ -7,4 +7,3 @@ if(global.options && global.optionState = "Audio") {
 		audio_master_gain((global.vol/100));
 	}
 }
-//game_end();

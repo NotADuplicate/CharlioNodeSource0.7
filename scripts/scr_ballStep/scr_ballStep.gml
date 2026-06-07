@@ -13,8 +13,12 @@ var hit = false;
 function ball_hits_wall(_x, _y) {
 	if(place_meeting(_x, _y, obj_turret)) {
 		turret = instance_nearest(x,y,obj_turret);
-		if(power(turret.hp, 2) > (power(xspd,2) + power(yspd,2))) * 0.75
+		if(global.testMode) {
+			turret.hp -= point_distance(0,0,xspd,yspd) * 0.75;
+		} 
+		if(power(turret.hp, 2) > (power(xspd,2) + power(yspd,2))) * 0.75 {
 			return true;
+		}
 	}
     return place_meeting(_x, _y, server_walls);
 }

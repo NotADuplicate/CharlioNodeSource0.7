@@ -7,3 +7,4 @@ alarm[1] = 1;
 lt = self
 portaled = false;
 scr_ball_sound(snd_flare,x,y)
+active = false;

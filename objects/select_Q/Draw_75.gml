@@ -9,7 +9,6 @@ if(room == room1) { //draw for rumble mode
 }
 else if(surface_exists(global.shopSurf)) { 
 	if(global.shop && global.shopState == "Abilities") {
-		//game_end();
 		surface_set_target(global.shopSurf);
 		//draw_rectangle_color(x-50,y-48,x+50,y-30,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,false)
 		draw_text(x,y-35,variable_global_get(abilityVar+"button"))

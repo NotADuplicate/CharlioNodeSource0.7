@@ -3,5 +3,8 @@
 if(other.num != num || active) {
 	var heals = Abilities.heal.healing;
 	scr_heal(heals,num);
+	with(ball_game) {
+		node_send(buffer,"eventName","Hook Stop", "Obj", obj_healthShot, "Num", other.num);
+	}
 	instance_destroy()
 }

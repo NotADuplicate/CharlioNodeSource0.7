@@ -32,7 +32,8 @@ if(room != room1 && global.shop && global.shopState == "Abilities" && global.uti
 		if(clicked) {
 			if(global.utilityClass != global.Q && global.utilityClass != global.space && global.utilityClass != global.right && global.utilityClass != global.R) {
 				if(variable_global_get(abilityVar) == 0) {
-					//global.leveled--;
+					if(global.testMode)
+						global.leveled--;
 				} else {
 					if(global.free <= 0)
 						global.free = 60;

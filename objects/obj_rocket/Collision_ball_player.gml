@@ -5,8 +5,8 @@ if(other.num != num || reflected) {
 		x -= lengthdir_x(1,direction);
 		y -= lengthdir_y(1,direction);
 	}
-	instance_destroy();
 	with(ball_game) {
-		node_send(buffer,"eventName","Hook Stop", "Obj", obj_rocket, "Num", ball_player.num);
+		node_send(buffer,"eventName","Hook Stop", "Obj", obj_rocket, "Num", other.num);
 	}
+	instance_destroy();
 }

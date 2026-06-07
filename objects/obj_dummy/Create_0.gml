@@ -4,7 +4,6 @@ hp = 120;
 maxhp = 250;
 xp = x;
 yp = y;
-//game_end()
 invincibility = 0;
 poisonDmg = 0;
 alarm[0] = 30;

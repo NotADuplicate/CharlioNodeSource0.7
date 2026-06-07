@@ -1,6 +1,5 @@
 /// @description Fire grenade
 if(global.attack == obj_grenade && global.slow < 1) {
-	//game_end()
     if(global.ammo > 0 && reload == 0 && scr_shootable()) {
 		
         xp = obj_player.x + lengthdir_x(40,point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y));

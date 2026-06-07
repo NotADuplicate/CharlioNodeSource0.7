@@ -95,7 +95,6 @@ function scr_ball_receive() {
 	    case "Hook Stop": //stop using something
 			ob = buffer[? "Obj"]
 			num2 = buffer[? "Num"]
-			//game_end()
 			scr_hook_stop(ob,num2)
 	    break;
 		case "Monster Hp": 

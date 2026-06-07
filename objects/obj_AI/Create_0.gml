@@ -30,3 +30,7 @@ blastOffDir = 0;
 shadow = instance_create(x,y+30,obj_shadow);
 shadow.link = self;
 shadow.depth = 600;
+
+seen = 0;
+ghosting = 0;
+invPass = false;

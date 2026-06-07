@@ -5,7 +5,6 @@ function scr_bandit(argument0) {
 	var threshold = round(global.loop/3)
 	if(Rnum < threshold) {
 		global.bandit = true;
-		//game_end()
 	}
 	else
 		global.bandit = false;

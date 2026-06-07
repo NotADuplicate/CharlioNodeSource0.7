@@ -244,7 +244,7 @@ else if(stage == 12) { //push into tower
 	textX = 550;
 	textY = 600;
 	tutText = "Standing close to enemy tower deals damage to you. \n Destroy the tower by pushing the ball into it"
-	if(instance_number(obj_turret) < 2) {
+	if(instance_number(obj_turret) < 4) {
 		stage = 13;
 		textScale = 1;
 		alarm[6] = 450;
@@ -290,7 +290,7 @@ else if(stage == 14) {
 else if(stage == 15) { 
 	global.teleportTimer = 0;
 	tutText = "There are monsters that are represented by icons on the map. \n Press M to view the map find the monster";
-	if(keyboard_check(global.mapKey)) { 
+	if(global.mapShowing) { 
 		arrowX = 1011;
 		arrowY = 648;
 	} else {

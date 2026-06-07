@@ -33,6 +33,9 @@ else if(global.shop && global.shopState == "Passives" && active) {
 			with(ball_game) {
 				node_send(buffer,"eventName","Loadout","Num",ball_player.num,"Slot",5,"Ability",-1, "PassiveIndex", other.passiveIndex)
 			}
+			if(global.testMode) {
+				global.leveled--;
+			}
 			audio_play_sound(snd_buy,1,false)
 			if(stacks+extraStacks >= maxStacks) {
 				active = false;
