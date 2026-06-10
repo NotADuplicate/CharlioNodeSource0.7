@@ -32,7 +32,7 @@ global.names[1] = global.name;
 	        global.ammodrop = 50/30//(buffer_read(buffer,buffer_u8)/30);
 	        //global.ultdrop = buffer_read(buffer,buffer_u8)
 			global.abilityNum = 1//buffer_read(buffer,buffer_u8)/100;
-			global.leveled = 5//round(global.ultdrop/10)
+			global.leveled = round(global.ultdrop/10)
 			global.cSwitch = true//buffer_read(buffer,buffer_bool);
 	        global.teaming = true//buffer_read(buffer,buffer_bool);
 }

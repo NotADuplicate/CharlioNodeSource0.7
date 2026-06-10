@@ -1,5 +1,6 @@
 /// @description Respawn timer and xscale
 if(respawnTimer > 0 && instance_exists(obj_ending) == false) {
+	x = -100;
 	respawnTimer -= (delta_time/1000000);
 	if(respawnTimer < 0.5) {
 		respawnTimer = 0;

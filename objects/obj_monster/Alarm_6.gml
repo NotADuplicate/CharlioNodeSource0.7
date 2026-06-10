@@ -1,5 +1,11 @@
 /// @description Path at player
 if(dead == false && pokeNum == 0) {
+	sprite_index = walkSpr;
+	if(direction < 90 || direction > 270) {
+		image_xscale = scale;
+	} else {
+		image_xscale = -scale;
+	}
 	target = 0; //check if nearby chummed ppl
 	if(ball_player.chummed > 0 && point_distance(x,y,ball_player.x,ball_player.y) < 1000) {
 		target = ball_player;
@@ -33,7 +39,8 @@ if(dead == false && pokeNum == 0) {
 	}
 	else {
 		x = xpos;
-		y = ypos
+		y = ypos;
+		sprite_index = idleSpr;
 	}
 }
 else {

@@ -231,7 +231,7 @@ if(enraged) {
 if(rammed > 0)
 	rammed--;
 
-if(x < 0 || x > 6500) {//outside of map
+if(x < 0 || x > 3910) {//outside of map
 	scr_damage(5,num,false, spr_edgerun, true);
 }
 

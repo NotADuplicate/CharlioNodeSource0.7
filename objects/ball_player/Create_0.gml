@@ -140,3 +140,4 @@ whirlwind = false;
 invincibilityNum = 0;
 sleepNum = 0;
 frostNum = 0;
+cdr = 1;

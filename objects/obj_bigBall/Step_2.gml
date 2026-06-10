@@ -39,7 +39,7 @@ if(ball_game.started) {
 		ending = instance_create(x,y,obj_ending);
 		ending.lore = "Right team wins!";
 	}*/
-	if((x > 3915) || (x > 3892 && global.gameMode == "Rumble")) {
+	if((x > 3920) || (x > 3892 && global.gameMode == "Rumble")) {
 		ending = instance_create(x,y,obj_ending);
 		ending.lore = "Left team wins!";
 	}

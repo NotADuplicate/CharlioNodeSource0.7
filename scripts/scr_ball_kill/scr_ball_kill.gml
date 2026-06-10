@@ -19,10 +19,24 @@ function scr_ball_kill(deadNum,killer,icon,assister){
 		with(global.players[deadNum]) {
 			scr_cleanse(false);
 		}
+		with(obj_gun) {
+			if(num == deadNum) { throwing = false; }
+		}
+		with(obj_reaper) {
+			if(num == deadNum) { instance_destroy(); }
+		}
+		with(obj_hook) {
+			if(num == deadNum) { instance_destroy(); }
+		}
 	}
 	if(deadNum > 20) {
 		with(obj_monster) { //kill monster and give buff to the right player
 			if(nameNum == deadNum) {
+				body = instance_create(x,y,obj_monsterCorpse);
+				body.sprite_index = deathSpr;
+				body.image_xscale = image_xscale;
+				body.image_yscale = image_yscale;
+
 				num = killer;
 				hp = -100;
 				path_end()

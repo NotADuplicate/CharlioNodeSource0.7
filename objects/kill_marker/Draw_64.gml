@@ -9,7 +9,7 @@ else
 if(suicide) {
 	draw_text(x,y-40,global.names[killer]);
 	if(assister > 0)
-		draw_text_transformed(x,y-25,global.names[killer],0.75,0.75,0);
+		draw_text_transformed(x,y-25,global.names[assister],0.75,0.75,0);
 	draw_set_color(c_white)
 	if(icon != 0)
 		draw_sprite(icon,0,x-26,y+12)

@@ -61,7 +61,7 @@ function scr_ball_receive() {
 	        global.ammodrop = 50/30//(buffer_read(buffer,buffer_u8)/30);
 	        //global.ultdrop = buffer_read(buffer,buffer_u8)
 			global.abilityNum = 1//buffer_read(buffer,buffer_u8)/100;
-			global.leveled = 5//buffer[? "Levels"]
+			global.leveled = buffer[? "Levels"]
 			global.simple = buffer[? "Simple"]
 			global.cSwitch = true//buffer_read(buffer,buffer_bool);
 	        global.teaming = true//buffer_read(buffer,buffer_bool);
@@ -397,14 +397,14 @@ function scr_ball_receive() {
 				ball_player.loadoutUnseen = true;
 			if(index2 == 0) { //boots
 				global.loadout[num,index2] = passiveSprite;
-				if(global.teamNum[num] == global.teamNum[ball_player.num]) //if on same team, update known loadouts
+				if(global.teamNum[num] == global.teamNum[ball_player.num] || global.spectator) //if on same team, update known loadouts
 					global.knownLoadout[num,index2] = passiveSprite;
 			}
 			else if(index2 <= 4) { //update one of your ability slots
 				if(num == ball_player.num)
 					scr_abilitySet(abilityIndex, index2);
 				global.loadout[num,index2] = ability;
-				if(global.teamNum[num] == global.teamNum[ball_player.num]) //if on same team, update known loadouts
+				if(global.teamNum[num] == global.teamNum[ball_player.num] || global.spectator) //if on same team, update known loadouts
 					global.knownLoadout[num,index2] = ability;
 			}
 			else if(index2 == 4) {
@@ -412,7 +412,7 @@ function scr_ball_receive() {
 					global.loadout[num,4] = 1
 				else
 					global.loadout[num,4] = ability;
-				if(global.teamNum[num] == global.teamNum[ball_player.num] || global.teamNum[ball_player.num] == 0) //if on same team, update known loadouts
+				if(global.teamNum[num] == global.teamNum[ball_player.num] || global.teamNum[ball_player.num] == 0 || global.spectator) //if on same team, update known loadouts
 					global.knownLoadout[num,index2] = ability;
 			}
 			else { //add new passive

@@ -15,8 +15,10 @@ function CooldownReduction() constructor {
 	}
 	
 	static otherGet = function(num) {
+		global.players[num].cdr *= 1.3;
 	}
 	
 	static otherLose = function(num) {
+		global.players[num].cdr /= 1.3;
 	}
 }

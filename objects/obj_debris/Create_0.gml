@@ -1,0 +1,1 @@
+tower = instance_nearest(x,y,obj_turret);

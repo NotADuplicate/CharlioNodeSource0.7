@@ -4,7 +4,7 @@ if(keyboard_check(vk_tab)) {
 	i = 1;
 	repeat(3) { //draw 3 white boxes and abilities
 		if(global.knownLoadout[num,i] != 0) {
-			statUi = scr_stats_UI(global.knownLoadout[num,i], -1);
+			statUi = scr_stats_UI(global.knownLoadout[num,i], -1, keyboard_check(vk_control), num);
 			var statText = statUi[0];
 			var height = statUi[1];
 			scr_hover_UI(xp,y+16,statText,self,"hover"+string(i),-1,height)
@@ -13,7 +13,7 @@ if(keyboard_check(vk_tab)) {
 		i++;
 	}
 	if(global.knownLoadout[num,4] != 0) {
-		statUi = scr_stats_UI(global.knownLoadout[num,i], -1);
+		statUi = scr_stats_UI(global.knownLoadout[num,i], -1, keyboard_check(vk_control), num);
 		var statText = statUi[0];
 		var height = statUi[1];
 		scr_hover_UI(xp,y+16,statText,self,"hover"+string(i),-1,height)

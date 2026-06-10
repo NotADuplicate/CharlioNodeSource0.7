@@ -21,7 +21,7 @@ function scr_ability_UI(xp, yp, ability, cooldown, cooldownMax, button, hoverVar
 		draw_rectangle_color(xp-16,yp-16,xp+16,yp+16,c_red,c_red,c_red,c_red,false);
 		draw_set_alpha(1)
 	}
-	statUi = scr_stats_UI(ability, 1);
+	statUi = scr_stats_UI(ability, 1, keyboard_check(vk_control), ball_player.num);
 	var statText = statUi[0];
 	var height = statUi[1];
 	scr_hover_UI(xp,yp,statText,self,hoverVar,1,height)

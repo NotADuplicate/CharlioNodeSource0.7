@@ -36,7 +36,7 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 		draw_sprite(spr_white,0,xp,y+16)
 		if(global.knownLoadout[num,i] != 0) {
 			abilitySprite = global.knownLoadout[num,i].sprite;
-			statUi = scr_stats_UI(global.knownLoadout[num,i], -1);
+			statUi = scr_stats_UI(global.knownLoadout[num,i], -1, keyboard_check(vk_control), num);
 			var statText = statUi[0];
 			var height = statUi[1];
 			scr_hover_UI(xp,y+16,statText,self,"hover"+string(i),-1,height)
@@ -50,7 +50,7 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 	if(global.knownLoadout[num,4] != 0) {
 		draw_sprite(spr_white,0,xp,y+16)
 		abilitySprite = global.knownLoadout[num,4].sprite;
-		statUi = scr_stats_UI(global.knownLoadout[num,i], -1);
+		statUi = scr_stats_UI(global.knownLoadout[num,i], -1, keyboard_check(vk_control), num);
 		var statText = statUi[0];
 		var height = statUi[1];
 		scr_hover_UI(xp,y+16,statText,self,"hover"+string(i),-1,height)
@@ -180,7 +180,7 @@ else if(keyboard_check(vk_tab)) {
 		draw_sprite(spr_white,0,xp,y+16)
 		if(global.knownLoadout[num,i] != 0) {
 			abilitySprite = global.knownLoadout[num,i].sprite;
-			statUi = scr_stats_UI(global.knownLoadout[num,i], -1);
+			statUi = scr_stats_UI(global.knownLoadout[num,i], -1, keyboard_check(vk_control), num);
 			var statText = statUi[0];
 			var height = statUi[1];
 			scr_hover_UI(xp,y+16,statText,self,"hover"+string(i),-1,height)
@@ -194,7 +194,7 @@ else if(keyboard_check(vk_tab)) {
 	if(global.knownLoadout[num,4] != 0) {
 		draw_sprite(spr_white,0,xp,y+16)
 		abilitySprite = global.knownLoadout[num,4].sprite;
-		statUi = scr_stats_UI(global.knownLoadout[num,i], -1);
+		statUi = scr_stats_UI(global.knownLoadout[num,i], -1, keyboard_check(vk_control), num);
 		var statText = statUi[0];
 		var height = statUi[1];
 		scr_hover_UI(xp,y+16,statText,self,"hover"+string(i),-1,height)

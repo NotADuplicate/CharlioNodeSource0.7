@@ -1,9 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(dead) {
-	draw_sprite_ext(sprite_index,0,xpos,ypos,image_xscale,image_yscale,0,c_white,knownAlpha);
-}
-else if(place_meeting(ball_player.x,ball_player.y,obj_regen) == false || keyboard_check(ord("M"))) {
+if(!dead) {
 	draw_self();
 }
 
@@ -40,8 +37,8 @@ if(enraged) {
 	hp -= 1;
 }
 	
-if(collision_line(xpos,ypos,ball_player.x,ball_player.y,ball_wall,false,true) == noone) {
+//if(collision_line(xpos,ypos,ball_player.x,ball_player.y,ball_wall,false,true) == noone || global.spectator) {
 	if(dead == false)
-		draw_healthbar(x-(20*image_xscale),y-(20*image_xscale),x+(20*image_xscale),y-(16*image_xscale),(hp/maxhp)*100,c_ltgray,c_red,c_green,0,true,true);
+		draw_healthbar(x-(30*abs(image_yscale)),y-(40*image_yscale),x+(30*abs(image_yscale)),y-(36*image_yscale),(hp/maxhp)*100,c_ltgray,c_red,c_green,0,true,true);
 	knownAlpha = image_alpha
-}
+//}

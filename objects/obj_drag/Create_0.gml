@@ -29,3 +29,4 @@ broken = 0;
 camp = self
 shield = 0;
 magicShield = 0;
+deathSpr = spr_demonDeath;

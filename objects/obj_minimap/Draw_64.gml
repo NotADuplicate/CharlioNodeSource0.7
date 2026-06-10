@@ -42,7 +42,7 @@ if(global.mapShowing) {
 		
 		for (var i = 0; i < instance_number(ball_other); i++) {
 		    var inst = instance_find(ball_other, i);
-			if(inst.position_known && inst.seen==0) {
+			if(inst.position_known && inst.seen==0 && inst.x > 0) {
 				playerx = inst.x*scale + xp1+1
 				playery = inst.y*scale + yp1+1
 				color = global.teamNum[inst.num] == 1 ? c_red : c_blue;
