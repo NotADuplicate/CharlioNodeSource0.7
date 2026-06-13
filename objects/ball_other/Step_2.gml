@@ -22,3 +22,9 @@ else
 	
 if(ghosting > 0)
 	ghosting--;
+	
+	
+//Handle movement prediction:
+if(movementPrediction < 1) {
+	movementPrediction += 1/3;
+}

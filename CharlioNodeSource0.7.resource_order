@@ -9,8 +9,8 @@
     {"name":"BallPassives","order":23,"path":"folders/Scripts/BallPassives.yy",},
     {"name":"Music","order":9,"path":"folders/Sounds/Music.yy",},
     {"name":"Epic World","order":60,"path":"folders/Sprites/Epic World.yy",},
-    {"name":"Golem","order":19,"path":"folders/Sprites/Epic World/Golem.yy",},
     {"name":"Demon","order":23,"path":"folders/Sprites/Epic World/Demon.yy",},
+    {"name":"Golem","order":19,"path":"folders/Sprites/Epic World/Golem.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"compatibility_report_050620_1028482848","order":1,"path":"notes/compatibility_report_050620_1028482848/compatibility_report_050620_1028482848.yy",},

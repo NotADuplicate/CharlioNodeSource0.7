@@ -1,7 +1,7 @@
 function scr_ball_receive() {
 	var buffer = argument[0];
 	var message_id = buffer[? "eventName"]
-	if(instance_exists(ball_player) || message_id = "Start Game" || message_id == "Team Name") {//global.playBall || message_id < 3 || message_id == 14) {
+	if(global.ballStart || message_id = "Start Game" || message_id == "Team Name") {//global.playBall || message_id < 3 || message_id == 14) {
 	switch(message_id) {
 	    case 0:
 	        global.game = buffer_read(buffer,buffer_string);
@@ -27,6 +27,7 @@ function scr_ball_receive() {
 	    case "Start Game": //start game
 	        global.ammo = 0;
 			global.playBall = false;
+			global.ballStart = false;
 	        global.ready = 0;
 	        obj_client.ready = false;
 			global.mons = 21;

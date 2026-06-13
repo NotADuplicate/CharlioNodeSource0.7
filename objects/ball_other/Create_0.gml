@@ -84,3 +84,7 @@ shadow = instance_create(x,y+30,obj_shadow);
 shadow.link = self;
 shadow.depth = 600;
 cdr = 1;
+
+xspd = 0;
+yspd = 0;
+movementPrediction = 0;
