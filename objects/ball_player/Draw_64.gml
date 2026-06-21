@@ -1,5 +1,5 @@
 /// @description Draw gui
-if(global.ballGameOver == 0) {
+if(global.ballGameOver == 0 && global.UI) {
 	if((!instance_exists(obj_tutorial) || obj_tutorial.stage > 5)) {
 		if(global.levelSpent > 9) {
 			levelDrawOffset += 6;

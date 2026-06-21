@@ -4,3 +4,4 @@ alarm[0] = 5;
 image_xscale = 3;
 image_yscale = 3;
 scr_ball_sound(snd_splash,x,y)
+instance_create(x,y,effect_oilSplash);

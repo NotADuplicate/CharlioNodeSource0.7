@@ -1,6 +1,10 @@
 /// @description Draw HP and statuses
 var dt = delta_time / 35000;
 
+if(batCharge > 0) {
+	draw_sprite_ext(HD_bat, 0,x,y,0.3,0.3,gunDir-120,c_white,1)
+}
+
 draw_healthbar(round(x)-20,round(y)-(10*(image_yscale))-9,round(x)+20,round(y)-(10*(image_yscale))-19,(hp/maxhp)*100,c_ltgray,c_red,c_green,0,true,true);
 
 if(hp > maxhp)

@@ -16,6 +16,7 @@ function Bat() constructor {
 			ball_player.batCharge = 1;
 			global.slow = 0;
 			ball_game.held = true;
+			ball_game.range = 0;
 			scr_ball_ammo(ammoCost);
 		}
 		return(0)

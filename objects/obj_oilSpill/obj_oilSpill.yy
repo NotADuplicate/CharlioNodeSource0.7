@@ -36,5 +36,5 @@
     "path":"sprites/spr_oilSpill/spr_oilSpill.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

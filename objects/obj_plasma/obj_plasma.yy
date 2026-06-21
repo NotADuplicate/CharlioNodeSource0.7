@@ -35,5 +35,5 @@
     "path":"sprites/spr_darkness/spr_darkness.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

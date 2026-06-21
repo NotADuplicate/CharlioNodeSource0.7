@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_darkness",
-    "path":"sprites/spr_darkness/spr_darkness.yy",
+    "name":"spr_plasmaPart",
+    "path":"sprites/spr_plasmaPart/spr_plasmaPart.yy",
   },
   "spriteMaskId":null,
   "visible":true,

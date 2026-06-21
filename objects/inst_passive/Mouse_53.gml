@@ -26,9 +26,6 @@ else if(global.shop && global.shopState == "Passives" && active) {
 		}
 		else if(selected == 1 && global.leveled > 0) {
 			global.levelSpent = 12;
-			global.passiveCount++;
-			if(global.passiveCount > 10) {extraStacks++;
-			} else { stacks++;}
 			
 			with(ball_game) {
 				node_send(buffer,"eventName","Loadout","Num",ball_player.num,"Slot",5,"Ability",-1, "PassiveIndex", other.passiveIndex)

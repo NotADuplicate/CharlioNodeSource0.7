@@ -419,6 +419,13 @@ function scr_ball_receive() {
 			else { //add new passive
 				if(num == ball_player.num) {
 					passiveOb.passiveGet(ball_game.buffer);
+					with(inst_passive) {
+						if(passiveIndex == other.passiveIndex) {
+							global.passiveCount++;
+							if(global.passiveCount > 10) {extraStacks++;
+							} else { stacks++;}
+						}
+					}
 				}
 				passiveOb.otherGet(num);
 				global.loadoutSize[num]++;

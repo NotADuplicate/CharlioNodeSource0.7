@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_anger",
-    "path":"sprites/spr_anger/spr_anger.yy",
+    "name":"spr_firePart",
+    "path":"sprites/spr_firePart/spr_firePart.yy",
   },
   "spriteMaskId":null,
   "visible":true,
