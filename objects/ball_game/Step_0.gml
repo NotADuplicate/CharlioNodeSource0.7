@@ -32,7 +32,7 @@ if(bullets < 5) {
 			scr_ball_sound(snd_shotgun,ball_player.x,ball_player.y,0.08)
 		else
 			scr_ball_sound(snd_shotgun,ball_player.x,ball_player.y,0.16)
-		bulletReload = 50;
+		bulletReload = 60;
 	}
 	else
 		bulletReload -= global.shooting*dt;

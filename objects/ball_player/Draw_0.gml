@@ -5,12 +5,10 @@ if(batCharge > 0) {
 	draw_sprite_ext(HD_bat, 0,x,y,0.3,0.3,gunDir-120,c_white,1)
 }
 
-draw_healthbar(round(x)-20,round(y)-(10*(image_yscale))-9,round(x)+20,round(y)-(10*(image_yscale))-19,(hp/maxhp)*100,c_ltgray,c_red,c_green,0,true,true);
+draw_healthbar(round(x)-20,round(y)-(13*(image_yscale))-9,round(x)+20,round(y)-(10*(image_yscale))-19,(hp/maxhp)*100,c_ltgray,c_red,c_green,0,true,true);
 
 if(hp > maxhp)
-	draw_healthbar(round(x)-20,round(y)-(28*(image_yscale/3+.5)),round(x)+20,round(y)-(22*(image_yscale/3+.5)),200*(hp-maxhp)/maxhp,c_green,c_aqua,c_aqua,0,true,true); //draw overheal
-	
-//draw_healthbar(round(x)-20,round(y)+(28*(image_yscale/3+.5)),round(x)+20,round(y)+(22*(image_yscale/3+.5)),(global.ammo/global.maxAmmo)*100,c_ltgray,c_red,c_green,0,true,true); //draw ammo
+	draw_healthbar(round(x)-20,round(y)-(13*(image_yscale))-9,round(x)+20,round(y)-(10*(image_yscale))-19,200*(hp-maxhp)/maxhp,c_green,c_aqua,c_aqua,0,true,true); //draw overheal
 
 if(global.boot == "Charge" && charge > 0) 
 	draw_healthbar(round(x)-20,round(y)+34,round(x)+20,round(y)+28,charge/3,c_ltgray,c_white,c_white,0,true,true); //draw charge boots charge
@@ -42,7 +40,7 @@ else {
 	draw_sprite_ext(spr_stasisAdventure,image_index,round(x),round(y),image_xscale,image_yscale,image_angle,c_white,1)
 }
 
-draw_text(round(x),round(y)-(50*(image_yscale/3)) - 31,string_hash_to_newline(global.names[num])); //name
+draw_text(round(x),round(y)-(50*(image_yscale/3)) - 35,string_hash_to_newline(global.names[num])); //name
 
 scr_drawStatus();
 //player specific shit

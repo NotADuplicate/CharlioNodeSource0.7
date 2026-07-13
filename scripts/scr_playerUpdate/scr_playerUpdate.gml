@@ -4,8 +4,6 @@ function scr_playerUpdate(players){
 	var dt = delta_time / 35000;
 	while(j < ds_list_size(players)) {
 		num = players[| j][? "n"];
-		show_debug_message(num)
-		show_debug_message(array_length(global.players))
 		
 		if(num != ball_player.num && array_length(global.players) > num) {
 			player = global.players[num];

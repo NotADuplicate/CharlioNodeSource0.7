@@ -3,9 +3,9 @@
 function PlasmaBomb() constructor {
 	sprite = spr_plasmaBomb;
 	dps = 12;
-	damage = 100;
+	damage = 70;
 	ammoCost = 2;
-	duration = 10;
+	duration = 9;
 	cooldown = 16; 
 	name = "Plasma Bomb"
 	abilityName = "plasmaBomb"

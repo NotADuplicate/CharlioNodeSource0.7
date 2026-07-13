@@ -2,14 +2,13 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Cleaver() constructor {
 	sprite = spr_cleaver;
-	damage = 50;
-	bleedDamage = 90;
+	damage = 35;
 	ammoCost = 2;
 	cooldown = 13; 
 	duration = 4;
 	name = "Cleaver"
 	abilityName = "cleaver"
-	text = "Fires a slow moving projectile which deals " + string(damage) + " damage and bleeds an enemy for " + string(duration) + " seconds. While bleeding, enemies take " + string(bleedDamage) + " damage per second while walking. The damage is not applied if they take knockback or teleport.";
+	text = "Fires a projectile which deals " + string(damage) + " damage and bleeds an enemy for " + string(duration) + " seconds. While bleeding, enemies take damage while walking proportional to how fast they are going.";
 	
 	
 	static abilityPressed = function(buffer) {

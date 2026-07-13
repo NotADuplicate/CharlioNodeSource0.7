@@ -4,9 +4,10 @@ function GlassShield() constructor {
 	sprite = spr_glass_defense;
 	ammoCost = 3;
 	cooldown = 16; 
+	duration = 2;
 	name = "Glass Shield"
 	abilityName = "glassShield"
-	text = "Apply a shield to any player that makes them invincible for 1.5 seconds then breaks and then they take double damage for the next 6 seconds.";
+	text = "Apply a shield to any player that makes them invincible for " + string(duration) + " seconds then breaks and then they take double damage for the next 6 seconds.";
 	
 	
 	static abilityPressed = function(buffer) {

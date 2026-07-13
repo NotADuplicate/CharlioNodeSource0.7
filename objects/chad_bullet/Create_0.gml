@@ -1,4 +1,4 @@
-dmg = 115;
+dmg = 135;
 //Range = 405
 speed = 0;
 visible = false;

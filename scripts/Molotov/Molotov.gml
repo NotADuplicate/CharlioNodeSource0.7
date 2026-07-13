@@ -4,8 +4,8 @@ function Molotov() constructor {
 	sprite = spr_molotov;
 	dps = 60;
 	ammoCost = 2;
-	duration = 6;
-	cooldown = 15; 
+	duration = 3;
+	cooldown = 20; 
 	name = "Molotov"
 	abilityName = "molotov"
 	text = "Throw a molotov which creates a fire when it lands, dealing " + string(dps) + " damage per second and applying fire to anyone who stands in it (excludes allies but not you).";

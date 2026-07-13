@@ -21,11 +21,7 @@ function scr_monster_dmg(dmg,n,attack){
 		//hp -= dmg*.65;
 		num = n
 		if(ball_player.num == n) {
-			with(ball_game) { //send monster damage
-				node_send(buffer,"eventName","Monster Dmg","Num",other.nameNum,"Dmg",dmg,"Damager",n)
-			}
-			show_debug_message("damage dealt:")
-			show_debug_message(dmg)
+			serverSendDamage += dmg;
 		}
 		if(milk > 0 && n == ball_player.num) {
 			scr_heal(dmg*ball_player.lifeSteal,ball_player.num);

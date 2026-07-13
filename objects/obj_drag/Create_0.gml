@@ -30,3 +30,4 @@ camp = self
 shield = 0;
 magicShield = 0;
 deathSpr = spr_demonDeath;
+serverSendDamage = 0;

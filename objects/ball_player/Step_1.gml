@@ -41,7 +41,7 @@ if(hp > maxhp) { //handle overheal
    
 //Handle some statuses
 if(bleed > 0 && (xspd != 0 || yspd != 0)) {
-	scr_damage(3,bleedNum,false, spr_blood, true);
+	scr_damage(max(xspd, yspd),bleedNum,false, spr_blood, true);
 	if(global.screenShake < 8)
 		global.screenShake = 8;
 }

@@ -31,3 +31,5 @@ pokeNum = 0;
 pokeHp = maxhp
 shield = 0;
 magicShield = 0;
+serverSendDamage = 0;
+alarm[9] = 1;

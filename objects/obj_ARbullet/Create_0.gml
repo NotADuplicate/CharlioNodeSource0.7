@@ -1,6 +1,6 @@
-dmg = 40;
+dmg = 45;
 //Range = 405
-speed = 40;
+speed = 35;
 alarm[0] = 1;
 //alarm[1] = 60;
 image_yscale = 0.75;

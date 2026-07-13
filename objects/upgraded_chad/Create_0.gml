@@ -1,4 +1,4 @@
-dmg = 170;
+dmg = 200;
 //Range = 405
 speed = 30;
 alarm[0] = 1;

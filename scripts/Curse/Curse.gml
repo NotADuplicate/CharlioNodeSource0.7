@@ -5,7 +5,7 @@ function Curse() constructor {
 	damage = 50;
 	maxDamage = 200;
 	ammoCost = 2;
-	cooldown = 14; 
+	cooldown = 15; 
 	name = "Curse"
 	abilityName = "curse"
 	text = "Shoot a projectile which curses enemies. After you curse an enemy you begin charging the attack and can recast to deal 50-200 damage depending on how long you charged. Being moved resets the charge.";

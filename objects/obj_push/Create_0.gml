@@ -1,3 +1,3 @@
-alarm[0] = 90;
+alarm[0] = 30;
 magnitude = 100;
 

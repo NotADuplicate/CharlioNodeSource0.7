@@ -185,6 +185,14 @@ function scr_targeted_status(status,target,user){
 		case 28: //finish curse with no damage
 			if(target == ball_player.num) { //allow player to move again
 				global.slow = 1;
+				if(global.right == Abilities.curse)
+					global.rightCool = Abilities.curse.cooldown;
+				if(global.space == Abilities.curse)
+					global.spaceCool = Abilities.curse.cooldown;
+				if(global.Q == Abilities.curse)
+					global.QCool = Abilities.curse.cooldown;
+				if(global.R == Abilities.curse)
+					global.RCool = Abilities.curse.cooldown;
 			}
 			with(obj_reaper) {
 				if(userNum == target) {
@@ -218,9 +226,9 @@ function scr_targeted_status(status,target,user){
 		break;
 		case 33: //glass shield
 			if(global.players[target].spellShield == 0) {
-				global.players[target].glassShield = 45;
+				global.players[target].glassShield = 30 * Abilities.glassShield.duration;
 				if(target == ball_player.num) {
-					global.invincibility = 45;
+					global.invincibility = 30 * Abilities.glassShield.duration;
 					ball_player.invincibilityNum = user;
 					ball_player.brokenNum = user;
 				}

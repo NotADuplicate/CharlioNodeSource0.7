@@ -466,6 +466,8 @@ function scr_ball_receive() {
 			passiveIndex = buffer[? "Passive Index"];
 			passiveOb = Passives.list[passiveIndex];
 			count = buffer[? "Count"];
+			show_debug_message("Passive lost count:")
+			show_debug_message(count);
 			repeat(count) {
 				if(num == ball_player.num) {
 					passiveOb.passiveLose(ball_game.buffer);

@@ -6,7 +6,7 @@ if(global.teamNum[other.num] != global.teamNum[num] || other.num == num) {
 		global.slow = 1;
 	}
 	if(burn < 300 && spellShield == 0 && global.invincibility == 0) {
-		burn += 10;
+		burn += 8;
 		burnNum = other.num
 	}
 }

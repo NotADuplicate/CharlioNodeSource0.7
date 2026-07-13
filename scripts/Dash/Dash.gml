@@ -3,7 +3,7 @@
 function Dash() constructor {
 	sprite = spr_speed;
 	ammoCost = 1;
-	cooldown = 4; 
+	cooldown = 5; 
 	name = "Dash"
 	abilityName = "dash"
 	text = "Quadruples your speed for 0.25 seconds."

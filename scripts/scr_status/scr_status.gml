@@ -51,9 +51,9 @@ function scr_status(status,target){
 			}
 		break;
 		case 8: //block
-			global.players[target].blocking = 30;
+			global.players[target].blocking = 20;
 			if(target == ball_player.num) {
-				global.invincibility = 30;
+				global.invincibility = 20;
 				ball_player.invincibilityNum = target;
 			}
 		break;

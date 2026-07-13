@@ -23,7 +23,7 @@ if(sprite_index == spr_melee) {
 }
 if(sprite_index == spr_chargeGunStrong || sprite_index == spr_chargeGunWeak) {
 	chargeGun++;
-	if(chargeGun >= 4) { chargeGun = 0; }
+	if(chargeGun >= 5) { chargeGun = 0; }
 	
 	if(chargeGun == 0) {
 		sprite_index = spr_chargeGunStrong;

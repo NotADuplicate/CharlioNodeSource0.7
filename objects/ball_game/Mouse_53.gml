@@ -35,7 +35,7 @@ if((global.ammo > 0 || global.attack = obj_bullet || global.attack = chad_bullet
             reload = 30;
             scr_ball_ammo(1);
 			global.chargeGun++;
-			if(global.chargeGun > 2)
+			if(global.chargeGun > 3)
 				global.attack = chad_bullet
         break;
         case chad_bullet:

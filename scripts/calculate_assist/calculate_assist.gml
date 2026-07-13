@@ -15,10 +15,10 @@ function calculate_assist(killer){
 			global.assistScore[frostNum] += 100;
 		}
 		if(bleed > 0 && bleedNum > 0) {
-			global.assistScore[bleedNum] += 100;
+			global.assistScore[bleedNum] += 140;
 		}
 		if(stunned > 0 && stunNum > 0) {
-			global.assistScore[stunNum] += 150;
+			global.assistScore[stunNum] += 180;
 		}
 		if(controlled) {
 			global.assistScore[controlledNum] += 90;
