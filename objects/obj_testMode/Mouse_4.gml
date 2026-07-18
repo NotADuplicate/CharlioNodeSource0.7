@@ -21,7 +21,7 @@ global.names[1] = global.name;
 	            }
 			global.gameMode = "Norms"//buffer_read(buffer,buffer_string)
 			ins = instance_create_depth(0,0,-1000,ball_game);
-			instance_create(0,0,obj_tutorial)
+			instance_create(0,0,obj_sandbox)
 			
 			room_goto(demo_room);
 			
@@ -29,10 +29,8 @@ global.names[1] = global.name;
 	        ins.loop = 1
 	        obj_client.index = 1
 	        random_set_seed(1)
-	        global.ammodrop = 50/30//(buffer_read(buffer,buffer_u8)/30);
-	        //global.ultdrop = buffer_read(buffer,buffer_u8)
 			global.abilityNum = 1//buffer_read(buffer,buffer_u8)/100;
-			global.leveled = round(global.ultdrop/10)
+			global.leveled = 5;
 			global.cSwitch = true//buffer_read(buffer,buffer_bool);
 	        global.teaming = true//buffer_read(buffer,buffer_bool);
 }

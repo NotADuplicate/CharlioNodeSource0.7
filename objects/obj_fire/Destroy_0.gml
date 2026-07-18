@@ -1,0 +1,1 @@
+mp_grid_update_circle(global.bb,x,y,290,32,false);

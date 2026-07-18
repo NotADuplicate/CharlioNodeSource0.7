@@ -7,3 +7,4 @@ image_speed = 0.75
 intensity = 30;
 duration = Abilities.molotov.duration;
 timer = duration;
+mp_grid_update_circle(global.bb,x,y,290,32,true);

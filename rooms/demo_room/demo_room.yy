@@ -152,6 +152,8 @@
     {"name":"inst_5C3EBFE3","path":"rooms/demo_room/demo_room.yy",},
     {"name":"inst_9A1A9E6","path":"rooms/demo_room/demo_room.yy",},
     {"name":"inst_2852FF34","path":"rooms/demo_room/demo_room.yy",},
+    {"name":"inst_44C843EF","path":"rooms/demo_room/demo_room.yy",},
+    {"name":"inst_62C0D09E","path":"rooms/demo_room/demo_room.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -473,6 +475,8 @@
         {"$GMRInstance":"v4","%Name":"inst_5C3EBFE3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5C3EBFE3","objectId":{"name":"obj_debris","path":"objects/obj_debris/obj_debris.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2478.0,"y":884.0,},
         {"$GMRInstance":"v4","%Name":"inst_9A1A9E6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_9A1A9E6","objectId":{"name":"obj_obelisk","path":"objects/obj_obelisk/obj_obelisk.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.5,"scaleY":1.0,"x":2546.0,"y":830.0,},
         {"$GMRInstance":"v4","%Name":"inst_2852FF34","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2852FF34","objectId":{"name":"obj_debris","path":"objects/obj_debris/obj_debris.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":-2.0,"scaleY":1.5,"x":2638.5,"y":876.25,},
+        {"$GMRInstance":"v4","%Name":"inst_44C843EF","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_44C843EF","objectId":{"name":"obj_goalPoint","path":"objects/obj_goalPoint/obj_goalPoint.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":576.0,},
+        {"$GMRInstance":"v4","%Name":"inst_62C0D09E","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_62C0D09E","objectId":{"name":"obj_goalPoint","path":"objects/obj_goalPoint/obj_goalPoint.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3872.0,"y":576.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"stones","depth":899,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"stones","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":86,"SerialiseWidth":122,"TileCompressedData":[
           41,492,491,492,491,492,491,492,491,492,491,492,491,492,491,492,491,492,491,492,491,492,491,492,491,492,

@@ -1,4 +1,4 @@
-function scr_pathfind() {
+function scr_pathfind(dodge_fire) {
 		//if(path_index != -1)
 		//	path_delete(path_index);
 	     goalx = argument[0]; 
@@ -19,6 +19,5 @@ function scr_pathfind() {
 			}
 		 }
 	     path_start(aa,argument[2],path_action_stop,true);
-
-
+		 return aa;
 }

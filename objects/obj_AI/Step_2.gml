@@ -1,27 +1,14 @@
 // Inherit the parent event
 event_inherited();
 
-/// @description Decide if seen
-if(position_meeting(x,y,obj_cover) == false) {
-	if(seen > 0 && invPass)
-		seen--;
-	else
-		seen = 0;
+link.x = x;
+link.y = y;
+link.hp = hp;
+
+//Keep track of enemy's last 7 distances (for reaction time based things)
+i = 6;
+while(i > 0) {
+	enemyDistances[i] = enemyDistances[i-1];
+	i--;
 }
-else {
-	cov = instance_position(x,y,obj_cover)
-	if(cov.seen = false)
-		seen = 30
-	else
-		seen = 0;
-}
-if(sameTeam && seen != 0)
-	image_alpha = .5;
-else if(ghosting > 0) {
-	image_alpha = .5;
-}
-else
-	image_alpha = 1;
-	
-if(ghosting > 0)
-	ghosting--;
+enemyDistances[0] = point_distance(x,y,enemy.x,enemy.y);

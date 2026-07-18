@@ -21,4 +21,26 @@ function Molotov() constructor {
 		scr_ball_ammo(2);
 		return(cooldown)
 	}
+	
+	static aiUse = function(ai, xp, yp) {
+		ai.ammo -= ammoCost;
+		with(ball_game) {
+			node_send(buffer,"Dir",global.throwing,"X",xp,"Y",yp,"Num",ai.num,"Obj",obj_molotov,"eventName","Bullet")
+		}
+	}
+	
+	static aiConsider = function(ai) {
+		if(ai.state == "Skirmish" && random(1) > 0.98) {
+			aiUse(ai,ai.enemy.x,ai.enemy.y);
+			return(cooldown);
+		}
+		if(ai.state == "Fleeing" && ai.enemyDistances[0] > 150 && ai.enemyDistances[0] < 300) {
+			aiUse(ai,(ai.x+ai.enemy.x*2)/3, (ai.y+ai.enemy.y*2)/3);
+			return(cooldown);
+		}
+	}
+	
+	static aiDecisions = function(ai) {
+		return;
+	}
 }

@@ -19,4 +19,34 @@ function Axe() constructor {
 		}
 		else { return(0); }
 	}
+	
+	static aiUse = function(ai, dir) {
+		ai.ammo -= ammoCost;
+		show_debug_message("Swing axe")
+		var axe = instance_create_depth(ai.x,ai.y,ai.depth,obj_axetinguisher);
+		axe.direction = dir;
+		axe.image_angle = dir;
+		axe.num = ai.num;
+	}
+	
+	static aiConsider = function(ai) {
+		if(point_distance(ai.x,ai.y,ai.enemy.x,ai.enemy.y) < 90) {
+			show_debug_message("Close enough to axe")
+			if(ai.enemyDistances[6] < 160 || ai.state == "Thirst") {
+				show_debug_message("Reacting fast enough")
+				if(ai.enemy.burn > 0 || ai.enemy.hp < 40) {
+					show_debug_message("Going for kill")
+					dir = point_direction(ai.x,ai.y,ai.enemy.x, ai.enemy.y);
+					aiUse(ai,dir);
+					return(cooldown);
+				}
+			}
+		}
+		return 0;
+	}
+	
+	static aiDecisions = function(ai) {
+		if(ai.enemy.burn > 0 && ai.enemyDistances[0] < 400 && random(1) > 0.6) {ai.state = "Thirst"; }
+		return;
+	}
 }

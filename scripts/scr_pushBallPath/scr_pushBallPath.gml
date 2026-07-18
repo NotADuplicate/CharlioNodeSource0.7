@@ -10,8 +10,8 @@ function scr_pushBallPath(targetX, targetY, push_distance){
     }
 
     // get first point along ball's path (the direction ball should move)
-    var nx = path_get_point_x(path, 3);
-    var ny = path_get_point_y(path, 3);
+    var nx = path_get_point_x(path, 2);
+    var ny = path_get_point_y(path, 2);
 
     var dx = nx - obj_bigBall.x;
     var dy = ny - obj_bigBall.y;

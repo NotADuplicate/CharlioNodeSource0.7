@@ -1,16 +1,14 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_dummy_damage(dmg,dealer,type, icon, DoT){
-	if(invincibility > 0) {
-		show_debug_message("Invincible:")
-		show_debug_message(string(invincibility))
+	if(invincibility > 0 || global.teamNum[dealer] == global.teamNum[num]) {
 		return;
 	}
 	if(type) {
-		dmg *= ball_player.atk
+		dmg *= global.players[dealer].atk
 	}
 	else {
-		dmg *= ball_player.magic
+		dmg *= global.players[dealer].magic
 	}
 	if(broken > 0) {
 		dmg *= 2
@@ -21,5 +19,6 @@ function scr_dummy_damage(dmg,dealer,type, icon, DoT){
 		magicBurn = max(magicBurn, duration);
 	}
 	recentDamageIcon = icon;
-	scr_deal_damage(2,dmg,type);
+	if(dealer == ball_player.num)
+		scr_deal_damage(num,dmg,type);
 }

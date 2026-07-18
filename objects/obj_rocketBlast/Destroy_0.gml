@@ -1,0 +1,1 @@
+//instance_create(x,y,ball_wall);

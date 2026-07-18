@@ -1,4 +1,5 @@
 /// @description Technically respawn
+show_debug_message("Respawning")
 speed = 0;
 visible = true;
 x = startingX;

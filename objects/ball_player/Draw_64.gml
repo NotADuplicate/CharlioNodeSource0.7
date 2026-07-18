@@ -21,8 +21,8 @@ if(global.ballGameOver == 0 && global.UI) {
 	}
 
 	if(keyboard_check(vk_tab) == false && (!instance_exists(obj_tutorial) || obj_tutorial.stage > 0)) {
-		if(global.dead)
-			draw_text(500,40,string_hash_to_newline(round(respawnTimer)));
+		if(global.dead) 
+			draw_text(500,40,string_hash_to_newline((respawnTimer+2)));
 		else if(global.shop == false)
 			draw_text(500,30,string_hash_to_newline(global.ammo));
 	}

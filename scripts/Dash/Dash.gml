@@ -20,4 +20,39 @@ function Dash() constructor {
 		} 
 		else { return(0); }
 	}
+	
+	static aiUse = function(ai) {
+		with(ball_game) {
+			node_send(buffer,"eventName","Status","Target",ai.num,"Status Num", 50)
+		}
+		with(ai) {
+			path_speed *= 4;
+			alarm[8] = 7;
+		}
+	}
+	
+	static aiConsider = function(ai) {
+		if(ai.speed > 0) { return; }
+		if(ai.state == "Flee" && random(1) > 0.8) {
+			aiUse(ai);
+			return cooldown;
+		}
+		if(ai.state == "Thirst" && random(1) > 0.8) {
+			aiUse(ai);
+			return cooldown;
+		}
+		if(ai.state == "Skirmish" && random(1) > 0.95 && ai.ammo > ai.maxAmmo/2) {
+			aiUse(ai);
+			return cooldown;
+		}
+		if(ai.state != "Push" && random(1) > 0.99 && ai.ammo > ai.maxAmmo*(3/4)) {
+			aiUse(ai);
+			return cooldown;
+		}
+		return 0;
+	}
+	
+	static aiDecisions = function(ai) {
+		return;
+	}
 }

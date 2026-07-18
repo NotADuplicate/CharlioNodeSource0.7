@@ -52,4 +52,7 @@ if(hp < 3) {
 		}
 	}
 	instance_destroy();
+	with(obj_AI) {
+		tower = scr_pick_tower(false);
+	}
 }

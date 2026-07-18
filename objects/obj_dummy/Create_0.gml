@@ -50,6 +50,6 @@ enraged = false;
 num = 2;
 kicking = 0;
 
-shadow = instance_create(x,y+30,obj_shadow);
+/*shadow = instance_create(x,y+30,obj_shadow);
 shadow.link = self;
 shadow.depth = 600;

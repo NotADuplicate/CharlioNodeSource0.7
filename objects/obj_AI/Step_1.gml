@@ -4,40 +4,57 @@ switch(state) {
 		if(point_distance(x,y,targetX,targetY) < 100) {
 			state = "Travel Ball";
 		}
-		if(point_distance(x,y,ball_player.x,ball_player.y) < 450 && collision_line(x,y,ball_player.x,ball_player.y, ball_wall, false, false) == noone) {
+		if(point_distance(x,y,enemy.x,enemy.y) < 450 && collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
 			//if near player
-			if(collision_line(x,y,ball_player.x,ball_player.y, obj_bigBall, false, false) != noone) {
+			if(collision_line(x,y,enemy.x,enemy.y, obj_bigBall, false, false) != noone && !global.aiPushing[team]) {
 				state = "Push";
+				global.aiPushing[team] = true;
 			} else {
 				state = "Skirmish";
 			}
 		}
-		else if(point_distance(x,y,obj_bigBall.x,obj_bigBall.y) < 200 && collision_line(x,y,obj_bigBall.x,obj_bigBall.y, ball_wall, false, false) == noone) {
+		else if(point_distance(x,y,obj_bigBall.x,obj_bigBall.y) < 300 && collision_line(x,y,obj_bigBall.x,obj_bigBall.y, ball_wall, false, false) == noone) {
 			//if near ball
-			state = "Push";
+			if(global.aiPushing[team]) 
+				state = "Forward"
+			else {
+				state = "Push";
+				global.aiPushing[team] = true;
+			}
 		}
 	break;
 	case "Travel Ball": //travel to the ball after respawn
 		targetX = obj_bigBall.x;
 		targetY = obj_bigBall.y;
-		if(point_distance(x,y,ball_player.x,ball_player.y) < 450 && collision_line(x,y,ball_player.x,ball_player.y, ball_wall, false, false) == noone) {
+		if(random(1) > 0.95 && point_distance(x,y,enemy.x,enemy.y) < 450 && collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
 			//if near player
-			if(collision_line(x,y,ball_player.x,ball_player.y, obj_bigBall, false, false) != noone) {
-				state = "Push";
+			if(collision_line(x,y,enemy.x,enemy.y, obj_bigBall, false, false) != noone) {
+				if(global.aiPushing[team]) 
+					state = "Forward"
+				else {
+					state = "Push";
+					global.aiPushing[team] = true;
+				}
 			} else {
 				state = "Skirmish";
 			}
 		}
-		else if(point_distance(x,y,obj_bigBall.x,obj_bigBall.y) < 200 && collision_line(x,y,obj_bigBall.x,obj_bigBall.y, ball_wall, false, false) == noone) {
+		else if(point_distance(x,y,obj_bigBall.x,obj_bigBall.y) < 150 && collision_line(x,y,obj_bigBall.x,obj_bigBall.y, ball_wall, false, false) == noone) {
 			//if near ball
-			state = "Push";
+			if(global.aiPushing[team]) 
+				state = "Forward"
+			else {
+				state = "Push";
+				global.aiPushing[team] = true;
+			}
 		}
 	break;
 	case "Push":
-		if(point_distance(x,y,ball_player.x,ball_player.y) < 250 && collision_line(x,y,ball_player.x,ball_player.y, ball_wall, false, false) == noone) {
-			if(collision_line(x,y,ball_player.x,ball_player.y, ball_wall, false, false) == noone && random(1) > 0.95) {
+		if(point_distance(x,y,enemy.x,enemy.y) < 250 && collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
+			if(collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone && random(1) > 0.95) {
 				if(recentlySwithced == 0) {
 					state = "Skirmish";
+					global.aiPushing[team] = false;
 					recentlySwithced = 80;
 				}
 			}
@@ -46,32 +63,95 @@ switch(state) {
 		if(point_distance(x,y,obj_bigBall.x,obj_bigBall.y) < 300 && collision_line(x,y,obj_bigBall.x,obj_bigBall.y, ball_wall, false, false) == noone) {
 			
 		} else {
+			global.aiPushing[team] = false;
+			state = "Travel Ball";
+		}
+	break;
+	case "Forward":
+		if(point_distance(x,y,enemy.x,enemy.y) < 350 && collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
+			if(collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone && random(1) > 0.75) {
+				if(recentlySwithced == 0) {
+					state = "Skirmish";
+					recentlySwithced = 80;
+				}
+			}
+		}
+		
+		if(point_distance(x,y,obj_bigBall.x,obj_bigBall.y) < 300 && collision_line(x,y,obj_bigBall.x,obj_bigBall.y, ball_wall, false, false) == noone) {
+			if(global.aiPushing[team] = false) {
+				state = "Push";
+				global.aiPushing[team] = true;
+			}
+		} else {
 			state = "Travel Ball";
 		}
 	break;
 	case "Skirmish":
-		if(collision_line(x,y,ball_player.x,ball_player.y, ball_wall, false, false) == noone) {
+		if(collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
 			if(knownLocation < 80) {
 				knownLocation+=4;
 			}
 			
-			if(point_distance(x,y,ball_player.x, ball_player.y) < 250) {
+			if(point_distance(x,y,enemy.x, enemy.y) < 250) {
 				if(reload == 0 && knownLocation > 12) {
-					dir = point_direction(x,y,ball_player.x,ball_player.y)
+					dir = point_direction(x,y,enemy.x,enemy.y)
+					var bullet = instance_create(x+lengthdir_x(16,dir), y+lengthdir_y(16,dir), obj_bullet);
+					bullet.direction = dir;
+					bullet.num = num;
+					bullet.dmg = 20;
+					bullet.icon = spr_pistol;
+					reload = 24;
+				}
+			}
+		} else {
+			if(knownLocation > 0 && enemyDistances[0] < 550) {
+				knownLocation--;
+			} else {
+				state = "Travel Ball";
+			}
+		}
+		if(random(1) > 0.99 && point_distance(x,y,obj_bigBall.x, obj_bigBall.y) < 500) {
+			if(recentlySwithced == 0) {
+				if(global.aiPushing[team]) 
+					state = "Forward"
+				else {
+					state = "Push";
+					global.aiPushing[team] = true;
+				}
+				recentlySwithced = 80;
+			}
+		}
+		
+		//Stop chasing under tower
+		turret = instance_nearest(x,y,obj_turret);
+		if(point_distance(enemy.x,enemy.y,turret.x,turret.y) < 150 && global.teamNum[turret.num] != global.teamNum[num]) { 
+			if(global.aiPushing[team]) 
+				state = "Forward"
+			else {
+				state = "Push";
+				global.aiPushing[team] = true;
+			}
+		}
+		//thirst down low enemy
+		if(hp > 70 && (enemy.hp < 50 || (enemy.hp < 100 && enemy.frost > 30))) {
+			state = "Thirst";
+		}
+	break;
+	case "Thirst":
+		if(collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
+			if(knownLocation < 80) {
+				knownLocation+=4;
+			}
+			
+			if(point_distance(x,y,enemy.x, enemy.y) < 250) {
+				if(reload == 0 && knownLocation > 12) {
+					dir = point_direction(x,y,enemy.x,enemy.y)
 					var bullet = instance_create(x+lengthdir_x(16,dir), y+lengthdir_y(16,dir), obj_bullet);
 					bullet.direction = dir;
 					bullet.num = 2;
 					bullet.dmg = 20;
 					bullet.icon = spr_pistol;
 					reload = 24;
-				}
-			
-				if(frostCooldown == 0 && random(1) > 0.98) {
-					dir = point_direction(x,y,ball_player.x,ball_player.y)
-					var bullet = instance_create(x+lengthdir_x(16,dir), y+lengthdir_y(16,dir), obj_frost);
-					bullet.direction = dir;
-					bullet.num = 2;
-					frostCooldown = 450;
 				}
 			}
 		} else {
@@ -81,30 +161,35 @@ switch(state) {
 				state = "Travel Ball";
 			}
 		}
-		if(random(1) > 0.99 && point_distance(x,y,obj_bigBall.x, obj_bigBall.y) < 500) {
-			if(recentlySwithced == 0) {
-				state = "Push";
-				recentlySwithced = 80;
-			}
-		}
-		
-		//Stop chasing under tower
-		tower = instance_nearest(x,y,obj_turret);
-		if(point_distance(ball_player.x,ball_player.y,tower.x,tower.y) < 150) { 
-			state = "Push";
+		if(hp < 50 || enemy.hp > 100) {
+			state = "Skirmish";
 		}
 	break;
 	case "Dodge Fire": //continues until fire is gone
-		if(instance_exists(obj_fire) && point_distance(x,y,obj_fire.x,obj_fire.y) < 350) {			
+		if(instance_exists(obj_fire) && point_distance(x,y,obj_fire.x,obj_fire.y) < 200) {			
 			if(point_distance(obj_bigBall.x,obj_bigBall.y, obj_fire.x, obj_fire.y) > 400) {
-				state = "Push";
-			} else if(point_distance(ball_player.x,ball_player.y, obj_fire.x, obj_fire.y) > 400) {
+				if(global.aiPushing[team]) 
+					state = "Forward"
+				else {
+					state = "Push";
+					global.aiPushing[team] = true;
+				}
+			} else if(point_distance(enemy.x,enemy.y, obj_fire.x, obj_fire.y) > 400) {
 				state = "Skirmish";
 			}
 		} else {
 			state = "Travel Ball";
 		}
 	break;
+	case "Flee": 
+		if(point_distance(x,y,enemy.x,enemy.y) > 330) {
+			state = "Travel Ball";
+		}
+	break;
+}
+
+if(hp < 100 && hp < enemy.hp/2 && point_distance(x,y,enemy.x,enemy.y) < 160) { //flee
+	state = "Flee";
 }
 
 //Get pushed
@@ -115,36 +200,5 @@ if(speed > 0.5) {
 	path_end();
 }
 
-if(hp < 150 && healCooldown == 0) {
-	healBomb = instance_create(x,y,obj_healBomb);
-	healBomb.num = num;
-	healBomb.direction = global.throwing;
-	healCooldown = 500;
-} else if(blastOffCooldown == 0 && hp < 70 && point_distance(x,y,ball_player.x,ball_player.y) < 120) { //flee
-	if(healCooldown < 450) { //dont blast off rt after using healBomb, its still in the air
-		dir = point_direction(ball_player.x, ball_player.y, x,y);
-		xp = x + lengthdir_x(90, dir);
-		yp = y + lengthdir_y(90, dir);
-		if(collision_line(x,y,xp,yp,ball_wall,false,false) == noone) { //if no walls behind them, blast off
-			show_debug_message("Blasting off towards player")
-			
-			blastOffDir = dir-180;
-			show_debug_message(blastOffDir)
-			alarm[4] = 1;
-			blastOffCooldown = 600;
-		}
-	}
-}
-
-if(blastOffCooldown == 0 && point_distance(x,y,ball_player.x,ball_player.y) < 60) {
-	dir = point_direction(ball_player.x, ball_player.y, x,y);
-	blastOffDir = dir-180;
-	alarm[4] = 1;
-	blastOffCooldown = 600;
-}
-
 if(reload > 0) {reload--;}
 if(recentlySwithced > 0) {recentlySwithced--;}
-if(frostCooldown > 0) {frostCooldown--;}
-if(healCooldown > 0) {healCooldown--;}
-if(blastOffCooldown > 0) {blastOffCooldown--;}

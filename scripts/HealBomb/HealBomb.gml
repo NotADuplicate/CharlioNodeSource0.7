@@ -21,4 +21,40 @@ function HealBomb() constructor {
 		scr_ball_ammo(ammoCost);
 		return(cooldown)
 	}
+	
+	static aiUse = function(ai, xp, yp) {
+		ai.ammo -= ammoCost;
+		with(ball_game) {
+			node_send(buffer,"Dir",global.throwing,"X",xp,"Y",yp,"Num",ai.num,"Obj",obj_healBomb,"eventName","Bullet")
+		}
+	}
+	
+	static aiConsider = function(ai) {
+		// if only ai is at 150 hp, desire to heal bomb will be at 70, 
+		desire = (220 - ai.hp);
+		xp = ai.x;
+		yp = ai.y;
+		with(ai) {
+			scr_pick_ally();
+		}
+		if(ai.ally != noone && (220 - ai.ally.hp) > 0) {
+			show_debug_message("Heal bomb ally")
+			desire += (220 - ai.ally.hp);
+			xp = (ai.x + ai.ally.x)/2;
+			yp = (ai.y + ai.ally.y)/2;
+		}
+		show_debug_message("Heal bomb desire")
+		show_debug_message(desire/25)
+		show_debug_message("Missing ammo")
+		show_debug_message(11-ai.ammo)
+		if(desire/25 > (11-ai.ammo)) { 
+			aiUse(ai,xp,yp); 
+			return(cooldown);
+		}
+		return 0;
+	}
+	
+	static aiDecisions = function(ai) {
+		return;
+	}
 }

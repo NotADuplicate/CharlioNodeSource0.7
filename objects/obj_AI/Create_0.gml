@@ -6,7 +6,6 @@ state = "Travel";
 // Inherit the parent event
 event_inherited();
 
-global.players[2] = self;
 alarm[2] = 10;
 position_known = false;
 alarm[5] = 10;
@@ -15,22 +14,32 @@ reload = 0;
 wallPassive = false;
 pushPos = 0;
 pushing = 0.5;
-num = 2;
+
 knownLocation = 0;
-frostCooldown = 200;
-healCooldown = 300;
-blastOffCooldown = 300;
 hp = 250;
-global.teamNum[num] = -1;
-global.names[num] = "Enemy";
 totalDamage = 0;
 recentlySwithced = 0;
 blastOffDir = 0;
+walkingAround = false;
+tower = self;
+maxAmmo = 10;
 
-shadow = instance_create(x,y+30,obj_shadow);
-shadow.link = self;
-shadow.depth = 600;
+ability1 = choose(Abilities.shuriken, Abilities.frost, Abilities.molotov, Abilities.axe, Abilities.blastOff, Abilities.bloodshot, Abilities.cleaver, Abilities.dash, Abilities.healBomb);
+ability2 = choose(Abilities.shuriken, Abilities.frost, Abilities.molotov, Abilities.axe, Abilities.blastOff, Abilities.bloodshot, Abilities.cleaver, Abilities.dash, Abilities.healBomb);
+ability3 = choose(Abilities.shuriken, Abilities.frost, Abilities.molotov, Abilities.axe, Abilities.blastOff, Abilities.bloodshot, Abilities.cleaver, Abilities.dash, Abilities.healBomb);
+ability1CD = 5;
+ability2CD = 5;
+ability3CD = 5;
+path = noone;
+pushingBall = 0;
+startX = x;
+startY = y;
 
-seen = 0;
-ghosting = 0;
-invPass = false;
+link = self;
+alarm[1] = 1; //create other
+enemy = ball_player;
+ally = noone;
+ammo = 10;
+enemyDistances = [0, 0, 0, 0, 0, 0, 0]
+fightingDist = 120;
+alarm[7] = 45;

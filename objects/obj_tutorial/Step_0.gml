@@ -94,7 +94,7 @@ if(stage == 5) {
 	textX = 550;
 	textY = 600;
 	tutText = "Hold " + button + " to aim the molotov and release to throw. \n Use the molotov cocktail to burn the dummy to death"
-	if(obj_dummy.burn > 0 && obj_dummy.hp < 10) {
+	if(obj_dummy.burn > 0 && obj_dummy.hp < 100) {
 		textScale = 1;
 		alarm[6] = 600;
 		stage = 6;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"mp_grid_update_circle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mp_grid_update_circle",
+  "parent":{
+    "name":"AI",
+    "path":"folders/Scripts/AI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,4 +1,4 @@
 /// @description Respawn
-x = 130;
-y = 120;
+x = startX;
+y = startY;
 state = "Travel";
