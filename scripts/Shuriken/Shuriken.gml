@@ -9,6 +9,10 @@ function Shuriken() constructor {
 	abilityName = "shuriken"
 	text = "Shoot a shuriken which deals " + string(damage) + " damage. If you hit you refund the ammo and reset the cooldown to 1 second.";
 	
+	stats = new AbilityStats();
+	stats.damage = 3;
+	stats.ammoSupply = 0;
+	stats.add_synergy("damage", "CC", 0.5);
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
@@ -20,6 +24,7 @@ function Shuriken() constructor {
 	}
 	
 	static aiUse = function(ai,dir) {
+		dir += random_range(-1,1) * ai.inaccuracy;
 		var bullet = instance_create(ai.x+lengthdir_x(16,dir), ai.y+lengthdir_y(16,dir), obj_shuriken);
 		bullet.direction = dir;
 		bullet.num = ai.num;
@@ -35,6 +40,7 @@ function Shuriken() constructor {
 				return(cooldown);
 			}
 		}
+		return 0;
 	}
 	
 	static aiDecisions = function(ai) {

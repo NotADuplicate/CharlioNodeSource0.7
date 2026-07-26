@@ -34,9 +34,9 @@ if(initialized && instance_exists(global.players[num]) && variable_instance_exis
 		if(sprite_index == spr_pistol || sprite_index == spr_biggun || sprite_index == spr_chargeGunWeak || sprite_index == spr_chargeGunStrong) {
 			x = global.players[num].x+6*sign(image_xscale)*global.players[num].scale;
 			if(dir > 20 && dir < 160)
-				depth = 2;
+				depth = global.players[num].depth+1;
 			else
-				depth = 0;
+				depth = global.players[num].depth-1;
 			var newDir = dir;
 			if(dir > 90 && dir < 270)
 				newDir = dir-27;
@@ -47,7 +47,7 @@ if(initialized && instance_exists(global.players[num]) && variable_instance_exis
 		}
 		else {
 			x = global.players[num].x - lengthdir_x(8,dir)*sign(image_xscale) * global.players[num].scale;
-			depth = 0;
+			depth = global.players[num].depth-1;
 			shootX = x + lengthdir_x(10*scale,dir) + 7*scale*sign(image_xscale);
 			shootY = y + lengthdir_y(10*scale,dir);
 			if(sprite_index == spr_curveGun || sprite_index == spr_curveGunDown) {

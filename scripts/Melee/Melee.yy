@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Melee",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Melee",
+  "parent":{
+    "name":"Guns",
+    "path":"folders/Scripts/Guns.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -10,6 +10,12 @@ function BlastOff() constructor {
 	abilityName = "blastOff"
 	text = "Create a short range rocket blast which sends you flying in the opposite direction. Hitting an enemy with the blast deals " + string(damage) + " damage and burns for 8 seconds.";
 	
+	stats = new AbilityStats();
+	stats.damage = 2;
+	stats.fire = 1;
+	stats.mobility = 2;
+	stats.ammoSupply = -1;
+	stats.add_synergy("damage", "mobility", 2);
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
@@ -25,10 +31,8 @@ function BlastOff() constructor {
 		show_debug_message("Creating blast off")
 		show_debug_message(dir)
 		ai.ammo -= ammoCost;
-		var bo = instance_create_depth(ai.x,ai.y,ai.depth,obj_rocketBlast);
-		bo.direction = dir;
-		bo.image_angle = dir;
-		bo.num = ai.num;
+		dir += random_range(-1,1) * ai.inaccuracy;
+		node_send(ball_game.buffer,"eventName","Bullet","Num",ai.num,"X", ai.x, "Y", ai.y, "Obj", obj_rocketBlast, "Dir", dir)
 		with(ai) {
 			path_end();
 			motion_add(dir+180, 30);
@@ -36,37 +40,39 @@ function BlastOff() constructor {
 	}
 	
 	static aiConsider = function(ai) {
+		if(random(1) < ai.mistakes*0.3) { return 0; } //chance to skip considering for a tick
 		switch(ai.state) {
 			case "Thirst":
-				if(point_distance(ai.x,ai.y,ai.enemy.x,ai.enemy.y) > 200 && collision_line(ai.enemy.x,ai.enemy.y,ai.x, ai.y, ball_wall, false, false) == noone) {
+				if(ai.burstMoving == 0 && point_distance(ai.x,ai.y,ai.enemy.x,ai.enemy.y) > 200 && collision_line(ai.enemy.x,ai.enemy.y,ai.x, ai.y, ball_wall, false, false) == noone) {
 					dir = point_direction(ai.enemy.x, ai.enemy.y, ai.x, ai.y);
 					aiUse(ai,dir);
+					ai.burstMoving = 15;
 					return(cooldown);
 				}
 				break;
 			case "Flee":
-				if(point_distance(ai.x,ai.y,ai.enemy.x,ai.enemy.y) > 170) { return 0; }
+				if(ai.burstMoving > 0 || point_distance(ai.x,ai.y,ai.enemy.x,ai.enemy.y) > 170) { return 0; }
 				dir = point_direction(ai.enemy.x, ai.enemy.y, ai.x,ai.y);
 				xp = ai.x + lengthdir_x(110, dir);
 				yp = ai.y + lengthdir_y(110, dir);
 				if(collision_line(ai.x,ai.y,xp,yp,ball_wall,false,false) == noone) { //if no walls behind them, blast off
-					show_debug_message("Blasting off towards player")
-			
+					ai.burstMoving = 15;
 					blastOffDir = dir-180;
 					aiUse(ai,blastOffDir);
 					return(cooldown);
 				}
 				break;
 		}
-		if(point_distance(ai.x,ai.y,ai.enemy.x,ai.enemy.y) < 60 && ai.enemyDistances[6] < 140) {
+		if(point_distance(ai.x,ai.y,ai.enemy.x,ai.enemy.y) < 60 && ai.enemyDistances[ai.mistakes*2] < 120) {
 			dir = point_direction(ai.x,ai.y,ai.enemy.x, ai.enemy.y);
 			aiUse(ai,dir);
 			return(cooldown);
 		}
 		if(collision_point(ai.x,ai.y,obj_fire,false,false)) { //blast off away from fire
-			show_debug_message("Blasting off away from fire")
+			if(ai.burstMoving > 0) { return 0; }
 			blastOffDir = point_direction(ai.x,ai.y,obj_fire.x,obj_fire.y);
 			aiUse(ai,blastOffDir);
+			ai.burstMoving = 15;
 			return(cooldown);
 		}
 		return 0;

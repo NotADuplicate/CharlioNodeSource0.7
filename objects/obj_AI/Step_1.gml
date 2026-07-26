@@ -26,7 +26,10 @@ switch(state) {
 	case "Travel Ball": //travel to the ball after respawn
 		targetX = obj_bigBall.x;
 		targetY = obj_bigBall.y;
-		if(random(1) > 0.95 && point_distance(x,y,enemy.x,enemy.y) < 450 && collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
+		if(random(1) > 0.95 && abs(gunDir - pointDir) < 15) {
+			gunDir = random_range(0,360);
+		}
+		if(point_distance(x,y,enemy.x,enemy.y) < random_range(100,450) && collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
 			//if near player
 			if(collision_line(x,y,enemy.x,enemy.y, obj_bigBall, false, false) != noone) {
 				if(global.aiPushing[team]) 
@@ -50,6 +53,7 @@ switch(state) {
 		}
 	break;
 	case "Push":
+		gunDir = point_direction(x,y,obj_bigBall.x,obj_bigBall.y);
 		if(point_distance(x,y,enemy.x,enemy.y) < 250 && collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
 			if(collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone && random(1) > 0.95) {
 				if(recentlySwithced == 0) {
@@ -87,22 +91,13 @@ switch(state) {
 		}
 	break;
 	case "Skirmish":
+		gunDir = point_direction(x,y,enemy.x,enemy.y);
 		if(collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
 			if(knownLocation < 80) {
 				knownLocation+=4;
 			}
 			
-			if(point_distance(x,y,enemy.x, enemy.y) < 250) {
-				if(reload == 0 && knownLocation > 12) {
-					dir = point_direction(x,y,enemy.x,enemy.y)
-					var bullet = instance_create(x+lengthdir_x(16,dir), y+lengthdir_y(16,dir), obj_bullet);
-					bullet.direction = dir;
-					bullet.num = num;
-					bullet.dmg = 20;
-					bullet.icon = spr_pistol;
-					reload = 24;
-				}
-			}
+			gunObj.skirmishAction(self);
 		} else {
 			if(knownLocation > 0 && enemyDistances[0] < 550) {
 				knownLocation--;
@@ -137,23 +132,21 @@ switch(state) {
 			state = "Thirst";
 		}
 	break;
+	case "Fight Monster": 
+		gunDir = point_direction(x,y,monster.x,monster.y);
+		gunObj.monsterAction(self);
+		if(point_distance(x,y,monster.x,monster.y) > 450)
+			state = "Travel";
+		
+	break;
 	case "Thirst":
+		gunDir = point_direction(x,y,enemy.x,enemy.y);
 		if(collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
 			if(knownLocation < 80) {
 				knownLocation+=4;
 			}
 			
-			if(point_distance(x,y,enemy.x, enemy.y) < 250) {
-				if(reload == 0 && knownLocation > 12) {
-					dir = point_direction(x,y,enemy.x,enemy.y)
-					var bullet = instance_create(x+lengthdir_x(16,dir), y+lengthdir_y(16,dir), obj_bullet);
-					bullet.direction = dir;
-					bullet.num = 2;
-					bullet.dmg = 20;
-					bullet.icon = spr_pistol;
-					reload = 24;
-				}
-			}
+			gunObj.skirmishAction(self);
 		} else {
 			if(knownLocation > 0) {
 				knownLocation--;
@@ -166,8 +159,8 @@ switch(state) {
 		}
 	break;
 	case "Dodge Fire": //continues until fire is gone
-		if(instance_exists(obj_fire) && point_distance(x,y,obj_fire.x,obj_fire.y) < 200) {			
-			if(point_distance(obj_bigBall.x,obj_bigBall.y, obj_fire.x, obj_fire.y) > 400) {
+		if(instance_exists(obj_fire) && point_distance(x,y,obj_fire.x,obj_fire.y) < 250) {			
+			/*if(point_distance(obj_bigBall.x,obj_bigBall.y, obj_fire.x, obj_fire.y) > 400) {
 				if(global.aiPushing[team]) 
 					state = "Forward"
 				else {
@@ -176,13 +169,15 @@ switch(state) {
 				}
 			} else if(point_distance(enemy.x,enemy.y, obj_fire.x, obj_fire.y) > 400) {
 				state = "Skirmish";
-			}
+			}*/
 		} else {
 			state = "Travel Ball";
 		}
 	break;
 	case "Flee": 
-		if(point_distance(x,y,enemy.x,enemy.y) > 330) {
+		gunDir = point_direction(x,y,enemy.x,enemy.y);
+		gunObj.skirmishAction(self);
+		if(point_distance(x,y,enemy.x,enemy.y) > 450) {
 			state = "Travel Ball";
 		}
 	break;

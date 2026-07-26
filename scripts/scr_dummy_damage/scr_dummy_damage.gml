@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_dummy_damage(dmg,dealer,type, icon, DoT){
-	if(invincibility > 0 || global.teamNum[dealer] == global.teamNum[num]) {
+	if(invincibility > 0 || hp <= 0 || (global.teamNum[dealer] == global.teamNum[num] && dealer != num)) {
 		return;
 	}
 	if(type) {
@@ -19,6 +19,23 @@ function scr_dummy_damage(dmg,dealer,type, icon, DoT){
 		magicBurn = max(magicBurn, duration);
 	}
 	recentDamageIcon = icon;
-	if(dealer == ball_player.num)
-		scr_deal_damage(num,dmg,type);
+	with(ball_game) {
+		node_send(buffer,"eventName","Damage Dealt","Dealer",dealer,"Target",other.num,"Amount",dmg,"Ability",type)
+	}
+	if(hp <= 0) {
+		with(ball_game) {
+			node_send(buffer,"eventName","Death","Target",other.num,"Killer",dealer, "Icon", icon, "Assister", 0)
+			node_send(buffer,"eventName","Bullet","Num",other.num,"X", other.x, "Y", other.y, "Obj", ball_corpse, "Dir", 0)
+		}
+		maxhp = 250;
+		hp = maxhp;
+		path_end();
+		x = -500;
+		y = -500;
+		state = "Dead";
+		speed = 0;
+		poisonDmg = 0;
+		alarm[3] = 300; //respawn
+		scr_cleanse(false);
+	}
 }

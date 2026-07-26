@@ -377,8 +377,11 @@ function scr_ball_receive() {
 			}
 		break;
 		case "Loadout": //recieve loadouts
+			show_debug_message("Got loadout")
 			num = buffer[? "Num"]
+			show_debug_message(num)
 			index2 = buffer[? "Slot"]
+			show_debug_message(index2)
 			abilityIndex = buffer[? "Ability"]
 			if(index2= 0) { //boots
 				passiveSprite = buffer[? "PassiveSprite"]
@@ -396,6 +399,11 @@ function scr_ball_receive() {
 			}
 			if(num == ball_player.num)
 				ball_player.loadoutUnseen = true;
+			with(obj_AI) {
+				if(self.num == num) {
+					loadoutUnseen = true;
+				}
+			}
 			if(index2 == 0) { //boots
 				global.loadout[num,index2] = passiveSprite;
 				if(global.teamNum[num] == global.teamNum[ball_player.num] || global.spectator) //if on same team, update known loadouts
@@ -405,6 +413,7 @@ function scr_ball_receive() {
 				if(num == ball_player.num)
 					scr_abilitySet(abilityIndex, index2);
 				global.loadout[num,index2] = ability;
+				show_debug_message("setting loadout slot")
 				if(global.teamNum[num] == global.teamNum[ball_player.num] || global.spectator) //if on same team, update known loadouts
 					global.knownLoadout[num,index2] = ability;
 			}
@@ -568,8 +577,8 @@ function scr_ball_receive() {
 			gunName = buffer[? "Gun Name"];
 			var gunNum = buffer[? "Num"];
 			var gunObj = noone;
-			if(global.testMode) {
-				gunObj =obj_gun;
+			if(false && global.testMode) {
+				gunObj = obj_gun;
 			} else {
 				with(obj_gun) {
 					if(self.num == gunNum) { gunObj = self; }

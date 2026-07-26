@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_meetBallPath(targetX, targetY){
+function scr_meetBallPath(targetX, targetY, travelCaution){
 	show_debug_message("Finding location to meet ball half way")
 	show_debug_message(targetX)
 	show_debug_message(targetY)
@@ -24,8 +24,8 @@ function scr_meetBallPath(targetX, targetY){
 		show_debug_message(path_get_point_x(path,i))
 		i++;
 	}*/
-    var nx = path_get_point_x(path, min(45, num-1));
-    var ny = path_get_point_y(path, min(45, num-1));
+    var nx = path_get_point_x(path, min(travelCaution, num-1));
+    var ny = path_get_point_y(path, min(travelCaution, num-1));
 
     path_delete(path);
 	//show_debug_message(nx)

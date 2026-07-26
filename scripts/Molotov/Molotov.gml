@@ -10,6 +10,14 @@ function Molotov() constructor {
 	abilityName = "molotov"
 	text = "Throw a molotov which creates a fire when it lands, dealing " + string(dps) + " damage per second and applying fire to anyone who stands in it (excludes allies but not you).";
 	
+	stats = new AbilityStats();
+	stats.damage = 1.5;
+	stats.fire = 2;
+	stats.selfDamage = 0.5;
+	stats.zoning = 4;
+	stats.add_synergy("damage","CC",1)
+	stats.ammoSupply = -1;
+	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
 			scr_startThrow(obj_molotov, sprite);
@@ -23,6 +31,8 @@ function Molotov() constructor {
 	}
 	
 	static aiUse = function(ai, xp, yp) {
+		xp += random_range(-40,40) * ai.mistakes;
+		yp += random_range(-40,40) * ai.mistakes;
 		ai.ammo -= ammoCost;
 		with(ball_game) {
 			node_send(buffer,"Dir",global.throwing,"X",xp,"Y",yp,"Num",ai.num,"Obj",obj_molotov,"eventName","Bullet")
@@ -38,6 +48,7 @@ function Molotov() constructor {
 			aiUse(ai,(ai.x+ai.enemy.x*2)/3, (ai.y+ai.enemy.y*2)/3);
 			return(cooldown);
 		}
+		return 0;
 	}
 	
 	static aiDecisions = function(ai) {

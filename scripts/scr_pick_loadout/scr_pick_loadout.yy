@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_pick_loadout",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_pick_loadout",
+  "parent":{
+    "name":"AI",
+    "path":"folders/Scripts/AI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

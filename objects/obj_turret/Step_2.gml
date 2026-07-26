@@ -22,7 +22,13 @@ if(global.testMode) {
 		}
 		else if(global.teamNum[num] != global.teamNum[ball_player.num] && point_distance(ball_player.x,ball_player.y,x,y) < bigRange) {
 			target = instance_nearest(x,y,ball_player)
-		} 
+		} else {
+			with(ball_other) {
+				if(global.teamNum[num] != global.teamNum[other.num] && point_distance(other.x,other.y,x,y) < other.bigRange) {
+					other.target = self;
+				}
+			}
+		}
 	} else if(point_distance(x,y,target.x,target.y) > bigRange) {target = noone}
 }
 

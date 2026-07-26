@@ -1,6 +1,8 @@
 /// @description Get pushed
+if(global.teamNum[other.num] != global.teamNum[num]) {
     scr_dummy_damage(20,other.num,false, spr_flare, false);
 	burnNum = other.num
 	instance_destroy(other);
 	motion_add(other.direction,6);
 	burn = 250;
+}

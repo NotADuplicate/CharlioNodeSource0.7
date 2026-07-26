@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"a_star_scripts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"a_star_scripts",
+  "parent":{
+    "name":"AI",
+    "path":"folders/Scripts/AI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

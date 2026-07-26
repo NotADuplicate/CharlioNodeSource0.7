@@ -10,6 +10,11 @@ function Axe() constructor {
 	abilityName = "fireAxe"
 	text = "Swing a short range axe which deals 50 damage to enemies or 170 damage if they are burning";
 	
+	stats = new AbilityStats();
+	stats.damage = 0;
+	stats.damageMultiplier = 0.5
+	stats.add_synergy("damageMultiplier", "mobility", 0.5);
+	stats.add_synergy("damage", "fire", 4);
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
@@ -22,17 +27,14 @@ function Axe() constructor {
 	
 	static aiUse = function(ai, dir) {
 		ai.ammo -= ammoCost;
-		show_debug_message("Swing axe")
-		var axe = instance_create_depth(ai.x,ai.y,ai.depth,obj_axetinguisher);
-		axe.direction = dir;
-		axe.image_angle = dir;
-		axe.num = ai.num;
+		dir += random_range(-1,1) * ai.inaccuracy;
+		node_send(ball_game.buffer,"eventName","Bullet","Num",ai.num,"X", ai.x, "Y", ai.y, "Obj", obj_axetinguisher, "Dir", dir)
 	}
 	
 	static aiConsider = function(ai) {
 		if(point_distance(ai.x,ai.y,ai.enemy.x,ai.enemy.y) < 90) {
 			show_debug_message("Close enough to axe")
-			if(ai.enemyDistances[6] < 160 || ai.state == "Thirst") {
+			if(ai.enemyDistances[ai.mistakes*2] < 120) {
 				show_debug_message("Reacting fast enough")
 				if(ai.enemy.burn > 0 || ai.enemy.hp < 40) {
 					show_debug_message("Going for kill")
@@ -46,7 +48,7 @@ function Axe() constructor {
 	}
 	
 	static aiDecisions = function(ai) {
-		if(ai.enemy.burn > 0 && ai.enemyDistances[0] < 400 && random(1) > 0.6) {ai.state = "Thirst"; }
+		if(ai.enemy.burn > 0 && ai.enemyDistances[0] < 300 && random(1) > 0.8 + 0.05 * ai.mistakes) {ai.state = "Thirst"; }
 		return;
 	}
 }

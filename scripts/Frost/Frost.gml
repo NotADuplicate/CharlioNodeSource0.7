@@ -10,6 +10,10 @@ function Frost() constructor {
 	abilityName = "Frost Shot"
 	text = string("Shoot a fast moving projectile which deals " + string(damage) + " damage and frosts a target for " + string(duration) + " seconds. While frosted, the target moves at half speed and does not take knockback from any sources.");
 	
+	stats = new AbilityStats();
+	stats.CC = 4;
+	stats.add_synergy("CC","fire",-2);
+	stats.ammoSupply = -1;
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
@@ -21,9 +25,8 @@ function Frost() constructor {
 	}
 	
 	static aiUse = function(ai,dir) {
-		var bullet = instance_create(ai.x+lengthdir_x(16,dir), ai.y+lengthdir_y(16,dir), obj_frost);
-		bullet.direction = dir;
-		bullet.num = ai.num;
+		dir += random_range(-1,1) * ai.inaccuracy;
+		node_send(ball_game.buffer,"eventName","Bullet","Num",ai.num,"X", ai.x, "Y", ai.y, "Obj", obj_rocketBlast, "Dir", dir)
 		ai.ammo -= ammoCost;
 	}
 	
@@ -36,6 +39,7 @@ function Frost() constructor {
 				return(cooldown);
 			}
 		}
+		return 0;
 	}
 	
 	static aiDecisions = function(ai) {

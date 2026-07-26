@@ -10,6 +10,10 @@ function Cleaver() constructor {
 	abilityName = "cleaver"
 	text = "Fires a projectile which deals " + string(damage) + " damage and bleeds an enemy for " + string(duration) + " seconds. While bleeding, enemies take damage while walking proportional to how fast they are going.";
 	
+	stats = new AbilityStats();
+	stats.damage = 2;
+	stats.CC = 2;
+	stats.ammoSupply = -1;
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
@@ -21,9 +25,8 @@ function Cleaver() constructor {
 	}
 	
 	static aiUse = function(ai,dir) {
-		var bullet = instance_create(ai.x+lengthdir_x(16,dir), ai.y+lengthdir_y(16,dir), obj_cleaver);
-		bullet.direction = dir;
-		bullet.num = ai.num;
+		dir += random_range(-1,1) * ai.inaccuracy;
+		node_send(ball_game.buffer,"eventName","Bullet","Num",ai.num,"X", ai.x, "Y", ai.y, "Obj", obj_cleaver, "Dir", dir)
 		ai.ammo -= ammoCost;
 	}
 	
@@ -36,6 +39,7 @@ function Cleaver() constructor {
 				return(cooldown);
 			}
 		}
+		return 0;
 	}
 	
 	static aiDecisions = function(ai) {

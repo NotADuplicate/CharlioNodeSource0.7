@@ -9,6 +9,9 @@ function HealBomb() constructor {
 	abilityName = "healBomb"
 	text = "Throw a bomb which heals all players by " + string(healing) + " health when it lands";
 	
+	stats = new AbilityStats();
+	stats.healing = 4;
+	stats.ammoSupply = -2;
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
@@ -43,10 +46,6 @@ function HealBomb() constructor {
 			xp = (ai.x + ai.ally.x)/2;
 			yp = (ai.y + ai.ally.y)/2;
 		}
-		show_debug_message("Heal bomb desire")
-		show_debug_message(desire/25)
-		show_debug_message("Missing ammo")
-		show_debug_message(11-ai.ammo)
 		if(desire/25 > (11-ai.ammo)) { 
 			aiUse(ai,xp,yp); 
 			return(cooldown);

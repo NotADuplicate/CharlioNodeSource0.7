@@ -8,6 +8,9 @@ function Dash() constructor {
 	abilityName = "dash"
 	text = "Quadruples your speed for 0.25 seconds."
 	
+	stats = new AbilityStats();
+	stats.mobility = 2;
+	stats.ammoSupply = -1;
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
@@ -22,6 +25,7 @@ function Dash() constructor {
 	}
 	
 	static aiUse = function(ai) {
+		ai.burstMoving = 8;
 		with(ball_game) {
 			node_send(buffer,"eventName","Status","Target",ai.num,"Status Num", 50)
 		}
@@ -32,7 +36,8 @@ function Dash() constructor {
 	}
 	
 	static aiConsider = function(ai) {
-		if(ai.speed > 0) { return; }
+		if(ai.burstMoving > 0) { return 0; }
+		if(ai.speed > 0) { return 0; }
 		if(ai.state == "Flee" && random(1) > 0.8) {
 			aiUse(ai);
 			return cooldown;
@@ -46,6 +51,10 @@ function Dash() constructor {
 			return cooldown;
 		}
 		if(ai.state != "Push" && random(1) > 0.99 && ai.ammo > ai.maxAmmo*(3/4)) {
+			aiUse(ai);
+			return cooldown;
+		}
+		if((ai.state == "Travel Ball" || ai.state == "Travel") && ai.ammo == 10) {
 			aiUse(ai);
 			return cooldown;
 		}

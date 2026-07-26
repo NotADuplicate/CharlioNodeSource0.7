@@ -1,4 +1,6 @@
 /// @description Set states and target
+pointDir = 0;
+gunDir = 0;
 targetX = obj_bigBall.x;
 targetY = obj_bigBall.y;
 state = "Travel";
@@ -23,10 +25,14 @@ blastOffDir = 0;
 walkingAround = false;
 tower = self;
 maxAmmo = 10;
+randomise();
+mistakes = 2; //DIFFICULTY SETTING FOR AI
+inaccuracy = 7;
+burstMoving = 0;
+finishWalkingAround = false;
 
-ability1 = choose(Abilities.shuriken, Abilities.frost, Abilities.molotov, Abilities.axe, Abilities.blastOff, Abilities.bloodshot, Abilities.cleaver, Abilities.dash, Abilities.healBomb);
-ability2 = choose(Abilities.shuriken, Abilities.frost, Abilities.molotov, Abilities.axe, Abilities.blastOff, Abilities.bloodshot, Abilities.cleaver, Abilities.dash, Abilities.healBomb);
-ability3 = choose(Abilities.shuriken, Abilities.frost, Abilities.molotov, Abilities.axe, Abilities.blastOff, Abilities.bloodshot, Abilities.cleaver, Abilities.dash, Abilities.healBomb);
+scr_pick_loadout();
+
 ability1CD = 5;
 ability2CD = 5;
 ability3CD = 5;
@@ -43,3 +49,5 @@ ammo = 10;
 enemyDistances = [0, 0, 0, 0, 0, 0, 0]
 fightingDist = 120;
 alarm[7] = 45;
+loadoutUnseen = true;
+travelCaution = irandom_range(5,60);
