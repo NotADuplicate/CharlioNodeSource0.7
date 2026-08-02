@@ -13,6 +13,7 @@ function Shuriken() constructor {
 	stats.damage = 3;
 	stats.ammoSupply = 0;
 	stats.add_synergy("damage", "CC", 0.5);
+	stats.add_synergy("damageMultiplier","AP",0.2)
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
@@ -33,12 +34,17 @@ function Shuriken() constructor {
 	
 	//calls every tick to decide if to use or not
 	static aiConsider = function(ai) {
-		if(ai.state == "Skirmish" && random(1) > 0.98) {
+		if(ai.state == "Skirmish" && ai.enemyDistances[ai.mistakes*2] < random_range(-2000,600)) {
 			if(collision_line(ai.x,ai.y,ai.enemy.x,ai.enemy.y,obj_bigBall,false,true) == noone) {
 				dir = point_direction(ai.x,ai.y,ai.enemy.x,ai.enemy.y)
 				aiUse(ai,dir);
 				return(cooldown);
 			}
+		}
+		if(ai.state == "Fight Monster") {
+			dir = point_direction(ai.x,ai.y,ai.monster.x,ai.monster.y)
+			aiUse(ai,dir);
+			return(cooldown);
 		}
 		return 0;
 	}

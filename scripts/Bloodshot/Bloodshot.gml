@@ -13,6 +13,8 @@ function Bloodshot() constructor {
 	stats = new AbilityStats();
 	stats.damage = 5;
 	stats.selfDamage = 2;
+	stats.add_synergy("damageMultiplier","AP",0.2)
+	stats.add_synergy("selfDamage", "resistance", -0.5);
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
@@ -33,12 +35,17 @@ function Bloodshot() constructor {
 	
 	//calls every tick to decide if to use or not
 	static aiConsider = function(ai) {
-		if(ai.state == "Skirmish" && ((random(1) > 0.98 && ai.hp > 100) || ai.invincibility > 0)) {
+		if(ai.state == "Skirmish" && ((ai.enemyDistances[ai.mistakes*2] < random_range(-5000,600) && ai.hp > 100) || ai.invincibility > 0)) {
 			if(collision_line(ai.x,ai.y,ai.enemy.x,ai.enemy.y,obj_bigBall,false,true) == noone) {
 				dir = point_direction(ai.x,ai.y,ai.enemy.x,ai.enemy.y)
 				aiUse(ai,dir);
 				return(cooldown);
 			}
+		}
+		if(ai.state == "Fight Monster" && ai.monster.hp > 70 && ai.gunObj.monsterTake < 3) {
+			dir = point_direction(ai.x,ai.y,ai.monster.x,ai.monster.y)
+			aiUse(ai,dir);
+			return(cooldown);
 		}
 		return 0;
 	}

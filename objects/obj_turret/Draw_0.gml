@@ -4,7 +4,6 @@
 //draw_sprite_ext(spr_obeliskStan,0,x,y+120*image_yscale,image_xscale,image_yscale,0,c_white,1);
 //draw_text(x,y,pushForce);
 draw_healthbar(x-25,y-16,x+5,y-10,100*(hp/maxhp),c_black,c_red,c_green,0,true,true)
-draw_text(x + 100, y, global.teamNum[num]);
 if(broken) {
 	draw_sprite(spr_broken,0,x,y-25);
 }

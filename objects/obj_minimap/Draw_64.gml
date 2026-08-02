@@ -50,7 +50,8 @@ if(global.mapShowing) {
 			}
 		}
 		
-		for (var i = 0; i < instance_number(obj_AI); i++) {
+		// TODO remove or keep
+		/*for (var i = 0; i < instance_number(obj_AI); i++) {
 		    var inst = instance_find(obj_AI, i);
 			if(inst.position_known) {
 				playerx = inst.x*scale + xp1+1
@@ -58,7 +59,7 @@ if(global.mapShowing) {
 				color = global.teamNum[inst.num] == 1 ? c_red : c_blue;
 				draw_rectangle_color(playerx-2,playery-2,playerx+2,playery+2,color,color,color,color,false)
 			}
-		}
+		}*/
 		
 		for (var i = 0; i < instance_number(obj_turret); i++) {
 		    var inst = instance_find(obj_turret, i);

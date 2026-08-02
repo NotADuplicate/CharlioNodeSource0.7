@@ -27,15 +27,19 @@ tower = self;
 maxAmmo = 10;
 randomise();
 mistakes = 2; //DIFFICULTY SETTING FOR AI
-inaccuracy = 7;
+inaccuracy = 8;
 burstMoving = 0;
 finishWalkingAround = false;
-
-scr_pick_loadout();
 
 ability1CD = 5;
 ability2CD = 5;
 ability3CD = 5;
+ability1 = noone;
+ability2 = noone;
+ability3 = noone;
+loadout = [];
+
+levels = 3;
 path = noone;
 pushingBall = 0;
 startX = x;
@@ -43,11 +47,16 @@ startY = y;
 
 link = self;
 alarm[1] = 1; //create other
-enemy = ball_player;
+enemy = noone;
 ally = noone;
 ammo = 10;
 enemyDistances = [0, 0, 0, 0, 0, 0, 0]
 fightingDist = 120;
+purchasing = -1
 alarm[7] = 45;
 loadoutUnseen = true;
 travelCaution = irandom_range(5,60);
+backing = 0;
+
+show_debug_message("AI created")
+show_debug_message(object_get_name(global.players[num].object_index))

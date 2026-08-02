@@ -18,7 +18,7 @@ function scr_ball_move(dir,spd,targetN){
 		global.lastTouchTime = current_time;
 	}
 	if(global.payload == false) {
-		if(targetN == obj_client.index) { //only actually apply if you were the one who pushed it
+		if(targetN == obj_client.index || global.aiControl[targetN]) { //only actually apply if you were the one who pushed it
 
 			with(obj_ballGhost) {
 				motion_add(dir, spd);

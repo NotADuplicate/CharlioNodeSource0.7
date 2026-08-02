@@ -17,6 +17,8 @@ function Molotov() constructor {
 	stats.zoning = 4;
 	stats.add_synergy("damage","CC",1)
 	stats.ammoSupply = -1;
+	stats.add_synergy("damageMultiplier","AP",0.2)
+	stats.add_synergy("selfDamage", "resistance", -0.5);
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

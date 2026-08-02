@@ -1,9 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_meetBallPath(targetX, targetY, travelCaution){
-	show_debug_message("Finding location to meet ball half way")
-	show_debug_message(targetX)
-	show_debug_message(targetY)
     var path = path_add();
     var success = mp_grid_path(global.AiPathGrid, path, obj_bigBall.x, obj_bigBall.y, targetX, targetY, true);
 

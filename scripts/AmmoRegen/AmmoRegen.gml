@@ -6,6 +6,9 @@ function AmmoRegen() constructor {
 	maxStacks = 3;
 	type = "Resources"
 	
+	stats = new AbilityStats();
+	stats.ammoSupply = 1;
+	
 	static passiveGet = function(buffer) {
 		global.ammoRegen += 0.4;
 	}

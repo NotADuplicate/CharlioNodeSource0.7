@@ -31,6 +31,9 @@ function AbilityStats() constructor {
 	CC			= 0;
 	zoning		= 0;
 	healing		= 0;
+	AP			= 0;
+	AD			= 0;
+	healPassive = 0;
     
     // synergies[$ targetStat][$ sourceStat] = multiplier
     synergies = {};
@@ -295,7 +298,21 @@ function ability_recommend(_candidates, _equipped, _weights = undefined, _caps =
     
     for (var i = 0; i < array_length(_candidates); i++) {
         var _ability = _candidates[i];
-		if(array_contains(_equipped,_ability)) { continue; }
+		if(array_contains(_equipped,_ability)) {
+			if(variable_struct_exists(_ability,"maxStacks")) {
+				var _count = 0;
+				for (var j = 0; j < array_length(_equipped); j++) {
+					if(variable_struct_exists(_equipped[j], "maxStacks") && _equipped[j].sprite == _ability.sprite) { _count++; }
+				}
+				if(_count >= _ability.maxStacks) {
+					show_debug_message("Already have too many of passive")
+					show_debug_message(_ability.text)
+					continue; }
+			} else { 
+					show_debug_message("Already have too many of ability")
+					show_debug_message(_ability.name)
+				continue; } // its an ability they already have so cant take another one
+		}
         
         var _trial = array_create(0);
         for (var k = 0; k < array_length(_loadout); k++) {
@@ -312,7 +329,15 @@ function ability_recommend(_candidates, _equipped, _weights = undefined, _caps =
             effective: _ability.stats.get_effective_stats(_equippedResolved)
         });
     }
-    
+  
+		if(array_length(_scored) == 0) {
+			show_debug_message("Empty recommendations")
+			show_debug_message("Loadout:")
+		    scr_print_loadout(_equipped);
+			show_debug_message("Candidates:")
+		    scr_print_loadout(_candidates)
+		}
+	
     array_sort(_scored, function(_a, _b) { return _b.score - _a.score; });
     return _scored;
 }
@@ -324,6 +349,20 @@ function convert_array_to_stats(abilities) {
 	var i = 0;
 	repeat(array_length(abilities)) {
 		array_push(stats,abilities[i].stats);
+		i++;
 	}
 	return stats;
+}
+
+function scr_print_loadout(_loadout) {
+	for (var i = 0; i < array_length(_loadout); i++) {
+		var _ability = _loadout[i];
+		if(variable_struct_exists(_ability,"name")) {
+			show_debug_message(_ability.name)
+		} else if(variable_struct_exists(_ability,"text")) {
+			show_debug_message(_ability.text)
+		} else {
+			show_debug_message(_ability)
+		}
+	}
 }

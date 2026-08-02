@@ -12,6 +12,7 @@ function HealBomb() constructor {
 	stats = new AbilityStats();
 	stats.healing = 4;
 	stats.ammoSupply = -2;
+	stats.add_synergy("healing","healPassive",2)
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

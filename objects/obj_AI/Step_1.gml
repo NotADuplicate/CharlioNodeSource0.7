@@ -177,8 +177,22 @@ switch(state) {
 	case "Flee": 
 		gunDir = point_direction(x,y,enemy.x,enemy.y);
 		gunObj.skirmishAction(self);
-		if(point_distance(x,y,enemy.x,enemy.y) > 450) {
-			state = "Travel Ball";
+		if(point_distance(x,y,enemy.x,enemy.y) > 550 && (levels > 0 || hp < 90)) {
+			if(hp > 60 || enemy.x < 5)
+				state = "Travel Ball";
+			else 
+				state = "Backing";
+		}
+	break;
+	case "Backing":
+		backing++;
+		if(backing > 150) {
+			x = startX;
+			y = startY;
+			state = "Travel"
+		}
+		if(enemyDistances[2] < 300) {
+			state = "Skirmish";
 		}
 	break;
 }

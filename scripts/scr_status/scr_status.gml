@@ -278,6 +278,20 @@ function scr_status(status,target){
 				if(global.R == Abilities.shuriken)
 					global.RCool = 0.5;
 			}
+			
+			with(obj_AI) {
+				if(target == num) {
+				ammo += 2;
+				if(ammo > maxAmmo)
+					ammo = maxAmmo;
+				if(ability1 == Abilities.shuriken)
+					ability1CD = 0.5;
+				if(ability2 == Abilities.shuriken)
+					ability2CD = 0.5;
+				if(ability3 == Abilities.shuriken)
+					ability3CD = 0.5;
+				}
+			}
 		break;
 		case 50: //dashing
 			global.players[target].dashing = 8;

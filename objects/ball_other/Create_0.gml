@@ -88,3 +88,4 @@ cdr = 1;
 xspd = 0;
 yspd = 0;
 movementPrediction = 0;
+serverSendDamage = 0; //specifically for ai dealing dm to monsters

@@ -20,8 +20,8 @@ if((global.teamNum[num] == global.teamNum[ball_player.num] && global.gameMode !=
 else
 	sameTeam = false;
 
-gun = instance_create(0,0,obj_gun)
-gun.num = num;
+//gun = instance_create(0,0,obj_gun)
+//gun.num = num;
 //sprite_index = global.colors[(num+seed) mod 6];
 //maxhp = hp;
 

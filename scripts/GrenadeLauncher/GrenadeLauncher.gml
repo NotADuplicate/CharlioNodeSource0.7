@@ -19,6 +19,8 @@ function GrenadeLauncher() constructor {
 	stats.damage = 3;
 	stats.mobility = 2;
 	stats.selfDamage = 2;
+	stats.add_synergy("damage", "AD", 0.75);
+	stats.add_synergy("selfDamage", "defense", -0.5);
 	
 	static aiDecisions = function(ai) {
 		return;
@@ -26,11 +28,12 @@ function GrenadeLauncher() constructor {
 	
 	static aiUse = function(ai, dir, timer) {
 		with(ai) {
-			dir += random_range(-10,10) * mistakes;
-			var bullet = instance_create(x+lengthdir_x(6,dir), y+lengthdir_y(6,dir), obj_grenade);
-			bullet.direction = dir;
-			bullet.num = num;
-			bullet.alarm[0] = timer;
+			dir += random_range(-1,1) * inaccuracy;
+			xp = x + lengthdir_x(16,dir);
+			yp = y + lengthdir_y(16,dir);
+			with(ball_game) {
+				node_send(buffer,"eventName","Bullet","Num",other.num,"X",other.xp,"Y",other.yp,"Dir",dir,"Obj",obj_grenade,"Timer",timer)
+			}
 			reload = 30;
 			ammo -= 1;
 		}
@@ -74,10 +77,7 @@ function GrenadeLauncher() constructor {
 		with(ai) {
 			if(ammo > 1 && reload == 0 && point_distance(x,y,monster.x, monster.y) < 200) {
 				dir = point_direction(x,y,monster.x,monster.y)
-				var bullet = instance_create(x+lengthdir_x(6,dir), y+lengthdir_y(6,dir), obj_grenade);
-				bullet.direction = dir;
-				bullet.num = num;
-				bullet.alarm[0] = floor(random_range(1,4) + point_distance(x,y,monster.x,monster.y)/20);
+				other.aiUse(self,dir,floor(random_range(0,2) + point_distance(x,y,monster.x,monster.y)/20));
 				reload = 30;
 				ammo -= 1;
 			}

@@ -1,21 +1,36 @@
-/// @description Die and have friction
-	if(place_meeting(x+hspeed,y,ball_wall)) {
-		if(place_meeting(x,y,ball_wall)) {
-			x -= hspeed*1.5;
-		}
-	    hspeed *= -0.2;
-	}
-	if(place_meeting(x,y+vspeed,ball_wall)) {
-		if(place_meeting(x,y,ball_wall)) {
-			y -= vspeed*1.5;
-		}
-	    vspeed *= -0.2;
-	}
+/// @description Die and have friction 
+/*
+if(place_meeting(x+hspeed,y,ball_wall)) {
 	if(place_meeting(x,y,ball_wall)) {
-		var playerDir = point_direction(x,y,enemy.x,enemy.y);
-		x += lengthdir_x(5,playerDir);
-		y += lengthdir_y(5,playerDir);
+		x -= hspeed*1.5;
 	}
+	hspeed *= -0.2;
+}
+if(place_meeting(x,y+vspeed,ball_wall)) {
+	if(place_meeting(x,y,ball_wall)) {
+		y -= vspeed*1.5;
+	}
+	vspeed *= -0.2;
+}
+if(place_meeting(x,y,ball_wall)) {
+	var playerDir = point_direction(x,y,enemy.x,enemy.y);
+	x += lengthdir_x(5,playerDir);
+	y += lengthdir_y(5,playerDir);
+}*/
+
+if(place_meeting(x,y,ball_wall)) {
+	x -= hspeed;
+	y -= vspeed;
+	collided = true;
+}
+if(place_meeting(x+hspeed,y,ball_wall)) {
+	hspeed = 0;
+	collided = true;
+}
+if(place_meeting(x,y+vspeed,ball_wall)) {
+	vspeed = 0;
+	collided = true;
+}
 
 if(speed > 0) {
 	speed -= 1.2
@@ -65,7 +80,8 @@ if(loadoutUnseen) { //enemy team doesnt know what your loadout is till they see 
 	}
 }
 
+doNothing = random(1) < 0.7 + 0.05 * mistakes;
 dt = delta_time / 30000;
-if(ability1CD > 0 || ammo < ability1.ammoCost) {ability1CD -= dt / room_speed; } else { ability1CD = ability1.aiConsider(self); }
-if(ability2CD > 0 || ammo < ability2.ammoCost) {ability2CD -= dt / room_speed; } else { ability2CD = ability2.aiConsider(self); }
-if(ability3CD > 0 || ammo < ability3.ammoCost) {ability3CD -= dt / room_speed; } else { ability3CD = ability3.aiConsider(self); }
+	if(doNothing || !ability1 || ability1CD > 0 || ammo < ability1.ammoCost) {ability1CD -= dt / room_speed; } else { ability1CD = ability1.aiConsider(self); }
+	if(doNothing || !ability2 || ability2CD > 0 || ammo < ability2.ammoCost) {ability2CD -= dt / room_speed; } else { ability2CD = ability2.aiConsider(self); }
+	if(doNothing || !ability3 || ability3CD > 0 || ammo < ability3.ammoCost) {ability3CD -= dt / room_speed; } else { ability3CD = ability3.aiConsider(self); }

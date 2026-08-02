@@ -3,6 +3,9 @@ function scr_pick_enemy(){
 		return;
 	}
 	minDist = 600;
+	if(enemy == noone) { //if not have an enemy, pick anything
+		minDist = 99999;
+	}
 	with(ball_other) {
 		if(global.teamNum[num] != other.team-2) {
 			dist = point_distance(x,y,other.x,other.y);

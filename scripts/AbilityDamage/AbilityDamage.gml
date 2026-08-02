@@ -6,6 +6,9 @@ function AbilityDamage() constructor {
 	maxStacks = 4;
 	type = "Offense"
 	
+	stats = new AbilityStats();
+	stats.AP = 1;
+	
 	static passiveGet = function(buffer) {
 	}
 	

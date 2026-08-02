@@ -6,6 +6,9 @@ function Healing() constructor {
 	maxStacks = 2;
 	type = "Utility"
 	
+	stats = new AbilityStats();
+	stats.healPassive = 1;
+	
 	static passiveGet = function(buffer) {
 	}
 	

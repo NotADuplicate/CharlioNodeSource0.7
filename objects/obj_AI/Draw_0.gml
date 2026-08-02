@@ -1,5 +1,4 @@
 /// @description Don't draw, handle through other
-draw_text(x,y-150,state)
 /*if(state == "Dodge Fire") 
 	draw_sprite(spr_yellow,0,targetX,targetY);
 if(state == "Push") {

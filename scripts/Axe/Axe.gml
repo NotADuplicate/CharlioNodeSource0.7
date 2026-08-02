@@ -15,6 +15,7 @@ function Axe() constructor {
 	stats.damageMultiplier = 0.5
 	stats.add_synergy("damageMultiplier", "mobility", 0.5);
 	stats.add_synergy("damage", "fire", 4);
+	stats.add_synergy("damageMultiplier","AP",0.15)
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

@@ -3,7 +3,7 @@ alarm[0] = 5;
 if(target == instance_nearest(x,y,ball_player) && point_distance(x,y, targetX, targetY) < beamLength) {
 	scr_damage(12,ball_player.num,true, spr_laserTrap, false)
 }
-if(global.testMode && target == ball_other && point_distance(x,y, targetX, targetY) < beamLength) {
+if(target != noone && target.object_index == ball_other && point_distance(x,y, targetX, targetY) < beamLength && global.aiControl[target.num]) {
 	with(obj_AI) {
 		if(num == other.target.num) {
 			scr_dummy_damage(12,num,true,spr_laserTrap,false);

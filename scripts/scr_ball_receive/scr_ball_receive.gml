@@ -34,6 +34,7 @@ function scr_ball_receive() {
 			i = 0;
 			repeat(10) {
 				global.players[i] = self;
+				global.aiControl[i] = false;
 				global.ping[i] = 0;
 				i++;
 			}
@@ -377,11 +378,8 @@ function scr_ball_receive() {
 			}
 		break;
 		case "Loadout": //recieve loadouts
-			show_debug_message("Got loadout")
 			num = buffer[? "Num"]
-			show_debug_message(num)
 			index2 = buffer[? "Slot"]
-			show_debug_message(index2)
 			abilityIndex = buffer[? "Ability"]
 			if(index2= 0) { //boots
 				passiveSprite = buffer[? "PassiveSprite"]
@@ -391,7 +389,7 @@ function scr_ball_receive() {
 				passiveOb = Passives.list[passiveIndex];
 			} 
 			if(abilityIndex > array_length(Abilities.list)) {
-				show_debug_message("Overflow on ability list")
+				throw("Overflow on ability list")
 				return;
 			}
 			if(abilityIndex >= 0) {
@@ -412,8 +410,12 @@ function scr_ball_receive() {
 			else if(index2 <= 4) { //update one of your ability slots
 				if(num == ball_player.num)
 					scr_abilitySet(abilityIndex, index2);
+				with(obj_AI) {
+					if(self.num = num) {
+						array_push(loadout,other.ability);
+					}
+				}
 				global.loadout[num,index2] = ability;
-				show_debug_message("setting loadout slot")
 				if(global.teamNum[num] == global.teamNum[ball_player.num] || global.spectator) //if on same team, update known loadouts
 					global.knownLoadout[num,index2] = ability;
 			}
@@ -434,6 +436,11 @@ function scr_ball_receive() {
 							if(global.passiveCount > 10) {extraStacks++;
 							} else { stacks++;}
 						}
+					}
+				}
+				with(obj_AI) {
+					if(self.num = num) {
+						array_push(loadout,other.passiveOb);
 					}
 				}
 				passiveOb.otherGet(num);
@@ -631,16 +638,21 @@ function scr_ball_receive() {
 			scr_towerUpdate(nums,healths,maxHealths)
 	    break;
 		case "Player Xp":
-			num = buffer[? "id"];
+			xpNum = buffer[? "id"];
 			xp = buffer[? "xp"];
 			xpMax = buffer[? "xpMax"];
 			level = buffer[? "level"];
 			respawnTimer = buffer[? "respawnTimer"];
-			global.players[num].setRespawnTimer = respawnTimer;
-			if(num == ball_player.num) {
+			global.players[xpNum].setRespawnTimer = respawnTimer;
+			if(xpNum == ball_player.num) {
 				global.xp = xp;
 				global.xpMax = xpMax;
 				global.leveled = level;
+			}
+			with(obj_AI) {
+				if(other.xpNum == self.num) {
+					levels = other.level;
+				}
 			}
 		break;
 		case "Collect Soul":
@@ -650,6 +662,20 @@ function scr_ball_receive() {
 					instance_destroy();
 				}
 			}
+		break;
+		case "Create Bot":
+			if(!instance_exists(obj_AI)) {
+				global.AiPathGrid = mp_grid_create(0,0,floor(room_width/32),floor(room_height/32),32,32);
+				mp_grid_add_instances(global.AiPathGrid,ball_wall,false);
+				mp_grid_add_instances(global.AiPathGrid,jungle_wall,false);
+			}
+			num = buffer[? "Num"];
+			global.aiControl[num] = true;
+			xp = global.teamNum[num] == -1 ? 125 : 3775;
+			ai = instance_create(xp, 125, obj_AI);
+			ai.num = num;
+			ai.team = global.teamNum[num]+2;
+			with(ai) { scr_pick_enemy(); }
 		break;
 	}
 	}

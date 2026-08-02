@@ -13,11 +13,12 @@ function Pistol() constructor {
 	minRange = 40;
 	maxRange = 180;
 	ballPush = 1;
-	monsterTake = 1;
+	monsterTake = -1;
 	
 	stats = new AbilityStats();
 	stats.damage = 1;
 	stats.ammoSupply = 6;
+	stats.add_synergy("damageMultiplier","AD",0.2)
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
@@ -29,12 +30,18 @@ function Pistol() constructor {
 		else { return(0); }
 	}
 	
-	static aiUse = function(ai,dir) {
-		var bullet = instance_create(ai.x+lengthdir_x(16,dir), ai.y+lengthdir_y(16,dir), obj_bloodShot);
-		bullet.direction = dir;
-		bullet.num = ai.num;
-		ai.ammo -= ammoCost;
-		ai.hp -= 50;
+	static aiUse = function(ai, dir) {
+		with(ai) {
+			dir += random_range(-1,1) * inaccuracy;
+			xp = x + lengthdir_x(16,dir);
+			yp = y + lengthdir_y(16,dir);
+			with(ball_game) {
+				node_send(buffer,"eventName","Bullet","Num",other.num,"X",other.xp,"Y",other.yp,"Dir",dir,"Obj",obj_bullet,"Primary",true)
+			}
+			reload = 20;
+			ammo -= 1;
+		}
+		return;
 	}
 	
 	//calls every tick to decide if to use or not
@@ -57,12 +64,7 @@ function Pistol() constructor {
 			if(point_distance(x,y,enemy.x, enemy.y) < 250) {
 				if(reload == 0 && knownLocation > 12) {
 					dir = point_direction(x,y,enemy.x,enemy.y)
-					var bullet = instance_create(x+lengthdir_x(16,dir), y+lengthdir_y(16,dir), obj_bullet);
-					bullet.direction = dir;
-					bullet.num = num;
-					bullet.dmg = 20;
-					bullet.icon = spr_pistol;
-					reload = 24;
+					other.aiUse(self,dir);
 				}
 			}
 		}
@@ -73,12 +75,7 @@ function Pistol() constructor {
 			if(point_distance(x,y,monster.x, monster.y) < 250) {
 				if(reload == 0) {
 					dir = point_direction(x,y,monster.x,monster.y)
-					var bullet = instance_create(x+lengthdir_x(16,dir), y+lengthdir_y(16,dir), obj_bullet);
-					bullet.direction = dir;
-					bullet.num = num;
-					bullet.dmg = 20;
-					bullet.icon = spr_pistol;
-					reload = 24;
+					other.aiUse(self,dir);
 				}
 			}
 		}
@@ -89,11 +86,7 @@ function Pistol() constructor {
 			if(reload == 0 && point_distance(x,y, targetX, targetY) < 80) {
 				show_debug_message("Shoot");
 				dir = point_direction(x,y,obj_bigBall.x,obj_bigBall.y)
-				var bullet = instance_create(x+lengthdir_x(16,dir), y+lengthdir_y(16,dir), obj_bullet);
-				bullet.direction = dir;
-				bullet.num = 2;
-				bullet.icon = spr_pistol;
-				reload = 30;
+				other.aiUse(self,dir);
 			}
 		}
 	}

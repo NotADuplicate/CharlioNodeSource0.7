@@ -85,8 +85,6 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 		+ (global.players[num].towerDamage > 10 ? 1 : 0) + (global.players[num].healingDealt > 95 ? 1 : 0)
 		+ (global.players[num].soulsCollected > 2 ? 1 : 0) + (global.players[num].damageBlocked > 200 ? 1 : 0)
 		+ (global.players[num].selfDamageBlocked > 200 ? 1 : 0);
-	show_debug_message("num stats")
-	show_debug_message(numStats)
 	xDist = 400 / max(1,numStats);
 	draw_set_halign(fa_center)
 	if(global.players[num].totalDamage >= 450) {
@@ -178,12 +176,6 @@ else if(keyboard_check(vk_tab)) {
 	i = 1;
 	repeat(3) { //draw 3 white boxes and abilities
 		draw_sprite(spr_white,0,xp,y+16)
-		if(num != 1) {
-		show_debug_message("Known loadout of:")
-		show_debug_message(num)
-		show_debug_message(i)
-		show_debug_message(global.knownLoadout[num,i])
-		}
 		if(global.knownLoadout[num,i] != 0) {
 			abilitySprite = global.knownLoadout[num,i].sprite;
 			statUi = scr_stats_UI(global.knownLoadout[num,i], -1, keyboard_check(vk_control), num);

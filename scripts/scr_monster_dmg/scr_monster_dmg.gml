@@ -20,9 +20,10 @@ function scr_monster_dmg(dmg,n,attack){
 			dmg*= 2;
 		//hp -= dmg*.65;
 		num = n
-		if(ball_player.num == n) {
+		if(ball_player.num == n || global.aiControl[n]) {
 			serverSendDamage += dmg;
 		}
+		
 		if(milk > 0 && n == ball_player.num) {
 			scr_heal(dmg*ball_player.lifeSteal,ball_player.num);
 		}

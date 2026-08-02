@@ -1,7 +1,11 @@
 /// @description Update pathfinding target
+if(instance_exists(obj_startWall)) {
+	alarm[2] = 10;
+	return;
+}
 overlapping = collision_point(x,y,obj_AI,false,true)
 if(overlapping != noone) {
-	if(overlapping.state == state) {
+	if(overlapping.state == state && num < overlapping.num) {
 		scr_pathfind(x + random_range(-40,40), y + random_range(-40,40), 5);
 		alarm[2] = 10;
 		return;
@@ -18,16 +22,16 @@ with(obj_AI) {
 	}
 }
 monster = instance_nearest(x,y,obj_monster);
-if(point_distance(x,y,monster.x,monster.y) < 400 && monster.visible) {
+if(point_distance(x,y,monster.x,monster.y) < 400 && !monster.dead) {
 	scr_decide_fight_monster(monster);
 }
 
 scr_pick_enemy();
 
 fightingDist = random_range(gunObj.minRange, gunObj.maxRange);
-if(ability1CD <= 0) {ability1.aiDecisions(self); }
-if(ability2CD <= 0) {ability2.aiDecisions(self); }
-if(ability3CD <= 0) {ability3.aiDecisions(self); }
+if(ability1CD <= 0 && ability1 != noone && ammo > ability1.ammoCost) {ability1.aiDecisions(self); }
+if(ability2CD <= 0 && ability2 != noone && ammo > ability2.ammoCost) {ability2.aiDecisions(self); }
+if(ability3CD <= 0 && ability3 != noone && ammo > ability3.ammoCost) {ability3.aiDecisions(self); }
 
 if(state == "Flee") {
 	targetPos = scr_flee_path(enemy);
@@ -70,7 +74,7 @@ else if(state == "Skirmish") {
 	targetX = enemy.x;
 	targetY = enemy.y;
 } else if(state == "Fight Monster") {
-	if(fightingDist < 90) { fightingDist = 90; }
+	if(fightingDist < 135) { fightingDist = 135; }
 	dir = point_direction(monster.x, monster.y, x, y);
 	targetX = monster.x + lengthdir_x(fightingDist, dir);
 	targetY = monster.y + lengthdir_y(fightingDist, dir);
@@ -119,11 +123,21 @@ if(state == "Travel") { //go to defend nearest friendly tower
 	targetX = travelTarget.x;
 	targetY = travelTarget.y;
 }
+// TODO go collect souls
+if(state != "Flee" && state != "Thirst" && state != "Dodge Fire") {
+	with(ball_corpse) {
+		if(global.teamNum[num] != global.teamNum[other.num] && point_distance(x,y,other.x,other.y) < 150) {
+			other.targetX = x;
+			other.targetY = y;
+		}
+	}
+}
 
 spd = link.dashing <= 0 ? 5 : 20;
 if(pushingBall > 0) { spd /= 2; }
 if(frost > 0) { spd = 2;}
-if(bleed == 0 && state != "Dead" && speed < 0.5) {
+if(bleed == 0 && state != "Dead" && speed < 0.75 && state != "Backing") {
+	backing = 0;
 	path = scr_pathfind(targetX, targetY, spd);
 }
 alarm[2] = 10;

@@ -14,7 +14,7 @@ if(global.boot == "Charge" && charge > 0)
 	draw_healthbar(round(x)-20,round(y)+34,round(x)+20,round(y)+28,charge/3,c_ltgray,c_white,c_white,0,true,true); //draw charge boots charge
 	
 if(global.healthText)
-	draw_text(round(x),round(y)-(10*(image_yscale))-24,round(hp));
+	draw_text(round(x),round(y)-(10*(image_yscale))-29,round(hp));
 
 if(back > 0)
 	draw_healthbar(round(x)-30,round(y)-36,round(x)+30,round(y)-28,(back/backMax)*100,c_ltgray,c_white,c_white,0,true,true);

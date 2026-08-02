@@ -6,6 +6,9 @@ function Resistance() constructor {
 	maxStacks = 4;
 	type = "Defense"
 	
+	stats = new AbilityStats();
+	stats.resistance = 1;
+	
 	static passiveGet = function(buffer) {
 		global.resistance *= 1.275
 	}

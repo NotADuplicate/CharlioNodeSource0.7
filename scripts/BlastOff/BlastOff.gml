@@ -15,7 +15,8 @@ function BlastOff() constructor {
 	stats.fire = 1;
 	stats.mobility = 2;
 	stats.ammoSupply = -1;
-	stats.add_synergy("damage", "mobility", 2);
+	stats.add_synergy("damage", "mobility", 1);
+	stats.add_synergy("damageMultiplier","AP",0.2)
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
@@ -28,8 +29,6 @@ function BlastOff() constructor {
 	}
 	
 	static aiUse = function(ai, dir) {
-		show_debug_message("Creating blast off")
-		show_debug_message(dir)
 		ai.ammo -= ammoCost;
 		dir += random_range(-1,1) * ai.inaccuracy;
 		node_send(ball_game.buffer,"eventName","Bullet","Num",ai.num,"X", ai.x, "Y", ai.y, "Obj", obj_rocketBlast, "Dir", dir)
@@ -40,7 +39,6 @@ function BlastOff() constructor {
 	}
 	
 	static aiConsider = function(ai) {
-		if(random(1) < ai.mistakes*0.3) { return 0; } //chance to skip considering for a tick
 		switch(ai.state) {
 			case "Thirst":
 				if(ai.burstMoving == 0 && point_distance(ai.x,ai.y,ai.enemy.x,ai.enemy.y) > 200 && collision_line(ai.enemy.x,ai.enemy.y,ai.x, ai.y, ball_wall, false, false) == noone) {
@@ -79,7 +77,7 @@ function BlastOff() constructor {
 	}
 	
 	static aiDecisions = function(ai) {
-		if(ai.hp > 110) { ai.fightingDist = 30; }
+		if(ai.enemyDistances[0]-30 < ai.fightingDist - ai.enemyDistances[0]) { ai.fightingDist = 30; }
 		return;
 	}
 }

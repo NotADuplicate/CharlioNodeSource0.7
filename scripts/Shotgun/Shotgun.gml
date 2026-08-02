@@ -19,6 +19,21 @@ function Shotgun() constructor {
 	stats.damage = 4;
 	stats.add_synergy("damage", "mobility", 0.5);
 	stats.ammoSupply = 0;
+	stats.add_synergy("damageMultiplier","AD",0.2)
+	
+	static aiUse = function(ai, dir) {
+		with(ai) {
+			dir += random_range(-1,1) * inaccuracy;
+			xp = x + lengthdir_x(16,dir);
+			yp = y + lengthdir_y(16,dir);
+			with(ball_game) {
+				node_send(buffer,"eventName","Bullet","Num",other.num,"X",other.xp,"Y",other.yp,"Dir",dir,"Obj",obj_shotgun,"Primary",true)
+			}
+			reload = 40;
+			ammo -= 2;
+		}
+		return;
+	}
 	
 	static aiDecisions = function(ai) {
 		return;
@@ -31,11 +46,7 @@ function Shotgun() constructor {
 				desire = (300 - point_distance(x,y,enemy.x, enemy.y))*2 + ammo*10 + (250-enemy.hp) + random_range(-70,30);
 				if(desire > 200) {
 					dir = point_direction(x,y,enemy.x,enemy.y)
-					var bullet = instance_create(x+lengthdir_x(6,dir), y+lengthdir_y(6,dir), obj_shotgun);
-					bullet.direction = dir;
-					bullet.num = num;
-					reload = 40;
-					ammo -= 2;
+					other.aiUse(self,dir);
 				}
 			}
 		}
@@ -45,11 +56,7 @@ function Shotgun() constructor {
 		with(ai) {
 			if(ammo > 1 && reload == 0 && point_distance(x,y,monster.x, monster.y) < 200) {
 				dir = point_direction(x,y,monster.x,monster.y)
-				var bullet = instance_create(x+lengthdir_x(6,dir), y+lengthdir_y(6,dir), obj_shotgun);
-				bullet.direction = dir;
-				bullet.num = num;
-				reload = 40;
-				ammo -= 2;
+				other.aiUse(self,dir);
 			}
 		}
 	}
@@ -59,10 +66,7 @@ function Shotgun() constructor {
 			if(reload == 0 && ammo > 4 && random(1) > 0.5 && point_distance(x,y, targetX, targetY) < 40) {
 				show_debug_message("Shoot");
 				dir = point_direction(pushPos.x,pushPos.y,obj_bigBall.x,obj_bigBall.y)
-				var bullet = instance_create(x+lengthdir_x(6,dir), y+lengthdir_y(6,dir), obj_shotgun);
-				bullet.direction = dir;
-				bullet.num = num;
-				reload = 40;
+				other.aiUse(self,dir);
 			}
 		}
 	}

@@ -1,6 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_dummy_damage(dmg,dealer,type, icon, DoT){
+	show_debug_message("Dummy take damage")
+	show_debug_message(dmg)
+	show_debug_message(self);
 	if(invincibility > 0 || hp <= 0 || (global.teamNum[dealer] == global.teamNum[num] && dealer != num)) {
 		return;
 	}
@@ -35,7 +38,7 @@ function scr_dummy_damage(dmg,dealer,type, icon, DoT){
 		state = "Dead";
 		speed = 0;
 		poisonDmg = 0;
-		alarm[3] = 300; //respawn
+		alarm[3] = link.setRespawnTimer * 30; //respawn
 		scr_cleanse(false);
 	}
 }
