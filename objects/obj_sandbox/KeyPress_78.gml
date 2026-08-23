@@ -6,8 +6,10 @@ if(!instance_exists(obj_AI)) {
 	ai.team = 1;
 	global.teamNum[2] = -1;
 	global.names[2] = "AI"
+	with(ai) { scr_pick_enemy(); }
+	global.aiControl[2] = true;
 
-	ai = instance_create(125, 125, obj_AI);
+	/*ai = instance_create(125, 125, obj_AI);
 	ai.num = 3;
 	ai.team = 1;
 	global.teamNum[3] = -1;
@@ -32,7 +34,7 @@ if(!instance_exists(obj_AI)) {
 	ai2.team = 1;
 	ai2.enemy = ball_player;
 	global.teamNum[6] = -1;
-	global.names[6] = "Enemy2"
+	global.names[6] = "Enemy2"*/
 
 	global.aiPushing[1] = false;
 	global.aiPushing[3] = false;

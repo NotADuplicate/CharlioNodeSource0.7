@@ -1,6 +1,5 @@
 /// @description Create link player
 if(global.testMode) {
-	game_end();
 	scr_createBallPlayer(num);
 }
 show_debug_message("Creating link:")

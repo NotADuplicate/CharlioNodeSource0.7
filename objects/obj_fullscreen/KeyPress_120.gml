@@ -12,6 +12,8 @@ else{
 	with(obj_shop) {
 		firstDraw = true;
 	}
-	with(inst_utility) {
-		drawOnce = 2;
+	if(global.shopState == "Abilities") {
+		with(inst_utility) {
+			drawOnce = 2;
+		}
 	}

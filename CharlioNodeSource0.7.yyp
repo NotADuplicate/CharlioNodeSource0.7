@@ -111,6 +111,7 @@
     {"$GMFolder":"","%Name":"Player_Colors","folderPath":"folders/Sprites/Player_Colors.yy","name":"Player_Colors","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Shopping","folderPath":"folders/Sprites/Shopping.yy","name":"Shopping","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"UI","folderPath":"folders/Sprites/UI.yy","name":"UI","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Steamworks","folderPath":"folders/Steamworks.yy","name":"Steamworks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
@@ -123,6 +124,7 @@
   },
   "name":"CharlioNodeSource0.7",
   "resources":[
+    {"id":{"name":"Steamworks","path":"extensions/Steamworks/Steamworks.yy",},},
     {"id":{"name":"compatibility_report_050620_1028482848","path":"notes/compatibility_report_050620_1028482848/compatibility_report_050620_1028482848.yy",},},
     {"id":{"name":"notes","path":"notes/notes/notes.yy",},},
     {"id":{"name":"Abilities","path":"objects/Abilities/Abilities.yy",},},
@@ -945,6 +947,7 @@
     {"id":{"name":"Shuriken","path":"scripts/Shuriken/Shuriken.yy",},},
     {"id":{"name":"Size","path":"scripts/Size/Size.yy",},},
     {"id":{"name":"SleepDart","path":"scripts/SleepDart/SleepDart.yy",},},
+    {"id":{"name":"Steamworks_Definitions","path":"scripts/Steamworks_Definitions/Steamworks_Definitions.yy",},},
     {"id":{"name":"Swapper","path":"scripts/Swapper/Swapper.yy",},},
     {"id":{"name":"Telekenesis","path":"scripts/Telekenesis/Telekenesis.yy",},},
     {"id":{"name":"Teleport","path":"scripts/Teleport/Teleport.yy",},},

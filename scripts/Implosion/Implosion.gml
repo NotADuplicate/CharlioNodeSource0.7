@@ -34,7 +34,7 @@ function Implosion() constructor {
 	
 	static aiConsider = function(ai) {
 		if(instance_exists(obj_fire) && (global.teamNum[obj_fire.num] == global.teamNum[ai.num] || obj_fire.num == ai.enemy.num)) {
-			if(point_distance(ai.enemy.x,ai.enemy.y,obj_fire.x,obj_fire.y) < 200) {
+			if(point_distance(ai.enemy.x,ai.enemy.y,obj_fire.x,obj_fire.y) < 250 && ai.enemyDistances[2] < 450) {
 				aiUse(ai,obj_fire.x,obj_fire.y);
 				return(cooldown);
 			}

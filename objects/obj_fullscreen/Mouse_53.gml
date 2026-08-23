@@ -6,11 +6,13 @@ if(global.options && mouse_x > xp-20 && mouse_x < xp + 20 && mouse_y > yp-20 && 
 	obj_options.firstDraw = true;
 	with(obj_shop) {
 		firstDraw = true;
+		if(global.shopState == "Abilities") {
+			with(inst_utility) {
+				drawOnce = 2;
+			}
+		}
 	}
-	with(inst_utility) {
-		drawOnce = 2;
-	}
-	//obj_options.wipe = true;
+	
 	if window_get_fullscreen(){
 	    window_set_fullscreen(false);
 	    sprite_index = spr_checkbox;

@@ -309,8 +309,6 @@ function ability_recommend(_candidates, _equipped, _weights = undefined, _caps =
 					show_debug_message(_ability.text)
 					continue; }
 			} else { 
-					show_debug_message("Already have too many of ability")
-					show_debug_message(_ability.name)
 				continue; } // its an ability they already have so cant take another one
 		}
         

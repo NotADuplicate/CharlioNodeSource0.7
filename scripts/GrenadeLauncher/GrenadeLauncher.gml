@@ -2,14 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function GrenadeLauncher() constructor {
 	sprite = spr_blood;
-	damage = 110;
-	selfDamage = 50;
-	ammoCost = 1;
-	cooldown = 4; 
 	name = "Grenade Launcher"
-	abilityName = "bloodshot"
-	text = "Fire a projectile which deals " + string(damage) + " damage. Using this ability makes you take " + string(selfDamage) + " damage"
-	
+
 	minRange = 40;
 	maxRange = 190;
 	ballPush = 1;

@@ -9,3 +9,5 @@ if(global.connected == true) {
     network_destroy(socket);
 }
 buffer_delete(buffer);
+
+steam_shutdown();

@@ -1,8 +1,5 @@
 function scr_pick_ally(){
-	show_debug_message("Picking ally")
 	if(ally != noone && point_distance(x,y,ally.x,ally.y) < 350) {
-		show_debug_message("Already close to ally")
-		show_debug_message(ally)
 		return;
 	}
 	ally = noone;

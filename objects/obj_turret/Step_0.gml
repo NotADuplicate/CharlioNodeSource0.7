@@ -42,6 +42,7 @@ if(hp < 3) {
 		ins.drag = false
 		with(jungle_wall) {
 			if(jungleReset) {
+				mp_grid_clear_rectangle(global.AiPathGrid,x-16*image_xscale,y-16*image_yscale,x+16*image_xscale,y+16*image_yscale)
 				instance_destroy();
 			}
 		}

@@ -584,16 +584,12 @@ function scr_ball_receive() {
 			gunName = buffer[? "Gun Name"];
 			var gunNum = buffer[? "Num"];
 			var gunObj = noone;
-			if(false && global.testMode) {
-				gunObj = obj_gun;
-			} else {
-				with(obj_gun) {
-					if(self.num == gunNum) { gunObj = self; }
-				}
-				if(gunObj == noone) {
-					gunObj = instance_create(0,0,obj_gun);
-					gunObj.num = gunNum;
-				}
+			with(obj_gun) {
+				if(self.num == gunNum) { gunObj = self; }
+			}
+			if(gunObj == noone) {
+				gunObj = instance_create(0,0,obj_gun);
+				gunObj.num = gunNum;
 			}
 			scr_gunVisual(gunName,gunObj);
 		break;

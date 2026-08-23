@@ -3,7 +3,11 @@
 function scr_clientStart(){
 	if(file_exists("Ball.sav")) {
 		ini_open("Ball.sav");
-		global.name = ini_read_string("Save1","Name","Fella")
+		if(steam_initialised()) {
+			global.name = steam_get_persona_name();
+		} else {
+			global.name = ini_read_string("Save1","Name","Fella")
+		}
 		var i = 0;
 		var j = 0;
 		show_debug_message("lOADOING lOADOUTS")

@@ -26,6 +26,7 @@
     {"name":"Epic World","order":60,"path":"folders/Sprites/Epic World.yy",},
     {"name":"Demon","order":23,"path":"folders/Sprites/Epic World/Demon.yy",},
     {"name":"Golem","order":19,"path":"folders/Sprites/Epic World/Golem.yy",},
+    {"name":"Steamworks","order":18,"path":"folders/Steamworks.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"compatibility_report_050620_1028482848","order":1,"path":"notes/compatibility_report_050620_1028482848/compatibility_report_050620_1028482848.yy",},
@@ -793,6 +794,7 @@
     {"name":"Shuriken","order":4,"path":"scripts/Shuriken/Shuriken.yy",},
     {"name":"Size","order":6,"path":"scripts/Size/Size.yy",},
     {"name":"SleepDart","order":15,"path":"scripts/SleepDart/SleepDart.yy",},
+    {"name":"Steamworks_Definitions","order":1,"path":"scripts/Steamworks_Definitions/Steamworks_Definitions.yy",},
     {"name":"Swapper","order":32,"path":"scripts/Swapper/Swapper.yy",},
     {"name":"Telekenesis","order":43,"path":"scripts/Telekenesis/Telekenesis.yy",},
     {"name":"Teleport","order":20,"path":"scripts/Teleport/Teleport.yy",},
