@@ -50,6 +50,7 @@ list[47] = malpractice;
 list[48] = oil;
 list[49] = whirlwind;
 list[50] = airstrike;
+list[51] = quickTap
 //list[45] = milk;
 //list[47] = glove;
 

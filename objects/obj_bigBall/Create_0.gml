@@ -5,6 +5,7 @@ stasisy = 0;
 startX = x;
 startY = y;
 num = 100;
+global.aiControl[num] = false;
 murderball = false;
 layer = layer_create(-1000);
 spellShield = 0;

@@ -4,7 +4,7 @@ function Block() constructor {
 	sprite = spr_defense;
 	duration = 0.67
 	cooldown = 11; 
-	ammoCost = 1;
+	ammoCost = 2;
 	name = "Block"
 	abilityName = "block"
 	text = "Become invincible for " + string(duration) + " seconds"
@@ -20,7 +20,7 @@ function Block() constructor {
 				node_send(buffer,"eventName","Status","Target",ball_player.num,"Status Num", 8)
 				global.invincibility = 20
 			}
-			scr_ball_ammo(2);
+			scr_ball_ammo(ammoCost);
 			return(cooldown)
 		}
 		else { return(0) }

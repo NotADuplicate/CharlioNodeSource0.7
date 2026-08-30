@@ -3,6 +3,8 @@
 function GrenadeLauncher() constructor {
 	sprite = spr_blood;
 	name = "Grenade Launcher"
+	text = @"Fire a grenade when you release left click. 
+	\n The longer you held click the longer the grenade takes to explode"
 
 	minRange = 40;
 	maxRange = 190;

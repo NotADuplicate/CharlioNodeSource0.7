@@ -56,6 +56,8 @@ function scr_movespeed(){
 		xspd *= 0.5;
 		yspd *= 0.5;
 	}
+	xspd *= speedPassives;
+	yspd *= speedPassives;
 	
 	if(global.boot = "Stress" && hp < maxhp*.8) {
 		stress = 0.8 - (hp/maxhp)

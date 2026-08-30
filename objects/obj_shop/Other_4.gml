@@ -16,13 +16,16 @@ if(global.gameMode == "Comp"){
 	ins2.atk = global.loadoutSet[global.selectedLoadout][9]
 } else if(global.gameMode == "Simple") {
 	i = 0;
-	while(i < 16){
-		xPos = 58 + ((i) mod 4)*140
-		yPos = 4155 + 95*floor((i/4))
-		ins = instance_create(xPos,yPos,inst_utility);
-		ins.utility = Abilities.simpleAbilities[i];
-		i++
-	}
+while(i < 16) {
+	// Four columns inside the new middle panel.
+	xPos = 68 + (i mod 4) * 162;
+	yPos = 140 + floor(i / 4) * 162;
+
+	ins = instance_create(xPos, yPos, inst_utility);
+	ins.utility = Abilities.simpleAbilities[i];
+
+	i++;
+}
 	with(inst_atk) {
 		instance_destroy()
 	}
@@ -40,8 +43,8 @@ if(global.gameMode == "Comp"){
 else {
 	i = 0;
 	while(i < array_length(Abilities.list)){
-		xPos = 48 + ((i) mod 8)*60
-		yPos = 4155 + 50*floor((i/8))
+		xPos = 34 + ((i) mod 8)*81
+		yPos = 125 + 85*floor((i/8))
 		ins = instance_create(xPos,yPos,inst_utility);
 		ins.utility = Abilities.list[i];
 		i++
@@ -61,14 +64,15 @@ else {
 	}
 }
 i = 0;
+numMobility = 3;
 numOffense = 5;
 numDefense = 4;
 numResources = 3;
-numUtility = 4;
-while(i < numOffense){
+numUtility = 2;
+while(i < numMobility){
 	if(!instance_exists(obj_tutorial) || i < 2) {
-		xPos = 1050 + 450/numOffense * (i+.5);
-		yPos = 4430;
+		xPos = 1050 + 450/numMobility * (i+.5);
+		yPos = 4327;
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
 		ins.spr = passiveOb.sprite;
@@ -78,10 +82,23 @@ while(i < numOffense){
 	}
 	i++
 }
-while(i < numOffense+numDefense){
+while(i < numOffense+numMobility){
+	if(!instance_exists(obj_tutorial) || i < 2) {
+		xPos = 1050 + 450/numOffense * (i-numMobility+.5);
+		yPos = 4445;
+		ins = instance_create(xPos,yPos,inst_passive);
+		passiveOb = Passives.list[i];
+		ins.spr = passiveOb.sprite;
+		ins.str = passiveOb.text;
+		ins.passiveIndex = i;
+		ins.maxStacks = passiveOb.maxStacks;
+	}
+	i++
+}
+while(i < numOffense+numDefense+numMobility){
 	if(!instance_exists(obj_tutorial) || i < 2+numOffense) {
-		xPos = 1050 + 450/numDefense * (i-numOffense+.5);
-		yPos = 4560;
+		xPos = 1050 + 450/numDefense * (i-numOffense-numMobility+.5);
+		yPos = 4575;
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
 		ins.spr = passiveOb.sprite;
@@ -92,9 +109,9 @@ while(i < numOffense+numDefense){
 	i++
 }
 if(!instance_exists(obj_tutorial)) {
-	while(i < numOffense+numDefense+numResources){
-		xPos = 1050 + 450/numResources * (i-numOffense-numDefense+.5);
-		yPos = 4690;
+	while(i < numOffense+numDefense+numResources+numMobility){
+		xPos = 1050 + 450/numResources * (i-numOffense-numDefense-numMobility+.5);
+		yPos = 4705;
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
 		ins.spr = passiveOb.sprite;
@@ -103,9 +120,9 @@ if(!instance_exists(obj_tutorial)) {
 		ins.maxStacks = passiveOb.maxStacks;
 		i++
 	}
-	while(i < numOffense+numDefense+numResources+numUtility){
-		xPos = 1050 + 450/numUtility * (i-numOffense-numDefense-numResources+.5);
-		yPos = 4810
+	while(i < numOffense+numDefense+numResources+numUtility+numMobility){
+		xPos = 1050 + 450/numUtility * (i-numOffense-numDefense-numResources-numMobility+.5);
+		yPos = 4825
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
 		ins.spr = passiveOb.sprite;

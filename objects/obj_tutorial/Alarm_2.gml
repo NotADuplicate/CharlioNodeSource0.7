@@ -17,7 +17,8 @@ with(inst_utility) {
 	instance_destroy()
 }
 
-ob = instance_create(150,4500,choose_molotov)
+ob = instance_create(150,550,inst_utility)
+ob.utility = Abilities.molotov;
 ob.drawOnce = 0;
 global.shopState = "Passives"
 obj_shop.wipe = true;

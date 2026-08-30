@@ -112,6 +112,7 @@ controlledNum = 0;
 controlledX = 0;
 controlledY = 0;
 walkDirection = 1; //image_xscale
+speedPassives = 1;
 
 global.throwRange = 0;
 global.levelSpent = 0;

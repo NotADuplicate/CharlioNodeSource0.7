@@ -1,6 +1,4 @@
 /// Fire
-show_debug_message("shootin")
-show_debug_message(sprite_index)
 if(sprite_index == spr_pistol || sprite_index == spr_shotgun) {
 	image_speed = 2;
 	if(sprite_index == spr_shotgun) {

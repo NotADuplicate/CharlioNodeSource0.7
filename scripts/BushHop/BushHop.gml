@@ -4,7 +4,7 @@ function BushHop() constructor {
 	sprite = spr_bush
 	text = "Press against a wall while in a bush to hop over it"
 	maxStacks = 1;
-	type = "Utility"
+	type = "Mobility"
 	
 	static passiveGet = function(buffer) {
 		ball_player.bushHop = true

@@ -17,3 +17,4 @@ moreKb = new MoreKB();
 healing = new Healing();
 fourthSlot = new FourthAbility()
 scope = new Scope();
+moveSpd = new Speed();

@@ -4,7 +4,7 @@ function MoreKB() constructor {
 	text = "Take 50% more knockback from all sources"
 	sprite = spr_push;
 	maxStacks = 1;
-	type = "Utility"
+	type = "Mobility"
 	
 	static passiveGet = function(buffer) {
 		global.pushSpd = 1.5;

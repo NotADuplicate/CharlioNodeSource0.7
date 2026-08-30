@@ -39,6 +39,7 @@ ability2 = noone;
 ability3 = noone;
 loadout = [];
 
+setLoadout = false
 levels = 3;
 path = noone;
 pushingBall = 0;
@@ -57,6 +58,7 @@ alarm[7] = 45;
 loadoutUnseen = true;
 travelCaution = irandom_range(5,60);
 backing = 0;
+dummy = false;
 
 show_debug_message("AI created")
 show_debug_message(object_get_name(global.players[num].object_index))

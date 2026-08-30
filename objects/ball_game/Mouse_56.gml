@@ -2,8 +2,8 @@
 if(global.attack == obj_grenade && global.slow < 1) {
     if(global.ammo > 0 && reload == 0 && scr_shootable()) {
 		
-        xp = obj_player.x + lengthdir_x(40,point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y));
-        yp = obj_player.y + lengthdir_y(40,point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y)); 
+        xp = obj_player.x + lengthdir_x(35,point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y));
+        yp = obj_player.y + lengthdir_y(35,point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y)); 
 		dir = round(point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y))
 		var ob = obj_grenade;
 		if(global.upgraded) {ob = upgraded_grenade;}

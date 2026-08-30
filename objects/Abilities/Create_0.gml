@@ -54,7 +54,7 @@ malpractice = new Malpractice();
 oil = new Oil();
 whirlwind = new Whirlwind();
 airstrike = new Airstrike();
-
+quickTap = new QuickTap();
 
 //Guns for AI
 pistol = new Pistol();
@@ -66,4 +66,5 @@ global.loadoutSet[0] = [shuriken, flash, bloodshot, frost, armorBreak, cleaver, 
 global.loadoutSet[1] = [axe, dash, flareGun, molotov, block, rocket, implosion, heal, obj_grenade, obj_melee];
 global.loadoutSet[2] = [heal, junglePotion, finisher, glassShield, revive, milk, healBomb, deathtouch, obj_shotgun, obj_bullet];
 global.selectedLoadout = 1;
-simpleAbilities = [shuriken, flash, bloodshot, frost, armorBreak, cleaver, healBomb, blastOff, axe, dash, flareGun, molotov, block, rocket, implosion, heal];
+simpleAbilities = [shuriken, quickTap, finisher, frost, deathtouch, cleaver, bump, blastOff, axe, dash, flareGun, molotov, block, rocket, bodyslam, heal];
+//[shuriken, flash, bloodshot, frost, armorBreak, cleaver, healBomb, blastOff, axe, dash, flareGun, molotov, block, rocket, implosion, heal];

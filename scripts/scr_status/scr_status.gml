@@ -193,19 +193,7 @@ function scr_status(status,target){
 
 		break;
 		case 37:
-			global.players[target].quickTap = 10;
-			with(obj_grenade) {
-				if(num == target)
-					alarm[0] = 1;
-			}
-			with(other_bolt) {
-				if(num == target)
-					charge = 150;
-			}
-			with(player_bolt) {
-				if(num == target)
-					charge = 150;
-			}
+			global.players[target].quickTap = 30;
 		break;
 		case 38: //shield
 			global.players[target].shield = 240;

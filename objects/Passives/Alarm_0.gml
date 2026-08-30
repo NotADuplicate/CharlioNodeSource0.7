@@ -1,20 +1,21 @@
 //Set list
-list[0] = attackDamage;
-list[1] = abilityDamage;
-list[2] = fireRate;
-list[3] = plasma; 
-list[4] = scope; //offense
-list[5] = defense;
-list[6] = resistance;
-list[7] = size;
-list[8] = ammoHealth; //defense
-list[9] = ammoRegen;
-list[10] = cooldownReduction;
-list[11] = maxAmmo; //resources
-list[12] = healing;
-list[13] = moreKb;
-list[14] = bushHop
-list[15] = fourthSlot
+list[0] = moreKb;
+list[1] = bushHop
+list[2] = moveSpd; //mobility
+list[3] = attackDamage;
+list[4] = abilityDamage;
+list[5] = fireRate;
+list[6] = plasma; 
+list[7] = scope; //offense
+list[8] = defense;
+list[9] = resistance;
+list[10] = size;
+list[11] = ammoHealth; //defense
+list[12] = ammoRegen;
+list[13] = cooldownReduction;
+list[14] = maxAmmo; //resources
+list[15] = healing;
+list[16] = fourthSlot
 
 var i =0;
 repeat(array_length(list)) {

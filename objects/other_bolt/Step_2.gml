@@ -16,8 +16,13 @@ else if(dmg < dmgRamp * 8) {
 } else {
 	dmg = dmgRamp*8;
 }
-if(charge < 75 && speed == 0)
-	charge += fire;
+if(charge < 75 && speed == 0) {
+	if(global.players[num].quickTap > 0) {
+		charge += fire*4;
+	} else {
+		charge += fire;
+	}
+}
 
 
 //Hit player

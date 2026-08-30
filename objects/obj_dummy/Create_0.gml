@@ -6,13 +6,14 @@ xp = x;
 yp = y;
 invincibility = 0;
 poisonDmg = 0;
-alarm[0] = 30;
-//global.players[2] = self;
 num = 2;
-image_yscale = 1.75;
-image_xscale = 2;
-image_speed = 1/2;
+//global.teamNum[num] = -1;
+//global.players[num] = self
+alarm[0] = 30;
 recentDamageIcon = spr_attack;
+dummy = true;
+image_xscale = -1.5;
+image_yscale = 1.5;
 
 //Status vars
 inversion = 0;
@@ -49,6 +50,7 @@ murderball = 0
 enraged = false;
 num = 2;
 kicking = 0;
+milked = 0;
 
 /*shadow = instance_create(x,y+30,obj_shadow);
 shadow.link = self;

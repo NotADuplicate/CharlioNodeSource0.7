@@ -4,8 +4,8 @@ if(confuse = 0) {
     yspd = 5*global.slow*(keyboard_check(ord("S"))-keyboard_check(ord("W")))
 }
 else {
-    xspd = moveSpd*global.slow*sign(xspd)
-    yspd = moveSpd*global.slow*sign(yspd)
+    xspd = 5*global.slow*sign(xspd)
+    yspd = 5*global.slow*sign(yspd)
 }
 if(global.typing) {
 	xspd = 0;

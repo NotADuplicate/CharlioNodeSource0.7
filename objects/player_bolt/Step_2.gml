@@ -15,8 +15,13 @@ if(instance_exists(obj_player)) {
 		node_send(buffer,"eventName","Bolt dir", "Num", ball_player.num, "Dir", other.dir)
 	}
 }
-if(charge < 75) 
-	charge += global.shooting*1.2;
+if(charge < 75) {
+	if(ball_player.quickTap > 0) {
+		charge += global.shooting*4.8;
+	} else {
+		charge += global.shooting*1.2;
+	}
+}
 else {
 	instance_destroy();
 	global.slow = 1;

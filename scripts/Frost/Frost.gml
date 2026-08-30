@@ -34,7 +34,7 @@ function Frost() constructor {
 	
 	//calls every tick to decide if to use or not
 	static aiConsider = function(ai) {
-		if(ai.state == "Skirmish" && ai.enemyDistances[ai.mistakes*2] < random_range(-5000,600)) {
+		if(ai.state == "Skirmish" && ai.enemyDistances[ai.mistakes*2] < random_range(-4000,600)) {
 			if(collision_line(ai.x,ai.y,ai.enemy.x,ai.enemy.y,obj_bigBall,false,true) == noone) {
 				dir = point_direction(ai.x,ai.y,ai.enemy.x,ai.enemy.y)
 				aiUse(ai,dir);

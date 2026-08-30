@@ -1,9 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_dummy_damage(dmg,dealer,type, icon, DoT){
-	show_debug_message("Dummy take damage")
-	show_debug_message(dmg)
-	show_debug_message(self);
 	if(invincibility > 0 || hp <= 0 || (global.teamNum[dealer] == global.teamNum[num] && dealer != num)) {
 		return;
 	}
@@ -25,7 +22,7 @@ function scr_dummy_damage(dmg,dealer,type, icon, DoT){
 	with(ball_game) {
 		node_send(buffer,"eventName","Damage Dealt","Dealer",dealer,"Target",other.num,"Amount",dmg,"Ability",type)
 	}
-	if(hp <= 0) {
+	if(hp <= 0 && !dummy) {
 		with(ball_game) {
 			node_send(buffer,"eventName","Death","Target",other.num,"Killer",dealer, "Icon", icon, "Assister", 0)
 			node_send(buffer,"eventName","Bullet","Num",other.num,"X", other.x, "Y", other.y, "Obj", ball_corpse, "Dir", 0)
@@ -40,5 +37,7 @@ function scr_dummy_damage(dmg,dealer,type, icon, DoT){
 		poisonDmg = 0;
 		alarm[3] = link.setRespawnTimer * 30; //respawn
 		scr_cleanse(false);
+	} else if(dummy) {
+		if(sprite_index == spr_dummy) { sprite_index = spr_dummyHit; }
 	}
 }

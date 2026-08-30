@@ -79,6 +79,7 @@ enrageNum = 0;
 kicking = 0;
 scope = 1;
 accuracy = 1;
+quickTap = 0;
 
 shadow = instance_create(x,y+30,obj_shadow);
 shadow.link = self;

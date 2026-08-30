@@ -10,9 +10,10 @@
 lastX = ball_player.x;
 lastY = ball_player.y;
 var dt = delta_time / 30000;
+var reloadSpd = (ball_player.quickTap > 0) ? global.shooting*dt*4 : global.shooting*dt;
 ///Reload
 if(reload > 0) {
-    reload-= global.shooting*dt;
+    reload-= reloadSpd;
 	if(global.attack == obj_shotgun && reload < 13*global.shooting*dt) {
 		if(!shotgunReload) {
 			shotgunReload = true;
@@ -35,7 +36,7 @@ if(bullets < 5) {
 		bulletReload = 60;
 	}
 	else
-		bulletReload -= global.shooting*dt;
+		bulletReload -= reloadSpd
 }
 //increment cooldowns and statuses
 

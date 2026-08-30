@@ -23,4 +23,8 @@ while(i > 0) {
 	enemyDistances[i] = enemyDistances[i-1];
 	i--;
 }
-enemyDistances[0] = point_distance(x,y,enemy.x,enemy.y);
+if(enemy == noone) {
+	enemyDistances[0] = 1000;
+} else {
+	enemyDistances[0] = point_distance(x,y,enemy.x,enemy.y);
+}

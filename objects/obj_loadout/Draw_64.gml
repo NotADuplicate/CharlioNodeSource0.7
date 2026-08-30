@@ -135,7 +135,7 @@ if(global.ballGameOver != 0) { //just for when the game ends to display all stat
 	}
 }
 else if(keyboard_check(vk_tab)) {
-	if(global.players[num].garren) {
+	if(false) {//global.players[num].garren) {
 		nameCol = c_purple;
 	} else {
 		nameCol = global.teamNum[num] == -1 ? c_teal : c_red;
@@ -145,6 +145,7 @@ else if(keyboard_check(vk_tab)) {
 		draw_rectangle_color(0,y-20,500,y+120,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
 		draw_set_halign(fa_right);
 		draw_text_transformed_color(480,y,global.names[num],2,2,0,nameCol,nameCol,nameCol,nameCol,1);
+		show_debug_message(global.players[num].object_index)
 		if(global.players[num].respawnTimer > 0) { //say respawn timer
 			draw_text(480,y-15,"Respawn: " + string(global.players[num].respawnTimer-0.5))
 		}

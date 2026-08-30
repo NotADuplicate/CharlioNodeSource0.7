@@ -28,7 +28,7 @@ function scr_gun_text(gun){
 		break;
 		case virgin_bullet:
 		case chad_bullet:
-			return("Very weak bullets but every 4th shot is extremely powerful")
+			return("Very weak bullets but every 5th shot is extremely powerful")
 		break
 		case obj_shotgun:
 			return("Slow firing and short range but deals huge damage up close. \nGood for pushing the ball and defending against attackers.")

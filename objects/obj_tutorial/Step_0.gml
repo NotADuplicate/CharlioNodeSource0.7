@@ -27,18 +27,18 @@ else if(stage == 2 && global.attack != obj_bullet && global.shop == false) {
 		arrowX = 0;
 		arrowY = 0;
 	} else {
-		arrowX = 500;
-		arrowY = 90
+		arrowX = 512;
+		arrowY = 110
 	}
 	stage = 3;
-	alarm[1] = 1000;
+	alarm[1] = 100//0;
 }
 if(stage == 3) {
 	if(global.shop) {
 		arrowX = 0;
 		arrowY = 0;
 	} else {
-		arrowX = 500;
+		arrowX = 930;
 		arrowY = 90
 	}
 	if(global.shop) {
@@ -102,11 +102,11 @@ if(stage == 5) {
 		select_Q.visible = true;
 		select_space.visible = true;
 
-		ob = instance_create(200,4500,inst_utility);
+		ob = instance_create(250,550,inst_utility);
 		ob.utility = Abilities.armorBreak;
-		ob = instance_create(250,4500,inst_utility)
+		ob = instance_create(360,550,inst_utility)
 		ob.utility = Abilities.finisher;
-		ob = instance_create(300,4500,inst_utility)
+		ob = instance_create(430,550,inst_utility)
 		ob.utility = Abilities.dash;
 		
 		with(inst_utility) {
@@ -134,8 +134,8 @@ if(stage == 6) {
 		textY = 400
 		textX = 300
 		tutText = "Fill up your ability slots. Each ability costs a level"
-		arrowX = 120;
-		arrowY = 60;
+		arrowX = 15;
+		arrowY = 55;
 		if(global.leveled < 4) {
 			textScale = 1;
 			remindingText = false;
@@ -199,7 +199,7 @@ if(stage == 8) {
 		tutText = "Try out some of the passives!"
 		remindingText = false;
 		textScale = 1;
-		alarm[4] = 300
+		alarm[4] = 30//0
 		stage = 8.5
 	}
 }
@@ -257,17 +257,17 @@ else if(stage == 13) {
 		textScale = 1;
 		remindingText = false;
 		stage = 14;
-		alarm[5] = 400;
+		alarm[5] = 40//0;
 		global.leveled = 5;
 		obj_shop.wipe = true;
 
-		ob = instance_create(200,4400,inst_utility);
+		ob = instance_create(150,400,inst_utility);
 		ob.utility = Abilities.blastOff;
-		ob = instance_create(250,4400,inst_utility)
+		ob = instance_create(250,400,inst_utility)
 		ob.utility = Abilities.bloodshot;
-		ob = instance_create(300,4400,inst_utility)
+		ob = instance_create(360,400,inst_utility)
 		ob.utility = Abilities.frost;
-		ob = instance_create(200,4300,inst_utility);
+		ob = instance_create(470,300,inst_utility);
 		ob.utility = Abilities.block;
 		with(obj_shop) {
 			alarm[2] = 1;
@@ -309,7 +309,17 @@ else if(stage == 16) {
 	tutText = "Killing monsters gives you a temporary buff.";
 	if(obj_junglePass.ammo > 0 || obj_junglePass.resistance > 0 || obj_junglePass.defense > 0 || obj_junglePass.dmg > 0 || obj_junglePass.pwr > 0 || obj_junglePass.spd > 0 || obj_junglePass.jungle > 0) {
 		stage = 17;
-		instance_create(100, 550, obj_AI);
+		AI = instance_create(80, 80, obj_AI);
+		AI.num = 3;
+		AI.team = 1;
+		AI.gunObj = Abilities.pistol;
+		AI.ability1 = Abilities.blastOff;
+		AI.ability2 = Abilities.frost;
+		AI.ability3 = Abilities.healBomb;
+		AI.mistakes = 0;
+		global.teamNum[3] = -1;
+		global.names[3] = "Bot"
+		AI.enemy = ball_player;
 		textScale = 1;
 		remindingText = true;
 		alarm[6] = 900;

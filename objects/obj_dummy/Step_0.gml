@@ -2,8 +2,9 @@
 if(hp < 1) {
 	maxhp = 250;
 	hp = maxhp;
-	x = xp;
-	y = yp;
+	instance_create(x,y,obj_dummyCorpse);
+	x = -50;
+	y = -50;
 	speed = 0;
 	poisonDmg = 0;
 	slayed = instance_create(0,0,slayer_marker)
@@ -13,7 +14,7 @@ if(hp < 1) {
 	scr_cleanse(false);
 }
 
-	if(place_meeting(x+hspeed,y,ball_wall)) {
+	/*if(place_meeting(x+hspeed,y,ball_wall)) {
 		if(place_meeting(x,y,ball_wall)) {
 			x -= hspeed;
 		}
@@ -30,6 +31,7 @@ if(speed > 0) {
 	speed -= 1.2
 	if(speed < 0.2)
 		speed = 0;
-}
+}*/
+speed = 0;
 if(invincibility > 0)
 	invincibility--;

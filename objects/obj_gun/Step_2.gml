@@ -48,8 +48,8 @@ if(initialized && instance_exists(global.players[num]) && variable_instance_exis
 		else {
 			x = global.players[num].x - lengthdir_x(8,dir)*sign(image_xscale) * global.players[num].scale;
 			depth = global.players[num].depth-1;
-			shootX = x + lengthdir_x(10*scale,dir) + 7*scale*sign(image_xscale);
-			shootY = y + lengthdir_y(10*scale,dir);
+			shootX = x + lengthdir_x(5*scale,dir) + 7*scale*sign(image_xscale);
+			shootY = y + lengthdir_y(5*scale,dir);
 			if(sprite_index == spr_curveGun || sprite_index == spr_curveGunDown) {
 				if(clockwise) {
 					sprite_index = image_xscale < 0 ? spr_curveGunDown : spr_curveGun

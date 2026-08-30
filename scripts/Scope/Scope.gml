@@ -14,11 +14,11 @@ function Scope() constructor {
 	
 	static otherGet = function(num) {
 		global.players[num].scope *= 1.17;
-		global.players[num].accuracy *= 1.3;
+		global.players[num].accuracy *= 1.25;
 	}
 	
 	static otherLose = function(num) {
 		global.players[num].scope /= 1.17;
-		global.players[num].accuracy /= 1.3;
+		global.players[num].accuracy /= 1.25;
 	}
 }

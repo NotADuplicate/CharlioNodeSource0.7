@@ -7,6 +7,10 @@ function scr_drawStatus(){
 	if(confuse > 0) {
 		statusCount++;
 	}
+	
+	if(quickTap > 0) {
+		statusCount++;
+	}
 
 	if(inversion > 0) {
 		statusCount++;
@@ -68,6 +72,12 @@ function scr_drawStatus(){
 		draw_sprite_ext(spr_inversion,0,xp,yp,1,1,0,c_white,inversion/30);
 		xp += 40;
 		inversion-= dt;
+	}
+	
+	if(quickTap > 0) {
+		draw_sprite_ext(spr_fastfire,0,xp,yp,1,1,0,c_white,quickTap/30);
+		xp += 40;
+		quickTap-= dt;
 	}
 
 	if(bleed > 0) {

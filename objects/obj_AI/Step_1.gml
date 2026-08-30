@@ -1,4 +1,5 @@
 /// @description Handle AI inputs
+if(enemy != noone) {
 switch(state) {
 	case "Travel": //travel to defend tower
 		if(point_distance(x,y,targetX,targetY) < 100) {
@@ -200,7 +201,7 @@ switch(state) {
 if(hp < 100 && hp < enemy.hp/2 && point_distance(x,y,enemy.x,enemy.y) < 160) { //flee
 	state = "Flee";
 }
-
+}
 //Get pushed
 if(frost > 0) {
 	speed = 0;
