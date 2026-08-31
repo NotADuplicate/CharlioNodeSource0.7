@@ -7,9 +7,11 @@ yp = y;
 invincibility = 0;
 poisonDmg = 0;
 num = 2;
-//global.teamNum[num] = -1;
-//global.players[num] = self
 alarm[0] = 30;
+if(global.testMode) {
+	global.teamNum[num] = -1;
+	global.players[num] = self
+}
 recentDamageIcon = spr_attack;
 dummy = true;
 image_xscale = -1.5;

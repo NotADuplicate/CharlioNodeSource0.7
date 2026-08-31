@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_createPlayer(Num,Name,Team,Ready,loadout){ //all arguments start w caps
+function scr_createPlayer(Num,Name,Team,Ready,loadout,bot){ //all arguments start w caps
 	ins = noone;
 	with(obj_playerUI) {
 		if(num == Num) {
@@ -14,6 +14,7 @@ function scr_createPlayer(Num,Name,Team,Ready,loadout){ //all arguments start w 
 	ins.named = Name;
 	ins.team = Team;
 	ins.ready = Ready;
+	ins.bot = bot;
 	show_debug_message(typeof(loadout))
 	if(loadout != "" && loadout != undefined) {
 		ins.loadoutPicked = true;

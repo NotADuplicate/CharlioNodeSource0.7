@@ -10,6 +10,11 @@ function Chainbreaker() constructor {
 	abilityName = "chainbreaker"
 	text = "Chain yourself to any nearby enemy or ball. If they are still in range of the chain after 3 seconds of being chained, they take " + string(damage) + " damage and lots of knockback. Particularly good at pushing the ball.";
 	
+	stats = new AbilityStats();
+	stats.damage = 2.5;
+	stats.add_synergy("damage", "CC", 1);
+	stats.add_synergy("damage", "mobility", 1);
+	stats.add_synergy("damageMultiplier","AP",0.15)
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

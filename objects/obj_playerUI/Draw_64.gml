@@ -13,11 +13,15 @@ if(global.connected && !global.loadoutView) {
 	draw_text_transformed_color(xp,y,named,2,2,0,col,col,col,col,1);
 	
 	if(!obj_client.loadoutPicking) {
-		if(ready || (obj_client.activeGame && num != obj_client.index)) {
+		if(ready || (obj_client.activeGame && num != obj_client.index) || bot) {
 			draw_sprite(spr_checkedbox,0,xp-64,y+20);
 		}
 		else {
 			draw_sprite(spr_checkbox,0,xp-64,y+20);
+		}
+		if(bot) {
+			draw_text(xp-150,y-40,"BOT");
+			draw_sprite(spr_red,0,xp-150,y+10)
 		}
 	} else if(obj_client.loadoutPickingIndex == num) { //pending to pick
 		draw_sprite(spr_yellow,0,xp-64,y+20);

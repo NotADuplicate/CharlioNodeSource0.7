@@ -10,6 +10,10 @@ function ArmorBreak() constructor {
 	abilityName = "armorBreak"
 	text = "Shoot a slow moving spear which deals 40 damage and applies armor broken for 6 seconds. While armor broken, target takes double damage from all sources.";
 	
+	stats = new AbilityStats();
+	stats.damage = 0;
+	stats.add_synergy("damage","damage",0.5)
+	stats.ammoSupply = -1;
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

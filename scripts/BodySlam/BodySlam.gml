@@ -8,6 +8,9 @@ function BodySlam() constructor {
 	abilityName = "bodySlam"
 	text = "Jump straight up and down over 1 second, creating a shockwave where you land. The shockwave stuns nearby enemies for a duration depending on your current HP. (100 HP = 1 second of stun)";
 	
+	stats = new AbilityStats();
+	stats.CC = 3;
+	stats.add_synergy("CC","size",0.5)
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

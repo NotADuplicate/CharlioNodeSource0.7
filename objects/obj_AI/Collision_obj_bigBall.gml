@@ -1,4 +1,7 @@
 /// @description Push
+if(other.murderball) {
+	scr_dummy_damage(5+power((other.xspd + other.yspd),2),num,false, spr_deathball, false)
+}
 	xPush = lengthdir_x(2, point_direction(other.x,other.y,x,y));
 	yPush = lengthdir_y(2, point_direction(other.x,other.y,x,y));
 	

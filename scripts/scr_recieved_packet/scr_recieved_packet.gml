@@ -42,6 +42,9 @@ function scr_recieved_packet() {
 				obj_client.ping = current_time-obj_client.pingSet
 				global.connected = true;
 				obj_client.pingTime = 0;
+				botUI = instance_create(0,0,obj_addBotUI)
+				botUI.team = 1;
+				instance_create(0,0,obj_addBotUI)
 				show_debug_message("Client Connected")
 			}
 			else if(message_id == "Ping") {
@@ -63,7 +66,8 @@ function scr_recieved_packet() {
 				ready = buffer[? "Ready"];
 				name = buffer[? "Name"];
 				loadout = buffer[? "Loadout"];
-				scr_createPlayer(num,name,team,ready, loadout);
+				bot = buffer[? "Bot"];
+				scr_createPlayer(num,name,team,ready, loadout, bot);
 			} else if(message_id = "Comp Loadout Pick") {
 				num = buffer[? "playerDraftIndex"];
 				obj_client.loadoutPickingIndex = num;

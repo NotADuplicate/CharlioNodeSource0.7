@@ -8,6 +8,8 @@ function Bump() constructor {
 	abilityName = "bump"
 	text = "Apply knockback to nearby players and the ball towards your mouse."
 	
+	stats = new AbilityStats();
+	stats.ballPush = 5;
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

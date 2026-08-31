@@ -11,3 +11,4 @@ passives = [];
 loadoutPicked = false;
 height = 55;
 gun = "Unset"
+bot = false;
