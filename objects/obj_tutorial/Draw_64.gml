@@ -1,4 +1,6 @@
 /// @description Draw tutorial text
+if(arrowX > 0)
+	draw_arrow(arrowX,arrowY,arrowX,arrowY-32,16)
 if(surface) {
 	textScale = 1;
 	if(surface_exists(global.shopSurf))
@@ -22,10 +24,10 @@ if(surface) {
 var width = string_width(tutText)
 var height = string_height(tutText)
 draw_set_alpha(0.5);
-draw_rectangle_colour(textX-(width/2)-10,textY-10,textX+(width/2)+10,textY+(height)+10,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false);
+if(string_length(tutText) > 1)
+	draw_rectangle_colour(textX-(width/2)*textScale-18,textY-10,textX+(width/2)*textScale+18,textY+(height)*textScale+10,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false);
 draw_set_alpha(0.75);
 draw_text_transformed(textX+textOffset,textY,tutText,textScale, textScale, 0);
-draw_arrow(arrowX,arrowY,arrowX,arrowY-32,16)
 draw_set_alpha(1)
 if(stage == 3 && global.shop == false) {
 	draw_text(512,120,"Ammo:")

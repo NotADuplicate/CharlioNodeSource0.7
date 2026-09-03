@@ -1,0 +1,16 @@
+stage = 17;
+AI = instance_create(80, 80, obj_AI);
+AI.num = 3;
+AI.team = 1;
+AI.gunObj = Abilities.pistol;
+AI.ability1 = Abilities.blastOff;
+AI.ability2 = Abilities.frost;
+AI.ability3 = Abilities.healBomb;
+AI.mistakes = 0;
+global.teamNum[3] = -1;
+global.names[3] = "Bot"
+AI.enemy = ball_player;
+textScale = 1;
+remindingText = true;
+alarm[6] = 900;
+arrowX = -20;

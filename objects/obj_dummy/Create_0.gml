@@ -53,6 +53,7 @@ enraged = false;
 num = 2;
 kicking = 0;
 milked = 0;
+quickTap = 0;
 
 /*shadow = instance_create(x,y+30,obj_shadow);
 shadow.link = self;

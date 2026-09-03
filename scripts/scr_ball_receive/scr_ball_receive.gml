@@ -673,6 +673,11 @@ function scr_ball_receive() {
 			ai.team = global.teamNum[num]+2;
 			with(ai) { scr_pick_enemy(); }
 		break;
+		case "Player Disconnect":
+			num = buffer[? "Number"];
+			scr_ball_kill(num,num,spr_skull, noone)
+			global.players[num].x = -1000;
+		break;
 	}
 	}
 

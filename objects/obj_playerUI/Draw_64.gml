@@ -20,8 +20,9 @@ if(global.connected && !global.loadoutView) {
 			draw_sprite(spr_checkbox,0,xp-64,y+20);
 		}
 		if(bot) {
-			draw_text(xp-150,y-40,"BOT");
-			draw_sprite(spr_red,0,xp-150,y+10)
+			draw_text(xp-150,y-3,"BOT");
+			draw_sprite_ext(spr_red,0,xp-130,y+39,1.75,0.75,0,c_white,0.6)
+			draw_text(xp-155,y+33,"Remove");
 		}
 	} else if(obj_client.loadoutPickingIndex == num) { //pending to pick
 		draw_sprite(spr_yellow,0,xp-64,y+20);

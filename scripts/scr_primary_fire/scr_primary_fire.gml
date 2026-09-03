@@ -72,7 +72,7 @@ function scr_primary_fire(){
 				scr_ball_shoot();
 				scr_ball_ammo(1)
 				bullets--;
-				reload = 6;
+				reload = 5;
 			if(global.upgraded)
 				scr_player_move(point_direction(mouse_x,mouse_y,ball_player.x,ball_player.y),5);
 			}

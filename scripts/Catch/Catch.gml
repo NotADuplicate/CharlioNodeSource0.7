@@ -26,7 +26,8 @@ function Catch() constructor {
 	}
 	
 	static abilityReleased = function(buffer) {
-		scr_endThrow(buffer);
-		return(cooldown)
+		if(scr_endThrow(buffer)) {
+			return(cooldown)
+		}
 	}
 }

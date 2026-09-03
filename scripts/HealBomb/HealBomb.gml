@@ -21,9 +21,10 @@ function HealBomb() constructor {
 	}
 	
 	static abilityReleased = function(buffer) {
-		scr_endThrow(buffer);
-		scr_ball_ammo(ammoCost);
-		return(cooldown)
+		if(scr_endThrow(buffer)) {
+			scr_ball_ammo(ammoCost);
+			return(cooldown)
+		}
 	}
 	
 	static aiUse = function(ai, xp, yp) {

@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_endThrow(buffer) {
+	if(global.simpleThrowing && global.throwRange < 90) { return false; }
 	if(point_distance(ball_player.x,ball_player.y,mouse_x,mouse_y) < global.throwRange) {
 		end_x = mouse_x;
 		end_y = mouse_y;
@@ -14,4 +15,5 @@ function scr_endThrow(buffer) {
 		node_send(buffer, "eventName", "Throw Sprite", "Num", ball_player.num, "Sprite", -1)
 	}
 	global.throwRange = 0;
+	return true;
 }

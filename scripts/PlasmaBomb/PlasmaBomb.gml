@@ -18,8 +18,9 @@ function PlasmaBomb() constructor {
 	}
 	
 	static abilityReleased = function(buffer) {
-		scr_endThrow(buffer);
-		scr_ball_ammo(2);
-		return(cooldown)
+		if(scr_endThrow(buffer)) {
+			scr_ball_ammo(ammoCost);
+			return(cooldown)
+		}
 	}
 }

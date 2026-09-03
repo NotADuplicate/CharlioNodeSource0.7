@@ -70,7 +70,7 @@ numDefense = 4;
 numResources = 3;
 numUtility = 2;
 while(i < numMobility){
-	if(!instance_exists(obj_tutorial) || i < 2) {
+	if(!instance_exists(obj_tutorial) || i < 1) {
 		xPos = 1050 + 450/numMobility * (i+.5);
 		yPos = 4327;
 		ins = instance_create(xPos,yPos,inst_passive);
@@ -82,9 +82,10 @@ while(i < numMobility){
 	}
 	i++
 }
-while(i < numOffense+numMobility){
-	if(!instance_exists(obj_tutorial) || i < 2) {
-		xPos = 1050 + 450/numOffense * (i-numMobility+.5);
+j = 0;
+while(j < numOffense){
+	if(!instance_exists(obj_tutorial) || j < 2) {
+		xPos = 1050 + 450/numOffense * (j+.5);
 		yPos = 4445;
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
@@ -93,11 +94,13 @@ while(i < numOffense+numMobility){
 		ins.passiveIndex = i;
 		ins.maxStacks = passiveOb.maxStacks;
 	}
-	i++
+	i++;
+	j++;
 }
-while(i < numOffense+numDefense+numMobility){
-	if(!instance_exists(obj_tutorial) || i < 2+numOffense) {
-		xPos = 1050 + 450/numDefense * (i-numOffense-numMobility+.5);
+j = 0;
+while(j < numDefense){
+	if(!instance_exists(obj_tutorial) || j < 2) {
+		xPos = 1050 + 450/numDefense * (j+.5);
 		yPos = 4575;
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
@@ -106,11 +109,13 @@ while(i < numOffense+numDefense+numMobility){
 		ins.passiveIndex = i;
 		ins.maxStacks = passiveOb.maxStacks;
 	}
-	i++
+	i++;
+	j++;
 }
+j = 0;
 if(!instance_exists(obj_tutorial)) {
-	while(i < numOffense+numDefense+numResources+numMobility){
-		xPos = 1050 + 450/numResources * (i-numOffense-numDefense-numMobility+.5);
+	while(j < numResources){
+		xPos = 1050 + 450/numResources * (j+.5);
 		yPos = 4705;
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
@@ -119,9 +124,11 @@ if(!instance_exists(obj_tutorial)) {
 		ins.passiveIndex = i;
 		ins.maxStacks = passiveOb.maxStacks;
 		i++
+		j++;
 	}
-	while(i < numOffense+numDefense+numResources+numUtility+numMobility){
-		xPos = 1050 + 450/numUtility * (i-numOffense-numDefense-numResources-numMobility+.5);
+	j = 0;
+	while(j < numUtility){
+		xPos = 1050 + 450/numUtility * (j+.5);
 		yPos = 4825
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
@@ -130,5 +137,6 @@ if(!instance_exists(obj_tutorial)) {
 		ins.passiveIndex = i;
 		ins.maxStacks = passiveOb.maxStacks;
 		i++
+		j++;
 	}
 }

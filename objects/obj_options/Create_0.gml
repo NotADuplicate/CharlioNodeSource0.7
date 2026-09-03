@@ -20,8 +20,9 @@ instance_create(300,500,sound_control);
 instance_create(300,300,music_control);
 instance_create(300,400,shake_control);
 instance_create(200,300,obj_fullscreen);
-instance_create(500,300,obj_mapToggle);
-instance_create(700,300,obj_chatToggle);
+instance_create(350,300,obj_mapToggle);
+instance_create(500,300,obj_chatToggle);
+instance_create(650,300,obj_simpleThrowToggle);
 instance_create(475,550,options_disconnect);
 
 scr_makeBind(500,140, "RC", "rightkey", "rightbutton", "First Ability")

@@ -1,5 +1,6 @@
 /// @description Stage 15
 stage = 15;
+alarm[6] = 600;
 with(obj_camp) {
 	alarm[0] = 1;
 }

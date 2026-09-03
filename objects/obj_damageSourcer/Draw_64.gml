@@ -1,11 +1,13 @@
 /// @description Draw death recap
 if(global.dead && global.ballGameOver == 0) {
+	if(alpha < 1) { alpha += 0.05; }
+	if(alpha > 0) {
 	i = 0;
-	draw_set_alpha(.5)
+	draw_set_alpha(alpha)
 	xp = 550 - (array_length(damageDealers)-1)*150;
 	
 	while(i < array_length(damageDealers)) {
-		draw_sprite_ext(buy_gun, 0, xp, 300,2.5,2.5,0,c_white,1);
+		draw_sprite_ext(buy_gun, 0, xp, 300,2.5,2.5,0,c_white,alpha);
 		if(global.teamNum[damageDealers[i]] == -1)
 			draw_set_color(c_blue)
 		else
@@ -21,7 +23,7 @@ if(global.dead && global.ballGameOver == 0) {
 				draw_sprite(spr_attack,0,xp2,300);
 			else
 				draw_sprite(damageSources[i,q].icon,0,xp2,300);
-			draw_text_color(xp2,310,round(damageSources[i,q].dmg),c_red,c_red,c_red,c_red,1);
+			draw_text_color(xp2,310,round(damageSources[i,q].dmg),c_red,c_red,c_red,c_red,alpha);
 			xp2 += 40;
 			q++;
 		}
@@ -30,4 +32,7 @@ if(global.dead && global.ballGameOver == 0) {
 	}
 	
 	draw_set_alpha(1)
+	}
+} else {
+	alpha = -1.5;
 }

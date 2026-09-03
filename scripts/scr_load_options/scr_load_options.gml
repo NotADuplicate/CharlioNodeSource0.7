@@ -22,5 +22,6 @@ function scr_load_options(){
 	global.vol = ini_read_real("Save1", "soundVolume", 50);
 	global.shakeVol = ini_read_real("Save1", "screenShake", 1);
 	global.mapToggle = ini_read_real("Save1", "mapToggle", false);
-	ini_close()
+	global.simpleThrowing = ini_read_real("Save1", "simpleThrowing", true);
+	ini_close();
 }
