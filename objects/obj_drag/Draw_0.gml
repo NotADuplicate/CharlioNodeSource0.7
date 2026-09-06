@@ -11,8 +11,8 @@ if(instance_exists(ball_player)) {
 		draw_sprite_ext(spr_poison,0,x,y-120,1,1,0,c_white,poison/100);
 
 	if(collision_line(xpos,ypos,ball_player.x,ball_player.y,ball_wall,false,true) == noone)
-		draw_healthbar(x-(20*image_xscale),y-(20*image_xscale),x+(20*image_xscale),y-(16*image_xscale),(hp/maxhp)*100,c_ltgray,c_red,c_green,0,true,true);
+		draw_healthbar(x-(20*image_xscale),y-(30*image_xscale),x+(20*image_xscale),y-(28*image_xscale),(hp/maxhp)*100,c_ltgray,c_red,c_green,0,true,true);
 	else if(hp < maxhp) 
-		draw_healthbar(x-(20*image_xscale),y-(20*image_xscale),x+(20*image_xscale),y-(16*image_xscale),(hp/maxhp)*100,c_ltgray,c_red,c_green,0,true,true);
+		draw_healthbar(x-(20*image_xscale),y-(30*image_xscale),x+(20*image_xscale),y-(28*image_xscale),(hp/maxhp)*100,c_ltgray,c_red,c_green,0,true,true);
 }
 	//draw_healthbar(x-(20*image_xscale),y-90,x+(20*image_xscale),y-110,(hp/maxhp)*100,c_ltgray,c_red,c_green,0,true,true);

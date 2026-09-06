@@ -13,6 +13,7 @@ else if(global.shop && global.shopState == "Abilities") {
 	yp = camera_get_view_y(view_camera[0])+obj_shop.yp+y;
 	if(mouse_x < xp + 40 && mouse_x > xp - 40 && mouse_y < yp + 40 && mouse_y > yp-40) {
 		global.utilityClass = utility;
+		global.keepUtility = true;
 		selected = true;
 		selectionChanged = true;
 	} else if(selected) {

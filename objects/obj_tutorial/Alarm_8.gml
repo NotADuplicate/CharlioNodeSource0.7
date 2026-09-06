@@ -7,6 +7,7 @@ AI.ability1 = Abilities.blastOff;
 AI.ability2 = Abilities.frost;
 AI.ability3 = Abilities.healBomb;
 AI.mistakes = 0;
+AI.setLoadout = true;
 global.teamNum[3] = -1;
 global.names[3] = "Bot"
 AI.enemy = ball_player;

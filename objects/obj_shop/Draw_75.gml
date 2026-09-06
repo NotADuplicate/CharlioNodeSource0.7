@@ -86,8 +86,7 @@ switch(global.shopState) {
 		if(recentlyHeld > 0) {
 			draw_rectangle_color(0,80,950,700,rectColor,rectColor,rectColor,rectColor,false);
 			with(inst_utility) {
-				draw_sprite(sprite0,0,x,y-4000);
-				draw_sprite(utility.sprite,0,x,y-4000);
+				drawOnce = 2;
 			}
 			recentlyHeld--;
 		}

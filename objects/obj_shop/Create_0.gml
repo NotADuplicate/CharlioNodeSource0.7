@@ -5,6 +5,7 @@ xp2 = 1000;
 yp = 40;
 global.shop = false;
 global.shopState = "Passives";
+global.keepUtility = false; //sets to true when you do something with utility, when false it clears utility var
 tabs = true;
 depth = 1;
 

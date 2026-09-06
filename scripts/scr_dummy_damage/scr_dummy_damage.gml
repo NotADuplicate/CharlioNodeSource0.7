@@ -36,6 +36,9 @@ function scr_dummy_damage(dmg,dealer,type, icon, DoT){
 		speed = 0;
 		poisonDmg = 0;
 		alarm[3] = link.setRespawnTimer * 30; //respawn
+		if(instance_exists(obj_tutorial)) {
+			alarm[3] = 450;
+		}
 		scr_cleanse(false);
 	} else if(dummy) {
 		if(sprite_index == spr_dummy) { sprite_index = spr_dummyHit; }

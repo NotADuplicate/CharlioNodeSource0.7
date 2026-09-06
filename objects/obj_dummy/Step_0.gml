@@ -7,10 +7,10 @@ if(hp < 1) {
 	y = -50;
 	speed = 0;
 	poisonDmg = 0;
-	slayed = instance_create(0,0,slayer_marker)
+	/*slayed = instance_create(0,0,slayer_marker)
 	slayed.victim = "Dummy";
 	slayed.killer = ball_player.num
-	slayed.icon = recentDamageIcon;
+	slayed.icon = recentDamageIcon;*/
 	scr_cleanse(false);
 }
 

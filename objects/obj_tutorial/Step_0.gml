@@ -298,7 +298,7 @@ else if(stage == 16) {
 		arrowX = 50
 		arrowY = 200;
 		tutText = "Mouse over a buff to see what it does"
-		alarm[8] = 210;
+		alarm[8] = 150;
 		stage = 16.5;
 	}
 }
