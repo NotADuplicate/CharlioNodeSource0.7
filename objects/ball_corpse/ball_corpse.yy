@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"dead_cowboy",
-    "path":"sprites/dead_cowboy/dead_cowboy.yy",
+    "name":"spr_soul",
+    "path":"sprites/spr_soul/spr_soul.yy",
   },
   "spriteMaskId":null,
   "visible":true,

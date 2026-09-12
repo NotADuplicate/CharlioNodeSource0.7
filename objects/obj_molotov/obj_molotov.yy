@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_molotov",
-    "path":"sprites/spr_molotov/spr_molotov.yy",
+    "name":"naduko_molotov",
+    "path":"sprites/naduko_molotov/naduko_molotov.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -7,3 +7,4 @@ stacks = 0;
 extraStacks = 0;
 active = true;
 maxStacks = 1;
+pendingStacks = 0; //pending buy before confirm is pressed

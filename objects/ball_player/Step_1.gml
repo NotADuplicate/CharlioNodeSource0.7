@@ -120,7 +120,11 @@ if(place_meeting(x,y,ball_wall)) {
 if(stasis == false && obj_bigBall.drone != num && sleeping == 0) {
 	iterations = ceil(abs(xspd)/25)
 	repeat(iterations) {
-	    if(!place_meeting(x+xspd/iterations,y,ball_wall)) {
+		if(place_meeting(x+xspd/iterations,y,ball_diagonal_wall)) {
+			xspd /= 2;
+			yspd -= abs(xspd);
+		} 
+		if(!place_meeting(x+xspd/iterations,y,ball_wall)) {
 			if(oil <= 0)
 				x += xspd/iterations;
 			else if(abs(hspeed) < abs(xspd))
@@ -134,6 +138,13 @@ if(stasis == false && obj_bigBall.drone != num && sleeping == 0) {
 	}
 	iterations = ceil(abs(yspd)/25)
 	repeat(iterations) {
+		if(place_meeting(x,y+yspd/iterations,ball_diagonal_wall)) {
+			yspd /= 2;
+			if(!place_meeting(x+xspd/iterations,y,ball_wall)) {
+				var slideSign = sign(1000-x)
+				x += slideSign*yspd/iterations;
+			}
+		} 
 	    if(!place_meeting(x,y+yspd/iterations,ball_wall)) {
 			if(oil <= 0)
 				y += yspd/iterations;

@@ -2,8 +2,9 @@
 xp = 50;
 yp = 85;
 if(garren > 0) {
-	draw_sprite_ext(spr_purple,0,xp,60,2,2,0,c_white,1)
-	draw_healthbar(xp-15,yp+10,xp+15,yp+15,garren/1.6,c_dkgray,c_white,c_white,0,true,true)
+	draw_sprite_ext(beholder_idle,0,xp,yp,0.6,0.6,0,c_white,0.75);
+	draw_healthbar(xp-20,yp+30,xp+20,yp+35,garren/1.6,c_dkgray,c_white,c_white,0,true,true)
+	scr_hover_UI(xp,yp,"All Jungle buffs\nEnemy towers take \ndouble damage",self,"hoverJungle",-1, -70)
 	xp += 80;
 }
 else {

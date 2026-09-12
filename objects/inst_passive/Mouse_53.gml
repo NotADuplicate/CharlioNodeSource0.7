@@ -23,19 +23,25 @@ else if(global.shop && global.shopState == "Passives" && active) {
 		
 		if(selected == 0) {
 			selected = 1
-		}
-		else if(selected == 1 && global.leveled > 0) {
+		} else if(selected == 1 && stacks+extraStacks+pendingStacks < maxStacks) {
+			if(global.leveled <= 0) {
+				global.insufficientLevels = 45;
+				return;
+			}
 			global.levelSpent = 12;
-			
-			with(ball_game) {
-				node_send(buffer,"eventName","Loadout","Num",ball_player.num,"Slot",5,"Ability",-1, "PassiveIndex", other.passiveIndex)
-			}
-			if(global.testMode) {
-				global.leveled--;
-			}
 			audio_play_sound(snd_buy,1,false)
-			if(stacks+extraStacks >= maxStacks) {
-				active = false;
+			
+			if(global.instantConfirm) {
+				with(ball_game) {
+					node_send(buffer,"eventName","Loadout","Num",ball_player.num,"Slot",5,"Ability",-1, "PassiveIndex", other.passiveIndex)
+				}
+				if(global.testMode) {
+					global.leveled--;
+				}
+			} else {
+				global.pendingLevels++;
+				global.leveled--;
+				pendingStacks++;
 			}
 		}
 		else if(selected == 1) {

@@ -56,11 +56,11 @@ function scr_ball_kill(deadNum,killer,icon,assister){
 					scr_ball_sound(snd_monsterBuff,ball_cam.x,ball_cam.y);
 				}
 				if(global.gameMode != "Royale" && nameNum == obj_drag.nameNum) { //dragon
-					if(instance_exists(slayer_marker) == false || slayer_marker.victim != "Dragon") {
+					if(instance_exists(slayer_marker) == false || slayer_marker.victim != "Beholder") {
 						obj_drag.dead = true;
 						ins = instance_create(0,0,slayer_marker);
 						ins.killer = killer
-						ins.victim = "Dragon";
+						ins.victim = "Beholder";
 					}
 				}
 			}

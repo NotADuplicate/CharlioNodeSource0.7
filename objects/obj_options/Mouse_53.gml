@@ -10,8 +10,10 @@ if(global.options) {
 		else if(mouse_x < relativeX + 630) {
 			global.optionState = "Audio";
 		}
-		else {
+		else if(mouse_x < relativeX + 900) {
 			global.optionState = "Controls";
+		} else {
+			global.options = false;
 		}
 	}
 	mouseX = mouse_x - camera_get_view_x(view_camera[0]);

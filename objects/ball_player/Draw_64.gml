@@ -22,6 +22,8 @@ if(global.ballGameOver == 0 && global.UI) {
 			draw_sprite_ext(spr_levelBar,0,50,50,0.4,0.5,0,c_white,0.8)
 			draw_healthbar(50,45,221,53,100*(global.xp/global.xpMax),c_black,#FDD354,#FDD354,0,true,true)
 			draw_sprite_ext(spr_levelDiamond,0,35,35,0.3,0.3,0,c_white,0.8);
+			draw_sprite_ext(spr_levelBar,0,12,60,0.11,0.55,0,c_white,1);
+			draw_text_transformed_colour(35,51,"Levels",0.8,0.8,0,#FDD354,#FDD354,#FDD354,#FDD354,1)
 			draw_text_transformed_colour(35,21,global.leveled,1.5,1.5,0,#FDD354,#FDD354,#FDD354,#FDD354,1)
 		}
 	}

@@ -33,7 +33,7 @@ while(i < 16) {
 	numGuns = 7;
 	while(i < numGuns){
 		xPos = 1600 + (i mod 4)*70
-		yPos = 4690 + 70*floor(i/4)
+		yPos = 4640 + 70*floor(i/4)
 		ins = instance_create(xPos,yPos,inst_atk);
 		ins.atk = Abilities.gun[i];
 		ins.spr = scr_gun_sprite(Abilities.gun[i])
@@ -56,7 +56,7 @@ else {
 	numGuns = instance_exists(obj_tutorial) ? 6 : array_length(Abilities.gun);
 	while(i < numGuns){
 		xPos = 1600 + (i mod 4)*70
-		yPos = 4690 + 70*floor(i/4)
+		yPos = 4640 + 70*floor(i/4)
 		ins = instance_create(xPos,yPos,inst_atk);
 		ins.atk = Abilities.gun[i];
 		ins.spr = scr_gun_sprite(Abilities.gun[i])

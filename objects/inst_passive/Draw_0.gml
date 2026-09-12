@@ -41,6 +41,9 @@ if(room == room1) {
 		else if(stacks+extraStacks > i) {
 			draw_rectangle_color(spacingX-4,yp+35,spacingX+4, yp+43, c_yellow, c_yellow, c_yellow, c_yellow, false);
 		}
+		else if(stacks+extraStacks+pendingStacks > i) {
+			draw_rectangle_color(spacingX-4,yp+35,spacingX+4, yp+43, c_yellow, c_yellow, c_yellow, c_yellow, false);
+		}
 		else {
 			draw_rectangle_color(spacingX-4,yp+35,spacingX+4, yp+43, c_white, c_white, c_white, c_white, false);
 		}

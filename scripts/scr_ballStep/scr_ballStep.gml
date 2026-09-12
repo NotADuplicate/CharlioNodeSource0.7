@@ -26,6 +26,40 @@ function ball_hits_wall(_x, _y) {
 for (var i = 0; i < substeps; i++) {
     var next_x = x + step_x;
     var next_y = y + step_y;
+	
+	var diagonal_wall = instance_place(
+	    next_x,
+	    next_y,
+	    ball_diagonal_wall
+	);
+
+	if (diagonal_wall != noone) {
+	    hit = true;
+
+	    var swapHolding;
+		if(diagonal_wall.wall_angle == 45) {
+			swapHolding = step_x;
+			step_x = step_y*0.7;
+			step_y = swapHolding*0.7;
+		} else {
+			swapHolding = step_x;
+			step_x = step_y*-0.7;
+			step_y = swapHolding*-0.7;
+		}
+	    var bounce_x = x + step_x;
+	    var bounce_y = y + step_y;
+
+	    // Immediately move away from the wall.
+	    if (
+	        !place_meeting(bounce_x, bounce_y, ball_diagonal_wall)
+	        && !ball_hits_wall(bounce_x, bounce_y)
+	    ) {
+	        x = bounce_x;
+	        y = bounce_y;
+	    }
+
+	    continue;
+	}
 
     if (!ball_hits_wall(next_x, next_y)) {
         x = next_x;
@@ -102,4 +136,28 @@ if (oil == 0) {
         yspd = 0;
     }
 }
+}
+
+function reflect_from_wall(_vx, _vy, _wall_angle, _restitution) {
+    // Direction perpendicular to the wall
+    var normal_angle = _wall_angle + 90;
+    var nx = lengthdir_x(1, normal_angle);
+    var ny = lengthdir_y(1, normal_angle);
+
+    var velocity_into_normal = _vx * nx + _vy * ny;
+
+    // Only bounce if traveling into the wall.
+    // The normal's direction is arbitrary, so orient it toward the velocity.
+    if (velocity_into_normal > 0) {
+        nx = -nx;
+        ny = -ny;
+        velocity_into_normal = -velocity_into_normal;
+    }
+
+    var multiplier = (1 + _restitution) * velocity_into_normal;
+
+    return [
+        _vx - multiplier * nx,
+        _vy - multiplier * ny
+    ];
 }

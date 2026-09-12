@@ -69,7 +69,7 @@ var stats = [
 	[p.towerDamage,10,spr_light_spot,"TOWER DMG"],
 	[p.healingDealt,95,spr_heal,"HEALING"],
 	[p.damageBlocked,200,spr_sponge,"BLOCKED"],
-	[p.soulsCollected,2,dead_cowboy,"SOULS"],
+	[p.soulsCollected,2,spr_soul,"SOULS COLLECTED"],
 	[p.selfDamageBlocked,400,spr_defense,"SELF BLOCK"]
 ];
 var leaders = array_create(7,0);

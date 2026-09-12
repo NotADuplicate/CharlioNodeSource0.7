@@ -33,7 +33,7 @@ if(stage == 3) {
 		//obj_shop.wipe = true;
 		textY = 100
 		textX = 300
-		tutText = "Try out a few new guns"
+		tutText = "Try using a few guns on the dummy"
 	}
 	else {
 		surface = false;
@@ -286,7 +286,7 @@ else if(stage == 15) {
 	}
 	
 	nearestMonster = instance_nearest(ball_player.x,ball_player.y,obj_monster);
-	if(point_distance(ball_player.x,ball_player.y, nearestMonster.x, nearestMonster.y) < 400) {
+	if(point_distance(ball_player.x,ball_player.y, nearestMonster.x, nearestMonster.y) < 350) {
 		stage = 16;
 	}
 }
@@ -298,8 +298,13 @@ else if(stage == 16) {
 		arrowX = 50
 		arrowY = 200;
 		tutText = "Mouse over a buff to see what it does"
-		alarm[8] = 150;
+		alarm[8] = 400;
 		stage = 16.5;
+	}
+} else if(stage == 16.5) {
+	if(obj_junglePass.hoverAmmo > 3 || obj_junglePass.hoverResistance > 3 || obj_junglePass.hoverDefense > 3 || obj_junglePass.hoverDmg > 3 || obj_junglePass.hoverPwr > 3 || obj_junglePass.hoverSpd > 3 || obj_junglePass.hoverJungle > 3) {
+		alarm[8] = 1;
+		stage = 17;
 	}
 }
 else if(stage == 17) {

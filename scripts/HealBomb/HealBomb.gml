@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function HealBomb() constructor {
-	sprite = spr_healthBomb;
+	sprite = naduko_healBomb;
 	healing = 50;
 	ammoCost = 4;
 	cooldown = 14; 

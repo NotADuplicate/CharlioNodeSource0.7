@@ -18,7 +18,7 @@ function scr_gun_text(gun){
 			return("Fire a grenade when you release left click. \n The longer you held click the longer the grenade takes to explode ")
 		break;
 		case obj_minigun:
-			return("Hold down click to rev up and then fire a stream of bullets. \nThe longer you shoot the more ammo it consumes ")
+			return("Hold down click to rev up and then fire a stream of bullets.")
 		break;
 		case obj_boomerang:
 			return("Does more damage on the way back. Takes a lot of ammo but catching it refunds the ammo.")

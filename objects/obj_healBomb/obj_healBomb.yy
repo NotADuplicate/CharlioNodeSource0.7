@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_healthBomb",
-    "path":"sprites/spr_healthBomb/spr_healthBomb.yy",
+    "name":"naduko_healBomb",
+    "path":"sprites/naduko_healBomb/naduko_healBomb.yy",
   },
   "spriteMaskId":null,
   "visible":true,

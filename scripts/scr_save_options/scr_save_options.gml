@@ -22,5 +22,7 @@ function scr_save_options(){
 	ini_write_real("Save1", "soundVolume", global.vol);
 	ini_write_real("Save1", "screenShake", global.shakeVol);
 	ini_write_real("Save1","mapToggle",global.mapToggle);
+	ini_write_real("Save1", "simpleThrowing", global.simpleThrowing);
+	ini_write_real("Save1", "instantShopConfirm", global.instantConfirm);
 	ini_close()
 }

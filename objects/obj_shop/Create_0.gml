@@ -8,6 +8,7 @@ global.shopState = "Passives";
 global.keepUtility = false; //sets to true when you do something with utility, when false it clears utility var
 tabs = true;
 depth = 1;
+global.insufficientLevels = 0;
 
 firstDraw = true;
 wipe = true;
@@ -35,6 +36,7 @@ instance_create(890,630,select_space)
 instance_create(0,0,obj_utilityHeld);
 lastUtilityClass = noone;
 lastFreeSecond = -1;
+global.pendingLevels = 0;
 /*instance_create(300,500,sound_control);
 instance_create(300,400,shake_control);
 instance_create(200,300,obj_fullscreen);

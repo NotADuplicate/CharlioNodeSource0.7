@@ -18,10 +18,11 @@ function scr_load_options(){
 	global.shopKey = ini_read_real("Save1","shopKey",ord("P"))
 	global.binded2Right = 0;//ini_read_real("Save1","binded2Right",0);
 	global.rightBinded = "right"//ini_read_string("Save1","rightBinded","right");
-	global.musVolume = ini_read_real("Save1", "musicVolume", 50);
+	global.musVolume = ini_read_real("Save1", "musicVolume", 0.50);
 	global.vol = ini_read_real("Save1", "soundVolume", 50);
 	global.shakeVol = ini_read_real("Save1", "screenShake", 1);
-	global.mapToggle = ini_read_real("Save1", "mapToggle", false);
+	global.mapToggle = ini_read_real("Save1", "mapToggle", true);
 	global.simpleThrowing = ini_read_real("Save1", "simpleThrowing", true);
+	global.instantConfirm = ini_read_real("Save1", "instantShopConfirm", false);
 	ini_close();
 }

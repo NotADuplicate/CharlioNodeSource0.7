@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Molotov() constructor {
-	sprite = spr_molotov;
+	sprite = naduko_molotov;
 	dps = 60;
 	ammoCost = 2;
 	duration = 3;

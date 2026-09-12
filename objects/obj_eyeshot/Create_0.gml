@@ -4,3 +4,4 @@ alarm[0] = 60;
 image_xscale = 3;
 image_yscale = 3;
 depth = obj_drag.depth-1;
+dmg = 30;

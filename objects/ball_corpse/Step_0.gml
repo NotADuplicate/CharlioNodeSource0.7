@@ -3,7 +3,7 @@ if(index > 0) {
 	sprite_index = spr_reviveBlue;
 	image_index = round(index/5);
 }
-else {
+else if(index < 0){
 	sprite_index = spr_reviveBlue;
 	image_index = round(abs(index/5));
 }
@@ -29,11 +29,13 @@ if(abs(index) > 100) {
 	}
 	instance_destroy();
 }
-index -= sign(index)
+if(abs(index) > 1) {
+	index -= sign(index) 
+} else { index = 0; }
 
 timer -= delta_time/1000000;
-if(timer < 2) {
-	image_alpha = timer/2;
+if(timer < 4) {
+	image_alpha = timer/4;
 }
 if(timer < 0) {
 	instance_destroy();

@@ -10,10 +10,12 @@ if(height > 0) {
 surface_set_target(global.optionsSurf);
 
 if(firstDraw) {
-	draw_rectangle_color(0,0,950,90,tabsColor,tabsColor,tabsColor,tabsColor,false);
-	draw_text_transformed(140,30,"General",2,2,0);
-	draw_text_transformed(810,30,"Controls",2,2,0);
-	draw_text_transformed(475,30,"Audio",2,2,0);
+	draw_rectangle_color(0,0,900,90,tabsColor,tabsColor,tabsColor,tabsColor,false);
+	draw_rectangle_color(900,0,950,90,escapeColor,escapeColor,escapeColor,escapeColor,false);
+	draw_text_transformed(130,30,"General",2,2,0);
+	draw_text_transformed(780,30,"Controls",2,2,0);
+	draw_text_transformed(460,30,"Audio",2,2,0);
+	draw_text_transformed(920,15,"X",3,3,0)
 	//firstDraw = false;
 }
 
@@ -31,7 +33,7 @@ switch(global.optionState) {
 		draw_rectangle_color(315,90,630,110,tabsColor,tabsColor,tabsColor,tabsColor,false);
 	break;
 	case "Controls":
-		draw_rectangle_color(630,90,950,110,tabsColor,tabsColor,tabsColor,tabsColor,false);
+		draw_rectangle_color(630,90,900,110,tabsColor,tabsColor,tabsColor,tabsColor,false);
 	break;
 }
 

@@ -6,6 +6,17 @@ if(throwTime == 0) {
 		y -= vspeed;
 		collided = true;
 	}
+	if(place_meeting(x+hspeed,y,ball_diagonal_wall)) {
+		x-= hspeed;
+	    hspeed *= 0.4;
+		vspeed -= abs(hspeed); // TODO, change logic if added sloped down walls
+	}
+	if(place_meeting(x+hspeed,y,ball_diagonal_wall)) {
+		y -= vspeed;
+	    vspeed *= 0.4;
+		slideSign = x < 1000 ? 1 : -1;
+		hspeed += vspeed*slideSign; // TODO, change logic if added sloped down walls
+	}
 	if(place_meeting(x+hspeed,y,ball_wall)) {
 	    hspeed = 0;
 		collided = true;
@@ -14,9 +25,9 @@ if(throwTime == 0) {
 	    vspeed = 0;
 		collided = true;
 	}
-	iterations = ceil(speed/30)
+	/*iterations = ceil(speed/30)
 	i = 0
-	/*repeat(iterations) {
+	repeat(iterations) {
 		i += 1/iterations;
 		if(!collided && place_meeting(x-hspeed*i,y-vspeed*i,ball_wall)) {
 			x -= hspeed*i;

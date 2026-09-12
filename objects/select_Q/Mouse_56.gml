@@ -5,29 +5,24 @@ if(room != room1 && global.shop && global.shopState == "Abilities") {
 	
 	//drag other slot to swap
 	if(mouse_x < xp + 18 && mouse_x > xp - 18 && mouse_y < yp + 18 && mouse_y > yp-18) {
-		if(global.utilityClass = "") {
-			global.utilityClass = variable_global_get(abilityVar);
+		if(global.utilityClass == "") {
+			if(variable_global_get(abilityVar) != 0) {
+				global.utilityClass = variable_global_get(abilityVar);
+			}
 			global.keepUtility = true;
 			clicked = false;
 			return;
 		}
 		if(global.utilitySwapHeld || clicked) {
 			swappedSlot = 0;
+			global.utilityHeld = false;
 			if(global.utilityClass == global.right) {
-				//global.right = variable_global_get(abilityVar);
-				//variable_global_set(abilityVar, global.utilityClass);
 				swappedSlot = 1;
 			} else if(global.utilityClass == global.space) {
-				//global.space = variable_global_get(abilityVar);
-				//variable_global_set(abilityVar, global.utilityClass);
 				swappedSlot = 3;
 			} else if(global.utilityClass == global.R) {
-				//global.R = variable_global_get(abilityVar);
-				//variable_global_set(abilityVar, global.utilityClass);
 				swappedSlot = 4;
 			} else if(global.utilityClass == global.Q) {
-				//global.Q = variable_global_get(abilityVar);
-				//variable_global_set(abilityVar, global.utilityClass);
 				swappedSlot = 2;
 			}
 			if(swappedSlot == slot) { 
@@ -49,6 +44,10 @@ if(room != room1 && global.shop && global.shopState == "Abilities") {
 		if(clicked) {
 			global.keepUtility = true;
 			if(variable_global_get(abilityVar) == 0) {
+				if(global.leveled <= 0) {
+					global.insufficientLevels = 45;
+					return;
+				}
 				if(global.testMode)
 					global.leveled--;
 			} else {
@@ -58,7 +57,6 @@ if(room != room1 && global.shop && global.shopState == "Abilities") {
 			if(global.leveled < 0) {
 				global.leveled = 0;
 			} else {
-				//variable_global_set(abilityVar, global.utilityClass);
 				with(ball_game) {
 					node_send(buffer,"eventName","Loadout","Num",ball_player.num,"Slot",other.slot,"Ability",global.utilityClass.abilityIndex)
 				}

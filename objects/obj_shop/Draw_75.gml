@@ -66,6 +66,19 @@ else {
 		borderColor, borderColor,
 		false
 	);
+	draw_rectangle_color(600,600,940,650,rectColor,rectColor,rectColor,rectColor,false);
+	if(!global.instantConfirm && global.pendingLevels > 0) {
+		draw_rectangle_colour(800,600,940,650,#005000,#005000,#005000,#005000,false);
+		draw_text(870,620,"Confirm");
+		draw_rectangle_colour(600,600,740,650,#a00000,#a00000,#a00000,#a00000,false);
+		draw_text(670,620,"Cancel")
+	}
+	if(global.insufficientLevels > 0) {
+		draw_rectangle_color(600,550,940,600,rectColor,rectColor,rectColor,rectColor,false);
+		if(global.insufficientLevels > 1)
+			draw_text_colour(770,570,"Insufficient Levels!",c_red,c_red,c_red,c_red,global.insufficientLevels/10)
+		global.insufficientLevels -= 0.5;
+	}
 }
 
 	draw_text_transformed(290,20,"Abilities",2,2,0);
@@ -112,7 +125,12 @@ switch(global.shopState) {
 			textY += 25;
 			draw_text_transformed(730,textY,global.utilityClass.ammoCost,2,2,0)
 			draw_text_transformed(870,textY,string(global.utilityClass.cooldown) + "s",2,2,0)
-			draw_text(795,565,"EQUIP TO SLOT")
+			if(global.insufficientLevels > 1) {
+				draw_text_colour(795,565,"Insufficient Levels!",c_red,c_red,c_red,c_red,global.insufficientLevels/10)
+				global.insufficientLevels -= 0.5;
+			} else {
+				draw_text(795,565,"EQUIP TO SLOT")
+			}
 		}
 
 		/*if(global.free == 0)
