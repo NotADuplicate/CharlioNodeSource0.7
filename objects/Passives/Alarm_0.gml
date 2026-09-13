@@ -1,7 +1,7 @@
 //Set list
-list[0] = moreKb;
+list[0] = moveSpd;
 list[1] = bushHop
-list[2] = moveSpd; //mobility
+list[2] = moreKb; //mobility
 list[3] = attackDamage;
 list[4] = abilityDamage;
 list[5] = fireRate;

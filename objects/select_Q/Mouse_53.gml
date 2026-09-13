@@ -13,7 +13,7 @@ if(room == room1) { //instant buy for rumble mode
 else if(global.shop && global.shopState == "Abilities") {
 	xp = camera_get_view_x(view_camera[0])+obj_shop.xp+x;
 	yp = camera_get_view_y(view_camera[0])+obj_shop.yp+y;
-	if(mouse_x < xp + 16 && mouse_x > xp - 16 && mouse_y < yp + 16 && mouse_y > yp-16) {
+	if(mouse_x < xp + 20 && mouse_x > xp - 20 && mouse_y < yp + 20 && mouse_y > yp-20) {
 		clicked = true;
 	}
 }

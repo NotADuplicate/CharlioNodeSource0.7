@@ -1,6 +1,6 @@
 /// @description Hook to enemies
-if(other != link && hooked = 0 && ready) {
-	if(other.spellShield) 
+if(ready) {//other != link && hooked = 0 && ready) {
+	if(other.spellShield > 0) 
 		instance_destroy();
 	hooked = ball_player;
 	alarm[0] = 60;

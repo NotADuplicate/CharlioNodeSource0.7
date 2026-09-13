@@ -314,6 +314,7 @@ else if(stage == 17) {
 		tutText = "";
 		remindingText = false;
 	}
+	obj_minimap.alarm[2] = 1;
 	arrowX = -100
 	arrowY = -100
 }

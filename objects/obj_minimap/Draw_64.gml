@@ -12,25 +12,6 @@ if(global.mapShowing) {
 		alarm[0] = 1;
 		alarm[1] = 1;
 	} else {
-		if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 14) {
-			/*if(failTimer == 0) {
-				if(position_meeting(ball_player.x, ball_player.y, obj_regen)) {
-					if(global.teleportTimer > 0)
-						draw_text(700, 445, string(round(global.teleportTimer)) + " seconds until teleport is available");
-					else 
-						draw_text(700, 445, "Press T on the minimap to teleport anywhere.");
-				}
-				else {
-					if(global.teleportTimer > 0)
-						draw_text(700, 445, string(round(global.teleportTimer)) + " seconds until teleport is available");
-					else
-						draw_text(700, 445, "You must be at spawn to teleport");
-				}
-			} else {
-				failTimer--;
-				draw_text_color(700, 445, failMessage,c_red,c_red,c_red,c_red,1);
-			}*/
-		}
 		draw_surface(minimap,xp1,yp1)
 
 		playerx = obj_player.x*scale + xp1+1
@@ -49,17 +30,6 @@ if(global.mapShowing) {
 				draw_rectangle_color(playerx-2,playery-2,playerx+2,playery+2,color,color,color,color,false)
 			}
 		}
-		
-		// TODO remove or keep
-		/*for (var i = 0; i < instance_number(obj_AI); i++) {
-		    var inst = instance_find(obj_AI, i);
-			if(inst.position_known) {
-				playerx = inst.x*scale + xp1+1
-				playery = inst.y*scale + yp1+1
-				color = global.teamNum[inst.num] == 1 ? c_red : c_blue;
-				draw_rectangle_color(playerx-2,playery-2,playerx+2,playery+2,color,color,color,color,false)
-			}
-		}*/
 		
 		for (var i = 0; i < instance_number(obj_turret); i++) {
 		    var inst = instance_find(obj_turret, i);

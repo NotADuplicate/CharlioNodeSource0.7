@@ -21,7 +21,7 @@ draw_line(left+230,y+29,left+230,y+92);
 draw_set_halign(fa_left);
 draw_set_color(nameCol);
 var nameScale = min(2,(mvp ? 225 : 280)/max(1,string_width(global.names[num])));
-draw_text_transformed(left+14,y-9,global.names[num],nameScale,nameScale,0);
+draw_text_transformed(left+14,y-12,global.names[num],nameScale,nameScale,0);
 if(mvp) {
 	draw_set_color(gold);
 	draw_text(left+248,y-5,"MVP");

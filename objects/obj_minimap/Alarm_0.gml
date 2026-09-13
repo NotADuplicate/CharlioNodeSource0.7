@@ -32,7 +32,7 @@ for (var i = 0; i < instance_number(obj_cover); i++){
 	y1 = (inst.y-(20*inst.image_yscale))*scale
 	x2 = (inst.x+(20*inst.image_xscale))*scale
 	y2 = (inst.y+(20*inst.image_yscale))*scale
-	draw_rectangle_color(x1,y1,x2,y2,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+	draw_rectangle_color(x1,y1,x2,y2,#d0e0d0,#d0e0d0,#d0e0d0,#d0e0d0,false)
 }
 
 surface_reset_target()

@@ -29,8 +29,5 @@ if(string_length(tutText) > 1)
 draw_set_alpha(0.75);
 draw_text_transformed(textX+textOffset,textY,tutText,textScale, textScale, 0);
 draw_set_alpha(1)
-if(stage == 3 && global.shop == false) {
-	draw_text(512,120,"Ammo:")
-}
 if(surface)
 	surface_reset_target()

@@ -22,5 +22,6 @@ if(target == obj_bigBall && point_distance(x,y, targetX, targetY) < beamLength) 
 		shootingX *= 4;
 		shootingX += x;
 	}
-	scr_ball_move(point_direction(x,y,shootingX, shootingY),3,0)
-}
+	scr_ball_move(point_direction(x,y,shootingX, shootingY),3*charge,0)
+	charge += 0.2;
+} else { charge = 0; }

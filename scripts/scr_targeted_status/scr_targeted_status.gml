@@ -3,11 +3,16 @@
 function scr_targeted_status(status,target,user){
 	switch(status) {
 		case 1: //hook
+		show_debug_message("Hooking")
+		show_debug_message(target);
+		show_debug_message(user);
 			with(obj_hook) { 
 				if(num == target) {
+					show_debug_message("Found hook")
 					hooked = global.players[user]
 					alarm[0] = 60;
 					if(ball_player.num = user) {
+						show_debug_message("Hooking player")
 						hooked = ball_player;
 						alarm[4] = 1;
 					}
