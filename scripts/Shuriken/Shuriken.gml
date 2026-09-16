@@ -8,6 +8,7 @@ function Shuriken() constructor {
 	name = "Shuriken"
 	abilityName = "shuriken"
 	text = "Shoot a shuriken which deals " + string(damage) + " damage. If you hit you refund the ammo and reset the cooldown to 1 second.";
+	tooltip = "No is certain how shuriken was added to the game as the records were destroyed by ninjas."
 	
 	stats = new AbilityStats();
 	stats.damage = 3;

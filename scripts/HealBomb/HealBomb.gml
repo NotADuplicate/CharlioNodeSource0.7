@@ -8,6 +8,7 @@ function HealBomb() constructor {
 	name = "Heal Bomb"
 	abilityName = "healBomb"
 	text = "Throw a bomb which heals all players by " + string(healing) + " health when it lands";
+	tooltip = "Heal bomb heals everyone, even your enemies. Never let them know your next move."
 	
 	stats = new AbilityStats();
 	stats.healing = 4;

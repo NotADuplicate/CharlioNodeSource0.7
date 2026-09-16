@@ -8,7 +8,7 @@ function Rocket() constructor {
 	name = "Rocket"
 	abilityName = "rocket"
 	text = "Shoot a rocket which deals 40 damage on impact and explodes. If you are hit by the explosion then your cooldown is reset"
-	
+	tooltip = "Try rocket jumping! How bad could it be?"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

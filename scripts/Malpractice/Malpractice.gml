@@ -8,7 +8,7 @@ function Malpractice() constructor {
 	name = "Malpractice"
 	abilityName = "malpractice"
 	text = "Any healing to other players reduces this ability's cooldown. Shoot a cone of projectiles that bleed enemies for 5 seconds."
-	
+	tooltip = "Malpractice does not charge from self healing, but that doesn't mean you shouldn't seek therapy."
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

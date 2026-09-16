@@ -9,6 +9,7 @@ function Bloodshot() constructor {
 	name = "Blood Shot"
 	abilityName = "bloodshot"
 	text = "Fire a projectile which deals " + string(damage) + " damage. Using this ability makes you take " + string(selfDamage) + " damage"
+	tooltip = "Bloodshot should not be used by people who are pregnant or have heart conditions"
 	
 	stats = new AbilityStats();
 	stats.damage = 5;

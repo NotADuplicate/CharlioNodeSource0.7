@@ -8,7 +8,7 @@ function JunglePotion() constructor {
 	name = "Jungle Potion"
 	abilityName = "junglePotion"
 	text = "Throw a potion which gives nearby allies all jungle buffs for " + string(duration) + " seconds.";
-	
+	tooltip = "Some of the best music of the 90s was written on Jungle Potion benders"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

@@ -7,7 +7,7 @@ function Wall() constructor {
 	name = "Wall"
 	abilityName = "wall"
 	text = "Places a breakable wall where your cursor is"
-	
+	tooltip = "Wall was one of humanities earliest inventions"
 	
 	static abilityPressed = function(buffer) {
 		if(point_distance(ball_player.x,ball_player.y,mouse_x,mouse_y) < 900 && global.ammo >= ammoCost) {

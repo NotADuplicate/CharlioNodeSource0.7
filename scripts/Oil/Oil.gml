@@ -8,6 +8,7 @@ function Oil() constructor {
 	name = "Oil"
 	abilityName = "oil"
 	text = "Throw an oil can that covers enemies in oil for " + string(duration) + " seconds. Oiled players are slippery and take triple damage from plasma and burning."
+	tooltip = "Step 1: Cover Opponent in oil. \nStep 2: Wait for it to rain"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

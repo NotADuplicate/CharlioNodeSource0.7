@@ -7,7 +7,7 @@ function Kick() constructor {
 	name = "Dribble"
 	abilityName = "dribble"
 	text = "Apply force to yourself, nearby players, and the ball towards your mouse. If used on the ball the cooldown is only 2 seconds unless you exit range of the ball.";
-	
+	tooltip = "Dribble was the first ability added to the sport Charlio Ball is based on"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

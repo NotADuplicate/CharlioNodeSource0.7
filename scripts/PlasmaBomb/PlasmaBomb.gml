@@ -10,6 +10,7 @@ function PlasmaBomb() constructor {
 	name = "Plasma Bomb"
 	abilityName = "plasmaBomb"
 	text = "Throw a bomb which explodes in a small radius dealing " + string(damage) + " damage and applying plasma for " + string(duration) + " seconds.";
+	tooltip = "Plasma, the fourth state of matter, hurts."
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

@@ -1,30 +1,4 @@
 function scr_ball_approach(){
-/*if(collision_line(obj_bigBall.x + (pushPos.x - obj_bigBall.x) * 3, obj_bigBall.y + (pushPos.y - obj_bigBall.y) * 3, obj_bigBall.x, obj_bigBall.y, ball_wall, false, false) != noone) {
-		show_debug_message("Walk through ball");
-		pushDir = point_direction(obj_bigBall.x,obj_bigBall.y,pushPos.x,pushPos.y);
-		i = 1;
-		while(collision_line(pushPos.x, pushPos.y, obj_bigBall.x, obj_bigBall.y, ball_wall, false, false) != noone && i < 10) {
-			newX = obj_bigBall.x + lengthdir_x(30,pushDir - i * 10)
-			newY = obj_bigBall.y + lengthdir_y(30,pushDir - i * 10)
-			if(collision_line(newX, newY, obj_bigBall.x, obj_bigBall.y, ball_wall, false, false) == noone) {
-				pushPos.x = newX;
-				pushPos.y = newY;
-			} else {
-				newX = obj_bigBall.x + lengthdir_x(30,pushDir + i * 10)
-				newY = obj_bigBall.y + lengthdir_y(30,pushDir + i * 10)
-				if(collision_line(newX, newY, obj_bigBall.x, obj_bigBall.y, ball_wall, false, false) == noone) {
-					pushPos.x = newX;
-					pushPos.y = newY;
-				}
-			}
-			i++;
-		}
-		
-		//if you need to get behind a wall to push ball, just walk into it to jostle it
-		targetX = obj_bigBall.x + (pushPos.x-obj_bigBall.x) /3;
-		targetY = obj_bigBall.y + (pushPos.y-obj_bigBall.y) /3;
-	}
-	else*/ 
 if(collision_line(obj_bigBall.x + (pushPos.x - obj_bigBall.x) * 3, obj_bigBall.y + (pushPos.y - obj_bigBall.y) * 3, obj_bigBall.x, obj_bigBall.y, ball_wall, false, false) != noone) {
 	dir = point_direction(obj_bigBall.x,obj_bigBall.y,pushPos.x,pushPos.y);
 	i = 1;
@@ -45,6 +19,7 @@ if(collision_line(obj_bigBall.x + (pushPos.x - obj_bigBall.x) * 3, obj_bigBall.y
 				done = true;
 			}
 		}
+		i++;
 	}
 }
 if(!walkingAround && collision_line(obj_bigBall.x + (pushPos.x-obj_bigBall.x)*4, obj_bigBall.y + (pushPos.y-obj_bigBall.y)*4, x, y, obj_bigBall, false, false) != noone) { 
@@ -106,10 +81,12 @@ if(!walkingAround && collision_line(obj_bigBall.x + (pushPos.x-obj_bigBall.x)*4,
 		if(walkingAround) {
 			endX = obj_bigBall.x + (pushPos.x - obj_bigBall.x) * 4;
 			endY = obj_bigBall.y + (pushPos.y - obj_bigBall.y) * 4;
-			while(position_meeting(endX,endY,ball_wall)) {
+			i = 0
+			while(position_meeting(endX,endY,ball_wall) && i < 5) {
 				show_debug_message("Moving endx out of wall")
 				endX += (obj_bigBall.x - endX)/2;
 				endY += (obj_bigBall.y - endY)/2;
+				i++;
 			}
 			if(point_distance(x,y,targetX, targetY) < 35) {
 				if(finishWalkingAround) {

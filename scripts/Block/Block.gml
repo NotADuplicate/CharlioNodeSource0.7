@@ -8,6 +8,7 @@ function Block() constructor {
 	name = "Block"
 	abilityName = "block"
 	text = "Become invincible for " + string(duration) + " seconds"
+	tooltip = "Despite the existence of 'Block' there are no cubes in the game."
 	
 	stats = new AbilityStats();
 	stats.effectiveness = 3;

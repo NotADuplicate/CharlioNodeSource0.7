@@ -6,8 +6,8 @@ if(stage == 0 && obj_dummy.hp > 200) {
 	remindingText = true;
 	reminderTimer = 450;
 	alarm[6] = 450;
-		arrowX = 905;
-		arrowY = 200;
+	arrowX = 905;
+	arrowY = 200;
 }
 else if(stage == 1 && global.shop) {
 	tutText = "Click on a gun to select your new primary fire. \n Press P to exit the shop and test it."
@@ -121,7 +121,7 @@ if(stage == 6) {
 		textY = 400
 		textX = 300
 		tutText = "Fill up your ability slots. Each ability costs a level"
-		arrowX = 55;
+		arrowX = 35;
 		arrowY = 100;
 		if(global.leveled < 4) {
 			textScale = 1;
@@ -296,7 +296,7 @@ else if(stage == 16) {
 	tutText = "Killing monsters gives you a temporary buff.";
 	if(obj_junglePass.ammo > 0 || obj_junglePass.resistance > 0 || obj_junglePass.defense > 0 || obj_junglePass.dmg > 0 || obj_junglePass.pwr > 0 || obj_junglePass.spd > 0 || obj_junglePass.jungle > 0) {
 		arrowX = 50
-		arrowY = 200;
+		arrowY = 150;
 		tutText = "Mouse over a buff to see what it does"
 		alarm[8] = 400;
 		stage = 16.5;
@@ -321,6 +321,6 @@ else if(stage == 17) {
 else if(stage == 18) {
 	if(obj_bigBall.x < 1) {
 		stage = 19;
-		tutText = "Good job!!! Now press escape and disconnect to leave the tutorial \n Now you're ready to play charlio ball!"
+		tutText = "Good job!!!\nYou've won your first round of Charlio Ball!"
 	}
 }

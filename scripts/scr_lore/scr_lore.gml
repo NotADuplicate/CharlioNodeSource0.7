@@ -1,17 +1,20 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_lore(){
+	var randomPlayer = irandom_range(1,global.loop);
+	var randomAbilitySlot = irandom_range(1,3);
+	var ability = global.knownLoadout[randomPlayer, randomAbilitySlot]
+	if(ability != 0 && ability != 1 && variable_instance_exists(ability, "tooltip")) {
+		return ability.tooltip;
+	}
+	//basic text if no ability is found
 	return(choose(
 	"Enrage was found by John B. Enrage who died shortly after his discovery",
-	"The Leech ability was inspired by Sam G",
 	"Gaming moments can get heated so remember to use fire axe to crit on burning targets",
-	"Garren Nashor became an evil monster after his soundcloud career failed",
-	"Big Gun was able to become so big because it has no natural predators",
+	"The Beholder became an evil monster after her soundcloud career failed",
 	"The airstrike ability was first used by Obama",
 	"Reflect is made using Uno reverse cards",
-	"The gas from gas trap is nearly as toxic as a League of Legends lobby",
 	"Cassandra Varga was the first woman to cross the Atlantic using only Ninja Dash",
-	"Stasis was used to pass time before the invention of television",
 	"The first man to ever throw a boomerang died",
 	"Cleaver was invented by Fiacre Frenchmen who used it to prepare Confit de Canard",
 	"Enrage a bad player and they will be enraged for the rest of their life.\n Enrage a good player and they will be enraged for the rest of your life",
@@ -30,5 +33,13 @@ function scr_lore(){
 	"Revive isn't used in medical settings due to lobbying by the funeral industry.",
 	"Shatter is great for punishing players near the ball.",
 	"Sleep dart would be a leading insomnia cure if it kept you asleep for more than 5 seconds.",
-	"Teleport is the 2nd most effective method of transport behind trains."));
+	"Teleport is the 2nd most effective method of transport behind trains.",
+	"Soccer evolved into Charlio Ball when players discovered no rule against using guns",
+	"Doctors recommending limiting bullet intake to <1 per day",
+	"Good Luck!",
+	"When all else fails, you can always rage quit!",
+	"In the past, people who wanted to shoot each other with guns had to become criminals",
+	"Want to see Charlio Ball live and in person? \nToo bad!",
+	"Rumors that Charlio Ball is 'unstable' and 'crashes frequently' are false.",
+	"Charlio Ball LLC is above the law and cannot be held responsible for anything"));
 }

@@ -8,7 +8,7 @@ function Ghost() constructor {
 	name = "Ghost"
 	abilityName = "ghost"
 	text = "Become ghosted for " + string(duration) + " seconds. While ghosted you take no damage or knockback from AD sources"
-	
+	tooltip = "Ghosts aren't real. If you can't shoot it with a gun, it doesn't exist"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

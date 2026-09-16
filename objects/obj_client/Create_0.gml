@@ -14,6 +14,7 @@ loadoutPickingIndex = 0;
 loadoutTimer = 0;
 rumbleSetup = false;
 rumbleGun = undefined;
+global.finishedTutorial = false;
 
 global.gameMode = "Comp"
 global.resolved = false;

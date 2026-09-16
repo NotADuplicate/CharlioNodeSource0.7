@@ -7,7 +7,7 @@ function Milk() constructor {
 	name = "Milk"
 	abilityName = "milk"
 	text = "Throw a jar of milk that cleanses any status effects."
-	
+	tooltip = "Feeling sick? Try covering yourself in milk!"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

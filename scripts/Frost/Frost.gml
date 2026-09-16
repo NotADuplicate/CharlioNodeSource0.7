@@ -9,6 +9,7 @@ function Frost() constructor {
 	name = "Frost Shot"
 	abilityName = "Frost Shot"
 	text = string("Shoot a fast moving projectile which deals " + string(damage) + " damage and frosts a target for " + string(duration) + " seconds. While frosted, the target moves at half speed and does not take knockback from any sources.");
+	tooltip = "In a pinch, Frost Shot can be used to give yourself hypothermia"
 	
 	stats = new AbilityStats();
 	stats.damage = 0.5;

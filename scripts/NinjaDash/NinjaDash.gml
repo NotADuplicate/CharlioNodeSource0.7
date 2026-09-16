@@ -9,7 +9,7 @@ function NinjaDash() constructor {
 	name = "Ninja Slash"
 	abilityName = "ninjaSlash"
 	text = "Hold to charge your range and release to dash. Dashing into enemies deals " + string(damage) + " damage, " + string(critDamage) + " if they are poisoned."
-	
+	tooltip = "'That Ninja will never slash' \n -Last words of anonymous poison victim"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost && ball_player.ninja <= 0 && !ball_player.ninjaSlash) {

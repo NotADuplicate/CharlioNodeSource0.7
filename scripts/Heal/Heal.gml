@@ -8,7 +8,7 @@ function Heal() constructor {
 	name = "Health Shot"
 	abilityName = "heal"
 	text = "Shoots a slow moving projectile which goes through walls and heals any player " + string(healing) + " health."
-	
+	tooltip = "Healing is for chumps"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

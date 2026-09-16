@@ -9,7 +9,7 @@ function PoisonDagger() constructor {
 	name = "Poison Dagger"
 	abilityName = "poisonDagger"
 	text = "Fires a fast moving projectile which deals " + string(damage) + " damage and poisons a target for " + duration + " seconds. Poison damage stacks exponentially so being poisoned for 10 seconds deals 50 damage, but being poisoned for 20 seconds deals 180 damage"
-	
+	tooltip = "Poison Dagger was discovered in a groundbreaking collaboration between poison scientists and dagger scientists"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

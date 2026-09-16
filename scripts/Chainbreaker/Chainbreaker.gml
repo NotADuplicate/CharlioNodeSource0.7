@@ -9,6 +9,7 @@ function Chainbreaker() constructor {
 	name = "Chainbreaker"
 	abilityName = "chainbreaker"
 	text = "Chain yourself to any nearby enemy or ball. If they are still in range of the chain after 3 seconds of being chained, they take " + string(damage) + " damage and lots of knockback. Particularly good at pushing the ball.";
+	tooltip = "Chainbreaker is most effective after initiating a group hug. It's a great response to an unwanted family reunion."
 	
 	stats = new AbilityStats();
 	stats.damage = 2.5;

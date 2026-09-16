@@ -7,6 +7,7 @@ function Dash() constructor {
 	name = "Dash"
 	abilityName = "dash"
 	text = "Quadruples your speed for 0.25 seconds."
+	tooltip = "Dash is banned in track and field events"
 	
 	stats = new AbilityStats();
 	stats.mobility = 2;

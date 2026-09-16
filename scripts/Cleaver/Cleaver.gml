@@ -9,6 +9,7 @@ function Cleaver() constructor {
 	name = "Cleaver"
 	abilityName = "cleaver"
 	text = "Fires a projectile which deals " + string(damage) + " damage and bleeds an enemy for " + string(duration) + " seconds. While bleeding, enemies take damage while walking proportional to how fast they are going.";
+	tooltip = "The earliest cleavers were not used for sports at all"
 	
 	stats = new AbilityStats();
 	stats.damage = 2;

@@ -9,7 +9,7 @@ function SleepDart() constructor {
 	name = "Sleep Dart"
 	abilityName = "sleepDart"
 	text = "Shoot a dart which applies drowsy to enemies. Enemies will be drowsy for 2 seconds before falling asleep for 5 seconds. Taking damage while asleep causes them to wake up";
-	
+	tooltip = "Recreational sleep dart use is strictly prohibited but I know a guy"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

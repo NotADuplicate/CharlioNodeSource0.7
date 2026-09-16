@@ -7,7 +7,7 @@ function Finisher() constructor {
 	name = "Finisher"
 	abilityName = "finisher"
 	text = "Shoot a fast moving projectile which goes through walls and kills targets who are below 35% health."
-	
+	tooltip = "Finisher? I hardly know 'er!"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

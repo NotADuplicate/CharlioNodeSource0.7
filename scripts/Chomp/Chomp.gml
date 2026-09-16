@@ -7,7 +7,7 @@ function Chomp() constructor {
 	name = "Chomp"
 	abilityName = "chomp"
 	text = "A melee attack which deals damage equal to 50% of the user's missing health. Hitting an enemy heals the user to an amount equal to damage dealt."
-	
+	tooltip = "The bigger they are, the harder they chomp"
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

@@ -863,7 +863,6 @@
     {"id":{"name":"scr_decide_fight_monster","path":"scripts/scr_decide_fight_monster/scr_decide_fight_monster.yy",},},
     {"id":{"name":"scr_distFromHistory","path":"scripts/scr_distFromHistory/scr_distFromHistory.yy",},},
     {"id":{"name":"scr_draw_action","path":"scripts/scr_draw_action/scr_draw_action.yy",},},
-    {"id":{"name":"scr_draw_ready","path":"scripts/scr_draw_ready/scr_draw_ready.yy",},},
     {"id":{"name":"scr_draw_receive","path":"scripts/scr_draw_receive/scr_draw_receive.yy",},},
     {"id":{"name":"scr_drawStatus","path":"scripts/scr_drawStatus/scr_drawStatus.yy",},},
     {"id":{"name":"scr_dummy_damage","path":"scripts/scr_dummy_damage/scr_dummy_damage.yy",},},

@@ -9,7 +9,7 @@ function Curse() constructor {
 	name = "Curse"
 	abilityName = "curse"
 	text = "Shoot a projectile which curses enemies. After you curse an enemy you begin charging the attack and can recast to deal 50-200 damage depending on how long you charged. Being moved resets the charge.";
-	
+	tooltip = "Curse was first discovered in the mummies tomb"
 	
 	static abilityPressed = function(buffer) {
 		if(ball_player.curseCharge > 0) {

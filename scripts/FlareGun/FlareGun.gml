@@ -9,7 +9,7 @@ function FlareGun() constructor {
 	name = "Flare Gun"
 	abilityName = "flareGun"
 	text = "Fires a fast moving flare which gives vision. Hitting enemies deals " + string(damage) + " damage and applies 8 seconds of buring.";
-	
+	tooltip = "Flare guns were used as signaling devices until scientists discovered how fun it was to shoot people with them."
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
