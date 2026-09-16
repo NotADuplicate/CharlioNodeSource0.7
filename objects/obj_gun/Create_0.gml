@@ -9,6 +9,9 @@ initialized = false;
 clockwise = true;
 throwing = false;
 throwSprite = spr_molotov;
+throwProjectile = noone;
+throwProjectileDir = 0;
+throwTimer = 0;
 
 upgraded = 0;
 

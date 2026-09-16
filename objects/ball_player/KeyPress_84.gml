@@ -1,0 +1,1 @@
+scr_throw_projectile(num,point_direction(x,y,mouse_x,mouse_y),spr_spear,obj_spear,10)

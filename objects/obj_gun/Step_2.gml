@@ -1,13 +1,29 @@
 /// @description Move to correct place
 if(initialized && instance_exists(global.players[num]) && variable_instance_exists(global.players[num], "gunDir") && variable_instance_exists(global.players[num], "scale")) {
 	dir = global.players[num].gunDir;
-	if(sprite_index == spr_melee && swung) {
+	if(throwing) {
+		image_angle = 0;
+		if(throwTimer < 3) {
+			if(dir < 270 && dir > 90)
+				x = global.players[num].x+global.players[num].scale*throwTimer*6;
+			else
+				x = global.players[num].x-global.players[num].scale*throwTimer*6;
+			y = global.players[num].y;
+		} else {
+			if(dir < 270 && dir > 90)
+				x = global.players[num].x+9-global.players[num].scale*(throwTimer-3)*4;
+			else
+				x = global.players[num].x-9+global.players[num].scale*(throwTimer-3)*4;
+			y = global.players[num].y-5+abs(throwTimer-5)*4;
+		}
+		 throwTimer--;
+	} else if(sprite_index == spr_melee && swung) {
 		image_angle = dir-45;;
 		image_xscale = scale //*sign(global.players[num].image_xscale);
 		image_yscale = scale;
 		x = global.players[num].x+14*global.players[num].scale;
 		y = global.players[num].y;
-	} else if(sprite_index == spr_boomerange || sprite_index == spr_melee || throwing) {
+	} else if(sprite_index == spr_boomerange || sprite_index == spr_melee) {
 		image_angle = 0;
 		if(dir < 270 && dir > 90)
 			x = global.players[num].x+14*global.players[num].scale;
