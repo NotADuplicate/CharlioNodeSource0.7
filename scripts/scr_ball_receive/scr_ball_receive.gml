@@ -678,6 +678,13 @@ function scr_ball_receive() {
 			scr_ball_kill(num,num,spr_skull, noone)
 			global.players[num].x = -1000;
 		break;
+		case "Throw Projectile":
+			num = buffer[? "num"];
+			dir = buffer[? "dir"];
+			obj = buffer[? "obj"];
+			spr = buffer[? "spr"];
+			scr_throw_projectile(num,dir,spr,obj,9)
+		break;
 	}
 	}
 

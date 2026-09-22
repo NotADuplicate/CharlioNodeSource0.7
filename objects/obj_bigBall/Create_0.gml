@@ -25,5 +25,9 @@ fric = 0.4;
 radius = 32;
 alarm[10] = 30 * 30
 ballHistory = [];
+deathTouching = false;
+deathTouchProgress = 0;
+deathTouchDuration = 0;
 
 instance_create(x,y,obj_ballGhost);
+ball_rotation = ball_pose(0, 0, 0, 1);

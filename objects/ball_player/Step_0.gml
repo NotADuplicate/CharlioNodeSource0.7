@@ -141,3 +141,5 @@ if(dashing > 0) {
 	instance_create(x,y,obj_dashing)
 	instance_create(x,y,obj_dashing)
 }
+
+depth = 2//1 + (y/3000);

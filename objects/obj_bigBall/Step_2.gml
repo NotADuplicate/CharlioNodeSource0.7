@@ -10,6 +10,9 @@ if(ballHistory[0].time < current_time - obj_client.ping - 40) {
 }
 var dt_scale = 30 * delta_time / 1000000;
 scr_ballStep(dt_scale);
+ball_rotation = ball_roll(
+    ball_rotation, xspd * dt_scale, yspd * dt_scale, 48
+);
 lastTouched--;
 //hspeed += .1*global.garren
 

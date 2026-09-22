@@ -1,6 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_self();
+var blend_color = merge_color(c_white, c_red, deathTouchProgress/10);
+draw_sprite_ext(
+    spr_ballGIF, ball_rotation.frame, x, y,
+    ball_rotation.flip_h ? -2 : 2,
+    ball_rotation.flip_v ? -2 : 2,
+    ball_rotation.angle, blend_color, 1
+);
 
 if(stasis) {
 	draw_line(x,y,x+stasisx*2,y+stasisy*2);

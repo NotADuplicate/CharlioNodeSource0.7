@@ -18,10 +18,9 @@ function ArmorBreak() constructor {
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
 			dir = point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y);
-			xp = ball_player.x+lengthdir_x(16,dir);
-			yp = ball_player.y+lengthdir_y(16,dir);
+			global.stun = 8;
 			scr_ball_ammo(ammoCost)
-			node_send(buffer,"eventName","Bullet","Num",ball_player.num,"X",xp, "Y", yp, "Obj", obj_spear, "Dir", dir)
+			node_send(buffer,"eventName","Throw Projectile","num",ball_player.num,"obj", obj_spear, "dir", dir, "spr", spr_spear)
 			return(cooldown);
 		}
 		else { return(0); }

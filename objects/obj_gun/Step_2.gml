@@ -5,9 +5,9 @@ if(initialized && instance_exists(global.players[num]) && variable_instance_exis
 		image_angle = 0;
 		if(throwTimer < 3) {
 			if(dir < 270 && dir > 90)
-				x = global.players[num].x+global.players[num].scale*throwTimer*6;
+				x = global.players[num].x+4+global.players[num].scale*throwTimer*6;
 			else
-				x = global.players[num].x-global.players[num].scale*throwTimer*6;
+				x = global.players[num].x-4-global.players[num].scale*throwTimer*6;
 			y = global.players[num].y;
 		} else {
 			if(dir < 270 && dir > 90)
@@ -16,7 +16,8 @@ if(initialized && instance_exists(global.players[num]) && variable_instance_exis
 				x = global.players[num].x-9+global.players[num].scale*(throwTimer-3)*4;
 			y = global.players[num].y-5+abs(throwTimer-5)*4;
 		}
-		 throwTimer--;
+		if(throwTimer > 0)
+			throwTimer--;
 	} else if(sprite_index == spr_melee && swung) {
 		image_angle = dir-45;;
 		image_xscale = scale //*sign(global.players[num].image_xscale);

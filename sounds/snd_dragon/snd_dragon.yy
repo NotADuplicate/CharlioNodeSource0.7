@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_dragon.wav",
-  "volume":0.47,
+  "volume":0.31,
 }

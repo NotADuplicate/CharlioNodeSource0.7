@@ -10,7 +10,7 @@ if(room == room1) {
 			draw_text_ext(750,200,str,20,300)
 		}
 	}
-	draw_sprite_ext(spr_white,0,xp,yp,1.5,1.5,0,c_white,1);
+	draw_rectangle_colour(xp-24,yp-24,xp+24,yp+24,c_ltgray,c_ltgray,c_ltgray,c_ltgray,false)
 	draw_sprite_ext(spr,0,xp,yp,1.5,1.5,0,c_white,1);
 } else if(surface_exists(global.shopSurf) && global.shopState == "Passives") {
 	surface_set_target(global.shopSurf);
@@ -27,7 +27,7 @@ if(room == room1) {
 			draw_rectangle_color(xp-31,yp-31,xp+31,yp+31,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,false)
 		}
 	}
-	draw_sprite_ext(spr_white,0,xp,yp,1.5,1.5,0,c_white,1);
+	draw_rectangle_colour(xp-24,yp-24,xp+23,yp+24,c_ltgray,c_ltgray,c_ltgray,c_ltgray,false)
 	draw_sprite_ext(spr,0,xp,yp,1.5,1.5,0,c_white,1);
 	
 	//Draw stacks bought

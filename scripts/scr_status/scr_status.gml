@@ -22,8 +22,7 @@ function scr_status(status,target){
 		case 5: //death Touch
 			if(global.players[target].spellShield == 0) {
 				if(target == 100) {
-					obj_bigBall.sprite_index = spr_deathball;
-					obj_bigBall.alarm[5] = 15;
+					obj_bigBall.deathTouching = true;
 				}
 				else {
 					global.players[target].murderball = 150;

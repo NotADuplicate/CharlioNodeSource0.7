@@ -4,7 +4,7 @@ if(room != room1 && global.shop && global.shopState == "Abilities") {
 	yp = camera_get_view_y(view_camera[0])+obj_shop.yp+y;
 	
 	//drag other slot to swap
-	if(mouse_x < xp + 20 && mouse_x > xp - 20 && mouse_y < yp + 20 && mouse_y > yp-20) {
+	if(mouse_x < xp + 23 && mouse_x > xp - 23 && mouse_y < yp + 23 && mouse_y > yp-23) {
 		if(global.utilityClass == "") {
 			if(variable_global_get(abilityVar) != 0) {
 				global.utilityClass = variable_global_get(abilityVar);

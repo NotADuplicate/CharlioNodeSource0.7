@@ -19,8 +19,10 @@ function Cleaver() constructor {
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
-			scr_ability_shoot(obj_cleaver)
-	        scr_ball_ammo(ammoCost);
+			dir = point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y);
+			global.stun = 8;
+			scr_ball_ammo(ammoCost)
+			node_send(buffer,"eventName","Throw Projectile","num",ball_player.num,"obj", obj_cleaver, "dir", dir, "spr", spr_cleaver)
 			return(cooldown);
 		}
 		else { return(0); }
