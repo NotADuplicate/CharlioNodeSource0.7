@@ -21,8 +21,8 @@ if(room == room1) {
 	if(clicked) {
 		if(selected == 1 && active) {
 			draw_rectangle_color(xp-30,yp-30,xp+30,yp+30,c_green,c_green,c_green,c_green,false)
-			draw_rectangle_color(600,150,900,500,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,false)
-			draw_text_ext(750,200,str,20,300)
+			/*draw_rectangle_color(600,150,900,500,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,false)
+			draw_text_ext(750,200,str,20,300)*/
 		} else {
 			draw_rectangle_color(xp-31,yp-31,xp+31,yp+31,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,obj_shop.rectColor,false)
 		}

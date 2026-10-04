@@ -2,14 +2,17 @@
   "$GMObject":"",
   "%Name":"obj_ending",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_ending",
   "overriddenProperties":[],
   "parent":{
-    "name":"Attacks",
-    "path":"folders/Objects/Ball/Attacks.yy",
+    "name":"Effects",
+    "path":"folders/Objects/Ball/Effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_blast",
-    "path":"sprites/spr_blast/spr_blast.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

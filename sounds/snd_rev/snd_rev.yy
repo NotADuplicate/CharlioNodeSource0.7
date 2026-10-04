@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":25.248,
+  "duration":25.205284,
   "exportDir":"",
   "name":"snd_rev",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_rev.mp3",
-  "volume":0.32,
+  "volume":0.28,
 }

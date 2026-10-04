@@ -5,6 +5,7 @@ function Resistance() constructor {
 	sprite = spr_spellShield;
 	maxStacks = 4;
 	type = "Defense"
+	name = "Ability Defense"
 	
 	stats = new AbilityStats();
 	stats.resistance = 1;

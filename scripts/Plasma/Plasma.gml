@@ -2,9 +2,10 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Plasma() constructor {
 	sprite = spr_darkness
-	text = "Hitting enemies with basic attacks applies 1 seconds of plasma"
+	text = "Hitting enemies with weapon attacks applies 1 seconds of plasma"
 	maxStacks = 2;
 	type = "Offense"
+	name = "Plasma Shots"
 	
 	static passiveGet = function(buffer) {
 

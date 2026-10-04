@@ -16,24 +16,24 @@ if(global.gameMode == "Comp"){
 	ins2.atk = global.loadoutSet[global.selectedLoadout][9]
 } else if(global.gameMode == "Simple") {
 	i = 0;
-while(i < 16) {
-	// Four columns inside the new middle panel.
-	xPos = 68 + (i mod 4) * 162;
-	yPos = 140 + floor(i / 4) * 162;
+	while(i < 16) {
+		// Four columns inside the new middle panel.
+		xPos = 68 + (i mod 4) * 162;
+		yPos = 140 + floor(i / 4) * 162;
 
-	ins = instance_create(xPos, yPos, inst_utility);
-	ins.utility = Abilities.simpleAbilities[i];
+		ins = instance_create(xPos, yPos, inst_utility);
+		ins.utility = Abilities.simpleAbilities[i];
 
-	i++;
-}
+		i++;
+	}
 	with(inst_atk) {
 		instance_destroy()
 	}
 	i = 0;
-	numGuns = 7;
+	numGuns = 5;
 	while(i < numGuns){
 		xPos = 1600 + (i mod 4)*70
-		yPos = 4640 + 70*floor(i/4)
+		yPos = 4740 + 70*floor(i/4)
 		ins = instance_create(xPos,yPos,inst_atk);
 		ins.atk = Abilities.gun[i];
 		ins.spr = scr_gun_sprite(Abilities.gun[i])
@@ -56,7 +56,7 @@ else {
 	numGuns = instance_exists(obj_tutorial) ? 6 : array_length(Abilities.gun);
 	while(i < numGuns){
 		xPos = 1600 + (i mod 4)*70
-		yPos = 4640 + 70*floor(i/4)
+		yPos = 4740 + 70*floor(i/4)
 		ins = instance_create(xPos,yPos,inst_atk);
 		ins.atk = Abilities.gun[i];
 		ins.spr = scr_gun_sprite(Abilities.gun[i])
@@ -72,7 +72,7 @@ numUtility = 2;
 while(i < numMobility){
 	if(!instance_exists(obj_tutorial) || i < 1) {
 		xPos = 1050 + 450/numMobility * (i+.5);
-		yPos = 4327;
+		yPos = 4337;
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
 		ins.spr = passiveOb.sprite;
@@ -86,7 +86,7 @@ j = 0;
 while(j < numOffense){
 	if(!instance_exists(obj_tutorial) || j < 2) {
 		xPos = 1050 + 450/numOffense * (j+.5);
-		yPos = 4445;
+		yPos = 4455;
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
 		ins.spr = passiveOb.sprite;
@@ -101,7 +101,7 @@ j = 0;
 while(j < numDefense){
 	if(!instance_exists(obj_tutorial) || j < 2) {
 		xPos = 1050 + 450/numDefense * (j+.5);
-		yPos = 4575;
+		yPos = 4585;
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
 		ins.spr = passiveOb.sprite;
@@ -116,7 +116,7 @@ j = 0;
 if(!instance_exists(obj_tutorial)) {
 	while(j < numResources){
 		xPos = 1050 + 450/numResources * (j+.5);
-		yPos = 4705;
+		yPos = 4715;
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
 		ins.spr = passiveOb.sprite;
@@ -129,7 +129,7 @@ if(!instance_exists(obj_tutorial)) {
 	j = 0;
 	while(j < numUtility){
 		xPos = 1050 + 450/numUtility * (j+.5);
-		yPos = 4825
+		yPos = 4840
 		ins = instance_create(xPos,yPos,inst_passive);
 		passiveOb = Passives.list[i];
 		ins.spr = passiveOb.sprite;

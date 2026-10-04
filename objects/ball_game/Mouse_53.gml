@@ -1,4 +1,5 @@
 ///Shoot bullet (switch)
+if(room != demo_room) { return; }
 if(held || ball_player.ninja) {
 	held = false;
 	ball_player.ninja = 0;

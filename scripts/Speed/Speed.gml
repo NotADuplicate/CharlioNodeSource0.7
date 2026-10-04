@@ -5,6 +5,7 @@ function Speed() constructor {
 	sprite = spr_speed;
 	maxStacks = 2;
 	type = "Mobility"
+	name = "Speed"
 	
 	stats = new AbilityStats();
 	stats.ammoSupply = 1;

@@ -12,3 +12,4 @@ image_yscale = 1.75;
 active = false;
 scr_ball_sound(snd_void,x,y)
 visible = false;
+up = 1;

@@ -5,6 +5,7 @@ function Healing() constructor {
 	text = "Increase healing given to other players by 50%"
 	maxStacks = 2;
 	type = "Utility"
+	name = "Healing"
 	
 	stats = new AbilityStats();
 	stats.healPassive = 1;

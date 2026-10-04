@@ -66,23 +66,10 @@ else {
 		borderColor, borderColor,
 		false
 	);
-	draw_rectangle_color(600,600,940,650,rectColor,rectColor,rectColor,rectColor,false);
-	if(!global.instantConfirm && global.pendingLevels > 0) {
-		draw_rectangle_colour(800,600,940,650,#005000,#005000,#005000,#005000,false);
-		draw_text(870,620,"Confirm");
-		draw_rectangle_colour(600,600,740,650,#a00000,#a00000,#a00000,#a00000,false);
-		draw_text(670,620,"Cancel")
-	}
-	if(global.insufficientLevels > 0) {
-		draw_rectangle_color(600,550,940,600,rectColor,rectColor,rectColor,rectColor,false);
-		if(global.insufficientLevels > 1)
-			draw_text_colour(770,570,"Insufficient Levels!",c_red,c_red,c_red,c_red,global.insufficientLevels/10)
-		global.insufficientLevels -= 0.5;
-	}
 }
 
-	draw_text_transformed(290,20,"Abilities",2,2,0);
-	draw_text_transformed(634,20,"Passives",2,2,0);
+draw_text_transformed(290,20,"Abilities",2,2,0);
+draw_text_transformed(634,20,"Passives",2,2,0);
 }
 else {
 	draw_rectangle_color(0,0,950,60,rectColor,rectColor,rectColor,rectColor,false);
@@ -138,18 +125,185 @@ switch(global.shopState) {
 		else
 			draw_text(770,600,string(round(global.free)) + " seconds until free swap");*/
 	break;
-	case "Passives":
-		if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 7) {
-			draw_text_transformed(260,68,"Mobility",2,2,0);
-			draw_text_transformed(260,173,"Offense",2,2,0);
-			draw_text_transformed(260,303,"Defense",2,2,0);
+case "Passives":
+	var panelBg = make_color_rgb(22,24,23);
+	var panelAlt = make_color_rgb(31,32,29);
+	var gold = make_color_rgb(201,157,60);
+	var ivory = make_color_rgb(232,225,207);
+	var muted = make_color_rgb(120,120,115);
+	var availableLevels = global.leveled;
 
-			if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 13) {
-				draw_text_transformed(260,433,"Resources",2,2,0);
-				draw_text_transformed(260,553,"Utility",2,2,0);
-			}
+	draw_set_halign(fa_center);
+	draw_set_color(panelBg);
+
+	draw_rectangle_color(10,70,575,690,panelBg,panelBg,panelBg,panelBg,false);
+	draw_rectangle_color(590,70,940,400,panelBg,panelBg,panelBg,panelBg,false);
+	draw_rectangle_color(590,415,940,690,panelBg,panelBg,panelBg,panelBg,false);
+
+	draw_set_color(borderColor);
+	draw_rectangle(10,70,575,690,true);
+	draw_rectangle(590,70,940,400,true);
+	draw_rectangle(590,415,940,690,true);
+
+
+	if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 7) {
+		draw_set_color(ivory);
+		draw_text_transformed(260,78,"Mobility",1.4,1.4,0);
+		draw_text_transformed(260,193,"Offense",1.4,1.4,0);
+		draw_text_transformed(260,319,"Defense",1.4,1.4,0);
+
+		draw_set_color(borderColor);
+		draw_line(25,195,560,195);
+		draw_line(25,315,560,315);
+//		draw_line(25,365,560,365);
+
+		if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 13) {
+			draw_set_color(ivory);
+			draw_text_transformed(260,448,"Resources",1.4,1.4,0);
+			draw_text_transformed(260,578,"Utility",1.4,1.4,0);
+
+			draw_set_color(borderColor);
+			draw_line(25,448,560,448);
+			draw_line(25,580,560,580);
 		}
-	break;
+	}
+
+	var selectedItem;
+	var selectedTitle;
+	var selectedName;
+	var selectedText;
+	var selectedSprite;
+	var buttonText;
+	var buttonEnabled;
+
+var passiveSelected = global.selectedOption != "Weapon";
+
+if(passiveSelected) {
+	selectedItem = global.selectedPassive;
+	selectedTitle = "SELECTED PASSIVE";
+	selectedName = selectedItem.name;
+	selectedType = selectedItem.type;
+	selectedText = selectedItem.text;
+	selectedSprite = selectedItem.sprite;
+
+	if(selectedItem.stacks >= selectedItem.maxStacks) {
+		buttonText = "MAX RANK";
+		buttonEnabled = false;
+	}
+	else if(availableLevels <= 0) {
+		buttonText = "INSUFFICIENT LEVELS";
+		buttonEnabled = false;
+	}
+	else {
+		buttonText = "BUY RANK — 1 LEVEL";
+		buttonEnabled = true;
+	}
+}
+else {
+	selectedTitle = "SELECTED WEAPON";
+	selectedName = scr_gun_name(global.attack);
+	selectedType = "PRIMARY WEAPON";
+	selectedText = scr_gun_text(global.attack)
+	selectedSprite = scr_gun_sprite(global.attack);
+	buttonText = "EQUIP — FREE";
+	buttonEnabled = true;
+}
+
+draw_set_halign(fa_center);
+draw_set_color(ivory);
+draw_text_transformed(765,82,selectedTitle,1.35,1.35,0);
+
+draw_set_color(borderColor);
+draw_line(605,112,925,112);
+
+draw_rectangle_color(
+	610,128,690,208,
+	c_ltgray,c_ltgray,c_ltgray,c_ltgray,
+	false
+);
+
+if(sprite_exists(selectedSprite)) {
+	if(global.selectedOption == "Weapon") {
+		draw_sprite_ext(selectedSprite,0,635,168,2,2,0,c_white,1);
+	} else {
+		draw_sprite_ext(selectedSprite,0,650,168,2,2,0,c_white,1);
+	}
+}
+
+draw_set_halign(fa_left);
+draw_set_color(ivory);
+draw_text_transformed(710,128,selectedName,1.5,1.5,0);
+
+draw_set_color(muted);
+draw_text_transformed(710,174,string_upper(selectedType),1,1,0);
+
+draw_set_color(borderColor);
+draw_line(710,201,920,201);
+
+draw_set_halign(fa_center);
+draw_set_color(ivory);
+draw_text_ext(765,220,selectedText,18,290);
+
+if(passiveSelected) {
+	draw_set_color(ivory);
+
+	var rankSize = 10;
+	var rankGap = 7;
+	var rankWidth = selectedItem.maxStacks*rankSize
+		+ max(0,selectedItem.maxStacks-1)*rankGap;
+	var rankX = 765-rankWidth*.5;
+
+	for(var rank = 0; rank < selectedItem.maxStacks; rank++) {
+		if(rank < selectedItem.stacks) {
+			draw_rectangle_color(
+				rankX,306,
+				rankX+rankSize,316,
+				ivory,ivory,ivory,ivory,
+				false
+			);
+		}
+		else {
+			draw_set_color(muted);
+			draw_rectangle(
+				rankX,306,
+				rankX+rankSize,316,
+				true
+			);
+		}
+
+		rankX += rankSize+rankGap;
+	}
+}
+
+var buttonColor = buttonEnabled ? gold : muted;
+
+draw_rectangle_color(
+	610,335,920,385,
+	buttonColor,buttonColor,buttonColor,buttonColor,
+	false
+);
+
+draw_rectangle_color(
+	615,340,915,380,
+	panelAlt,panelAlt,panelAlt,panelAlt,
+	false
+);
+
+draw_set_color(buttonColor);
+draw_set_halign(fa_center);
+draw_text_transformed(765,351,buttonText,1.15,1.15,0);
+
+	draw_set_color(ivory);
+	draw_text_transformed(765,427,"PRIMARY WEAPON",1.35,1.35,0);
+	draw_set_color(borderColor);
+	draw_line(605,457,925,457);
+
+	draw_set_color(muted);
+	draw_text(765,665,"Switching weapons is free");
+
+	draw_set_color(c_white);
+	draw_set_halign(fa_center);
+break;
 }
 
 if(!global.shop) {

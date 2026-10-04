@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(global.connected && !global.loadoutView) {
+if((global.connected || global.testMode) && !global.loadoutView) {
 	if(team == -1) { //draw box for left team
 		draw_rectangle_color(0,y,500,y+height,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
 		xp = 200;
@@ -27,7 +27,10 @@ if(global.connected && !global.loadoutView) {
 	} else if(obj_client.loadoutPickingIndex == num) { //pending to pick
 		draw_sprite(spr_yellow,0,xp-64,y+20);
 	}
-	
+	if(!global.connected) {
+		draw_set_halign(fa_center)
+		return;
+	}
 	if(obj_client.rumbleSetup && loadoutPicked) {
 		xp -= 155
 		for(i = 0; i < 3; i++) {

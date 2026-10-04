@@ -5,6 +5,7 @@ function FireRate() constructor {
 	text = "Increase primary weapon fire rate by 50%"
 	maxStacks = 2;
 	type = "Offense"
+	name = "Fire Rate"
 	
 	static passiveGet = function(buffer) {
 		global.shooting += .5;

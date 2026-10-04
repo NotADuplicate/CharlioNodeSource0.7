@@ -5,6 +5,7 @@ function MaxAmmo() constructor {
 	sprite = spr_ammo;
 	maxStacks = 3;
 	type = "Resources"
+	name = "Max Ammo"
 	
 	static passiveGet = function(buffer) {
 		global.maxAmmo += 4

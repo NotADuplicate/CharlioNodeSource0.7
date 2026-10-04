@@ -1,18 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 instance_create(533,667,obj_disconnect);
-instance_destroy()
-with(obj_testMode) {
-	x = -500;
-}
-with(obj_quit) {
-	x = -500;
-}
-with(obj_optionButton) {
-	x = -500;
-}
-with(obj_loadouts) {
-	if(str != "Back") {
-		y = -500;
-	}
+with(inst_menuButton) {
+	x -= 500;
 }

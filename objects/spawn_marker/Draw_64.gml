@@ -6,7 +6,7 @@ draw_self();
 	if(jungleWall) 
 		draw_text(x,y-15,"Jungle path \n has opened");
 	else if(drag)
-		draw_text(x,y,"Beholder Spawned");
+		draw_text(x,y,"The Ref Spawned");
 	else
 		draw_text(x,y,"Garren Spawned");
 	draw_set_color(c_white)

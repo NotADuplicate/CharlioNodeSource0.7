@@ -1,10 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function AmmoRegen() constructor {
-	text = "Increase ammo regen"
+	text = "Increase ammo regen by 40%"
 	sprite = spr_ammoRegen;
 	maxStacks = 3;
 	type = "Resources"
+	name = "Ammo Regen"
 	
 	stats = new AbilityStats();
 	stats.ammoSupply = 1;

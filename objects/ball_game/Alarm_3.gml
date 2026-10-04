@@ -31,8 +31,15 @@ if(global.abilityNum < 90) {
 	leftLoadoutY = 80//4338
 	rightLoadoutY = 80//4338
 	global.loop = loop
+	show_debug_message("loop")
+	show_debug_message(loop)
+	global.ballStart = true;
     repeat(loop) {
 		scr_createBallPlayer(i);
+		if(global.testMode && i > 1) {
+			show_debug_message("Sending create bot")
+			node_send(buffer, "eventName", "Create Bot", "Num", i);
+		}
 		i++;
 	}
 if(global.spectator) { //make fake player ig
@@ -42,7 +49,8 @@ if(global.spectator) { //make fake player ig
 	ins.spectating = true;
 }
 global.players[100] = obj_bigBall
-global.ballStart = true;
+
 
 
 var i = 0;
+

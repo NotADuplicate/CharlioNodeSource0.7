@@ -37,6 +37,7 @@ instance_create(0,0,obj_utilityHeld);
 lastUtilityClass = noone;
 lastFreeSecond = -1;
 global.pendingLevels = 0;
+global.selectedOption = "Weapon"
 /*instance_create(300,500,sound_control);
 instance_create(300,400,shake_control);
 instance_create(200,300,obj_fullscreen);

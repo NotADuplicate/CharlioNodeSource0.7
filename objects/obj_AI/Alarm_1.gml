@@ -1,5 +1,5 @@
 /// @description Create link player
-if(global.testMode) {
+if(global.testMode && !instance_exists(global.players[num])) {
 	scr_createBallPlayer(num);
 }
 show_debug_message("Creating link:")

@@ -3,6 +3,7 @@
 function AbilityDamage() constructor {
 	sprite = spr_wand
 	text = "Increase ability damage by 20%"
+	name = "Ability Damage";
 	maxStacks = 4;
 	type = "Offense"
 	

@@ -8,7 +8,7 @@ invincibility = 0;
 poisonDmg = 0;
 num = 2;
 alarm[0] = 30;
-if(global.testMode) {
+if(global.testMode && !instance_exists(global.players[num])) {
 	global.teamNum[num] = -1;
 	global.players[num] = self
 }

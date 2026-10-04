@@ -5,6 +5,7 @@ function Scope() constructor {
 	text = "Increase primary weapon projectile speed, range, and accuracy"
 	maxStacks = 3;
 	type = "Offense"
+	name = "Scope"
 	
 	static passiveGet = function(buffer) {
 	}

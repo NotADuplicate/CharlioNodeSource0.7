@@ -5,5 +5,5 @@ if(hp < 0 && global.testMode) {
 	hp = 200;
 	alarm[8] = 1;
 	alarm[5] = 2;
-	alarm[0] = 90;
+	alarm[0] = 1800;
 }

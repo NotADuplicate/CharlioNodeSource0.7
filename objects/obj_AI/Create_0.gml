@@ -12,7 +12,7 @@ alarm[2] = 10;
 position_known = false;
 alarm[5] = 10;
 
-reload = 0;
+reload = 90;
 wallPassive = false;
 pushPos = 0;
 pushing = 0.5;

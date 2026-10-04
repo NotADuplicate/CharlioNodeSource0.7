@@ -1,6 +1,6 @@
 //Set list
 list[0] = moveSpd;
-list[1] = bushHop
+list[1] = ballPush
 list[2] = moreKb; //mobility
 list[3] = attackDamage;
 list[4] = abilityDamage;

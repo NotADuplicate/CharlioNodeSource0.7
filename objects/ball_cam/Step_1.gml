@@ -1,9 +1,5 @@
 /// @description Spectating
 if(global.spectator || global.dead) {
-	/*if(mouse_check_button(mb_right)) {
-		x = cameraPinx + (mousePinx-mouse_x)
-		y = cameraPiny + (mousePiny-mouse_y)
-	}*/
 	if(linked) {
 		if(link.x < 10)
 			linked = false
@@ -11,10 +7,12 @@ if(global.spectator || global.dead) {
 			x = link.x;
 			y = link.y;
 		}
-		if((keyboard_check(ord("D"))-keyboard_check(ord("A"))) != 0 || (keyboard_check(ord("S"))-keyboard_check(ord("W"))) != 0)
-			linked = false;
+		if(global.spectator) {
+			if((keyboard_check(ord("D"))-keyboard_check(ord("A"))) != 0 || (keyboard_check(ord("S"))-keyboard_check(ord("W"))) != 0)
+				linked = false;
+		}
 	}
-	else {
+	else if(global.spectator) {
 	    x += 8*(keyboard_check(ord("D"))-keyboard_check(ord("A")))
 	    y += 8*(keyboard_check(ord("S"))-keyboard_check(ord("W")))
 		if(keyboard_check(vk_shift)) {
@@ -23,7 +21,3 @@ if(global.spectator || global.dead) {
 		}
 	}
 }
-/*		mousePinx = mouse_x;
-		mousePiny = mouse_y;
-		cameraPinx = x;
-		cameraPiny = y;

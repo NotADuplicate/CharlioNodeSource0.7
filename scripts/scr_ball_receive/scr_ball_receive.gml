@@ -22,7 +22,8 @@ function scr_ball_receive() {
 		case "Tower Target":
 			towerNum = buffer[? "Num"];
 			target = buffer[? "Target"];
-			scr_tower_target(towerNum, target);
+			serverTime = buffer[? "ServerTime"]
+			scr_tower_target(towerNum, target, serverTime);
 		break;
 	    case "Start Game": //start game
 	        global.ammo = 0;
@@ -42,8 +43,6 @@ function scr_ball_receive() {
 	                instance_destroy(inst_game);
 	            }
 			global.gameMode = buffer[? "GameMode"]
-						show_debug_message("\n /n")
-			show_debug_message(global.gameMode)
 			ins = instance_create_depth(0,0,0,ball_game);
 			
 			room_goto(demo_room);
@@ -86,12 +85,10 @@ function scr_ball_receive() {
 	            global.ready--;
 	    break;
 	    case "Death":
-			show_debug_message("Death received")
 	        dead = buffer[? "Target"]
 			killer = buffer[? "Killer"]
 			assister = buffer[? "Assister"]
 			icon = buffer[? "Icon"]
-			show_debug_message(icon)
 	        scr_ball_kill(dead,killer,icon, assister)
 	    break;
 	    case "Hook Stop": //stop using something
@@ -121,7 +118,6 @@ function scr_ball_receive() {
 			var num = buffer[? "Num"];
 			
 			if(primary) {
-				show_debug_message("primary")
 				with(obj_gun) {
 					if(self.num == num) {
 						event_user(0);
@@ -193,6 +189,7 @@ function scr_ball_receive() {
 	        ins.fire = buffer[? "Shooting"]
 	    break;
 		case "Game Over":
+			instance_destroy(obj_ending)
 			global.ballGameOver = buffer[? "Winner"]
 			var towerDamages = buffer[? "towerDamages"]
 			var ballPushes = buffer[? "playersBallPush"]
@@ -201,17 +198,12 @@ function scr_ball_receive() {
 			var soulsCollected = buffer[? "soulsCollected"]
 			var selfDamageBlocked = buffer[? "selfDamageBlocked"]
 			var mvpNum = buffer[? "mvpId"]
-			show_debug_message(towerDamages[| 0])
-			show_debug_message(ballPushes[| 0])
-			show_debug_message(mvpNum)
 			//Set up all the loadout UI objects
 			leftLoadoutY = 105;
 			rightLoadoutY = 105;
 			for (var i = 0; i < instance_number(obj_loadout); i++){
 			    var inst = instance_find(obj_loadout, i);
 				var num = inst.num;
-				show_debug_message("Loadout num:")
-				show_debug_message(num)
 				global.players[num].towerDamage = towerDamages[| num-1];
 				global.players[num].ballPush = ballPushes[| num-1];
 				global.players[num].healingDealt = healingDealt[| num-1];
@@ -235,13 +227,10 @@ function scr_ball_receive() {
 			instance_create(700, 720, obj_replayButton);
 		break;
 	    case "Team Name": //recieve names
-			show_debug_message("Names")
 	        num8 = buffer[? "Num"]
 	        global.names[num8] = buffer[? "Name"]
 			if(global.teaming != 0) {
-				show_debug_message(num8)
 				global.teamNum[num8] = buffer[? "Team"]
-				show_debug_message(buffer[? "Team"])
 			}
 	    break;
 		case "Throw Sprite":
@@ -270,8 +259,9 @@ function scr_ball_receive() {
 			xp = buffer[? "X"]
 			yp = buffer[? "Y"]
 			if(xp < 0 || xp > 3905) {
-				ending = instance_create(xp,yp,obj_ending);
-				ending.lore = "Right team wins!";
+				if(!instance_exists(obj_ending)) {
+					ending = instance_create(xp,yp,obj_ending);
+				}
 			}
 			xspd = buffer[? "Xspd"]
 			yspd = buffer[? "Yspd"]
@@ -298,12 +288,6 @@ function scr_ball_receive() {
 					}
 					predictionTime += 33;
 				}
-				//extraPredictedX = local_ball.x + obj_bigBall.xspd * (obj_client.ping/33);
-				//extraPredictedY = local_ball.y + obj_bigBall.yspd * (obj_client.ping/33);
-				//if(obj_client.ping+20 < (current_time - global.lastTouchTime)/2) {// || (abs(obj_bigBall.x-local_ball.x) + abs(obj_bigBall.y-local_ball.y))/2 > (abs(obj_bigBall.xspd) + abs(obj_bigBall.yspd)) * ((10+obj_client.ping)/33)) {
-					//if(scr_distFromHistory(local_ball.x, local_ball.y) < 30) { return; }
-					//show_debug_message("dist from hist")
-					//show_debug_message(scr_distFromHistory(local_ball.x, local_ball.y))
 			snapDist = 3
 			if(abs(obj_bigBall.x-local_ball.x) < snapDist)
 				obj_bigBall.x = local_ball.x;
@@ -452,10 +436,8 @@ function scr_ball_receive() {
 					global.knownLoadout[num,global.loadoutSize[num]] = 0;
 					
 			}
-			show_debug_message(global.loadout[num,index2])
 		break;
 		case "Loadout Swap":
-			show_debug_message("loadout switch")
 			num = buffer[? "Num"]
 			index1 = buffer[? "Slot1"]
 			index2 = buffer[? "Slot2"]
@@ -580,7 +562,6 @@ function scr_ball_receive() {
 			}
 		break;
 		case "Gun Picked":
-			show_debug_message("gun picked")
 			gunName = buffer[? "Gun Name"];
 			var gunNum = buffer[? "Num"];
 			var gunObj = noone;
@@ -596,19 +577,16 @@ function scr_ball_receive() {
 		case "Telekenesis Point":
 			
 			var tKNum = buffer[? "User"];
-			show_debug_message("Controlled num:" + string(tKNum));
 			xp = buffer[? "X"];
 			yp = buffer[? "Y"];
 			with(ball_player) {
 				if(controlledNum == tKNum) {
-					show_debug_message("Self controlled:" + string(other.xp));
 					controlledX = other.xp;
 					controlledY = other.yp;
 				}
 			}
 			with(ball_other) {
 				if(controlledNum == tKNum) {
-					show_debug_message("other controlled:" + string(other.xp));
 					controlledX = other.xp;
 					controlledY = other.yp;
 				}
@@ -619,9 +597,7 @@ function scr_ball_receive() {
 			if(num8 != obj_client.index) {
 		        global.names[num8] = buffer[? "Name"]
 				if(global.teaming != 0) {
-					show_debug_message(num8)
 					global.teamNum[num8] = buffer[? "Team"]
-					show_debug_message(buffer[? "Team"])
 				}
 				global.loop++;
 				scr_createBallPlayer(num8);

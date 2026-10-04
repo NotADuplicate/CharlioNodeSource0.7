@@ -5,6 +5,7 @@ function MoreKB() constructor {
 	sprite = spr_push;
 	maxStacks = 1;
 	type = "Mobility"
+	name = "Bouncy"
 	
 	static passiveGet = function(buffer) {
 		global.pushSpd = 1.5;

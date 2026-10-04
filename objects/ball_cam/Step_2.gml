@@ -25,7 +25,6 @@ if(global.spectator == false) {
 	if(global.shop && global.dead == false) {
 		if(position_meeting(ball_player.x,ball_player.y,obj_regen) == false) {
 			global.shop = false
-			y = 0;
 		}
 	}
 	

@@ -1,4 +1,13 @@
 /// @description Respawn
+if(global.testMode) {
+	dead = false
+	x = xpos;
+	y = ypos;
+	hp = maxhp
+	enraged = false;
+	visible = true;
+	return;
+}
 image_alpha += .1;
 
 if(image_alpha > .5) {
@@ -9,5 +18,3 @@ if(image_alpha > .5) {
 	hp = maxhp
 	enraged = false;
 }
-else
-	alarm[0] = 90;

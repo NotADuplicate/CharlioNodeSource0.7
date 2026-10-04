@@ -3,7 +3,8 @@
 if(other.murderball)
 	scr_damage(5+power((other.xspd + other.yspd),2),num,false, spr_deathball, false)
 else if(other.stasis == false){
-	ballPushing = 2;
+	//if(pushing < 1) 
+		ballPushing = 2;
 	if(speed > 4) {
 		scr_ball_move(direction,pushing*speed/3,num)
 		speed *= .5

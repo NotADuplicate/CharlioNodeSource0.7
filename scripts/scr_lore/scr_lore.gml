@@ -11,7 +11,7 @@ function scr_lore(){
 	return(choose(
 	"Enrage was found by John B. Enrage who died shortly after his discovery",
 	"Gaming moments can get heated so remember to use fire axe to crit on burning targets",
-	"The Beholder became an evil monster after her soundcloud career failed",
+	"The Ref became an evil monster after her soundcloud career failed",
 	"The airstrike ability was first used by Obama",
 	"Reflect is made using Uno reverse cards",
 	"Cassandra Varga was the first woman to cross the Atlantic using only Ninja Dash",

@@ -4,13 +4,9 @@ if(!obj_client.loadoutPicking) {
 	global.teamside = -1;
 	if(global.connected)
 		obj_client.alarm[6] = 1;
-}
-/*if(global.spectator == false ) {//&& global.connected == true) {
-	if(global.teamside && global.connected = true) {
-		scr_endTeam(obj_client.buffer,obj_client.socket) //this line might cause an illegal buffer index error!
-		obj_client.alarm[6] = 1;
+	if(global.testMode) {
+		with(obj_client) {
+		node_send(buffer,"eventName","Player UI", "Number", 1, "Team", -1, "Ready", false, "Name", global.name, "Loadout", ds_list_create(), "Bot", false);
+		}
 	}
 }
-	global.team = 50;
-	global.teamside = false;
-//}

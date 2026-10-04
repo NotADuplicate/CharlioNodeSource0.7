@@ -5,6 +5,7 @@ function FourthAbility() constructor {
 	sprite = spr_4;
 	maxStacks = 1;
 	type = "Utility"
+	name = "Fourth Ability"
 	
 	static passiveGet = function(buffer) {
 		instance_create(select_space.x+94,select_space.y,select_R);

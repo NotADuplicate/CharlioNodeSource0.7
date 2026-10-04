@@ -4,3 +4,5 @@ speed = 27;
 alarm[1] = 30;
 portaled = false
 active = false;
+image_xscale = 2;
+image_yscale = 2;

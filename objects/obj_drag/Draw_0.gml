@@ -1,8 +1,8 @@
 /// @description Theres a illegal pointer error, cant figure it out
 if(instance_exists(ball_player)) {
 	if(dead) {
-		draw_sprite_ext(sprite_index,0,xpos,ypos,image_xscale,image_yscale,0,c_white,image_alpha)
-		draw_text(xpos,ypos,round(timer));
+		//draw_sprite_ext(sprite_index,0,xpos,ypos,image_xscale,image_yscale,0,c_white,image_alpha)
+		//draw_text(xpos,ypos,round(timer));
 	}
 	else if(place_meeting(ball_player.x,ball_player.y,obj_regen) == false || keyboard_check(ord("M"))) {
 		draw_self();

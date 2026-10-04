@@ -1,4 +1,5 @@
 /// @description Fire grenade
+if(room != demo_room) { return; }
 if(global.attack == obj_grenade && global.slow < 1) {
     if(global.ammo > 0 && reload == 0 && scr_shootable()) {
 		

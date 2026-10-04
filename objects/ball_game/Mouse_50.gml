@@ -1,4 +1,5 @@
 /// @description Do minigun things
+if(room != demo_room) { return; }
 if(timer < 250)
     timer++;
 if(global.stun != 0) {

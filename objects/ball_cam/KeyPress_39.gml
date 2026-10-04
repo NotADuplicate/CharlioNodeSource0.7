@@ -1,32 +1,33 @@
-/// @description Shift spectating
-if(global.spectator || global.dead) {
-	linked = true;
-	if(link == self)
-		link = 0;
-	else if(variable_instance_exists(link,"num"))
-		linkI = link.num
-	else
-		link = 0;
-	if(linkI == 100)
-		linkI = 1;
-	else if(linkI >= global.loop)
-		linkI = 100;
-	else
-		linkI++;
-	done = 5;
-	validPlayer = linkI == 100 || (global.players[linkI].respawnTimer <= 0 && (global.spectator || (linkI <= global.loop && global.teamNum[linkI] == global.teamNum[ball_player.num])))
-	while(!validPlayer && done > 0) {
-		linkI++;
-		done--;
-		if(linkI > 100)
-			linkI = 1;
-		else if(linkI > global.loop)
-			linkI = 100;
-		validPlayer = linkI == 100 || (global.players[linkI].respawnTimer <= 0 && (global.spectator || (linkI <= global.loop && global.teamNum[linkI] == global.teamNum[ball_player.num])))
-	}
-	if(linkI == 100) {
-		link = obj_bigBall;
-	} else if(done > 0) {
-		link = global.players[linkI];
-	}
+/// @description Shift spectating forward
+if (global.spectator || global.dead) {
+    linked = true;
+
+    var current = 0;
+    if (instance_exists(link) && variable_instance_exists(link, "num"))
+        current = link.num;
+
+    var next = current;
+
+    for (var i = 0; i < global.loop + (global.spectator ? 1 : 0); i++) {
+        next = (next >= global.loop) ? (global.spectator ? 100 : 1) : next + 1;
+        if (next == 100)
+            next = 1;
+        else if (next >= global.loop)
+            next = global.spectator ? 100 : 1;
+        else
+            next++;
+
+        if (next == 100) {
+            link = obj_bigBall;
+            break;
+        }
+
+        var player = global.players[next];
+        if (instance_exists(player)
+            && player.respawnTimer <= 0
+            && (global.spectator || global.teamNum[next] == global.teamNum[ball_player.num])) {
+            link = player;
+            break;
+        }
+    }
 }

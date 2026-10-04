@@ -17,6 +17,10 @@ function node_send(){
 		
 		
 	if(global.testMode) { //single player send buffer right back to yourself
+		if(room == room1) {
+			scr_recieved_packet(data);
+			return;
+		}
 		scr_ball_receive(data)
 	}
 	else {

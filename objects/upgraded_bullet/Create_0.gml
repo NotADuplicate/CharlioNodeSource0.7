@@ -1,4 +1,4 @@
-dmg = 30;
+dmg = 40;
 speed = 30;
 alarm[0] = 1;
 slow = 1.5;

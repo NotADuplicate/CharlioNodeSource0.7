@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(global.connected && !global.loadoutView) {
+if((global.connected || global.testMode) && !global.loadoutView) {
 	if(!hovering) {
 		draw_set_alpha(0.3)
 	} else {

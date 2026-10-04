@@ -10,12 +10,12 @@ if(global.connected) {
 	node_send(buffer,"eventName","Disconnect","Num",index)
 	network_destroy(socket);
 }
-with(obj_playerUI) {
-	instance_destroy();
-}
-with(obj_addBotUI) {
-	instance_destroy();
-}
 global.connected = false;
+if(instance_exists(inst_game))
+	instance_destroy(inst_game)
+show_debug_message("Going baxk to room1")
+room_goto(room1);
+
+
 global.game = 0;
 loadoutPicking = false;

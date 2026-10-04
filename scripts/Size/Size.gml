@@ -5,6 +5,7 @@ function Size() constructor {
 	text = "+15% max hp and 10% size"
 	maxStacks = 4
 	type = "Defense"
+	name = "Size"
 	
 	static passiveGet = function(buffer) {
 	}

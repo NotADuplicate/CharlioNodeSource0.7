@@ -15,8 +15,8 @@ function scr_movespeed(){
 		yspd *= 1.2;
 	}
 	if(ballPushing > 0) {
-		xspd *= 0.5;
-		yspd *= 0.5;
+		xspd *= 0.5 * (pushing/0.8);
+		yspd *= 0.5 * (pushing/0.8);
 		ballPushing--;
 	}
 	if(enraged) {

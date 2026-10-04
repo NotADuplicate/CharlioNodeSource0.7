@@ -14,5 +14,5 @@ if(spec)
 
 	show_debug_message("Client tries to connect")
 pingSet = current_time;
-message = "penis";
+message = "debug";
 	global.connected = false;

@@ -1,10 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Defense() constructor {
-	text = "Take 20% less damage from attacks"
+	text = "Take 20% less damage from weapons"
 	sprite = spr_defense;
 	maxStacks = 4;
 	type = "Defense"
+	name = "Weapon Defense"
 	
 	stats = new AbilityStats();
 	stats.defense = 1;

@@ -30,6 +30,6 @@ if(beamLength > 0) {
 		beamX = x+lengthdir_x(beamLength, dir);
 		beamY = y+lengthdir_y(beamLength, dir);
 	}
-	draw_line_width_color(x,y,beamX,beamY,3,c_red,c_red);
+	draw_line_width_color(x,y,beamX,beamY,max(charge*2,2),c_red,c_red);
 	
 }
