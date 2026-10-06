@@ -8,6 +8,20 @@ if(point_distance(x,y,ball_player.x,ball_player.y) <= currentRadius) {
 	}
 }
 
+if(!instance_exists(obj_screenWhiteout) && point_distance(x,y,ball_cam.x,ball_cam.y) <= currentRadius) {
+	instance_create(0,0,obj_screenWhiteout);
+	if(global.testMode) {
+		if(instance_exists(obj_tutorial)) {
+			alarm[0] = 90;
+			global.finishedTutorial = true;
+		} else {
+			node_send(obj_client.buffer,"eventName","Game Over", "Winner", obj_bigBall.x < 1000 ? -1 : 1, 
+				"playersBallPush", ds_map_create(), "towerDamages", ds_map_create(), "healingDealt", ds_map_create(),
+				"soulsCollected", ds_map_create(), "selfDamageBlocked", ds_map_create(), "mvpId", 1);
+		}
+	}
+}
+
 if(age < chargeDuration) {
 	currentRadius = 0;
 	chargeSpawnTimer += chargeRate * dt;

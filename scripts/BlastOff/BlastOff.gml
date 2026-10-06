@@ -18,6 +18,8 @@ function BlastOff() constructor {
 	stats.add_synergy("damage", "mobility", 1);
 	stats.add_synergy("damageMultiplier","AP",0.2)
 	
+	unlocked = false;
+	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {
 			node_send(buffer,"Dir",point_direction(ball_player.x,ball_player.y,mouse_x,mouse_y),"X",ball_player.x,"Y",ball_player.y,"Num",ball_player.num,"Obj",obj_rocketBlast,"eventName","Bullet")

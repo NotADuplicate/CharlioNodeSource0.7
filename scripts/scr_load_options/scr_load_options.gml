@@ -24,5 +24,6 @@ function scr_load_options(){
 	global.mapToggle = ini_read_real("Save1", "mapToggle", true);
 	global.simpleThrowing = ini_read_real("Save1", "simpleThrowing", true);
 	global.instantConfirm = ini_read_real("Save1", "instantShopConfirm", false);
+	global.chatEnabled = ini_read_real("Save1", "enableChat", true);
 	ini_close();
 }

@@ -44,6 +44,13 @@ function scr_targeted_status(status,target,user){
 						global.music = audio_play_sound(mus_shredIntro,0,false,global.musVolume);
 					}
 				}
+				if(global.aiControl[target]) {
+					with(obj_AI) {
+						if(num == target) {
+							enraged = true;
+						}
+					}
+				}
 			}
 		break;
 		case 7: //burn from burn passive

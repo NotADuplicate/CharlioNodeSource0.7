@@ -12,7 +12,7 @@ if(loadoutPicking && loadoutPickingIndex == index && loadoutTimer <= maxLoadoutT
 		loadoutTimer = maxLoadoutTimer + 1;
 	}
 }
-if(room = room1 && global.connected)
+if(room = room1 && global.connected && !instance_exists(obj_modal))
 	draw_text(500,80,"Ping:" + string(ping));
 
 //draw_text(500,400,instance_number(obj_playerUI));

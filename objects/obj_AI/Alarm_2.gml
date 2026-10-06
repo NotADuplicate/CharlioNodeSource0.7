@@ -4,7 +4,7 @@ if(instance_exists(obj_startWall)) {
 	return;
 }
 overlapping = collision_point(x,y,obj_AI,false,true)
-if(overlapping != noone) {
+if(overlapping != noone && !enraged) {
 	if(overlapping.state == state && num < overlapping.num) {
 		scr_pathfind(x + random_range(-40,40), y + random_range(-40,40), 5);
 		alarm[2] = 10;
@@ -134,9 +134,10 @@ if(state != "Flee" && state != "Thirst" && state != "Dodge Fire") {
 }
 
 spd = link.dashing <= 0 ? 5 : 20;
+if(enraged) { spd *= 1.5; }
 if(pushingBall > 0) { spd /= 2; }
 if(frost > 0) { spd = 2;}
-if(bleed == 0 && state != "Dead" && speed < 0.75 && state != "Backing") {
+if(bleed == 0 && state != "Dead" && speed < 1 && state != "Backing") {
 	backing = 0;
 	path = scr_pathfind(targetX, targetY, spd);
 }

@@ -9,13 +9,15 @@ function Bloodshot() constructor {
 	name = "Blood Shot"
 	abilityName = "bloodshot"
 	text = "Fire a projectile which deals " + string(damage) + " damage. Using this ability makes you take " + string(selfDamage) + " damage"
-	tooltip = "Bloodshot should not be used by people who are pregnant or have heart conditions"
+	tooltip = ["Bloodshot should not be used by people who are pregnant or have heart conditions", "Using bloodshot hurts"]
 	
 	stats = new AbilityStats();
 	stats.damage = 5;
 	stats.selfDamage = 2;
 	stats.add_synergy("damageMultiplier","AP",0.2)
 	stats.add_synergy("selfDamage", "resistance", -0.5);
+	
+	unlocked = false;
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

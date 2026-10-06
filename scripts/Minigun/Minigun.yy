@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Minigun",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Minigun",
+  "parent":{
+    "name":"Guns",
+    "path":"folders/Scripts/Guns.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

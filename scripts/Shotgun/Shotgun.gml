@@ -4,6 +4,8 @@ function Shotgun() constructor {
 	sprite = spr_blood;
 	ammoCost = 2;
 	name = "Shotgun"
+	bullet = obj_shotgun;
+	unlocked = true;
 
 	minRange = 60;
 	maxRange = 220;

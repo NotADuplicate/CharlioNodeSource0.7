@@ -8,14 +8,16 @@ function Cleaver() constructor {
 	duration = 4;
 	name = "Cleaver"
 	abilityName = "cleaver"
-	text = "Fires a projectile which deals " + string(damage) + " damage and bleeds an enemy for " + string(duration) + " seconds. While bleeding, enemies take damage while walking proportional to how fast they are going.";
-	tooltip = "The earliest cleavers were not used for sports at all"
+	text = "Fires a projectile which deals " + string(damage) + " damage and bleeds an enemy for " + string(duration) + " seconds. Bleeding does huge damage only while walking.";
+	tooltip = ["The earliest cleavers were not used for sports at all"]
 	
 	stats = new AbilityStats();
 	stats.damage = 2;
 	stats.CC = 2;
 	stats.ammoSupply = -1;
 	stats.add_synergy("damageMultiplier","AP",0.2)
+	
+	unlocked = false;
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

@@ -49,6 +49,14 @@ if(hp < 3) {
 		}
 		with(server_walls) {
 			if(jungleReset) {
+				surface_set_target(obj_minimap.minimap)
+				x1 = (x-(16*image_xscale))*obj_minimap.scale
+				y1 = (y-(16*image_yscale))*obj_minimap.scale
+				x2 = (x+(16*image_xscale))*obj_minimap.scale
+				y2 = (y+(16*image_yscale))*obj_minimap.scale 
+				draw_rectangle_color(x1,y1,x2,y2,c_ltgray,c_ltgray,c_ltgray,c_ltgray,false)
+				surface_reset_target()
+				
 				instance_destroy();
 			}
 		}

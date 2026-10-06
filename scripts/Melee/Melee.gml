@@ -6,6 +6,8 @@ function Melee() constructor {
 	ammoCost = 1;
 	reload = 4; 
 	name = "Melee"
+	bullet = obj_melee;
+	unlocked = true;
 	
 	minRange = 25;
 	maxRange = 80;

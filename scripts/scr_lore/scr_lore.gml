@@ -5,11 +5,10 @@ function scr_lore(){
 	var randomAbilitySlot = irandom_range(1,3);
 	var ability = global.knownLoadout[randomPlayer, randomAbilitySlot]
 	if(ability != 0 && ability != 1 && variable_instance_exists(ability, "tooltip")) {
-		return ability.tooltip;
+		return ability.tooltip[0];
 	}
 	//basic text if no ability is found
 	return(choose(
-	"Enrage was found by John B. Enrage who died shortly after his discovery",
 	"Gaming moments can get heated so remember to use fire axe to crit on burning targets",
 	"The Ref became an evil monster after her soundcloud career failed",
 	"The airstrike ability was first used by Obama",

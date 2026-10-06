@@ -14,6 +14,17 @@ else if(point_distance(x,y,ball_player.x,ball_player.y) < 500) {
 		global.assistScore[num] += 80;
 	}
 }
+
+with(obj_AI) {
+	if(point_distance(x,y,other.x,other.y) < 300) {
+		dir = point_direction(x,y,other.x,other.y);
+		motion_add(dir,25);
+	} else if(point_distance(x,y,other.x,other.y) < 500) {
+		dir = point_direction(x,y,other.x,other.y);
+		motion_add(dir,15);
+	}
+}
+
 ins = instance_create(x,y,obj_implosion)
 ins.num = num
 ins.alarm[0] = 6;
@@ -25,7 +36,7 @@ repeat(12) {
     ins = instance_create(x+lengthdir_x(250,dir),y+lengthdir_y(250,dir),obj_explosion);
     ins.num = num;
 	ins.icon = spr_pushBomb
-    ins.dmg = 5;
+    ins.dmg = 2;
     ins.direction = dir+180;
     dir += 30;
 	ins.alarm[1] = 10;

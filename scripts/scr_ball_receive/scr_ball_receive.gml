@@ -190,6 +190,9 @@ function scr_ball_receive() {
 	    break;
 		case "Game Over":
 			instance_destroy(obj_ending)
+			with(obj_screenWhiteout) {
+				up = false;
+			}
 			global.ballGameOver = buffer[? "Winner"]
 			var towerDamages = buffer[? "towerDamages"]
 			var ballPushes = buffer[? "playersBallPush"]
@@ -204,14 +207,24 @@ function scr_ball_receive() {
 			for (var i = 0; i < instance_number(obj_loadout); i++){
 			    var inst = instance_find(obj_loadout, i);
 				var num = inst.num;
-				global.players[num].towerDamage = towerDamages[| num-1];
-				global.players[num].ballPush = ballPushes[| num-1];
-				global.players[num].healingDealt = healingDealt[| num-1];
-				global.players[num].soulsCollected = soulsCollected[| num-1];
-				global.players[num].damageBlocked = damageBlocked[| num-1];
-				global.players[num].selfDamageBlocked = selfDamageBlocked[| num-1];
-				if(num == mvpNum) {
-					inst.mvp = true;
+				if(!global.testMode) {
+					global.players[num].towerDamage = towerDamages[| num-1];
+					global.players[num].ballPush = ballPushes[| num-1];
+					global.players[num].healingDealt = healingDealt[| num-1];
+					global.players[num].soulsCollected = soulsCollected[| num-1];
+					global.players[num].damageBlocked = damageBlocked[| num-1];
+					global.players[num].selfDamageBlocked = selfDamageBlocked[| num-1];
+					if(num == mvpNum) {
+						inst.mvp = true;
+					}
+					instance_create(700, 720, obj_replayButton);
+				} else {
+					global.players[num].towerDamage = 0;
+					global.players[num].ballPush = 0;
+					global.players[num].healingDealt = 0;
+					global.players[num].soulsCollected = 0;
+					global.players[num].damageBlocked = 0;
+					global.players[num].selfDamageBlocked = 0;
 				}
 				
 				if(global.teamNum[num] == -1) { //left side
@@ -224,7 +237,6 @@ function scr_ball_receive() {
 				}
 			}
 			instance_create(250,720,obj_lobbyButton);
-			instance_create(700, 720, obj_replayButton);
 		break;
 	    case "Team Name": //recieve names
 	        num8 = buffer[? "Num"]
@@ -632,6 +644,13 @@ function scr_ball_receive() {
 			with(ball_corpse) {
 				if(self.num == soulNum) {
 					instance_destroy();
+				}
+			}
+			with(solo_server) {
+				if(global.teamNum[soulNum] == global.teamNum[ball_player.num]) {
+					global.xp2 += global.xpMax2/4;
+				} else {
+					global.xp += global.xpMax/4;
 				}
 			}
 		break;

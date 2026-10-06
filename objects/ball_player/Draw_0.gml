@@ -40,7 +40,7 @@ else {
 	draw_sprite_ext(spr_stasisAdventure,image_index,round(x),round(y),image_xscale,image_yscale,image_angle,c_white,1)
 }
 
-draw_text(round(x),round(y)-(50*(image_yscale/3)) - 35,instance_number(obj_AI));//string_hash_to_newline(global.names[num])); //name
+draw_text(round(x),round(y)-(50*(image_yscale/3)) - 35, string_hash_to_newline(global.names[num])); //name
 
 scr_drawStatus();
 //player specific shit

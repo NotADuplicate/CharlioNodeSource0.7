@@ -82,6 +82,8 @@ if(loadoutUnseen) { //enemy team doesnt know what your loadout is till they see 
 
 doNothing = random(1) < 0.7 + 0.05 * mistakes;
 dt = delta_time / 30000;
-	if(doNothing || !ability1 || ability1CD > 0 || ammo < ability1.ammoCost) {ability1CD -= dt / room_speed; } else { ability1CD = ability1.aiConsider(self); }
-	if(doNothing || !ability2 || ability2CD > 0 || ammo < ability2.ammoCost) {ability2CD -= dt / room_speed; } else { ability2CD = ability2.aiConsider(self); }
-	if(doNothing || !ability3 || ability3CD > 0 || ammo < ability3.ammoCost) {ability3CD -= dt / room_speed; } else { ability3CD = ability3.aiConsider(self); }
+if(enraged) { dt *= 2; } //twice as fast cooldowns
+
+if(doNothing || !ability1 || ability1CD > 0 || ammo < ability1.ammoCost) {ability1CD -= dt / room_speed; } else { ability1CD = ability1.aiConsider(self); }
+if(doNothing || !ability2 || ability2CD > 0 || ammo < ability2.ammoCost) {ability2CD -= dt / room_speed; } else { ability2CD = ability2.aiConsider(self); }
+if(doNothing || !ability3 || ability3CD > 0 || ammo < ability3.ammoCost) {ability3CD -= dt / room_speed; } else { ability3CD = ability3.aiConsider(self); }

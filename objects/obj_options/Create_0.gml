@@ -17,15 +17,19 @@ escapeColor = #202020
 
 global.optionsSurf = surface_create(950,700);
 
-instance_create(300,500,sound_control);
-instance_create(300,300,music_control);
-instance_create(300,400,shake_control);
-instance_create(200,300,obj_fullscreen);
-instance_create(350,300,obj_mapToggle);
-instance_create(500,300,obj_chatToggle);
-instance_create(300,200,obj_simpleThrowToggle);
-instance_create(550,200,obj_instantConfirm);
-instance_create(475,550,options_disconnect);
+instance_create(275,390,sound_control);
+instance_create(275,240,music_control);
+
+instance_create(275,505,shake_control);
+
+instance_create(175,400,obj_fullscreen);
+instance_create_depth(475,400,depth-1,obj_mapToggle);
+instance_create(775,400,obj_chatToggle);
+
+instance_create_depth(300,220,depth-1,obj_simpleThrowToggle);
+instance_create_depth(650,220,depth-1,obj_instantConfirm);
+
+instance_create(475,625,options_disconnect);
 
 scr_makeBind(500,140, "RC", "rightkey", "rightbutton", "First Ability")
 scr_makeBind(500,210,"Q","Qkey","Qbutton","Second Ability");

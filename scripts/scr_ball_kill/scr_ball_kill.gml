@@ -4,6 +4,10 @@ function scr_ball_kill(deadNum,killer,icon,assister){
 	show_debug_message("Smth got killed by:")
 	show_debug_message(killer)
 	if(deadNum > 0 && deadNum < 11) { //player deaths
+		if(!instance_exists(global.players[deadNum])) {
+			show_debug_message("Victim player not found")
+			return;
+		}
 		global.players[deadNum].hp = 250; //reset the dead players HP
 		global.players[deadNum].garren = false;
 		global.players[deadNum].respawnTimer = global.players[deadNum].setRespawnTimer;
@@ -12,6 +16,13 @@ function scr_ball_kill(deadNum,killer,icon,assister){
 				ball_player.hp = ball_player.maxhp;
 			if(global.ammoThirst)
 				global.ammo = global.maxAmmo;
+		}
+		if(global.aiControl[killer]) {
+			with(obj_AI) {
+				if(enraged && num == killer) {
+					hp = maxhp;
+				}
+			}
 		}
 		ins = instance_create(900,50,kill_marker)
 		ins.icon = icon;

@@ -1,4 +1,5 @@
 /// @description Draw shop GUI
+if(global.ballGameOver != 0) { return; }
 if(height > 0) {
 	draw_rectangle_color(xp,yp,xp2,yp+height,rectColor,rectColor,rectColor,rectColor,false);
 	draw_line_width_color(xp,yp,xp2,yp,6,borderColor,borderColor);

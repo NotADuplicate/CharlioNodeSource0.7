@@ -1,10 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function GrenadeLauncher() constructor {
-	sprite = spr_blood;
+	sprite = spr_gLauncher;
 	name = "Grenade Launcher"
-	text = @"Fire a grenade when you release left click. 
-	\n The longer you held click the longer the grenade takes to explode"
+	text = @"Click to charge a grenade, release to shoot. The longer you held click the longer the grenade takes to explode. Quickly click to grenade jump."
+	bullet = obj_grenade;
+	unlocked = false;
 
 	minRange = 40;
 	maxRange = 190;

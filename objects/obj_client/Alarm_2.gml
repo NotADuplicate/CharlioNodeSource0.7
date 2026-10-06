@@ -32,9 +32,8 @@ if(global.connected = true) {
 	if(instance_exists(inst_game)) { //delete the old game object to make way for the new
 	    instance_destroy(inst_game);
 	}
-	global.gameMode = "Norms"//buffer_read(buffer,buffer_string)
+	global.gameMode = "Simple"
 	ins = instance_create_depth(0,0,-1000,ball_game);
-	instance_create(0,0,obj_testMode)
 			
 	room_goto(demo_room);
 			

@@ -4,4 +4,10 @@ if(purchasing > 0 && levels > 0) {
 	if(global.testMode) {
 		levels--;
 	}
+	if(hp < maxhp) { 
+		hp += 3; 
+	} else { 
+		hp = maxhp;
+	}
+	enraged = false;
 }

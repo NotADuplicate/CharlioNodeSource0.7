@@ -6,29 +6,32 @@ if(!surface_exists(minimap)) {
 }
 else if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 14) {
 	surface_set_target(minimap)
-
+	
+	show_debug_message("Num monsters")
+	show_debug_message(instance_number(obj_monster))
 	for (var i = 0; i < instance_number(obj_monster); i++){
 	    var inst = instance_find(obj_monster, i);
+		show_debug_message(inst.object_index)
 
 		x1 = (inst.x-(16*inst.image_xscale))*scale
 		y1 = (inst.y-(16*inst.image_yscale))*scale
 		x2 = (inst.x+(16*inst.image_xscale))*scale
 		y2 = (inst.y+(16*inst.image_yscale))*scale
-		if(x1 > 20) {
-			draw_rectangle_color(x1,y1,x2,y2,c_orange,c_orange,c_orange,c_orange,false) 
+		if(x1 > 0) {
+			//draw_rectangle_color(x1,y1,x2,y2,c_orange,c_orange,c_orange,c_orange,false) 
 			spr = spr_orange
 			switch(inst.object_index) {
 				case ammo_monster:
 					spr = spr_ammo;
 					break;
 				case cooldown_monster:
-					spr = spr_clock;
+					spr = spr_defense;
 					break;
 				case dmg_monster:
 					spr = spr_attack;
 					break;
 				case health_monster:
-					spr = spr_heart;
+					spr = spr_spellShield;
 					break;
 				case jungle_monster:
 					spr = spr_jungle;
@@ -38,9 +41,10 @@ else if(!instance_exists(obj_tutorial) || obj_tutorial.stage > 14) {
 					break;
 				case speed_monster:
 					spr = spr_speed;
-				break;
+					show_debug_message("Speed mon")
+					break;
 			}
-			draw_sprite_ext(spr,0,(x1+x2)/2,(y1+y2)/2,0.25,0.25,0,c_white,1)
+			draw_sprite_ext(spr,0,(x1+x2)/2,(y1+y2)/2,0.35,0.35,0,c_white,1)
 		}
 	}
 

@@ -2,6 +2,10 @@
 if(enemy != noone) {
 switch(state) {
 	case "Travel": //travel to defend tower
+		if(enraged) {
+			state = "Backing";
+			return;
+		}
 		if(point_distance(x,y,targetX,targetY) < 100) {
 			state = "Travel Ball";
 		}
@@ -25,6 +29,10 @@ switch(state) {
 		}
 	break;
 	case "Travel Ball": //travel to the ball after respawn
+		if(enraged) {
+			state = "Backing";
+			return;
+		}
 		targetX = obj_bigBall.x;
 		targetY = obj_bigBall.y;
 		if(random(1) > 0.95 && abs(gunDir - pointDir) < 15) {
@@ -54,6 +62,18 @@ switch(state) {
 		}
 	break;
 	case "Push":
+		if(enraged) {
+			if(enemyDistances[3] < 400) {
+				state = "Thirst";
+			} else {
+				state = "Backing";
+			}
+			return;
+		}
+		if(obj_bigBall.murderball) {
+			state = "Flee";
+			return;
+		}
 		gunDir = point_direction(x,y,obj_bigBall.x,obj_bigBall.y);
 		if(point_distance(x,y,enemy.x,enemy.y) < 250 && collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
 			if(collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone && random(1) > 0.95) {
@@ -73,6 +93,14 @@ switch(state) {
 		}
 	break;
 	case "Forward":
+		if(enraged) {
+			if(enemyDistances[3] < 400) {
+				state = "Thirst";
+			} else {
+				state = "Backing";
+			}
+			return;
+		}
 		if(point_distance(x,y,enemy.x,enemy.y) < 350 && collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
 			if(collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone && random(1) > 0.75) {
 				if(recentlySwithced == 0) {
@@ -92,6 +120,10 @@ switch(state) {
 		}
 	break;
 	case "Skirmish":
+		if(enraged) {
+			state = "Thirst";
+			return;
+		}
 		gunDir = point_direction(x,y,enemy.x,enemy.y);
 		if(collision_line(x,y,enemy.x,enemy.y, ball_wall, false, false) == noone) {
 			if(knownLocation < 80) {
@@ -187,18 +219,19 @@ switch(state) {
 	break;
 	case "Backing":
 		backing++;
+		path_end();
 		if(backing > 150) {
 			x = startX;
 			y = startY;
 			state = "Travel"
 		}
 		if(enemyDistances[2] < 300) {
-			state = "Skirmish";
+			state = hp > 100 ? "Skirmish" : "Flee";
 		}
 	break;
 }
 
-if(hp < 100 && hp < enemy.hp/2 && point_distance(x,y,enemy.x,enemy.y) < 160) { //flee
+if(hp < 100 && hp < enemy.hp/2 && point_distance(x,y,enemy.x,enemy.y) < 160 && !enraged) { //flee
 	state = "Flee";
 }
 }

@@ -9,6 +9,7 @@ function Axe() constructor {
 	name = "Fire Axe"
 	abilityName = "fireAxe"
 	text = "Swing a short range axe which deals 50 damage to enemies or 170 damage if they are burning";
+	tooltip = ["Gaming moments can get heated, so remember to use fire axe to crit burning targets"]
 	
 	stats = new AbilityStats();
 	stats.damage = 0;
@@ -16,6 +17,8 @@ function Axe() constructor {
 	stats.add_synergy("damageMultiplier", "mobility", 0.5);
 	stats.add_synergy("damage", "fire", 4);
 	stats.add_synergy("damageMultiplier","AP",0.15)
+	
+	unlocked = false;
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

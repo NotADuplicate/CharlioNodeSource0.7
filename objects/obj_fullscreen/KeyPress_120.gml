@@ -1,5 +1,6 @@
 /// @description Go fullscreen
-if window_get_fullscreen(){
+event_user(0);
+/*if window_get_fullscreen(){
     window_set_fullscreen(false);
     sprite_index = spr_checkbox;
 }

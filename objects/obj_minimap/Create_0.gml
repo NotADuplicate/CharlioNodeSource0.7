@@ -1,6 +1,6 @@
 /// @description Read map
 alarm[0] = 1; //set all walls
-alarm[1] = 2; //draw monsters
+alarm[1] = 30; //draw monsters
 scale = 0.1
 width = room_width*scale;
 height = 2725*scale; // room height ignoring bottom area

@@ -8,6 +8,9 @@ if(global.options && global.optionState == "General") {
 		with(obj_tutorial) {
 			instance_destroy();
 		}
+		with(solo_server) {
+			instance_destroy();
+		}
 		obj_client.alarm[9] = 1;
 		if(instance_exists(inst_game))
 			instance_destroy(inst_game)

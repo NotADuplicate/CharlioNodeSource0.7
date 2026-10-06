@@ -28,3 +28,7 @@ if(enemy == noone) {
 } else {
 	enemyDistances[0] = point_distance(x,y,enemy.x,enemy.y);
 }
+
+if(enraged) {
+	scr_dummy_damage(0.8,num,false, spr_anger, true);
+}

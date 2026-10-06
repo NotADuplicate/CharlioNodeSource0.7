@@ -7,6 +7,7 @@ function Bump() constructor {
 	name = "Bump"
 	abilityName = "bump"
 	text = "Apply knockback to nearby players and the ball towards your mouse."
+	tooltip = ["Bump allies at enemies to put them on the offensive"]
 	
 	stats = new AbilityStats();
 	stats.ballPush = 5;

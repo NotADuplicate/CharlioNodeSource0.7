@@ -4,22 +4,22 @@
   "bboxMode":0,
   "bbox_bottom":25,
   "bbox_left":4,
-  "bbox_right":28,
-  "bbox_top":7,
+  "bbox_right":30,
+  "bbox_top":1,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"f7398b67-8e88-4d80-b9e2-0e6cc0101b8f","name":"f7398b67-8e88-4d80-b9e2-0e6cc0101b8f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0154aeab-2001-4aa1-9e09-76aa55f8c32b","name":"0154aeab-2001-4aa1-9e09-76aa55f8c32b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"14262079-eba5-4fcf-b89d-c8a20639b7dc","blendMode":0,"displayName":"default","isLocked":false,"name":"14262079-eba5-4fcf-b89d-c8a20639b7dc","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"c5ffccc6-d0d6-419a-809d-7620ea4455cf","blendMode":0,"displayName":"default","isLocked":false,"name":"c5ffccc6-d0d6-419a-809d-7620ea4455cf","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"naduko_molotov",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f7398b67-8e88-4d80-b9e2-0e6cc0101b8f","path":"sprites/naduko_molotov/naduko_molotov.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4e68edc8-7fb1-4f82-ad0d-4145500ecb94","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0154aeab-2001-4aa1-9e09-76aa55f8c32b","path":"sprites/naduko_molotov/naduko_molotov.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f04a0073-ca1c-4b2c-b90f-89b00a007563","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

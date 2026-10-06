@@ -16,6 +16,7 @@ reminderTimer = 100;
 textScale = 1;
 textShake = 0;
 textOffset = 0;
+global.spectating = false;
 
 /*/Skip
 alarm[1] = 5;

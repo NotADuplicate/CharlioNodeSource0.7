@@ -1,2 +1,3 @@
 /// @description Highlight
-highlighted = true;
+if(!global.options && !instance_exists(obj_modal))
+	highlighted = true;

@@ -6,8 +6,13 @@ function Deathtouch() constructor {
 	cooldown = 15; 
 	name = "Death Touch"
 	abilityName = "deathTouch"
-	text = "Shoots a projectile which applies death touch for 5 seconds. Any player who touches something afflicted with death touch instantly dies.";
+	text = "Shoots a projectile which applies death touch. Touching a death touched object kills you. Death touched balls do double tower damage."
+	tooltip = ["Death touched balls deal double damage to towers\nAnd infinity times more damage to players"]
 	
+	stats = new AbilityStats();
+	stats.damage = 0;
+	stats.ammoSupply = -2;
+	stats.add_synergy("damage","ballPush",1.2)
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

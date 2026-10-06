@@ -8,12 +8,14 @@ function Block() constructor {
 	name = "Block"
 	abilityName = "block"
 	text = "Become invincible for " + string(duration) + " seconds"
-	tooltip = "Despite the existence of 'Block' there are no cubes in the game."
+	tooltip = ["Despite the existence of 'Block' there are no cubes in the game."]
 	
 	stats = new AbilityStats();
 	stats.effectiveness = 3;
 	stats.add_synergy("effectiveness", "selfDamage", 1);
 	stats.ammoSupply = -1;
+	
+	unlocked = false;
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

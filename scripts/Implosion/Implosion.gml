@@ -7,12 +7,14 @@ function Implosion() constructor {
 	name = "Implosion Grenade"
 	abilityName = "implosion"
 	text = "Throw a bomb which pulls players towards it when it lands";
-	tooltip = "Implosion is one half of the classic 'Implositov' combo. Can you find the other half?"
+	tooltip = ["Implosion is one half of the classic 'Implositov' combo. Can you find the other half?"]
 	
 	stats = new AbilityStats();
 	stats.CC = 1;
 	stats.mobility = 0.5;
 	stats.add_synergy("effectiveness","zoning",0.5);
+	
+	unlocked = false;
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

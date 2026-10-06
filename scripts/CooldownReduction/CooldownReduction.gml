@@ -7,6 +7,10 @@ function CooldownReduction() constructor {
 	type = "Resources"
 	name = "Cooldown Reduction"
 	
+	stats = new AbilityStats();
+	stats.ammoSupply = -1;
+	stats.effectiveness = 3;
+	
 	static passiveGet = function(buffer) {
 		global.coolReduc *= 1.3
 	}

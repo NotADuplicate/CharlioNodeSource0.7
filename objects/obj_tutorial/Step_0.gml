@@ -90,9 +90,9 @@ if(stage == 5) {
 		select_space.visible = true;
 
 		ob = instance_create(250,550,inst_utility);
-		ob.utility = Abilities.armorBreak;
+		ob.utility = Abilities.block;
 		ob = instance_create(360,550,inst_utility)
-		ob.utility = Abilities.finisher;
+		ob.utility = Abilities.bloodshot;
 		ob = instance_create(470,550,inst_utility)
 		ob.utility = Abilities.dash;
 		
@@ -172,7 +172,7 @@ if(stage == 8) {
 				surface = true;
 				obj_shop.wipe = true;
 			}
-			tutText = "Click on a passive to see what it does.\nDouble click it to select it"
+			tutText = ""
 		}
 	}
 	else {
@@ -239,7 +239,7 @@ else if(stage == 12) { //push into tower
 	}
 }
 else if(stage == 13) {
-	tutText = "You can hold B in order to return back to your spawn";
+	tutText = "Hold B in order to return back to your spawn";
 	if(position_meeting(ball_player.x,ball_player.y, obj_regen)) {
 		textScale = 1;
 		remindingText = false;
@@ -251,11 +251,28 @@ else if(stage == 13) {
 		ob = instance_create(150,400,inst_utility);
 		ob.utility = Abilities.blastOff;
 		ob = instance_create(250,400,inst_utility)
-		ob.utility = Abilities.bloodshot;
+		ob.utility = Abilities.cleaver;
 		ob = instance_create(360,400,inst_utility)
-		ob.utility = Abilities.frost;
+		ob.utility = Abilities.bump;
 		ob = instance_create(470,400,inst_utility);
-		ob.utility = Abilities.block;
+		ob.utility = Abilities.shatter;
+		
+		xPos = 1050 + 450/2 * (.5);
+		yPos = 4715;
+		ins = instance_create(xPos,yPos,inst_passive);
+		passiveOb = Passives.ammoRegen
+		ins.spr = passiveOb.sprite;
+		ins.str = passiveOb.text;
+		ins.passiveIndex = passiveOb.passiveIndex;
+		ins.maxStacks = passiveOb.maxStacks;
+		xPos = 1050 + 450/2 * (1.5);
+		ins = instance_create(xPos,yPos,inst_passive);
+		passiveOb = Passives.cooldownReduction
+		ins.spr = passiveOb.sprite;
+		ins.str = passiveOb.text;
+		ins.passiveIndex = passiveOb.passiveIndex;
+		ins.maxStacks = passiveOb.maxStacks;
+		
 		with(obj_shop) {
 			alarm[2] = 1;
 		}
@@ -321,6 +338,5 @@ else if(stage == 17) {
 else if(stage == 18) {
 	if(obj_bigBall.x < 1) {
 		stage = 19;
-		tutText = "Good job!!!\nYou've won your first round of Charlio Ball!"
 	}
 }

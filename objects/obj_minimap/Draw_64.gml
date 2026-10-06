@@ -1,5 +1,5 @@
 /// @description Draw minimap
-if(global.mapShowing) {
+if(global.mapShowing && global.ballGameOver == 0) {
 	draw_set_alpha(0.5)
 
 	xp1 = 1024 - width;
@@ -37,6 +37,12 @@ if(global.mapShowing) {
 			towerX = inst.x*scale + xp1+1
 			towerY = inst.y*scale + yp1+1
 			draw_rectangle_color(towerX-5,towerY-5,towerX+5,towerY+10,c_maroon, c_maroon, c_maroon, c_maroon,false)
+		}
+		
+		if(obj_drag.visible && obj_drag.x > 500) {
+			refX = obj_drag.x*scale + xp1+1
+			refY = obj_drag.y*scale + yp1+1
+			draw_sprite_ext(beholder_idle,0,refX,refY,0.5,0.5,0,c_white,0.9)
 		}
 
 		ballx = obj_bigBall.x*scale+xp1

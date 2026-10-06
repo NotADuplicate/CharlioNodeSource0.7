@@ -1,7 +1,10 @@
 /// @description Set text
-alarm[4] = 1;
-global.levels = 3;
-alarm[2] = 2; //respawn the ref
-ability2 = noone;
-ability3 = noone;
-global.spectating = false;
+if(!instance_exists(obj_tutorial)) {
+	alarm[4] = 1;
+	global.levels = 3;
+	alarm[2] = 2; //respawn the ref
+	global.spectating = false;
+}
+
+global.xp2 = 0;
+global.xpMax2 = 1500;

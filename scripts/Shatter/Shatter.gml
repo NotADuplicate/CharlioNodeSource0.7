@@ -8,8 +8,15 @@ function Shatter() constructor {
 	knockback = 4
 	name = "Shatter"
 	abilityName = "shatter"
-	text = "Fire a fast moving projectile which passes through players but explodes upon contact with the ball or a wall. Explosions deal " + string(damage) + " to nearby enemies."
+	text = "Fire a fast moving projectile which explodes upon contact with the ball or a wall. Radius is doubled if it hit the ball. Explosions deal " + string(damage) + " to nearby enemies."
+	tooltip = ["Shatter has much larger explosion when it hits the ball", "Shatter will go right through players\nIt only explodes on a wall or the ball"]
 	
+	stats = new AbilityStats();
+	stats.damage = 3;
+	stats.ammoSupply = 0;
+	stats.add_synergy("damage", "ballPush", 0.5);
+	stats.ballPressure = 4;
+	stats.add_synergy("damageMultiplier","AP",0.2)
 	
 	static abilityPressed = function(buffer) {
 		if(global.ammo >= ammoCost) {

@@ -1,5 +1,6 @@
 /// @description Set all abilities
 alarm[0] = 1;
+alarm[1] = 3; // load unlocks
 cleaver = new Cleaver();
 block = new Block();
 molotov = new Molotov();
@@ -61,6 +62,13 @@ pistol = new Pistol();
 melee = new Melee();
 shotgun = new Shotgun();
 grenade = new GrenadeLauncher();
+chargeGun = new ChargeGun();
+popGun = new PopGun();
+minigun = new Minigun();
+
+gunObjs = [pistol, melee, shotgun, grenade, chargeGun, popGun, minigun];
+
+global.unlocks = 0;
 
 global.loadoutSet[0] = [shuriken, flash, bloodshot, frost, armorBreak, cleaver, healBomb, blastOff, obj_ARbullet, virgin_bullet];
 global.loadoutSet[1] = [axe, dash, flareGun, molotov, block, rocket, implosion, heal, obj_grenade, obj_melee];

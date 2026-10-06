@@ -4,6 +4,8 @@ function Pistol() constructor {
 	sprite = spr_blood;
 	ammoCost = 0;
 	name = "Pistol"
+	bullet = obj_bullet;
+	unlocked = false;
 
 	minRange = 40;
 	maxRange = 180;

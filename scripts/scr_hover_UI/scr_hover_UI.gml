@@ -12,8 +12,9 @@ function scr_hover_UI(xp, yp, text, object, hoverVar, up, height){
 		}
 		var alpha = min(hover/15,0.8)
 		draw_set_alpha(alpha);
+		width = 10 + string_width(text)/2;
 		
-		draw_rectangle_color(xp-70,yp-20*up-height,xp+70,yp-20*up,c_grey,c_grey,c_grey,c_grey,false);
+		draw_rectangle_color(xp-width,yp-20*up-height,xp+width,yp-20*up,c_grey,c_grey,c_grey,c_grey,false);
 		if(up == 1) {
 			draw_text(xp,yp-height-20,text);
 		} else {

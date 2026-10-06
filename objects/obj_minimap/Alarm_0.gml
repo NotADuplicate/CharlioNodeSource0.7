@@ -3,6 +3,17 @@ surface_set_target(minimap)
 
 draw_rectangle_color(0,0,width,height,c_ltgray,c_ltgray,c_ltgray,c_ltgray,false);
 
+for (var i = 0; i < instance_number(server_walls); i++){
+    var inst = instance_find(server_walls, i);
+	if(inst.object_index == server_walls) { //only count literal ball walls
+		x1 = (inst.x-(16*inst.image_xscale))*scale
+		y1 = (inst.y-(16*inst.image_yscale))*scale
+		x2 = (inst.x+(16*inst.image_xscale))*scale
+		y2 = (inst.y+(16*inst.image_yscale))*scale 
+		draw_rectangle_color(x1,y1,x2,y2,#909090,#909090,#909090,#909090,false)
+	}
+}
+
 for (var i = 0; i < instance_number(ball_wall); i++){
     var inst = instance_find(ball_wall, i);
 	if(inst.object_index == ball_wall) { //only count literal ball walls

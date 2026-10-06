@@ -6,6 +6,7 @@ if(instance_exists(obj_tutorial) = false || obj_tutorial.stage > 14) {
 	monster.hp = maxhp;
 	monster.maxhp = maxhp;
 	monster.regen = regen;
+	monster.sprite_index = idleSpr;
 	monster.idleSpr = idleSpr;
 	monster.walkSpr = walkSpr;
 	monster.deathSpr = deathSpr;

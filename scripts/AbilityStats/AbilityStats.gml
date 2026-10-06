@@ -34,6 +34,8 @@ function AbilityStats() constructor {
 	AP			= 0;
 	AD			= 0;
 	healPassive = 0;
+	ballPressure= 0;
+	buffs       = 0;
     
     // synergies[$ targetStat][$ sourceStat] = multiplier
     synergies = {};
