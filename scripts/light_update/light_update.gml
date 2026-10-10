@@ -29,12 +29,30 @@ function light_update(argument0) {
 	var light_type = light[| eLight.Type];
 	var light_direction = light[| eLight.Direction];
 	var dirty = light_flags & eLightFlags.Dirty;
+	// Followers write positions directly without setting Dirty. Detect every
+	// geometry dependency before reusing static shadows, including map-space changes.
+	var geometry_state = light[| eLight.ShadowGeometryState];
+	var light_width = light[| eLight.Width];
+	var light_shadow_length = light[| eLight.ShadowLength];
+	var geometry_flags = light_flags & (eLightFlags.CastsShadows | eLightFlags.UsesUniqueShadowMap);
+	if(geometry_state == undefined
+	|| geometry_state[0] != light_x || geometry_state[1] != light_y
+	|| geometry_state[2] != light_range || geometry_state[3] != light_type
+	|| geometry_state[4] != light_direction || geometry_state[5] != light_width
+	|| geometry_state[6] != light_shadow_length || geometry_state[7] != geometry_flags) {
+		dirty = true;
+		light[| eLight.ShadowGeometryState] = [light_x, light_y, light_range, light_type,
+			light_direction, light_width, light_shadow_length, geometry_flags];
+	}
 	var static_storage = light[| eLight.StaticStorage];
 	var out_of_range_map = light[| eLight.ShadowCastersOutOfRange];
 	var culled_shadow_casters = light[| eLight.CulledShadowCasters];
 	var ignore_set = light[| eLight.IgnoreSet];
 	var light_last_camera = light[| eLight.ActiveCamera];
 	var light_is_directional = light_type == eLightType.Directional;
+	// Changed lights cannot use old static triangles. Do not copy new triangles
+	// into the cache while the light moves; populate it once it settles instead.
+	if(dirty && static_storage != undefined) ds_map_clear(static_storage);
 
 	// Light's affected area
 	var light_area = [light_x - light_range, light_y - light_range, light_x + light_range, light_y + light_range];
@@ -110,7 +128,19 @@ function light_update(argument0) {
 		// Find all shadow casters possibly affected by this light
 		var list = global.worldCulledShadowCastersRTree;
 		ds_list_clear(list);
-		collision_rectangle_list(light_area[0], light_area[1], light_area[2], light_area[3], obj_shadow_caster, false, false, list, false);
+		// Query only the overlap of the light and the player's lighting region.
+		var query_left = light_area[0], query_top = light_area[1];
+		var query_right = light_area[2], query_bottom = light_area[3];
+		var region = global.lightingCasterRegion;
+		if(region != undefined) {
+			query_left = max(query_left, region[0]);
+			query_top = max(query_top, region[1]);
+			query_right = min(query_right, region[2]);
+			query_bottom = min(query_bottom, region[3]);
+		}
+		if(query_left <= query_right && query_top <= query_bottom) {
+			collision_rectangle_list(query_left, query_top, query_right, query_bottom, obj_shadow_caster, false, false, list, false);
+		}
 		var list_size = ds_list_size(list);
 	
 		for(var caster_index = 0; caster_index < list_size; ++caster_index)
@@ -118,6 +148,7 @@ function light_update(argument0) {
 			// Iterate over all shadow casters and trace shadows
 			// NOTE: While mostly identical, there are some differences between this code and that of the else-statement
 			with(ds_list_find_value(list, caster_index)) {
+				if(outside_lighting_region) continue;
 				// Is the light ignoring this shadow caster?
 				if(has_ignore_set && ds_map_exists(ignore_set, id)) {
 					// Yes, skip it
@@ -190,7 +221,7 @@ function light_update(argument0) {
 					// The shadow caster is static
 					if(!dirty && !shadow_caster_dirty) {
 						// Neither the light nor shadow caster is dirty
-						shadow = light_static_get_array(light, id);
+						if(static_storage != undefined) shadow = static_storage[? id];
 					}
 					else if(shadow_caster_dirty && (flags & eShadowCasterFlags.MarkedForCleanup) == 0) {
 						// The shadow caster is dirty, mark it to get cleaned after the lighting pass
@@ -213,11 +244,16 @@ function light_update(argument0) {
 						continue;
 					}
 		
-					if(shadow_caster_static) {
+					if(shadow_caster_static && !dirty) {
 						// Save the array; we copy it because the returned array is reused
-						var copy = array_create(array_length_1d(shadow));
-						array_copy(copy, 0, shadow, 0, array_length_1d(shadow));
-						light_static_set_array(light, id, copy);
+						var shadow_vertex_count = array_length_1d(shadow);
+						var copy = array_create(shadow_vertex_count);
+						array_copy(copy, 0, shadow, 0, shadow_vertex_count);
+						if(static_storage == undefined) {
+							static_storage = ds_map_create();
+							light[| eLight.StaticStorage] = static_storage;
+						}
+						static_storage[? id] = copy;
 					}
 				}
 	
@@ -252,6 +288,7 @@ function light_update(argument0) {
 	
 		// Iterate over all shadow casters and trace shadows
 		with(obj_shadow_caster) {
+			if(outside_lighting_region) continue;
 			// Is the light ignoring this shadow caster?
 			if(has_ignore_set && ds_map_exists(ignore_set, id)) {
 				// Yes, skip it
@@ -344,7 +381,7 @@ function light_update(argument0) {
 				// The shadow caster is static
 				if(!dirty && !shadow_caster_dirty) {
 					// Neither the light nor shadow caster is dirty
-					shadow = light_static_get_array(light, id);
+					if(static_storage != undefined) shadow = static_storage[? id];
 				}
 				else if(shadow_caster_dirty && (flags & eShadowCasterFlags.MarkedForCleanup) == 0) {
 					// The shadow caster is dirty, mark it to get cleaned after the lighting pass
@@ -367,11 +404,16 @@ function light_update(argument0) {
 					continue;
 				}
 		
-				if(shadow_caster_static) {
+				if(shadow_caster_static && !dirty) {
 					// Save the array; we copy it because the returned array is reused
-					var copy = array_create(array_length_1d(shadow));
-					array_copy(copy, 0, shadow, 0, array_length_1d(shadow));
-					light_static_set_array(light, id, copy);
+					var shadow_vertex_count = array_length_1d(shadow);
+					var copy = array_create(shadow_vertex_count);
+					array_copy(copy, 0, shadow, 0, shadow_vertex_count);
+					if(static_storage == undefined) {
+						static_storage = ds_map_create();
+						light[| eLight.StaticStorage] = static_storage;
+					}
+					static_storage[? id] = copy;
 				}
 			}
 	

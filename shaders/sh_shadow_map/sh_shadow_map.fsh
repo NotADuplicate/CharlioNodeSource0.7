@@ -14,10 +14,13 @@ varying vec4 v_vColour;
 
 // How many texels to diverge from this fragment when blending?
 // BLEND_ITERATIONS is how many steps we take to reach this distance
-#define BLEND_TEXELS 64.0
+#define BLEND_TEXELS 4.0
 
 // The ambient shadow color and intensity
 uniform float u_AmbientShadow;
+uniform sampler2D u_Environment;
+uniform bool u_EnvironmentPass;
+uniform float u_EnvironmentVisibility;
 
 // Texel information
 uniform vec2 u_TexelSize;
@@ -94,6 +97,16 @@ void main()
 	gl_FragColor = fragment * u_AmbientShadow;
 	
 #endif
+	// A second blur must never undo a wall's occlusion. The unblurred map
+	// establishes the minimum darkness, so softness stays on the lit side.
+	vec4 hardShadow = clamp(vec4(1.0) - texture2D(gm_BaseTexture, v_vTexcoord), 0.0, 1.0);
+	gl_FragColor = max(gl_FragColor, hardShadow * u_AmbientShadow);
+	// Add back only the environment, weighted by the same softened darkness mask.
+	// The first pass removes the entire scene in darkness, including instances.
+	if (u_EnvironmentPass) {
+		vec3 environment = texture2D(u_Environment, v_vTexcoord).rgb;
+		gl_FragColor = vec4(environment * u_EnvironmentVisibility * gl_FragColor.rgb, 0.0);
+	}
 }
 
 // You can uncomment adjacent fragments to do a more complete blend

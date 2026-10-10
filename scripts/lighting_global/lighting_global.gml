@@ -23,6 +23,14 @@ function lighting_global() {
 
 	// Ambient shadow level
 	global.ambientShadowIntensity = 1;
+	// Visibility of tile/background layers in fully unlit areas (instances stay hidden).
+	global.environmentDarknessVisibility = 0.5;
+	global.lightingEnvironmentSurface = -1;
+	global.lightingLayerSurface = -1;
+	global.lightingEnvironmentReady = false;
+	global.lightingLayerCapturing = false;
+	// Shadow casters are limited to 2000 x 1100 around ball_cam when it exists.
+	global.lightingCasterRegion = undefined;
 
 	// Whether the shadow caster's collision mask is used to cull it against lights (true) or not (false)
 	// A polygon must be assigned to the shadow caster regardless, this is only for efficient culling
@@ -151,6 +159,7 @@ function lighting_global() {
 		ShadowCastersOutOfRange,	// A set of static shadow casters that are known to be out of range of this light; only applies to static shadow casters
 		CulledShadowCasters,		// A set of shadow casters that have been culled from this light because they don't affect the global shadow map; culled against the camera, not the light
 		ActiveCamera,				// The camera this light was last updated for, this is the camera array [X, Y, Width, Height]
+		ShadowGeometryState,		// Attributes used to build cached static shadow geometry
 	
 		// The number of light fields (this must be the last enum field)
 		// This makes it easier to deal with arrays that contain this information
@@ -301,6 +310,9 @@ function lighting_global() {
 
 	// Ambient shadow color and intensity; this is set to global.ambientShadowIntensity
 	global.u_AmbientShadow = shader_get_uniform(__WORLD_SHADOW_MAP_SHADER, "u_AmbientShadow");
+	global.u_Environment = shader_get_sampler_index(__WORLD_SHADOW_MAP_SHADER, "u_Environment");
+	global.u_EnvironmentPass = shader_get_uniform(__WORLD_SHADOW_MAP_SHADER, "u_EnvironmentPass");
+	global.u_EnvironmentVisibility = shader_get_uniform(__WORLD_SHADOW_MAP_SHADER, "u_EnvironmentVisibility");
 
 	// Light intensity LUT
 	global.u_LutIntensity = shader_get_sampler_index(__LIGHT_SHADER, "u_LutIntensity");
@@ -324,4 +336,85 @@ function lighting_global() {
 	global.u_LineEmitterPoint2 = shader_get_uniform(__LIGHT_SHADER, "u_LineEmitterPoint2");
 
 
+}
+
+// Capture native tile/background rendering so animation, tiling and layer offsets
+// are retained. Each layer is replayed immediately to preserve its normal depth.
+function lighting_environment_layer_begin() {
+	if(event_type != ev_draw || event_number != 0 || !global.lightingEnvironmentReady) return;
+	global.lightingCaptureCamera = camera_get_active();
+	global.lightingCaptureBounds = lighting_get_active_camera();
+	global.lightingCaptureWorld = matrix_get(matrix_world);
+	global.lightingCaptureView = matrix_get(matrix_view);
+	global.lightingCaptureProjection = matrix_get(matrix_projection);
+	gpu_push_state();
+	if(!surface_set_target(global.lightingLayerSurface)) {
+		gpu_pop_state();
+		return;
+	}
+	global.lightingLayerCapturing = true;
+	draw_clear_alpha(c_black, 0);
+	matrix_set(matrix_world, global.lightingCaptureWorld);
+	matrix_set(matrix_view, global.lightingCaptureView);
+	matrix_set(matrix_projection, global.lightingCaptureProjection);
+	// Store premultiplied RGB with correct coverage in the transparent surface.
+	gpu_set_blendmode_ext_sepalpha(bm_src_alpha, bm_inv_src_alpha, bm_one, bm_inv_src_alpha);
+}
+
+function lighting_environment_layer_end() {
+	if(event_type != ev_draw || event_number != 0 || !global.lightingLayerCapturing) return;
+	global.lightingLayerCapturing = false;
+	surface_reset_target();
+	var old_colour = draw_get_color();
+	var old_alpha = draw_get_alpha();
+	draw_set_color(c_white);
+	draw_set_alpha(1);
+	// Accumulate only environment layers, even when instances lie between them.
+	surface_set_target(global.lightingEnvironmentSurface);
+	matrix_set(matrix_world, matrix_build_identity());
+	gpu_set_blendmode_ext_sepalpha(bm_one, bm_inv_src_alpha, bm_one, bm_inv_src_alpha);
+	draw_surface(global.lightingLayerSurface, 0, 0);
+	surface_reset_target();
+	camera_apply(global.lightingCaptureCamera);
+	matrix_set(matrix_world, global.lightingCaptureWorld);
+	matrix_set(matrix_view, global.lightingCaptureView);
+	matrix_set(matrix_projection, global.lightingCaptureProjection);
+	var camera = global.lightingCaptureBounds;
+	draw_surface(global.lightingLayerSurface, camera[eLightingCamera.X], camera[eLightingCamera.Y]);
+	draw_set_color(old_colour);
+	draw_set_alpha(old_alpha);
+	gpu_pop_state();
+}
+
+function lighting_environment_prepare() {
+	global.lightingEnvironmentReady = false;
+	if(global.teamNum[obj_client.index] == 0) return;
+	var active_camera = camera_get_active();
+	var camera = lighting_get_active_camera();
+	var w = ceil(camera[eLightingCamera.Width]);
+	var h = ceil(camera[eLightingCamera.Height]);
+	if(surface_exists(global.lightingEnvironmentSurface)) {
+		if(surface_get_width(global.lightingEnvironmentSurface) != w || surface_get_height(global.lightingEnvironmentSurface) != h) {
+			surface_free(global.lightingEnvironmentSurface);
+		}
+	}
+	if(surface_exists(global.lightingLayerSurface)) {
+		if(surface_get_width(global.lightingLayerSurface) != w || surface_get_height(global.lightingLayerSurface) != h) {
+			surface_free(global.lightingLayerSurface);
+		}
+	}
+	if(!surface_exists(global.lightingEnvironmentSurface)) global.lightingEnvironmentSurface = surface_create(w, h);
+	if(!surface_exists(global.lightingLayerSurface)) global.lightingLayerSurface = surface_create(w, h);
+	if(!surface_exists(global.lightingEnvironmentSurface) || !surface_exists(global.lightingLayerSurface)) return;
+	var world = matrix_get(matrix_world);
+	var view = matrix_get(matrix_view);
+	var projection = matrix_get(matrix_projection);
+	surface_set_target(global.lightingEnvironmentSurface);
+	draw_clear_alpha(c_black, 0);
+	surface_reset_target();
+	camera_apply(active_camera);
+	matrix_set(matrix_world, world);
+	matrix_set(matrix_view, view);
+	matrix_set(matrix_projection, projection);
+	global.lightingEnvironmentReady = true;
 }

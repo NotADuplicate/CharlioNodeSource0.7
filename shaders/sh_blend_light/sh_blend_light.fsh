@@ -4,11 +4,7 @@
 
 // Comment this out to disable lit fragment blending
 #define BLEND_LIT_FRAGMENTS
-// Comment this out to disable unlit fragment blending
-#define BLEND_UNLIT_FRAGMENTS
-
 // How many texels to diverge from this fragment when blending?
-#define BLEND_TEXELS_IN_SHADOW 8.0	// if BLEND_UNLIT_FRAGMENTS is defined
 #define BLEND_TEXELS_IN_LIGHT 4.0	// if BLEND_LIT_FRAGMENTS is defined
 
 // Maps to eLightType enum in lighting_global
@@ -90,6 +86,12 @@ vec4 blendFragment(sampler2D sampler, vec2 coord, float dist);
 
 void main()
 {
+	// Wall occlusion is authoritative. Smooth only the lit side of the edge;
+	// averaging lit neighbours into shadow reveals characters behind walls.
+	gl_FragColor = vec4(0.0);
+	vec4 fragment = texture2D(gm_BaseTexture, v_vTexcoord);
+	if(fragment.a >= 0.5) return;
+
 	// Starting light intensity
 	float intensity = u_LightIntensity;
 	
@@ -142,19 +144,6 @@ void main()
 		}
 	}
 	
-	// Get the fragment of this light
-	vec4 fragment = texture2D(gm_BaseTexture, v_vTexcoord);
-	
-	if(fragment.a > 0.5) {
-		// This fragment is in shadow
-#ifdef BLEND_UNLIT_FRAGMENTS
-		// Blend it with nearby fragments
-		vec4 blend = 0.50 * (blendFragment(gm_BaseTexture, v_vTexcoord, BLEND_TEXELS_IN_SHADOW * 0.50)
-						  +  blendFragment(gm_BaseTexture, v_vTexcoord, BLEND_TEXELS_IN_SHADOW));
-		gl_FragColor = u_LightColor * intensity * (1.0 - blend.a);
-#endif
-	}
-	else {
 #ifdef BLEND_LIT_FRAGMENTS
 		vec4 blend = 0.50 * (blendFragment(gm_BaseTexture, v_vTexcoord, BLEND_TEXELS_IN_LIGHT * 0.50)
 						  +  blendFragment(gm_BaseTexture, v_vTexcoord, BLEND_TEXELS_IN_LIGHT));
@@ -162,7 +151,6 @@ void main()
 #else
 		gl_FragColor = u_LightColor * intensity * (1.0 - fragment.a);
 #endif
-	}
 }
 
 //

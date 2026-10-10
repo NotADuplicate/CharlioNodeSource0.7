@@ -19,7 +19,6 @@ function light_destroy(argument0) {
 	// Destroy out of range shadow casters map
 	var out_of_range_list = light[| eLight.ShadowCastersOutOfRange];
 	if(out_of_range_list != undefined) ds_map_destroy(out_of_range_list);
-	if(static_storage != undefined) ds_map_destroy(static_storage);
 
 	// Destroy culled shadow casters map
 	var culled_shadow_casters = light[| eLight.CulledShadowCasters];

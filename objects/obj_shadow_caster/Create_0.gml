@@ -23,6 +23,8 @@ cached_polygon_area = undefined;
 
 // Is the shadow caster outside the active camera?
 outside_active_camera = false;
+// Updated before compositing; excluded casters must also skip light_update.
+outside_lighting_region = false;
 // The last camera this shadow caster was compared against,
 // as the view array
 last_camera = undefined;

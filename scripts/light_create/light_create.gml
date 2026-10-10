@@ -83,6 +83,7 @@ function light_create(argument0, argument1, argument2, argument3, argument4, arg
 
 	// Must be rendered first
 	arr[| eLight.ActiveCamera] = undefined;
+	arr[| eLight.ShadowGeometryState] = undefined;
 
 	//
 	//	Add default extensions

@@ -8,20 +8,26 @@ function polygon_get_area(argument0) {
 	// Number of points in polygon
 	var points = polygon[ePolygon.Length];
 
-	var area = [1000000000, 1000000000, -1000000000, -1000000000];
+	// Accumulate in scalars, then allocate the result once. This avoids repeated
+	// array reads/writes in the per-vertex loop, preserving the existing comparisons.
+	var left = 1000000000;
+	var top = 1000000000;
+	var right = -1000000000;
+	var bottom = -1000000000;
+	var vertex_end_index = ePolygon.Count + points;
 
-	for(var i = ePolygon.Count; i < ePolygon.Count + points; ++i) {
+	for(var i = ePolygon.Count; i < vertex_end_index; ++i) {
 		var pt = polygon[i];
 		var px = pt[eVertex.X];
-		if(px < area[0]) area[0] = px;
-		else if(px > area[2]) area[2] = px;
+		if(px < left) left = px;
+		else if(px > right) right = px;
 	
 		var py = pt[eVertex.Y];
-		if(py < area[1]) area[1] = py;
-		else if(py > area[3]) area[3] = py;
+		if(py < top) top = py;
+		else if(py > bottom) bottom = py;
 	}
 
-	return area;
+	return [left, top, right, bottom];
 
 
 }

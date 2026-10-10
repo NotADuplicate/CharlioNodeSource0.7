@@ -1,5 +1,8 @@
 /// @desc Free the lighting engine
 function lighting_free() {
+	global.lightingEnvironmentReady = false;
+	if(surface_exists(global.lightingEnvironmentSurface)) surface_free(global.lightingEnvironmentSurface);
+	if(surface_exists(global.lightingLayerSurface)) surface_free(global.lightingLayerSurface);
 
 	vertex_format_delete(global.lightVertexFormat);
 

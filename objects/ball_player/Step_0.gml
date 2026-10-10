@@ -93,7 +93,7 @@ else
 if(loadoutUnseen) { //enemy team doesnt know what your loadout is till they see you
 	
 	with(ball_other) {
-		if(sameTeam == false && collision_line(x,y,other.x,other.y,ball_wall,false,false) == noone) {
+		if(sameTeam == false && point_distance(x,y,other.x,other.y) < 350 && collision_line(x,y,other.x,other.y,ball_wall,false,false) == noone) {
 			if(instance_position(ball_player.x,ball_player.y,obj_cover) == noone) {
 				other.loadoutUnseen = false
 			}

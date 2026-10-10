@@ -20,7 +20,7 @@ if(!instance_exists(obj_screenWhiteout) && point_distance(x,y,ball_cam.x,ball_ca
 			alarm[0] = 90;
 			global.finishedTutorial = true;
 		} else {
-			if(statsReady) {
+			if(obj_client.statsReady) {
 				var matches = steam_get_stat_int("matches_finished");
 				steam_set_stat_int("matches_finished", matches+1);
 				obj_client.steamUpdate = true;
