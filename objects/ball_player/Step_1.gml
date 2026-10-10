@@ -227,8 +227,8 @@ if(invPass) {
 	
 if(enraged) {
 	scr_damage(enrageDmg*global.resistance,num,false, spr_anger, true)
-	if(global.screenShake < enrageDmg*1.5)
-		global.screenShake = enrageDmg*1.5
+	if(global.screenShake < enrageDmg*2 && still < 30)
+		global.screenShake = enrageDmg*2
 	enrageDmg += 0.001
 	if(hp < 1 || x < 1) {
 		enraged = false;

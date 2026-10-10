@@ -26,17 +26,18 @@ instance_create(175,400,obj_fullscreen);
 instance_create_depth(475,400,depth-1,obj_mapToggle);
 instance_create(775,400,obj_chatToggle);
 
-instance_create_depth(300,220,depth-1,obj_simpleThrowToggle);
-instance_create_depth(650,220,depth-1,obj_instantConfirm);
+instance_create_depth(200,220,depth-1,obj_simpleThrowToggle);
+instance_create_depth(450,220,depth-1,obj_statusAlert);
+instance_create_depth(700,220,depth-1,obj_instantConfirm);
 
 instance_create(475,625,options_disconnect);
 
-scr_makeBind(500,140, "RC", "rightkey", "rightbutton", "First Ability")
-scr_makeBind(500,210,"Q","Qkey","Qbutton","Second Ability");
-scr_makeBind(500,280,"space","spacekey","spacebutton","Third Ability");
-scr_makeBind(500,350,"R","Rkey","Rbutton","Fourth Ability");
-scr_makeBind(500,420,"M","mapKey","mapbutton","Map");
-scr_makeBind(500,490,"P","shopKey","shopbutton","Shop");
-scr_makeBind(500,560,"B","backKey","backbutton","Back");
+scr_makeBind(475,205,"RC","rightkey","rightbutton","First Ability");
+scr_makeBind(475,261,"Q","Qkey","Qbutton","Second Ability");
+scr_makeBind(475,317,"space","spacekey","spacebutton","Third Ability");
+scr_makeBind(475,373,"R","Rkey","Rbutton","Fourth Ability");
+scr_makeBind(475,429,"M","mapKey","mapbutton","Map");
+scr_makeBind(475,485,"P","shopKey","shopbutton","Shop");
+scr_makeBind(475,541,"B","backKey","backbutton","Back");
 
-instance_create(500,630,unbind_button);
+instance_create(475,630,unbind_button);

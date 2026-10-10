@@ -140,17 +140,39 @@ if(firstDraw || wipe) {
 			);
 		break;
 
-		case "Controls":
-			draw_rectangle_color(
-				40,135,910,650,
-				panelRaised,panelRaised,
-				panelRaised,panelRaised,
-				false
-			);
+case "Controls":
+	draw_rectangle_color(
+		70,135,880,675,
+		panelRaised,panelRaised,
+		panelRaised,panelRaised,
+		false
+	);
 
-			draw_set_color(gold);
-			draw_rectangle(40,135,910,650,true);
-		break;
+	draw_set_color(gold);
+	draw_rectangle(70,135,880,675,true);
+
+	draw_set_halign(fa_left);
+	draw_set_color(muted);
+	draw_text_transformed(
+		117,151,
+		"ACTION",
+		1,1,0
+	);
+
+	draw_set_halign(fa_center);
+	draw_text_transformed(
+		751,151,
+		"BINDING",
+		1,1,0
+	);
+
+	draw_set_color(gold);
+	draw_rectangle_color(
+		95,178,855,181,
+		gold,gold,gold,gold,
+		false
+	);
+break;
 	}
 
 	firstDraw = false;

@@ -12,10 +12,10 @@
   "author":"",
   "classname":"",
   "ConfigValues":{},
-  "copyToTargets":0,
+  "copyToTargets":2,
   "description":"",
   "exportToGame":true,
-  "extensionVersion":"2.2.1",
+  "extensionVersion":"2.3.0",
   "files":[
     {"$GMExtensionFile":"v1","%Name":"Steamworks.ext","constants":[
         {"$GMExtensionConstant":"","%Name":"ov_friends","hidden":false,"name":"ov_friends","resourceType":"GMExtensionConstant","resourceVersion":"2.0","value":"0",},

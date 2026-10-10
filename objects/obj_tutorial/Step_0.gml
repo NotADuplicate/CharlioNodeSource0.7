@@ -24,7 +24,7 @@ else if(stage == 2 && global.attack != obj_bullet && global.shop == false) {
 	textX = 550;
 	textY = 675;
 	stage = 3;
-	alarm[1] = 1000;
+	alarm[1] = 800;
 }
 if(stage == 3) {
 	arrowX = 0;
@@ -120,7 +120,7 @@ if(stage == 6) {
 		surface = true;
 		textY = 400
 		textX = 300
-		tutText = "Fill up your ability slots. Each ability costs a level"
+		tutText = "Fill up your ability slots. Each ability costs a level.\nLevels are displayed in the top left"
 		arrowX = 35;
 		arrowY = 100;
 		if(global.leveled < 4) {
@@ -186,7 +186,7 @@ if(stage == 8) {
 		tutText = "Try out some of the passives!"
 		remindingText = false;
 		textScale = 1;
-		alarm[4] = 300
+		alarm[4] = 270
 		stage = 8.5
 	}
 }
@@ -212,7 +212,7 @@ else if(stage == 10) { //go to ball
 	if(point_distance(ball_player.x,ball_player.y,obj_bigBall.x,obj_bigBall.y) < 500) {
 		stage = 11;
 		remindingText = true;
-		alarm[6] = 600;
+		alarm[6] = 700;
 	}
 }
 else if(stage == 11) { //push into       

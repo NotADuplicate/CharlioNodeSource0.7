@@ -1,4 +1,9 @@
 /// @description Get the client to connect
+if(steam_stats_ready()) {
+	steam_set_stat_int("tutorial_open",1);
+	obj_client.steamUpdate = true;
+}
+
 global.testMode = true;
 obj_client.socket = network_create_socket(network_socket_ws)
 global.teamside = 1;

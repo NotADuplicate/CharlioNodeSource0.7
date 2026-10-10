@@ -9,5 +9,5 @@ if(purchasing > 0 && levels > 0) {
 	} else { 
 		hp = maxhp;
 	}
-	enraged = false;
 }
+enraged = false;

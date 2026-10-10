@@ -15,3 +15,4 @@ else{
 	window_set_fullscreen(true);
 	sprite_index = spr_checkedbox;
 }
+alarm[1] = 1;

@@ -23,5 +23,8 @@ if(target == obj_bigBall && point_distance(x,y, targetX, targetY) < beamLength) 
 		shootingX += x;
 	}
 	charge += 0.15;
+	if(instance_exists(obj_tutorial)) {
+		charge -= 0.05;
+	}
 	scr_ball_move(point_direction(x,y,shootingX, shootingY),3*charge,0)
 } else { charge = 0; }

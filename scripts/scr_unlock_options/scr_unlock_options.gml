@@ -1,5 +1,9 @@
 function scr_unlock_options(){
-	possibleUnlocks = [Abilities.enrage, Abilities.deathtouch, Abilities.axe, Abilities.implosion, Abilities.grenade, Abilities.minigun];
+	possibleUnlocks = [Abilities.enrage, Abilities.healBomb, Abilities.deathtouch, Abilities.axe, Abilities.implosion, Abilities.grenade, Abilities.minigun];
+	if(global.gunLock) {
+		possibleUnlocks = [Abilities.grenade, Abilities.minigun];
+		global.gunLock = false;
+	}
 	unlockOptions = [];
 	var i = 0;
 	repeat(array_length(possibleUnlocks)) {
@@ -9,6 +13,7 @@ function scr_unlock_options(){
 		i++;
 	}
 	if(array_length(unlockOptions) < 1) { return; }
+	
 	
 	instance_create(0,0,obj_unlockScreen);
 

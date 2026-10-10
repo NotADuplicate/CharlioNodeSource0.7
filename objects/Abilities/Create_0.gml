@@ -1,6 +1,9 @@
 /// @description Set all abilities
 alarm[0] = 1;
 alarm[1] = 3; // load unlocks
+
+window_set_fullscreen(true)
+
 cleaver = new Cleaver();
 block = new Block();
 molotov = new Molotov();

@@ -8,20 +8,16 @@ else if((audio_is_playing(mus_shred) || audio_is_playing(mus_shredIntro)) && bal
 	audio_stop_sound(global.music)
 	global.music = audio_play_sound(track,0,true,0);
 	audio_sound_gain(global.music,global.musVolume,1000)
-}
-//Play duel music
-else if(audio_is_playing(mus_duel) && audio_sound_get_track_position(global.music) > 19.6 && ball_player.duel > 0) { //go from enrage sound to enraged music
+} else if(audio_is_playing(mus_duel) && audio_sound_get_track_position(global.music) > 19.6 && ball_player.duel > 0) { //go from enrage sound to enraged music
 	audio_stop_sound(global.music)
 	global.music = audio_play_sound(track,0,true,global.musVolume);
 	ball_player.duel = 1;
-}
-else if((audio_is_playing(mus_duel) && ball_player.duel == 0)) {
+} else if((audio_is_playing(mus_duel) && ball_player.duel == 0)) {
 	//scr_crossfade(mus_letsBall,2000);
 	audio_stop_sound(global.music)
 	global.music = audio_play_sound(track,0,true,0);
 	audio_sound_gain(global.music,global.musVolume,1000)
-}
-else if(audio_is_playing(global.music) == false) { //if not playing anything then play smth
+} else if(audio_is_playing(global.music) == false) { //if not playing anything then play smth
 	global.music = audio_play_sound(track,0,true,0);
 	audio_sound_gain(global.music,global.musVolume,1000)
 }

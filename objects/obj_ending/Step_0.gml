@@ -12,9 +12,19 @@ if(!instance_exists(obj_screenWhiteout) && point_distance(x,y,ball_cam.x,ball_ca
 	instance_create(0,0,obj_screenWhiteout);
 	if(global.testMode) {
 		if(instance_exists(obj_tutorial)) {
+			if(obj_client.statsReady) {
+				steam_set_stat_int("tutorial_finished",1);
+				steam_set_stat_int("tutorial_time",round(current_minute - obj_tutorial.createdTime));
+				obj_client.steamUpdate = true;
+			}
 			alarm[0] = 90;
 			global.finishedTutorial = true;
 		} else {
+			if(statsReady) {
+				var matches = steam_get_stat_int("matches_finished");
+				steam_set_stat_int("matches_finished", matches+1);
+				obj_client.steamUpdate = true;
+			}
 			node_send(obj_client.buffer,"eventName","Game Over", "Winner", obj_bigBall.x < 1000 ? -1 : 1, 
 				"playersBallPush", ds_map_create(), "towerDamages", ds_map_create(), "healingDealt", ds_map_create(),
 				"soulsCollected", ds_map_create(), "selfDamageBlocked", ds_map_create(), "mvpId", 1);

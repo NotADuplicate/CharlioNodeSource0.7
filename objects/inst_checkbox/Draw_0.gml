@@ -1,5 +1,6 @@
-if(!surface_exists(global.optionsSurf))
-	global.optionsSurf = surface_create(950,700);
+if(!surface_exists(global.optionsSurf)) {
+	return;
+}
 
 if(global.options && global.optionState == "General") {
 	var ivory = make_color_rgb(232,225,207);

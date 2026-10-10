@@ -3,27 +3,30 @@
 function scr_ball_kill(deadNum,killer,icon,assister){
 	show_debug_message("Smth got killed by:")
 	show_debug_message(killer)
+	
+	if(global.players[killer].enraged == true) {
+		global.players[killer].hp = global.players[killer].maxhp;
+		global.players[killer].enrageDmg = 0.4;
+		if(global.aiControl[killer]) {
+			with(obj_AI) {
+				if(num == killer) { hp = maxhp; }
+			}
+		}
+	}
+	
 	if(deadNum > 0 && deadNum < 11) { //player deaths
-		if(!instance_exists(global.players[deadNum])) {
+		if(!instance_exists(global.players[deadNum]) || (global.players[deadNum].object_index != ball_player && global.players[deadNum].object_index != ball_other)) {
 			show_debug_message("Victim player not found")
 			return;
 		}
+		
 		global.players[deadNum].hp = 250; //reset the dead players HP
 		global.players[deadNum].garren = false;
+		if(!variable_instance_exists(global.players[deadNum],"setRespawnTimer")) {
+			show_debug_message("Somehow no set respawn")
+			return;
+		}
 		global.players[deadNum].respawnTimer = global.players[deadNum].setRespawnTimer;
-		if(killer == ball_player.num) { //killing while enraged
-			if(ball_player.enraged == true)
-				ball_player.hp = ball_player.maxhp;
-			if(global.ammoThirst)
-				global.ammo = global.maxAmmo;
-		}
-		if(global.aiControl[killer]) {
-			with(obj_AI) {
-				if(enraged && num == killer) {
-					hp = maxhp;
-				}
-			}
-		}
 		ins = instance_create(900,50,kill_marker)
 		ins.icon = icon;
 		ins.victim = deadNum;
@@ -58,11 +61,7 @@ function scr_ball_kill(deadNum,killer,icon,assister){
 					camp.knownAlpha = .5;
 				alarm[5] = 1;
 				dead = true;
-				if(killer == ball_player.num) { //stop being enraged
-					if(ball_player.enraged == true) {
-						ball_player.hp = ball_player.maxhp;
-						ball_player.enrageDmg = 0.5
-					}
+				if(killer == ball_player.num) { //get buff
 					alarm[8] = 1;
 					scr_ball_sound(snd_monsterBuff,ball_cam.x,ball_cam.y);
 				}

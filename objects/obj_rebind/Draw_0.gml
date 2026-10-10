@@ -6,6 +6,3 @@ if(surface_exists(global.optionsSurf)) {
 		surface_reset_target();
 	}
 }
-else {
-	global.optionsSurf = surface_create(950,600);
-}

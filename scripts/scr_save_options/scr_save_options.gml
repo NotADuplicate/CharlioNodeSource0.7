@@ -25,5 +25,7 @@ function scr_save_options(){
 	ini_write_real("Save1", "simpleThrowing", global.simpleThrowing);
 	ini_write_real("Save1", "instantShopConfirm", global.instantConfirm);
 	ini_write_real("Save1", "enableChat", global.chatEnabled);
+	ini_write_real("Save1", "newPlayer", global.newPlayer);
+	ini_write_real("Save1", "statusAlert", global.statusAlert);
 	ini_close()
 }

@@ -25,5 +25,7 @@ function scr_load_options(){
 	global.simpleThrowing = ini_read_real("Save1", "simpleThrowing", true);
 	global.instantConfirm = ini_read_real("Save1", "instantShopConfirm", false);
 	global.chatEnabled = ini_read_real("Save1", "enableChat", true);
+	global.newPlayer = ini_read_real("Save1", "newPlayer", true); 
+	global.statusAlert = ini_read_real("Save1", "statusAlert", true); 
 	ini_close();
 }

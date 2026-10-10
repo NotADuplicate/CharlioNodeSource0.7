@@ -12,6 +12,11 @@ if(global.connected = true) {
 		node_send(buffer,"eventName","Ready","Num",index,"Ready",ready, "Loadout", "")
 	}
 } else if(global.testMode) {
+	if(statsReady) {
+		var matches = steam_get_stat_int("offline_matches");
+		steam_set_stat_int("offline_matches", matches+1);
+		obj_client.steamUpdate = true;
+	}
 	global.loop = instance_number(obj_playerUI);
 	instance_create(0,0,solo_server)
 	with(obj_playerUI) {
@@ -42,7 +47,7 @@ if(global.connected = true) {
 	obj_client.index = 1
 	random_set_seed(1)
 	global.abilityNum = 1//buffer_read(buffer,buffer_u8)/100;
-	global.leveled = 5;
+	global.leveled = 3
 	global.cSwitch = true//buffer_read(buffer,buffer_bool);
 	global.teaming = true//buffer_read(buffer,buffer_bool);
 }

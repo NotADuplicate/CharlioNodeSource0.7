@@ -15,6 +15,8 @@ loadoutTimer = 0;
 rumbleSetup = false;
 rumbleGun = undefined;
 global.finishedTutorial = false;
+global.gunLock = false;
+steamUpdate = false;
 
 global.gameMode = "Comp"
 global.resolved = false;
@@ -92,6 +94,7 @@ repeat(10) {
 	i++;
 }
 
+//Steam
+steam_init();
 
-/* */
-/*  */
+statsReady = false;

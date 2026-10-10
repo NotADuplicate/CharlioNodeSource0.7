@@ -18,6 +18,8 @@ textShake = 0;
 textOffset = 0;
 global.spectating = false;
 
+createdTime = current_minute;
+
 /*/Skip
 alarm[1] = 5;
 alarm[4] = 7;

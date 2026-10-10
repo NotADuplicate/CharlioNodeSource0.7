@@ -30,7 +30,7 @@ if(global.ballGameOver == 0 && global.UI) {
 
 	if(keyboard_check(vk_tab) == false && (!instance_exists(obj_tutorial) || obj_tutorial.stage > 0)) {
 		if(global.dead) 
-			draw_text(500,40,round(respawnTimer)); 
+			draw_text(500,70,"Respawn: " + string(round(respawnTimer))); 
 		else if(global.shop == false && (!instance_exists(obj_tutorial) || obj_tutorial.stage > 2)) {
 			draw_sprite_ext(spr_frame,0,512,40,0.75,0.75,0,c_white,0.75);
 			draw_text_transformed_colour(512,12,string_hash_to_newline(global.ammo),2,2.5,0,#FDD354,#FDD354,#FDD354,#FDD354,0.8);
@@ -61,6 +61,23 @@ if(global.ballGameOver == 0 && global.UI) {
 		if(global.R != 0) {
 			RCoolMax = scr_ability_UI(xp,yp,global.R, global.RCool, RCoolMax, global.Rbutton, "RHover");
 		}
+	}
+	
+	if(global.statusAlert) {
+		if(bleed > 0) {
+			draw_text_transformed_colour(530,150,"BLEEDING\nSTAND STILL",3,3,0,c_red,c_red,c_red,c_red,min(0.2+bleed/200,0.8));
+		} else if(enraged) {
+			if(still < 15) {
+				draw_text_transformed_colour(530,140,"ENRAGED\nKILL ENEMIES OR STAND STILL",3,3,0,c_red,c_red,c_red,c_red,0.8);
+			} else {
+				draw_text_transformed_colour(530,140,"Calming down",2.5,2.5,0,#00bbbb,#00bbbb,#00bbbb,#00bbbb,0.7);
+				draw_healthbar(470,190,590,210,(still-15)/0.8,c_gray,c_aqua,c_aqua,0,false,true);
+			}
+		}
+	}
+	
+	if((position_meeting(x,y,obj_regen) && !instance_exists(obj_tutorial)) || x < 0) {
+		draw_text(530,600,"Press " + global.shopbutton + " to open the shop");
 	}
 }
 draw_set_alpha(1)

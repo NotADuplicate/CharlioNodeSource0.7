@@ -1,6 +1,7 @@
 /// @description Draw tutorial text
-if(arrowX > 0)
-	draw_arrow(arrowX,arrowY,arrowX,arrowY-32,16)
+if(arrowX > 0) {
+	draw_arrow (arrowX,arrowY,arrowX,arrowY-32,32)
+}
 if(surface) {
 	textScale = 1;
 	if(surface_exists(global.shopSurf))

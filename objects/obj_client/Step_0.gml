@@ -7,3 +7,15 @@ if(global.connected) {
 		pingTime = 1;
 	}
 }
+
+if(steamUpdate) {
+	steam_update();
+}
+
+if(!statsReady) {
+	if(steam_stats_ready()) {
+		statsReady = true;
+		steam_set_stat_int("game_open", 1)
+		steamUpdate = true;
+	}
+}

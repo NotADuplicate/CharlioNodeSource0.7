@@ -1,5 +1,5 @@
 /// @description Get revived
-if(!global.testMode) {
+if(!instance_exists(obj_tutorial)) {
 	dead = false
 	x = xpos;
 	y = ypos;

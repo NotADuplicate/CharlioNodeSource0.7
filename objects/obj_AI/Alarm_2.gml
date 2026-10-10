@@ -34,7 +34,11 @@ if(ability2CD <= 0 && ability2 != noone && ammo > ability2.ammoCost) {ability2.a
 if(ability3CD <= 0 && ability3 != noone && ammo > ability3.ammoCost) {ability3.aiDecisions(self); }
 
 if(state == "Flee") {
-	targetPos = scr_flee_path(enemy);
+	if(obj_bigBall.murderball > 0 && point_distance(x,y,obj_bigBall.x,obj_bigBall.y) < 200) {
+		targetPos = scr_flee_path(obj_bigBall);
+	} else {
+		targetPos = scr_flee_path(enemy);
+	}
 	targetX = targetPos[0];
 	targetY = targetPos[1];
 	if(targetX == x && targetY == y) {
