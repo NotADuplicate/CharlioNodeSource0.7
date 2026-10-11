@@ -34,7 +34,7 @@ if(batCharge > 0)
 	draw_healthbar(round(x)-30,round(y)-36,round(x)+30,round(y)-28,batCharge,c_ltgray,c_white,c_white,0,true,true);
 
 if(stasis == 0) { //draw self i guess???
-	draw_sprite_ext(sprite_index,image_index,round(x),round(y),walkDirection*image_xscale,image_yscale,image_angle,c_white,image_alpha)
+	draw_sprite_ext(sprite_index,image_index,round(x),round(y),walkDirection*image_xscale*xSquish,image_yscale*(2-xSquish),image_angle*ySquish,c_white,image_alpha)
 }
 else {
 	draw_sprite_ext(spr_stasisAdventure,image_index,round(x),round(y),image_xscale,image_yscale,image_angle,c_white,1)

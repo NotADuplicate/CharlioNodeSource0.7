@@ -13,6 +13,9 @@ function scr_player_move(moveDirection,moveSpeed){
 		}
 		else {
 			with(ball_player) {
+				xSquish -= abs(lengthdir_x(moveSpeed,moveDirection)/35);
+				xSquish += abs(lengthdir_y(moveSpeed,moveDirection)/35);
+				xSquish = clamp(xSquish, 0.3,1.7);
 				if(inversion <= 0)
 					motion_add(moveDirection,moveSpeed*global.pushSpd)
 				else {

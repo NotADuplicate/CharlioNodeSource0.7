@@ -301,3 +301,11 @@ if(back > 0) {
 	else
 		back = 0;
 }
+
+if(xSquish > 1) {
+	xSquish -= 0.05;
+	if(xSquish < 1) { xSquish = 1; }
+} else if(xSquish < 1) {
+	xSquish += 0.05;
+	if(xSquish > 1) { xSquish = 1; }
+}
