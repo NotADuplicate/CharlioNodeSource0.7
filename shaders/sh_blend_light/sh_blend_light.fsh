@@ -6,6 +6,8 @@
 #define BLEND_LIT_FRAGMENTS
 // How many texels to diverge from this fragment when blending?
 #define BLEND_TEXELS_IN_LIGHT 4.0	// if BLEND_LIT_FRAGMENTS is defined
+// World pixels allowed into a wall along the incoming light ray.
+#define WALL_PENETRATION 10.0
 
 // Maps to eLightType enum in lighting_global
 #define eLightType_Point 0
@@ -86,10 +88,27 @@ vec4 blendFragment(sampler2D sampler, vec2 coord, float dist);
 
 void main()
 {
-	// Wall occlusion is authoritative. Smooth only the lit side of the edge;
-	// averaging lit neighbours into shadow reveals characters behind walls.
+	// Look back towards the emitter by a fixed world distance. This delays the
+	// start of the wall shadow without adding samples or changing light range.
+	vec2 emitter = u_LightPosition;
+	if(u_LightType == eLightType_Area || u_LightType == eLightType_Line) {
+		vec2 span = (u_LineEmitterPoint2 - u_LineEmitterPoint1) / u_TexelSize;
+		vec2 fromStart = (v_vTexcoord - u_LineEmitterPoint1) / u_TexelSize;
+		float projection = clamp(dot(fromStart, span) / max(dot(span, span), 0.0001), 0.0, 1.0);
+		emitter = mix(u_LineEmitterPoint1, u_LineEmitterPoint2, projection);
+	}
+	vec2 toLight = (emitter - v_vTexcoord) / u_TexelSize;
+	float lightDistance = length(toLight);
+	vec2 offset = toLight / max(lightDistance, 0.0001) * min(WALL_PENETRATION, lightDistance);
+	if(u_LightType == eLightType_Directional) {
+		float angle = u_LightDirection * DEG_TO_RAD;
+		offset = vec2(-cos(angle), sin(angle)) * WALL_PENETRATION;
+	}
+	vec2 shadowCoord = clamp(v_vTexcoord + offset * u_TexelSize,
+		u_TexelSize * 0.5, vec2(1.0) - u_TexelSize * 0.5);
+	// Keep a hard stop after the allowance; smooth only the lit side.
 	gl_FragColor = vec4(0.0);
-	vec4 fragment = texture2D(gm_BaseTexture, v_vTexcoord);
+	vec4 fragment = texture2D(gm_BaseTexture, shadowCoord);
 	if(fragment.a >= 0.5) return;
 
 	// Starting light intensity
@@ -145,8 +164,8 @@ void main()
 	}
 	
 #ifdef BLEND_LIT_FRAGMENTS
-		vec4 blend = 0.50 * (blendFragment(gm_BaseTexture, v_vTexcoord, BLEND_TEXELS_IN_LIGHT * 0.50)
-						  +  blendFragment(gm_BaseTexture, v_vTexcoord, BLEND_TEXELS_IN_LIGHT));
+		vec4 blend = 0.50 * (blendFragment(gm_BaseTexture, shadowCoord, BLEND_TEXELS_IN_LIGHT * 0.50)
+						  +  blendFragment(gm_BaseTexture, shadowCoord, BLEND_TEXELS_IN_LIGHT));
 		gl_FragColor = u_LightColor * intensity * (1.0 - blend.a);
 #else
 		gl_FragColor = u_LightColor * intensity * (1.0 - fragment.a);

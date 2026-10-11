@@ -14,7 +14,7 @@ function scr_forward_position(targetX, targetY){
 	
 	//TODO make forward not stand in tower
 	if(point_distance(nx,ny,tower.x,tower.y) < 300) {
-		if(point_distance(x,y,enemy.x,enemy.y) > 500) {
+		if(point_distance(x,y,enemy.x,enemy.y) > 700) {
 			state = "Backing";
 			nx = x;
 			ny = y;

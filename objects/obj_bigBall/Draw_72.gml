@@ -1,0 +1,1 @@
+draw_sprite_ext(spr_shadow,0,x,y+30,1.25,1.25,0,c_white,0.5);

@@ -49,6 +49,9 @@ if(spectating) {
 	gun = instance_create(0,0,obj_gun)
 	gun.num = num;
 }
+
+nameUI = instance_create(0,0,obj_playerName);
+nameUI.link = self;
 ///Get passive
 /*switch(global.passive) {
     case "regen":

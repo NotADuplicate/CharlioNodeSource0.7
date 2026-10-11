@@ -1,0 +1,1 @@
+depth = obj_light_renderer.depth-1;

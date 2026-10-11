@@ -63,7 +63,7 @@ switch(state) {
 	break;
 	case "Push":
 		if(enraged) {
-			if(enemyDistances[3] < 400) {
+			if(enemyDistances[3] < 450) {
 				state = "Thirst";
 			} else {
 				state = "Backing";
@@ -94,7 +94,7 @@ switch(state) {
 	break;
 	case "Forward":
 		if(enraged) {
-			if(enemyDistances[3] < 400) {
+			if(enemyDistances[3] < 450) {
 				state = "Thirst";
 			} else {
 				state = "Backing";
@@ -210,7 +210,7 @@ switch(state) {
 	case "Flee": 
 		gunDir = point_direction(x,y,enemy.x,enemy.y);
 		gunObj.skirmishAction(self);
-		if(point_distance(x,y,enemy.x,enemy.y) > 550 && (levels > 0 || hp < 90) && obj_bigBall.murderball <= 0) {
+		if(point_distance(x,y,enemy.x,enemy.y) > 650 && (levels > 0 || hp < 90) && obj_bigBall.murderball <= 0) {
 			if(hp > 60 || enemy.x < 5)
 				state = "Travel Ball";
 			else 

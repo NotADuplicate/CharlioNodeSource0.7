@@ -51,8 +51,8 @@ function draw_shadow_map(argument0, argument1) {
 		}
 		// Draw from living instances: no registration, repeated flashes or cleanup.
 		with(obj_fire) {
-			lighting_draw_visual_light(surface, X, Y, x, y, light_radius * light_flicker,
-				light_intensity * light_flicker, light_colour);
+			lighting_draw_visual_light(surface, X, Y, x, y, light_draw_radius,
+				light_intensity, light_colour);
 		}
 		shader_set_uniform_i(global.u_VisualPass, false);
 	}

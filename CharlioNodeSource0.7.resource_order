@@ -376,6 +376,7 @@
     {"name":"obj_plasmaBomb","order":94,"path":"objects/obj_plasmaBomb/obj_plasmaBomb.yy",},
     {"name":"obj_play","order":22,"path":"objects/obj_play/obj_play.yy",},
     {"name":"obj_player","order":1,"path":"objects/obj_player/obj_player.yy",},
+    {"name":"obj_playerName","order":33,"path":"objects/obj_playerName/obj_playerName.yy",},
     {"name":"obj_playerUI","order":18,"path":"objects/obj_playerUI/obj_playerUI.yy",},
     {"name":"obj_pod","order":15,"path":"objects/obj_pod/obj_pod.yy",},
     {"name":"obj_pokeball","order":65,"path":"objects/obj_pokeball/obj_pokeball.yy",},

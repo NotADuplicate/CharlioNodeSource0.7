@@ -483,6 +483,7 @@
     {"id":{"name":"obj_plasmaBomb","path":"objects/obj_plasmaBomb/obj_plasmaBomb.yy",},},
     {"id":{"name":"obj_play","path":"objects/obj_play/obj_play.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"obj_playerName","path":"objects/obj_playerName/obj_playerName.yy",},},
     {"id":{"name":"obj_playerUI","path":"objects/obj_playerUI/obj_playerUI.yy",},},
     {"id":{"name":"obj_pod","path":"objects/obj_pod/obj_pod.yy",},},
     {"id":{"name":"obj_pokeball","path":"objects/obj_pokeball/obj_pokeball.yy",},},
