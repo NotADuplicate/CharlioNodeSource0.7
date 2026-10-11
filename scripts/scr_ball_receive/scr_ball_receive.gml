@@ -120,6 +120,7 @@ function scr_ball_receive() {
 			if(primary) {
 				with(obj_gun) {
 					if(self.num == num) {
+						bullet = other.bullet;
 						event_user(0);
 					}
 				}

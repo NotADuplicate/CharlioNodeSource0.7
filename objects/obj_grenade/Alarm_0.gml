@@ -1,4 +1,5 @@
 /// @description Explode
+lighting_flash(x, y, 0.5);
 dir = 0;
 repeat(12) {
     ins = instance_create(x,y,obj_explosion);

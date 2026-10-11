@@ -313,6 +313,8 @@ function lighting_global() {
 	global.u_Environment = shader_get_sampler_index(__WORLD_SHADOW_MAP_SHADER, "u_Environment");
 	global.u_EnvironmentPass = shader_get_uniform(__WORLD_SHADOW_MAP_SHADER, "u_EnvironmentPass");
 	global.u_EnvironmentVisibility = shader_get_uniform(__WORLD_SHADOW_MAP_SHADER, "u_EnvironmentVisibility");
+	global.u_VisualPass = shader_get_uniform(__WORLD_SHADOW_MAP_SHADER, "u_VisualPass");
+	global.u_VisualLight = shader_get_uniform(__WORLD_SHADOW_MAP_SHADER, "u_VisualLight");
 
 	// Light intensity LUT
 	global.u_LutIntensity = shader_get_sampler_index(__LIGHT_SHADER, "u_LutIntensity");

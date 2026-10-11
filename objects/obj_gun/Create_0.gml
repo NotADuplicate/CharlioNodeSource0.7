@@ -24,3 +24,5 @@ revSound = 0;
 swung = false;
 chargeGun = 0;
 depth = -1;
+
+bullet = obj_bullet;

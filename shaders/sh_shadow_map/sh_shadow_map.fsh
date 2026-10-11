@@ -21,6 +21,9 @@ uniform float u_AmbientShadow;
 uniform sampler2D u_Environment;
 uniform bool u_EnvironmentPass;
 uniform float u_EnvironmentVisibility;
+uniform bool u_VisualPass;
+// Source UV and radius in world pixels. Colour/strength use the draw colour.
+uniform vec3 u_VisualLight;
 
 // Texel information
 uniform vec2 u_TexelSize;
@@ -33,6 +36,19 @@ vec4 average(sampler2D sampler, vec2 coord, float dist);
 //
 void main()
 {
+	float glow = 0.0;
+	if (u_VisualPass) {
+		// Reject hidden sources and receiving pixels before the soft-mask samples.
+		vec3 source = texture2D(gm_BaseTexture, u_VisualLight.xy).rgb;
+		vec3 receiver = texture2D(gm_BaseTexture, v_vTexcoord).rgb;
+		vec2 offset = (v_vTexcoord - u_VisualLight.xy) / u_TexelSize;
+		float falloff = max(0.0, 1.0 - dot(offset, offset) / (u_VisualLight.z * u_VisualLight.z));
+		glow = falloff * falloff * clamp(max(source.r, max(source.g, source.b)), 0.0, 1.0);
+		if (glow <= 0.0 || max(receiver.r, max(receiver.g, receiver.b)) <= 0.0) {
+			gl_FragColor = vec4(0.0);
+			return;
+		}
+	}
 #ifdef BLEND_AVERAGE
 	//
 	//	Blending is ENABLED
@@ -101,6 +117,11 @@ void main()
 	// establishes the minimum darkness, so softness stays on the lit side.
 	vec4 hardShadow = clamp(vec4(1.0) - texture2D(gm_BaseTexture, v_vTexcoord), 0.0, 1.0);
 	gl_FragColor = max(gl_FragColor, hardShadow * u_AmbientShadow);
+	if (u_VisualPass) {
+		// Use exactly the same resolved vision as the darkness/environment passes.
+		gl_FragColor = vec4(v_vColour.rgb * v_vColour.a * glow * (1.0 - clamp(gl_FragColor.rgb, 0.0, 1.0)), 0.0);
+		return;
+	}
 	// Add back only the environment, weighted by the same softened darkness mask.
 	// The first pass removes the entire scene in darkness, including instances.
 	if (u_EnvironmentPass) {

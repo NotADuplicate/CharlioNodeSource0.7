@@ -3,3 +3,4 @@
 tick = 0;
 dirty = false;
 environment_layers = [];
+lighting_flashes = [];

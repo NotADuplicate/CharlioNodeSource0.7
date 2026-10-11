@@ -5,3 +5,4 @@ image_yscale = 10
 active = true;
 alarm[1] = 2;
 alarm[0] = 3;
+lighting_flash(x,y,0.7)
