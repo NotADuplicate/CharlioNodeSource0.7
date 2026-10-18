@@ -1,5 +1,6 @@
-draw_set_alpha(alpha);
-if((sameTeam || seen) && link.visible) {
+if((sameTeam || (seen && link.seen==0)) && link.visible) {
+	draw_set_alpha(alpha);
+	
 	draw_healthbar(round(x)-20,round(y)-(13*(link.image_yscale))-9,round(x)+20,round(y)-(13*(link.image_yscale))-19,(link.hp/link.maxhp)*100,c_ltgray,c_red,c_green,0,true,true);
 
 	if(link.hp > link.maxhp)
@@ -20,9 +21,11 @@ if((sameTeam || seen) && link.visible) {
 		draw_text(round(x),round(y)-(10*(link.image_yscale))-29,round(link.hp));
 	
 	draw_text(round(x),round(y)-(50*(link.image_yscale/3)) - 35, string_hash_to_newline(global.names[link.num])); //name
+} else {
+	draw_set_alpha(0);
+}
 
-	with(link) {
-		scr_drawStatus();
-	}
+with(link) {
+	scr_drawStatus();
 }
 draw_set_alpha(1);

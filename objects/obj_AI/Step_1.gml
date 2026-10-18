@@ -151,13 +151,15 @@ switch(state) {
 		}
 		
 		//Stop chasing under tower
-		turret = instance_nearest(x,y,obj_turret);
-		if(point_distance(enemy.x,enemy.y,turret.x,turret.y) < 150 && global.teamNum[turret.num] != global.teamNum[num]) { 
-			if(global.aiPushing[team]) 
-				state = "Forward"
-			else {
-				state = "Push";
-				global.aiPushing[team] = true;
+		if(instance_exists(obj_turret)) {
+			turret = instance_nearest(x,y,obj_turret);
+			if(point_distance(enemy.x,enemy.y,turret.x,turret.y) < 150 && global.teamNum[turret.num] != global.teamNum[num]) { 
+				if(global.aiPushing[team]) 
+					state = "Forward"
+				else {
+					state = "Push";
+					global.aiPushing[team] = true;
+				}
 			}
 		}
 		//thirst down low enemy

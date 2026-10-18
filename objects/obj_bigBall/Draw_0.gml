@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+draw_sprite_ext(spr_shadow,0,x,y+27,1.25,1.25,0,c_white,0.5);
 var blend_color = merge_color(c_white, c_red, deathTouchProgress/10);
 draw_sprite_ext(
     spr_ballGIF, ball_rotation.frame, x, y,
