@@ -679,7 +679,7 @@ function scr_ball_receive() {
 			dir = buffer[? "dir"];
 			obj = buffer[? "obj"];
 			spr = buffer[? "spr"];
-			scr_throw_projectile(num,dir,spr,obj,9)
+			scr_throw_projectile(num,dir,spr,obj,5)
 		break;
 	}
 	}

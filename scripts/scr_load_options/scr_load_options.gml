@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_load_options(){
-	ini_open("Ball.sav")
+	ini_open("Ball1.sav")
 	global.spacekey = ini_read_real("Save1","spacekey",vk_space);
 	global.Rkey = ini_read_real("Save1","Rkey",ord("R"));
 	global.Rbutton = ini_read_string("Save1","Rbutton","R");

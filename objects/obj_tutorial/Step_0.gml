@@ -24,7 +24,7 @@ else if(stage == 2 && global.attack != obj_bullet && global.shop == false) {
 	textX = 550;
 	textY = 675;
 	stage = 3;
-	alarm[1] = 800;
+	alarm[1] = 500;
 }
 if(stage == 3) {
 	arrowX = 0;
@@ -39,14 +39,14 @@ if(stage == 3) {
 		surface = false;
 		textX = 550;
 		textY = 675;
-		tutText = global.atktext + "\n" + scr_gun_text(global.attack)
+		//tutText = global.atktext + "\n" + scr_gun_text(global.attack)
 	}
 }
 if(stage == 4) {
 	if(global.shop) {
 		surface = true;
 		if(global.shopState == "Abilities") {
-			tutText = "Click on an ability to select it \n then click on an ability slot at the bottom left to equip it. \n You have 3 ability slots which each use different buttons."
+			tutText = "Click on an ability to select it \n then click on an ability slot at the bottom right to equip it. \n You have 3 ability slots which each use different buttons."
 		}
 		else {
 			textY = 400
@@ -172,7 +172,7 @@ if(stage == 8) {
 				surface = true;
 				obj_shop.wipe = true;
 			}
-			tutText = ""
+			tutText = "Select a passive then confirm to spend a level on it"
 		}
 	}
 	else {

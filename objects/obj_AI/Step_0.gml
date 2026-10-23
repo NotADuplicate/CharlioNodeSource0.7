@@ -1,4 +1,5 @@
 /// @description Die and have friction 
+scr_ball_push_tick();
 /*
 if(place_meeting(x+hspeed,y,ball_wall)) {
 	if(place_meeting(x,y,ball_wall)) {

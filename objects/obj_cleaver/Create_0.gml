@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-speed = 21;
+speed = 24;
 alarm[0] = 38;
 image_xscale = -.5;
 image_yscale = .5;

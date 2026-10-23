@@ -1,5 +1,8 @@
 /// @description Handle AI inputs
-if(enemy != noone) {
+var _previous_state = state;
+scr_ball_tower_escape();
+var _tower_objective_changed = scr_ai_skirmish_tower_tick();
+if(enemy != noone && state != "Escape Tower" && !_tower_objective_changed) {
 switch(state) {
 	case "Travel": //travel to defend tower
 		if(enraged) {
@@ -85,7 +88,7 @@ switch(state) {
 			}
 		}
 		
-		if(point_distance(x,y,obj_bigBall.x,obj_bigBall.y) < 300 && collision_line(x,y,obj_bigBall.x,obj_bigBall.y, ball_wall, false, false) == noone) {
+		if(scr_ball_approach_committed() || (point_distance(x,y,obj_bigBall.x,obj_bigBall.y) < 300 && collision_line(x,y,obj_bigBall.x,obj_bigBall.y, ball_wall, false, false) == noone)) {
 			
 		} else {
 			global.aiPushing[team] = false;
@@ -130,7 +133,7 @@ switch(state) {
 				knownLocation+=4;
 			}
 			
-			gunObj.skirmishAction(self);
+			if (!scr_ai_ball_blocks_combat_shot(enemy)) gunObj.skirmishAction(self);
 		} else {
 			if(knownLocation > 0 && enemyDistances[0] < 550) {
 				knownLocation--;
@@ -150,18 +153,8 @@ switch(state) {
 			}
 		}
 		
-		//Stop chasing under tower
-		if(instance_exists(obj_turret)) {
-			turret = instance_nearest(x,y,obj_turret);
-			if(point_distance(enemy.x,enemy.y,turret.x,turret.y) < 150 && global.teamNum[turret.num] != global.teamNum[num]) { 
-				if(global.aiPushing[team]) 
-					state = "Forward"
-				else {
-					state = "Push";
-					global.aiPushing[team] = true;
-				}
-			}
-		}
+		// Navigation keeps ordinary skirmishes outside hostile tower range.
+		// Do not claim the Push exception just because an enemy is under a tower.
 		//thirst down low enemy
 		if(hp > 70 && (enemy.hp < 50 || (enemy.hp < 100 && enemy.frost > 30))) {
 			state = "Thirst";
@@ -181,7 +174,7 @@ switch(state) {
 				knownLocation+=4;
 			}
 			
-			gunObj.skirmishAction(self);
+			if (!scr_ai_ball_blocks_combat_shot(enemy)) gunObj.skirmishAction(self);
 		} else {
 			if(knownLocation > 0) {
 				knownLocation--;
@@ -211,7 +204,7 @@ switch(state) {
 	break;
 	case "Flee": 
 		gunDir = point_direction(x,y,enemy.x,enemy.y);
-		gunObj.skirmishAction(self);
+		if (!scr_ai_ball_blocks_combat_shot(enemy)) gunObj.skirmishAction(self);
 		if(point_distance(x,y,enemy.x,enemy.y) > 650 && (levels > 0 || hp < 90) && obj_bigBall.murderball <= 0) {
 			if(hp > 60 || enemy.x < 5)
 				state = "Travel Ball";
@@ -247,3 +240,6 @@ if(speed > 0.5) {
 
 if(reload > 0) {reload--;}
 if(recentlySwithced > 0) {recentlySwithced--;}
+// Start the new state's route on the next alarm step, rather than continuing
+// the previous state's path for up to ten steps near a corner.
+if (state != _previous_state && state != "Dead") alarm[2] = 1;

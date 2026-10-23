@@ -3,10 +3,24 @@ if(instance_exists(obj_startWall)) {
 	alarm[2] = 10;
 	return;
 }
+// Tower safety takes precedence over overlap, combat, abilities and loot.
+if (scr_ball_tower_escape()) {
+	scr_ball_tower_escape_path();
+	alarm[2] = 3;
+	return;
+}
+if (state != "Push" && ballApproachPath != -1) {
+	if (path_index == ballApproachPath) path_end();
+	if (path_exists(ballApproachPath)) path_delete(ballApproachPath);
+	ballApproachPath = -1;
+}
 overlapping = collision_point(x,y,obj_AI,false,true)
-if(overlapping != noone && !enraged) {
+if(overlapping != noone && !enraged && state != "Push") {
 	if(overlapping.state == state && num < overlapping.num) {
-		scr_pathfind(x + random_range(-40,40), y + random_range(-40,40), 5);
+		targetX = x + random_range(-40,40);
+		targetY = y + random_range(-40,40);
+		scr_ai_safe_tower_target();
+		path = scr_pathfind(targetX, targetY, 5, state != "Thirst");
 		alarm[2] = 10;
 		return;
 	}
@@ -128,7 +142,7 @@ if(state == "Travel") { //go to defend nearest friendly tower
 	targetY = travelTarget.y;
 }
 // TODO go collect souls
-if(state != "Flee" && state != "Thirst" && state != "Dodge Fire") {
+if(state != "Flee" && state != "Thirst" && state != "Dodge Fire" && state != "Push") {
 	with(ball_corpse) {
 		if(global.teamNum[num] != global.teamNum[other.num] && point_distance(x,y,other.x,other.y) < 150) {
 			other.targetX = x;
@@ -141,11 +155,17 @@ spd = link.dashing <= 0 ? 5 : 20;
 if(enraged) { spd *= 1.5; }
 if(pushingBall > 0) { spd /= 2; }
 if(frost > 0) { spd = 2;}
-if(bleed == 0 && state != "Dead" && speed < 1 && state != "Backing") {
+if(bleed == 0 && state != "Dead" && speed < 1 && state != "Backing" && state != "Push") {
 	backing = 0;
-	path = scr_pathfind(targetX, targetY, spd);
+	scr_ai_safe_tower_target();
+	path = scr_pathfind(targetX, targetY, spd, state != "Thirst");
 }
-alarm[2] = 10;
+alarm[2] = state == "Push" ? 3 : 10;
 
-hp += 1;
+// Faster push replanning must not also triple passive healing.
+ballHealSteps += alarm[2];
+if (ballHealSteps >= 10) {
+	hp += 1;
+	ballHealSteps -= 10;
+}
 if(hp > maxhp) {hp = maxhp;}

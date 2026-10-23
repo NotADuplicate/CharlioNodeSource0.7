@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_load_unlocks(){
-	ini_open("Ball.sav")
+	ini_open("Ball1.sav")
 	var i = 0;
 	repeat(array_length(Abilities.list)) {
 		Abilities.list[i].unlocked = ini_read_real("abilities",string(i),false);
